@@ -1,0 +1,20 @@
+{
+  "name": "prsui",
+  "homepage": "https://github.com/MandavkarPranjal/prsui",
+  "items": [
+    {
+      "name": "smooth-input",
+      "type": "registry:ui",
+      "title": "Smooth Input",
+      "description": "A smooth input component with a caret animation.",
+      "files": [
+        {
+          "path": "registry/new-york/smooth-input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/smooth-input.tsx"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    }
+  ]
+}
