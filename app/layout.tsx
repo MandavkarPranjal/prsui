@@ -1,5 +1,6 @@
 import { SoundProvider } from "@web-kits/audio/react";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -22,7 +23,9 @@ const RootLayout = ({
   <html lang="en" suppressHydrationWarning>
     <head>
       <JsonLdScripts />
-      <script
+      <Script
+        id="theme-color-script"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
               try {

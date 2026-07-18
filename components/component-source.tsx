@@ -21,7 +21,7 @@ const ComponentCode = ({
   language: string;
   title: string | undefined;
 }) => (
-  <figure data-rehype-pretty-code-figure="" className="[&>pre]:max-h-96">
+  <figure data-rehype-pretty-code-figure="" className="mt-0">
     {title ? (
       <figcaption
         className="text-code-foreground flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70"
@@ -74,12 +74,14 @@ export const ComponentSource = async ({
   if (!collapsible) {
     return (
       <div className={cn("relative", className)}>
-        <ComponentCode
-          code={code}
-          highlightedCode={highlightedCode}
-          language={lang}
-          title={title}
-        />
+        <div className="max-h-96 min-h-[350px] overflow-auto rounded-xl border border-border/60">
+          <ComponentCode
+            code={code}
+            highlightedCode={highlightedCode}
+            language={lang}
+            title={title}
+          />
+        </div>
       </div>
     );
   }

@@ -1,16 +1,27 @@
+import Script from "next/script";
+
 import { LINK } from "@/constants/links";
 import { ROUTES } from "@/constants/routes";
 import { SITE } from "@/constants/site";
 
-const JsonLdScript = ({ data }: { data: Record<string, unknown> }) => (
-  <script
-    dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+const JsonLdScript = ({
+  id,
+  data,
+}: {
+  id: string;
+  data: Record<string, unknown>;
+}) => (
+  <Script
+    id={id}
     type="application/ld+json"
+    strategy="beforeInteractive"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
   />
 );
 
 export const WebsiteJsonLd = () => (
   <JsonLdScript
+    id="json-ld-website"
     data={{
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -24,6 +35,7 @@ export const WebsiteJsonLd = () => (
 
 export const SoftwareSourceCodeJsonLd = () => (
   <JsonLdScript
+    id="json-ld-software-source-code"
     data={{
       "@context": "https://schema.org",
       "@type": "SoftwareSourceCode",
@@ -59,6 +71,7 @@ export const SoftwareSourceCodeJsonLd = () => (
 
 export const OrganizationJsonLd = () => (
   <JsonLdScript
+    id="json-ld-organization"
     data={{
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -81,6 +94,7 @@ export const BreadcrumbJsonLd = ({
   items: { name: string; path: string }[];
 }) => (
   <JsonLdScript
+    id="json-ld-breadcrumb"
     data={{
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
