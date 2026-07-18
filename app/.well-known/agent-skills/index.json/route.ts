@@ -14,7 +14,7 @@ export const GET = (request: Request) => {
           description:
             "Install and use components from this public shadcn registry starter and documentation site.",
           digest: siteAgentSkillDigest(),
-          name: "registry-starter",
+          name: "prsui",
           type: "skill-md",
           url: `${base}${ROUTES.AGENT_SKILLS_SITE_SKILL}`,
         },

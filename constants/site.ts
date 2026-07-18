@@ -20,7 +20,8 @@ export const SITE = {
     TWITTER: "@pr5dev",
   },
   DESCRIPTION: {
-    LONG: "A starter kit for building and publishing your own shadcn registry components.",
+    LONG: "ui-library with a growing library of ready-to-use react components & microinteractions. free & open source.",
+    SHORT: "ui components & microinteractions by @pr5dev",
   },
   KEYWORDS: [
     "shadcn",
