@@ -1,0 +1,53 @@
+---
+title: Split Action
+description: Interactive component for split actions.
+---
+
+import { SplitActionDemo } from "@/registry/new-york/split-action-demo";
+
+<ComponentPreview name="split-action">
+  <SplitActionDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/split-action"
+  __npm__="npx shadcn@latest add @prsui/split-action"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/split-action"
+  __yarn__="yarn shadcn@latest add @prsui/split-action"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/split-action.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/split-action.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/split-action.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/split-action.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { SplitActions } from "@/components/ui/split-action";
+
+export function MyComponent() {
+  const actions = [
+    { icon: PenTool, label: "Edit" },
+    { icon: Share2, label: "Share" },
+  ];
+  return <SplitActions actions={actions} />;
+}
+```
+
+## Props
+
+| Prop          | Type         | Default | Description                                     |
+| ------------- | ------------ | ------- | ----------------------------------------------- |
+| `actions`     | `Action[]`   | -       | Array of action objects with `icon` and `label` |
+| `triggerIcon` | `LucideIcon` | `Plus`  | Icon for the trigger button                     |

@@ -15,6 +15,20 @@
         }
       ],
       "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "split-action",
+      "type": "registry:ui",
+      "title": "Split Action",
+      "description": "Interactive component for split actions.",
+      "files": [
+        {
+          "path": "registry/new-york/split-action.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/split-action.tsx"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"]
     }
   ]
 }
