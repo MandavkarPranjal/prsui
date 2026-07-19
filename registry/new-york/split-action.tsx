@@ -15,11 +15,13 @@ interface Action {
 interface SplitActionsProps {
   actions: Action[];
   triggerIcon?: LucideIcon;
+  onActionClick?: (action: Action, index: number) => void;
 }
 
 const SplitActions = ({
   actions,
   triggerIcon: TriggerIcon = Plus,
+  onActionClick,
 }: SplitActionsProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -64,11 +66,7 @@ const SplitActions = ({
 
   return (
     <div className="flex items-center justify-center py-8">
-      <button
-        type="button"
-        className="relative flex min-h-14 min-w-14 items-center justify-center"
-        onClick={() => setIsOpen((prev) => !prev)}
-      >
+      <div className="relative flex min-h-14 min-w-14 items-center justify-center">
         <AnimatePresence mode="wait">
           {!isOpen && (
             <motion.button
@@ -95,6 +93,7 @@ const SplitActions = ({
                 type: "spring",
               }}
               className="rounded-full bg-black p-2 text-white dark:bg-white dark:text-black"
+              onClick={() => setIsOpen(true)}
             >
               <TriggerIcon className="size-8 stroke-3" />
             </motion.button>
@@ -136,13 +135,18 @@ const SplitActions = ({
                   "absolute flex items-center gap-2 rounded-full bg-zinc-100 px-4 py-2 text-zinc-900",
                   (positions[index] ?? 0) < 0 ? "origin-right" : "origin-left"
                 )}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsOpen(false);
+                  onActionClick?.(action, index);
+                }}
               >
                 <action.icon className="size-4 stroke-2" />
                 <span className="text-lg font-medium">{action.label}</span>
               </motion.button>
             ))}
         </AnimatePresence>
-      </button>
+      </div>
     </div>
   );
 };

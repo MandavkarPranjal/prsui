@@ -9,5 +9,12 @@ export const SplitActionDemo = () => {
     { icon: PenTool, label: "Edit" },
     { icon: Share2, label: "Share" },
   ];
-  return <SplitActions actions={actions} />;
+  return (
+    <SplitActions
+      actions={actions}
+      onActionClick={(action, index) => {
+        console.log(`Clicked ${action.label} at index ${index}`);
+      }}
+    />
+  );
 };

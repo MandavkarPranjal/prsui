@@ -41,13 +41,28 @@ export function MyComponent() {
     { icon: PenTool, label: "Edit" },
     { icon: Share2, label: "Share" },
   ];
-  return <SplitActions actions={actions} />;
+  return (
+    <SplitActions
+      actions={actions}
+      onActionClick={(action, index) => {
+        console.log(`Clicked ${action.label} at index ${index}`);
+      }}
+    />
+  );
 }
 ```
 
 ## Props
 
-| Prop          | Type         | Default | Description                                     |
-| ------------- | ------------ | ------- | ----------------------------------------------- |
-| `actions`     | `Action[]`   | -       | Array of action objects with `icon` and `label` |
-| `triggerIcon` | `LucideIcon` | `Plus`  | Icon for the trigger button                     |
+| Prop            | Type                                      | Default | Description                                                                                                     |
+| --------------- | ----------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------- |
+| `actions`       | `Action[]`                                | -       | Array of action objects with `icon` and `label`                                                                 |
+| `triggerIcon`   | `LucideIcon`                              | `Plus`  | Icon for the trigger button                                                                                     |
+| `onActionClick` | `(action: Action, index: number) => void` | -       | Callback fired when an action button is clicked. The component closes automatically after an action is clicked. |
+
+### Action
+
+| Property | Type         | Description                       |
+| -------- | ------------ | --------------------------------- |
+| `icon`   | `LucideIcon` | Icon displayed in the button      |
+| `label`  | `string`     | Text label displayed next to icon |
