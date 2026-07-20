@@ -1,0 +1,78 @@
+---
+title: Link
+description: Animated link components with underline hover effects and customizable icons.
+---
+
+import { LinkDemo } from "@/registry/new-york/link-demo";
+
+<ComponentPreview name="link">
+  <LinkDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/link"
+  __npm__="npx shadcn@latest add @prsui/link"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/link"
+  __yarn__="yarn shadcn@latest add @prsui/link"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/link.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/link.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/link.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/link.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { Link01, Link02, Link03, Link04, Link05 } from "@/components/ui/link";
+
+export function MyComponent() {
+  return <Link01 href="https://example.com">Visit example</Link01>;
+}
+```
+
+## Variants
+
+| Variant  | Description                                                                  |
+| -------- | ---------------------------------------------------------------------------- |
+| `Link01` | Underline animation from left to right on hover. External `<a>` tag.         |
+| `Link02` | Underline animation from right to left on hover. External `<a>` tag.         |
+| `Link03` | Underline animation from center outward on hover. External `<a>` tag.        |
+| `Link04` | Full-width highlight with mix-blend-difference on hover. External `<a>` tag. |
+| `Link05` | Left-to-right wipe with mix-blend-difference on hover. External `<a>` tag.   |
+
+## Props
+
+All variants extend the native `<a>` attributes via the shared `LinkProps` type, plus two extras:
+
+| Prop        | Type        | Default           | Description                                                                |
+| ----------- | ----------- | ----------------- | -------------------------------------------------------------------------- |
+| `href`      | `string`    | -                 | The link URL (passed to the underlying `<a>`)                              |
+| `children`  | `ReactNode` | -                 | Link content                                                               |
+| `className` | `string`    | -                 | Additional CSS classes merged onto the root `<a>`                          |
+| `icon`      | `ReactNode` | arrow SVG         | Custom icon node; replaces the default arrow (add your own hover classes)  |
+| `target`    | `string`    | `_blank` (Link01) | All other native `<a>` props (`target`, `rel`, `onClick`, …) are forwarded |
+
+```tsx
+import type { LinkProps } from "@/components/ui/link";
+
+// Bring your own target / rel / onClick, etc.
+<Link02
+  href="https://example.com"
+  target="_self"
+  rel="nofollow"
+  icon={<SomeIcon className="size-4" />}
+>
+  Visit example
+</Link02>;
+```

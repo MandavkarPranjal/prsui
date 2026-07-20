@@ -86,6 +86,19 @@
         }
       ],
       "dependencies": ["motion"]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "Animated link components with underline hover effects and customizable icons.",
+      "files": [
+        {
+          "path": "registry/new-york/link.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/link.tsx"
+        }
+      ]
     }
   ]
 }
