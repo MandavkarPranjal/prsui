@@ -1,0 +1,57 @@
+---
+title: Tooltip
+description: Accessible animated tooltip with spring physics and portal rendering.
+---
+
+import { TooltipPreview } from "@/registry/new-york/tooltip-demo";
+
+<ComponentPreview name="tooltip">
+  <TooltipPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/tooltip"
+  __npm__="npx shadcn@latest add @prsui/tooltip"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/tooltip"
+  __yarn__="yarn shadcn@latest add @prsui/tooltip"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/tooltip.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/tooltip.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/tooltip.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/tooltip.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { Tooltip } from "@/components/ui/tooltip";
+
+export function MyComponent() {
+  return (
+    <Tooltip content="Save changes" side="top">
+      <button type="button">Save</button>
+    </Tooltip>
+  );
+}
+```
+
+## Props
+
+| Prop               | Type                                     | Default | Description                                              |
+| ------------------ | ---------------------------------------- | ------- | -------------------------------------------------------- |
+| `content`          | `ReactNode`                              | -       | Tooltip content                                          |
+| `children`         | `ReactElement`                           | -       | Trigger element (must be a single valid React element)   |
+| `side`             | `"top" \| "right" \| "bottom" \| "left"` | `"top"` | Preferred side for the tooltip to appear                 |
+| `delay`            | `number`                                 | `120`   | Delay before showing in ms                               |
+| `className`        | `string`                                 | -       | Classes applied to the tooltip popover                   |
+| `wrapperClassName` | `string`                                 | -       | Classes for the outer wrapper span (use to fix baseline) |

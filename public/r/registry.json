@@ -29,6 +29,30 @@
         }
       ],
       "dependencies": ["framer-motion", "lucide-react"]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Accessible animated tooltip with spring physics and portal rendering.",
+      "files": [
+        {
+          "path": "registry/new-york/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:lib",
+          "target": "lib/hooks/use-hover-capable.ts"
+        }
+      ],
+      "dependencies": ["motion"]
     }
   ]
 }

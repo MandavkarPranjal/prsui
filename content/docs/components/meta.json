@@ -1,4 +1,4 @@
 {
   "title": "Components",
-  "pages": ["index", "smooth-input", "split-action"]
+  "pages": ["index", "smooth-input", "split-action", "tooltip"]
 }
