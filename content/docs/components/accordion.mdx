@@ -1,0 +1,90 @@
+---
+title: Accordion
+description: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.
+---
+
+import { BouncyAccordionPreview } from "@/registry/new-york/accordion-demo";
+
+<ComponentPreview name="accordion">
+  <BouncyAccordionPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/accordion"
+  __npm__="npx shadcn@latest add @prsui/accordion"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/accordion"
+  __yarn__="yarn shadcn@latest add @prsui/accordion"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { Accordion, type AccordionItem } from "@/components/ui/accordion";
+
+const items: AccordionItem[] = [
+  {
+    id: "item-1",
+    title: "First question",
+    description: "Answer to the first question.",
+  },
+  {
+    id: "item-2",
+    title: "Second question",
+    description: "Answer to the second question.",
+  },
+];
+
+export function MyComponent() {
+  return <Accordion items={items} defaultValue="item-1" />;
+}
+```
+
+## Props
+
+| Prop            | Type                              | Default | Description                                           |
+| --------------- | --------------------------------- | ------- | ----------------------------------------------------- |
+| `items`         | `AccordionItem[]`                 | -       | Array of accordion items                              |
+| `value`         | `string \| null`                  | -       | Controlled currently open item id                     |
+| `defaultValue`  | `string \| null`                  | `null`  | Initially open item id                                |
+| `onValueChange` | `(value: string \| null) => void` | -       | Callback fired when the open item changes             |
+| `collapsible`   | `boolean`                         | `true`  | When false, an open item cannot be closed by clicking |
+| `className`     | `string`                          | -       | Classes applied to the root wrapper                   |
+| `classNames`    | `AccordionClassNames`             | -       | Override classes for individual sub-elements          |
+
+### AccordionItem
+
+| Field         | Type        | Description                              |
+| ------------- | ----------- | ---------------------------------------- |
+| `id`          | `string`    | Unique identifier for the item           |
+| `title`       | `ReactNode` | Content shown in the trigger row         |
+| `description` | `ReactNode` | Content revealed when the item is open   |
+| `icon`        | `ReactNode` | Optional icon displayed before the title |
+| `disabled`    | `boolean`   | Disables the item                        |
+
+### AccordionClassNames
+
+| Key           | Description                  |
+| ------------- | ---------------------------- |
+| `root`        | Wrapper around all items     |
+| `item`        | Each accordion row container |
+| `trigger`     | The clickable button row     |
+| `icon`        | The icon wrapper span        |
+| `title`       | The title text span          |
+| `chevron`     | The chevron rotation wrapper |
+| `content`     | The animated content wrapper |
+| `description` | The description text div     |

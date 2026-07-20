@@ -53,6 +53,25 @@
         }
       ],
       "dependencies": ["motion"]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Animated accordion with spring physics, group morphing, and accessible ARIA attributes.",
+      "files": [
+        {
+          "path": "registry/new-york/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/accordion.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "lib/ease.ts"
+        }
+      ],
+      "dependencies": ["motion", "lucide-react"]
     }
   ]
 }
