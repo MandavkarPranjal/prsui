@@ -1,4 +1,11 @@
 {
   "title": "Components",
-  "pages": ["index", "smooth-input", "split-action", "tooltip", "accordion"]
+  "pages": [
+    "index",
+    "smooth-input",
+    "split-action",
+    "tooltip",
+    "accordion",
+    "typewriter"
+  ]
 }

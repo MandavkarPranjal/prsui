@@ -72,6 +72,20 @@
         }
       ],
       "dependencies": ["motion", "lucide-react"]
+    },
+    {
+      "name": "typewriter",
+      "type": "registry:ui",
+      "title": "Typewriter",
+      "description": "Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.",
+      "files": [
+        {
+          "path": "registry/new-york/typewriter.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/typewriter.tsx"
+        }
+      ],
+      "dependencies": ["motion"]
     }
   ]
 }

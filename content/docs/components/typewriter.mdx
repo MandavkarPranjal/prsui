@@ -1,0 +1,80 @@
+---
+title: Typewriter
+description: Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.
+---
+
+import { TypewriterPreview } from "@/registry/new-york/typewriter-demo";
+
+<ComponentPreview name="typewriter">
+  <TypewriterPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/typewriter"
+  __npm__="npx shadcn@latest add @prsui/typewriter"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/typewriter"
+  __yarn__="yarn shadcn@latest add @prsui/typewriter"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/typewriter.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/typewriter.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/typewriter.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/typewriter.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import Typewriter from "./typewriter";
+
+export const TypewriterPreview = () => (
+  <div className="flex flex-col items-center gap-2 text-center">
+    <p className="text-3xl text-muted-foreground">To seek the truth we must</p>
+    <p className="text-3xl font-medium text-foreground">
+      <Typewriter
+        as="span"
+        text={[
+          "question",
+          "observe",
+          "doubt",
+          "discover",
+          "keep looking upward",
+        ]}
+        speed={70}
+        waitTime={1500}
+        deleteSpeed={40}
+        cursorChar={"_"}
+      />
+    </p>
+  </div>
+);
+```
+
+## Props
+
+| Prop                      | Type                                                             | Default  | Description                                           |
+| ------------------------- | ---------------------------------------------------------------- | -------- | ----------------------------------------------------- |
+| `text`                    | `string \| string[]`                                             | -        | Text to type. Pass an array to cycle through phrases. |
+| `as`                      | `ElementType`                                                    | `"div"`  | Element or component to render as.                    |
+| `speed`                   | `number`                                                         | `50`     | Typing speed in ms per character.                     |
+| `initialDelay`            | `number`                                                         | `0`      | Delay before typing starts in ms.                     |
+| `waitTime`                | `number`                                                         | `2000`   | Pause before deleting or moving to next phrase in ms. |
+| `deleteSpeed`             | `number`                                                         | `30`     | Deleting speed in ms per character.                   |
+| `loop`                    | `boolean`                                                        | `true`   | Whether to loop through the phrases.                  |
+| `className`               | `string`                                                         | -        | Classes applied to the wrapper element.               |
+| `showCursor`              | `boolean`                                                        | `true`   | Whether to show the cursor.                           |
+| `hideCursorOnType`        | `boolean`                                                        | `false`  | Hide the cursor while typing/deleting.                |
+| `cursorChar`              | `string \| React.ReactNode`                                      | `"\|"`   | Character or node rendered as the cursor.             |
+| `cursorClassName`         | `string`                                                         | `"ml-1"` | Classes applied to the cursor element.                |
+| `cursorAnimationVariants` | `{ initial: Variants["initial"]; animate: Variants["animate"] }` | blinking | Animation variants for the cursor.                    |
