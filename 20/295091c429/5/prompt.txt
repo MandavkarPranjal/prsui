@@ -1,0 +1,92 @@
+added new component @registry/new-york/mouse-follow.tsx update docs and demo, then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/mouse-follow.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/mouse-follow.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import { motion, useMotionValue, useSpring } from "framer-motion";
+4: import React from "react";
+5: 
+6: const SPRING = {
+7:   mass: 0.1, // avoid Controls inertia (how sluggish or responsive the object feels). Lower mass = snappier motion; higher mass = lethargic motion
+8:   damping: 10, // its like the weight of the ball heavier the ball less it will bounce or harder the rubber band the more it will bounce
+9:   stiffness: 131, // like rubber Band the more you strech the more speed it goes back to the original position
+10: };
+11: 
+12: const SimpleMouseFollow = () => {
+13:   const x = useMotionValue(0);
+14:   const y = useMotionValue(0);
+15:   const opacity = useMotionValue(0);
+16: 
+17:   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+18:     const bounds = e.currentTarget.getBoundingClientRect();
+19:     x.set(e.clientX - bounds.left);
+20:     y.set(e.clientY - bounds.top);
+21:   };
+22: 
+23:   return (
+24:     <div
+25:       onPointerMove={(e) => {
+26:         handlePointerMove(e);
+27:       }}
+28:       onPointerEnter={() => {
+29:         opacity.set(1);
+30:       }}
+31:       onPointerLeave={() => {
+32:         opacity.set(0);
+33:       }}
+34:       className="rounded-4xl bg-background mt-20 size-[500px] cursor-none overflow-hidden"
+35:     >
+36:       <motion.div
+37:         style={{
+38:           x,
+39:           y,
+40:           opacity,
+41:         }}
+42:         className="rounded-4xl size-5 bg-[#ccc]"
+43:       ></motion.div>
+44:     </div>
+45:   );
+46: };
+47: 
+48: const SpringMouseFollow = () => {
+49:   const xSpring = useSpring(0, SPRING);
+50:   const ySpring = useSpring(0, SPRING);
+51:   const opacitySpring = useSpring(0, SPRING);
+52:   const scaleSpring = useSpring(0, SPRING);
+53: 
+54:   return (
+55:     <div
+56:       onPointerMove={(e) => {
+57:         const bounds = e.currentTarget.getBoundingClientRect();
+58:         xSpring.set(e.clientX - bounds.left);
+59:         ySpring.set(e.clientY - bounds.top);
+60:       }}
+61:       onPointerEnter={() => {
+62:         opacitySpring.set(1);
+63:         scaleSpring.set(1);
+64:       }}
+65:       onPointerLeave={() => {
+66:         opacitySpring.set(0);
+67:         scaleSpring.set(0);
+68:       }}
+69:       className="rounded-4xl bg-background mt-20 size-[500px] overflow-hidden"
+70:     >
+71:       <motion.div
+72:         style={{
+73:           x: xSpring,
+74:           y: ySpring,
+75:           opacity: opacitySpring,
+76:           scale: scaleSpring,
+77:         }}
+78:         className="rounded-4xl size-10 bg-orange-500"
+79:       ></motion.div>
+80:     </div>
+81:   );
+82: };
+83: 
+84: export { SimpleMouseFollow, SpringMouseFollow };
+
+(End of file - total 84 lines)
+</content>

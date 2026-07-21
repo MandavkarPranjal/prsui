@@ -1,0 +1,1552 @@
+{
+  "info": {
+    "id": "ses_07c00aa2effeljJI5xxC4Pnzln",
+    "slug": "happy-forest",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "New session - 2026-07-21T09:26:16.785Z",
+    "agent": "build",
+    "model": {
+      "id": "mimo-v2.5-free",
+      "providerID": "opencode",
+      "variant": "default"
+    },
+    "version": "1.18.4",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 11554,
+      "output": 2079,
+      "reasoning": 335,
+      "cache": {
+        "read": 128064,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1784625976785,
+      "updated": 1784627173098
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784627100163
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "mimo-v2.5-free"
+        },
+        "summary": {
+          "diffs": [
+            {
+              "file": "content/docs/(root)/index.mdx",
+              "patch": "Index: content/docs/(root)/index.mdx\n===================================================================\n--- content/docs/(root)/index.mdx\t\n+++ content/docs/(root)/index.mdx\t\n@@ -1,62 +1,63 @@\n ---\n title: Introduction\n description: A shadcn registry by Pranjal Mandavkar, shipping polished, ready-to-install components.\n ---\n \n **prsui** is a [shadcn registry](https://ui.shadcn.com/docs/registry) by [Pranjal Mandavkar](https://x.com/pr5dev) — a curated collection of polished, ready-to-install components you can drop into any React project.\n \n ## Add the Registry\n \n First, add the prsui registry to your project:\n \n <CodeBlockCommand\n   __bun__=\"bunx --bun shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n   __npm__=\"npx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n   __pnpm__=\"pnpm dlx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n   __yarn__=\"yarn shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n />\n \n ## Components\n \n The registry currently ships:\n \n - **[Smooth Input](/docs/components/smooth-input)** - A smooth input component with a caret animation.\n+- **[Mouse Follow](/docs/components/mouse-follow)** - Animated cursor-following component with spring physics and opacity transitions.\n \n ## FAQ\n \n <Accordion type=\"multiple\">\n \n <AccordionItem value=\"faq-1\">\n <AccordionTrigger>\n Why copy/paste instead of npm packages?\n </AccordionTrigger>\n <AccordionContent>\n \n The shadcn philosophy gives you **ownership** of the code. You can customize components to your exact needs without fighting library constraints.\n \n </AccordionContent>\n </AccordionItem>\n \n <AccordionItem value=\"faq-2\">\n <AccordionTrigger>\n Which frameworks are supported?\n </AccordionTrigger>\n <AccordionContent>\n \n Any React framework: Next.js, Remix, Astro, Gatsby, Vite, etc.\n \n </AccordionContent>\n </AccordionItem>\n \n <AccordionItem value=\"faq-3\">\n <AccordionTrigger>\n Can I request a component?\n </AccordionTrigger>\n <AccordionContent>\n \n Reach out to [Pranjal Mandavkar](https://x.com/pr5dev) with suggestions — more components are added over time.\n \n </AccordionContent>\n </AccordionItem>\n \n </Accordion>\n",
+              "additions": 1,
+              "deletions": 0,
+              "status": "modified"
+            },
+            {
+              "file": "content/docs/components/mouse-follow.mdx",
+              "patch": "Index: content/docs/components/mouse-follow.mdx\n===================================================================\n--- content/docs/components/mouse-follow.mdx\t\n+++ content/docs/components/mouse-follow.mdx\t\n@@ -0,0 +1,64 @@\n+---\n+title: Mouse Follow\n+description: Animated cursor-following component with spring physics and opacity transitions.\n+---\n+\n+import { MouseFollowPreview } from \"@/registry/new-york/mouse-follow-demo\";\n+\n+<ComponentPreview name=\"mouse-follow\">\n+  <MouseFollowPreview />\n+</ComponentPreview>\n+\n+## Installation\n+\n+If you've already added the prsui registry, use the short command:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add @prsui/mouse-follow\"\n+  __npm__=\"npx shadcn@latest add @prsui/mouse-follow\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/mouse-follow\"\n+  __yarn__=\"yarn shadcn@latest add @prsui/mouse-follow\"\n+/>\n+\n+Otherwise, use the full registry URL:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n+  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n+  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n+/>\n+\n+## Usage\n+\n+After you add the component with the CLI, import it from your UI folder:\n+\n+```tsx\n+\"use client\";\n+\n+import { SimpleMouseFollow, SpringMouseFollow } from \"./mouse-follow\";\n+\n+export const MouseFollowPreview = () => (\n+  <div className=\"flex flex-col items-center gap-4\">\n+    <SimpleMouseFollow />\n+    <SpringMouseFollow />\n+  </div>\n+);\n+```\n+\n+## Exports\n+\n+| Export                | Description                                                                 |\n+| --------------------- | --------------------------------------------------------------------------- |\n+| `SimpleMouseFollow`   | Basic mouse-following dot with opacity fade in/out on pointer enter/leave.  |\n+| `SpringMouseFollow`   | Spring-physics mouse-following dot with scale and opacity spring animation. |\n+\n+## Spring Config\n+\n+The `SpringMouseFollow` uses the following spring configuration:\n+\n+| Property   | Value | Description                                                |\n+| ---------- | ----- | ---------------------------------------------------------- |\n+| `mass`     | `0.1` | Lower mass = snappier motion; higher mass = lethargic.     |\n+| `damping`  | `10`  | Controls bounce — higher damping = less bounce.            |\n+| `stiffness`| `131` | Like a rubber band — higher stiffness = faster return.     |\n",
+              "additions": 64,
+              "deletions": 0,
+              "status": "added"
+            },
+            {
+              "file": "registry/new-york/mouse-follow-demo.tsx",
+              "patch": "Index: registry/new-york/mouse-follow-demo.tsx\n===================================================================\n--- registry/new-york/mouse-follow-demo.tsx\t\n+++ registry/new-york/mouse-follow-demo.tsx\t\n@@ -0,0 +1,12 @@\n+\"use client\";\n+\n+import { SimpleMouseFollow, SpringMouseFollow } from \"./mouse-follow\";\n+\n+export const MouseFollowPreview = () => (\n+  <div className=\"flex flex-col items-center gap-4\">\n+    <h4 className=\"text-sm text-muted-foreground\">Simple Follow</h4>\n+    <SimpleMouseFollow />\n+    <h4 className=\"text-sm text-muted-foreground\">Spring Follow</h4>\n+    <SpringMouseFollow />\n+  </div>\n+);\n",
+              "additions": 12,
+              "deletions": 0,
+              "status": "added"
+            }
+          ]
+        },
+        "id": "msg_f84107a03001r7eCkfbP5GP89g",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "type": "file",
+          "mime": "text/plain",
+          "filename": "registry/new-york/mouse-follow.tsx",
+          "url": "file:///home/himmel/personal/prsui/registry/new-york/mouse-follow.tsx",
+          "source": {
+            "text": {
+              "value": "@registry/new-york/mouse-follow.tsx",
+              "start": 20,
+              "end": 55
+            },
+            "type": "file",
+            "path": "registry/new-york/mouse-follow.tsx"
+          },
+          "id": "prt_f83ff56a4004YvCqmWOgvme46e",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a03001r7eCkfbP5GP89g"
+        },
+        {
+          "type": "text",
+          "text": "added new component @registry/new-york/mouse-follow.tsx update docs and demo, then run pnpm fix",
+          "id": "prt_f84107a0b001ak464xHR3kvyjG",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a03001r7eCkfbP5GP89g"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "Called the Read tool with the following input: {\"filePath\":\"/home/himmel/personal/prsui/registry/new-york/mouse-follow.tsx\"}",
+          "id": "prt_f84107a0b002PKpoKtgfP6DrwE",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a03001r7eCkfbP5GP89g"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "<path>/home/himmel/personal/prsui/registry/new-york/mouse-follow.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { motion, useMotionValue, useSpring } from \"framer-motion\";\n4: import React from \"react\";\n5: \n6: const SPRING = {\n7:   mass: 0.1, // avoid Controls inertia (how sluggish or responsive the object feels). Lower mass = snappier motion; higher mass = lethargic motion\n8:   damping: 10, // its like the weight of the ball heavier the ball less it will bounce or harder the rubber band the more it will bounce\n9:   stiffness: 131, // like rubber Band the more you strech the more speed it goes back to the original position\n10: };\n11: \n12: const SimpleMouseFollow = () => {\n13:   const x = useMotionValue(0);\n14:   const y = useMotionValue(0);\n15:   const opacity = useMotionValue(0);\n16: \n17:   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {\n18:     const bounds = e.currentTarget.getBoundingClientRect();\n19:     x.set(e.clientX - bounds.left);\n20:     y.set(e.clientY - bounds.top);\n21:   };\n22: \n23:   return (\n24:     <div\n25:       onPointerMove={(e) => {\n26:         handlePointerMove(e);\n27:       }}\n28:       onPointerEnter={() => {\n29:         opacity.set(1);\n30:       }}\n31:       onPointerLeave={() => {\n32:         opacity.set(0);\n33:       }}\n34:       className=\"rounded-4xl bg-background mt-20 size-[500px] cursor-none overflow-hidden\"\n35:     >\n36:       <motion.div\n37:         style={{\n38:           x,\n39:           y,\n40:           opacity,\n41:         }}\n42:         className=\"rounded-4xl size-5 bg-[#ccc]\"\n43:       ></motion.div>\n44:     </div>\n45:   );\n46: };\n47: \n48: const SpringMouseFollow = () => {\n49:   const xSpring = useSpring(0, SPRING);\n50:   const ySpring = useSpring(0, SPRING);\n51:   const opacitySpring = useSpring(0, SPRING);\n52:   const scaleSpring = useSpring(0, SPRING);\n53: \n54:   return (\n55:     <div\n56:       onPointerMove={(e) => {\n57:         const bounds = e.currentTarget.getBoundingClientRect();\n58:         xSpring.set(e.clientX - bounds.left);\n59:         ySpring.set(e.clientY - bounds.top);\n60:       }}\n61:       onPointerEnter={() => {\n62:         opacitySpring.set(1);\n63:         scaleSpring.set(1);\n64:       }}\n65:       onPointerLeave={() => {\n66:         opacitySpring.set(0);\n67:         scaleSpring.set(0);\n68:       }}\n69:       className=\"rounded-4xl bg-background mt-20 size-[500px] overflow-hidden\"\n70:     >\n71:       <motion.div\n72:         style={{\n73:           x: xSpring,\n74:           y: ySpring,\n75:           opacity: opacitySpring,\n76:           scale: scaleSpring,\n77:         }}\n78:         className=\"rounded-4xl size-10 bg-orange-500\"\n79:       ></motion.div>\n80:     </div>\n81:   );\n82: };\n83: \n84: export { SimpleMouseFollow, SpringMouseFollow };\n\n(End of file - total 84 lines)\n</content>",
+          "id": "prt_f84107a0b003zOG9Kg0lrlTcXf",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a03001r7eCkfbP5GP89g"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12413,
+          "input": 1989,
+          "output": 129,
+          "reasoning": 55,
+          "cache": {
+            "write": 0,
+            "read": 10240
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627100263,
+          "completed": 1784627108148
+        },
+        "finish": "tool-calls",
+        "id": "msg_f84107a67001nwNxNPoK63iBvY",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f84108c99001nTK0G0CbIaC1ET",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a67001nwNxNPoK63iBvY"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to add a new component `mouse-follow.tsx` to the docs and demo, then run `pnpm fix`. Let me first explore the project structure to understand how components are organized, how docs and demos work, and what the existing patterns are.",
+          "time": {
+            "start": 1784627104922,
+            "end": 1784627105669
+          },
+          "id": "prt_f84108c9a0017h1vdhnpSzeGhm",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a67001nwNxNPoK63iBvY"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_9343f085552f422abfd4e583",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Understand project structure - how docs, demos, and registry components are organized",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add mouse-follow component to docs (registry metadata, documentation)",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add mouse-follow component to demo",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Understand project structure - how docs, demos, and registry components are organized\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add mouse-follow component to docs (registry metadata, documentation)\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add mouse-follow component to demo\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Understand project structure - how docs, demos, and registry components are organized",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add mouse-follow component to docs (registry metadata, documentation)",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add mouse-follow component to demo",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "4 todos",
+            "time": {
+              "start": 1784627106910,
+              "end": 1784627106914
+            }
+          },
+          "id": "prt_f84108fa6001Ghx1T6RmEExT1a",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a67001nwNxNPoK63iBvY"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12413,
+            "input": 1989,
+            "output": 129,
+            "reasoning": 55,
+            "cache": {
+              "write": 0,
+              "read": 10240
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8410991b001cPk1hD2OUmpDNS",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84107a67001nwNxNPoK63iBvY"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12861,
+          "input": 350,
+          "output": 268,
+          "reasoning": 19,
+          "cache": {
+            "write": 0,
+            "read": 12224
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627108151,
+          "completed": 1784627120016
+        },
+        "finish": "tool-calls",
+        "id": "msg_f84109937001Z5lJSB6huIC2fp",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f8410a1de001o1BlUZmTea3cmL",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84109937001Z5lJSB6huIC2fp"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me explore the project structure to understand how components are registered, documented, and demoed.",
+          "time": {
+            "start": 1784627110368,
+            "end": 1784627110674
+          },
+          "id": "prt_f8410a1e0001RocwCuy0L3YfeL",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84109937001Z5lJSB6huIC2fp"
+        },
+        {
+          "type": "tool",
+          "tool": "task",
+          "callID": "call_4b6a78c8dd984eb8b6ef8e40",
+          "state": {
+            "status": "completed",
+            "input": {
+              "description": "Explore project structure",
+              "prompt": "Explore the project at /home/himmel/personal/prsui to understand its structure. I need to know:\n\n1. How is the registry organized? Look at `registry/` directory structure.\n2. How are components documented? Look for docs files, especially how existing components like \"marquee\" or \"globe\" or any other component have their docs structured.\n3. How are demos set up? Find demo files for existing components.\n4. Is there a `registry.json` or similar file that registers components?\n5. Look at the content directory - `content/docs/` or similar for MDX files.\n\nReturn:\n- The directory structure of `registry/`\n- A sample of how a component's docs page looks (full content of one component's MDX file)\n- A sample of how a component's demo is structured\n- The registry.json or equivalent file content (at least the first component entry)\n- Any configuration files that list/register components\n\nBe thorough - check for `content/`, `docs/`, `src/` directories. This is a shadcn-style registry project.",
+              "subagent_type": "explore"
+            },
+            "output": "<task id=\"ses_07bef5036ffeV0fo7gvxv0bH60\" state=\"completed\">\n<task_result>\n\n</task_result>\n</task>",
+            "metadata": {
+              "parentSessionId": "ses_07c00aa2effeljJI5xxC4Pnzln",
+              "sessionId": "ses_07bef5036ffeV0fo7gvxv0bH60",
+              "model": {
+                "modelID": "mimo-v2.5-free",
+                "providerID": "opencode"
+              },
+              "truncated": false
+            },
+            "title": "Explore project structure",
+            "time": {
+              "start": 1784627113936,
+              "end": 1784627118869
+            }
+          },
+          "id": "prt_f8410a31600174Xd2BzEAD9YT2",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84109937001Z5lJSB6huIC2fp"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12861,
+            "input": 350,
+            "output": 268,
+            "reasoning": 19,
+            "cache": {
+              "write": 0,
+              "read": 12224
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8410c35e0017aR25NAyaB37lM",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84109937001Z5lJSB6huIC2fp"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13048,
+          "input": 2689,
+          "output": 104,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 10240
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627120019,
+          "completed": 1784627122825
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8410c793001LJEEyod97jVbDP",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f8410cdb80019iKFb9NVUiDSQi",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410c793001LJEEyod97jVbDP"
+        },
+        {
+          "type": "reasoning",
+          "text": "The task didn't return results. Let me explore the project structure directly.",
+          "time": {
+            "start": 1784627121594,
+            "end": 1784627121835
+          },
+          "id": "prt_f8410cdba001RT52qVjtN69mAq",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410c793001LJEEyod97jVbDP"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_9e8a9073f064477485450960",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui"
+            },
+            "output": "<path>/home/himmel/personal/prsui</path>\n<type>directory</type>\n<entries>\n.agents/\n.codex/\n.cursor/\n.entire/\n.git/\n.github/\n.gitignore\n.next/\n.opencode/\n.pi/\n.source/\n.vscode/\n.web-kits/\napp/\naudio/\ncomponents.json\ncomponents/\nconstants/\ncontent/\nhooks/\nlefthook.yml\nlib/\nLICENSE\nmdx-components.tsx\nnext-env.d.ts\nnext.config.mjs\nnode_modules/\noxfmt.config.ts\noxlint.config.ts\npackage.json\npnpm-lock.yaml\npnpm-workspace.yaml\npostcss.config.mjs\nproxy.ts\npublic/\nREADME.md\nregistry.json\nregistry/\nseo/\nskills-lock.json\nsource.config.ts\nstyles/\ntsconfig.json\ntsconfig.scripts.json\ntsconfig.tsbuildinfo\n\n(45 entries)\n</entries>",
+            "metadata": {
+              "preview": ".agents/\n.codex/\n.cursor/\n.entire/\n.git/\n.github/\n.gitignore\n.next/\n.opencode/\n.pi/\n.source/\n.vscode/\n.web-kits/\napp/\naudio/\ncomponents.json\ncomponents/\nconstants/\ncontent/\nhooks/",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui",
+                "entries": [
+                  ".agents/",
+                  ".codex/",
+                  ".cursor/",
+                  ".entire/",
+                  ".git/",
+                  ".github/",
+                  ".gitignore",
+                  ".next/",
+                  ".opencode/",
+                  ".pi/",
+                  ".source/",
+                  ".vscode/",
+                  ".web-kits/",
+                  "app/",
+                  "audio/",
+                  "components.json",
+                  "components/",
+                  "constants/",
+                  "content/",
+                  "hooks/",
+                  "lefthook.yml",
+                  "lib/",
+                  "LICENSE",
+                  "mdx-components.tsx",
+                  "next-env.d.ts",
+                  "next.config.mjs",
+                  "node_modules/",
+                  "oxfmt.config.ts",
+                  "oxlint.config.ts",
+                  "package.json",
+                  "pnpm-lock.yaml",
+                  "pnpm-workspace.yaml",
+                  "postcss.config.mjs",
+                  "proxy.ts",
+                  "public/",
+                  "README.md",
+                  "registry.json",
+                  "registry/",
+                  "seo/",
+                  "skills-lock.json",
+                  "source.config.ts",
+                  "styles/",
+                  "tsconfig.json",
+                  "tsconfig.scripts.json",
+                  "tsconfig.tsbuildinfo"
+                ],
+                "offset": 1,
+                "totalEntries": 45,
+                "truncated": false
+              }
+            },
+            "title": "",
+            "time": {
+              "start": 1784627122042,
+              "end": 1784627122048
+            }
+          },
+          "id": "prt_f8410cead00146kqS5f6SQk8rQ",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410c793001LJEEyod97jVbDP"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_be442a088c2147799d19ba16",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "registry.json",
+              "path": "/home/himmel/personal/prsui"
+            },
+            "output": "/home/himmel/personal/prsui/registry.json\n/home/himmel/personal/prsui/public/r/registry.json",
+            "metadata": {
+              "count": 2,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784627122390,
+              "end": 1784627122402
+            }
+          },
+          "id": "prt_f8410cf7c001FzCls1Ft3kPXuz",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410c793001LJEEyod97jVbDP"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_ee3dbbcb88394e7ba633b01a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/*.mdx",
+              "path": "/home/himmel/personal/prsui/content"
+            },
+            "output": "/home/himmel/personal/prsui/content/docs/components/typewriter.mdx\n/home/himmel/personal/prsui/content/docs/components/tooltip.mdx\n/home/himmel/personal/prsui/content/docs/components/split-action.mdx\n/home/himmel/personal/prsui/content/docs/components/smooth-input.mdx\n/home/himmel/personal/prsui/content/docs/components/link.mdx\n/home/himmel/personal/prsui/content/docs/components/index.mdx\n/home/himmel/personal/prsui/content/docs/components/accordion.mdx\n/home/himmel/personal/prsui/content/docs/(root)/index.mdx",
+            "metadata": {
+              "count": 8,
+              "truncated": false
+            },
+            "title": "content",
+            "time": {
+              "start": 1784627122725,
+              "end": 1784627122750
+            }
+          },
+          "id": "prt_f8410d11d0013VQnJRXGAqr5n3",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410c793001LJEEyod97jVbDP"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13048,
+            "input": 2689,
+            "output": 104,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 10240
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8410d278001n0zXeuAbzWuNfC",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410c793001LJEEyod97jVbDP"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13606,
+          "input": 583,
+          "output": 134,
+          "reasoning": 25,
+          "cache": {
+            "write": 0,
+            "read": 12864
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627122828,
+          "completed": 1784627127911
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8410d28c001nPk7fa3PCBIsOe",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f8410dfde001gcOfDq80q6YFSy",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410d28c001nPk7fa3PCBIsOe"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me look at the registry.json, a sample component MDX file, and the registry directory structure to understand the patterns.",
+          "time": {
+            "start": 1784627126240,
+            "end": 1784627126653
+          },
+          "id": "prt_f8410dfe0001yhFu3qmx6vM435",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410d28c001nPk7fa3PCBIsOe"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_527ee4b0ce014f318dcee390",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"name\": \"prsui\",\n3:   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n4:   \"items\": [\n5:     {\n6:       \"name\": \"smooth-input\",\n7:       \"type\": \"registry:ui\",\n8:       \"title\": \"Smooth Input\",\n9:       \"description\": \"A smooth input component with a caret animation.\",\n10:       \"files\": [\n11:         {\n12:           \"path\": \"registry/new-york/smooth-input.tsx\",\n13:           \"type\": \"registry:ui\",\n14:           \"target\": \"components/ui/smooth-input.tsx\"\n15:         }\n16:       ],\n17:       \"dependencies\": [\"framer-motion\"]\n18:     },\n19:     {\n20:       \"name\": \"split-action\",\n21:       \"type\": \"registry:ui\",\n22:       \"title\": \"Split Action\",\n23:       \"description\": \"Interactive component for split actions.\",\n24:       \"files\": [\n25:         {\n26:           \"path\": \"registry/new-york/split-action.tsx\",\n27:           \"type\": \"registry:ui\",\n28:           \"target\": \"components/ui/split-action.tsx\"\n29:         }\n30:       ],\n31:       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n32:     },\n33:     {\n34:       \"name\": \"tooltip\",\n35:       \"type\": \"registry:ui\",\n36:       \"title\": \"Tooltip\",\n37:       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n38:       \"files\": [\n39:         {\n40:           \"path\": \"registry/new-york/tooltip.tsx\",\n41:           \"type\": \"registry:ui\",\n42:           \"target\": \"components/ui/tooltip.tsx\"\n43:         },\n44:         {\n45:           \"path\": \"lib/ease.ts\",\n46:           \"type\": \"registry:lib\",\n47:           \"target\": \"lib/ease.ts\"\n48:         },\n49:         {\n50:           \"path\": \"lib/hooks/use-hover-capable.ts\",\n51:           \"type\": \"registry:lib\",\n52:           \"target\": \"lib/hooks/use-hover-capable.ts\"\n53:         }\n54:       ],\n55:       \"dependencies\": [\"motion\"]\n56:     },\n57:     {\n58:       \"name\": \"accordion\",\n59:       \"type\": \"registry:ui\",\n60:       \"title\": \"Accordion\",\n61:       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n62:       \"files\": [\n63:         {\n64:           \"path\": \"registry/new-york/accordion.tsx\",\n65:           \"type\": \"registry:ui\",\n66:           \"target\": \"components/ui/accordion.tsx\"\n67:         },\n68:         {\n69:           \"path\": \"lib/ease.ts\",\n70:           \"type\": \"registry:lib\",\n71:           \"target\": \"lib/ease.ts\"\n72:         }\n73:       ],\n74:       \"dependencies\": [\"motion\", \"lucide-react\"]\n75:     },\n76:     {\n77:       \"name\": \"typewriter\",\n78:       \"type\": \"registry:ui\",\n79:       \"title\": \"Typewriter\",\n80:       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n81:       \"files\": [\n82:         {\n83:           \"path\": \"registry/new-york/typewriter.tsx\",\n84:           \"type\": \"registry:ui\",\n85:           \"target\": \"components/ui/typewriter.tsx\"\n86:         }\n87:       ],\n88:       \"dependencies\": [\"motion\"]\n89:     },\n90:     {\n91:       \"name\": \"link\",\n92:       \"type\": \"registry:ui\",\n93:       \"title\": \"Link\",\n94:       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n95:       \"files\": [\n96:         {\n97:           \"path\": \"registry/new-york/link.tsx\",\n98:           \"type\": \"registry:ui\",\n99:           \"target\": \"components/ui/link.tsx\"\n100:         }\n101:       ]\n102:     }\n103:   ]\n104: }\n\n(End of file - total 104 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry.json",
+                "text": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Split Action\",\n      \"description\": \"Interactive component for split actions.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/split-action.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/split-action.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"tooltip\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Tooltip\",\n      \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/tooltip.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/tooltip.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        },\n        {\n          \"path\": \"lib/hooks/use-hover-capable.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/hooks/use-hover-capable.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"accordion\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Accordion\",\n      \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/accordion.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/accordion.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"typewriter\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Typewriter\",\n      \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/typewriter.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/typewriter.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"link\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Link\",\n      \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/link.tsx\"\n        }\n      ]\n    }\n  ]\n}",
+                "lineStart": 1,
+                "lineEnd": 104,
+                "totalLines": 104,
+                "truncated": false
+              }
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784627126864,
+              "end": 1784627126869
+            }
+          },
+          "id": "prt_f8410e17f001Lukrt2wzEGjcAt",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410d28c001nPk7fa3PCBIsOe"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_c6cd99e0f13e463f979bcb63",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry</path>\n<type>directory</type>\n<entries>\nnew-york/\n\n(1 entries)\n</entries>",
+            "metadata": {
+              "preview": "new-york/",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui/registry",
+                "entries": [
+                  "new-york/"
+                ],
+                "offset": 1,
+                "totalEntries": 1,
+                "truncated": false
+              }
+            },
+            "title": "registry",
+            "time": {
+              "start": 1784627127125,
+              "end": 1784627127129
+            }
+          },
+          "id": "prt_f8410e28d001nzerSpH7ft3CyJ",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410d28c001nPk7fa3PCBIsOe"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_e19b3d63422d49a3bce3879e",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/typewriter.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/typewriter.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Typewriter\n3: description: Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\n4: ---\n5: \n6: import { TypewriterPreview } from \"@/registry/new-york/typewriter-demo\";\n7: \n8: <ComponentPreview name=\"typewriter\">\n9:   <TypewriterPreview />\n10: </ComponentPreview>\n11: \n12: ## Installation\n13: \n14: If you've already added the prsui registry, use the short command:\n15: \n16: <CodeBlockCommand\n17:   __bun__=\"bunx --bun shadcn@latest add @prsui/typewriter\"\n18:   __npm__=\"npx shadcn@latest add @prsui/typewriter\"\n19:   __pnpm__=\"pnpm dlx shadcn@latest add @prsui/typewriter\"\n20:   __yarn__=\"yarn shadcn@latest add @prsui/typewriter\"\n21: />\n22: \n23: Otherwise, use the full registry URL:\n24: \n25: <CodeBlockCommand\n26:   __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n27:   __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n28:   __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n29:   __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n30: />\n31: \n32: ## Usage\n33: \n34: After you add the component with the CLI, import it from your UI folder:\n35: \n36: ```tsx\n37: \"use client\";\n38: \n39: import Typewriter from \"./typewriter\";\n40: \n41: export const TypewriterPreview = () => (\n42:   <div className=\"flex flex-col items-center gap-2 text-center\">\n43:     <p className=\"text-3xl text-muted-foreground\">To seek the truth we must</p>\n44:     <p className=\"text-3xl font-medium text-foreground\">\n45:       <Typewriter\n46:         as=\"span\"\n47:         text={[\n48:           \"question\",\n49:           \"observe\",\n50:           \"doubt\",\n51:           \"discover\",\n52:           \"keep looking upward\",\n53:         ]}\n54:         speed={70}\n55:         waitTime={1500}\n56:         deleteSpeed={40}\n57:         cursorChar={\"_\"}\n58:       />\n59:     </p>\n60:   </div>\n61: );\n62: ```\n63: \n64: ## Props\n65: \n66: | Prop                      | Type                                                             | Default  | Description                                           |\n67: | ------------------------- | ---------------------------------------------------------------- | -------- | ----------------------------------------------------- |\n68: | `text`                    | `string \\| string[]`                                             | -        | Text to type. Pass an array to cycle through phrases. |\n69: | `as`                      | `ElementType`                                                    | `\"div\"`  | Element or component to render as.                    |\n70: | `speed`                   | `number`                                                         | `50`     | Typing speed in ms per character.                     |\n71: | `initialDelay`            | `number`                                                         | `0`      | Delay before typing starts in ms.                     |\n72: | `waitTime`                | `number`                                                         | `2000`   | Pause before deleting or moving to next phrase in ms. |\n73: | `deleteSpeed`             | `number`                                                         | `30`     | Deleting speed in ms per character.                   |\n74: | `loop`                    | `boolean`                                                        | `true`   | Whether to loop through the phrases.                  |\n75: | `className`               | `string`                                                         | -        | Classes applied to the wrapper element.               |\n76: | `showCursor`              | `boolean`                                                        | `true`   | Whether to show the cursor.                           |\n77: | `hideCursorOnType`        | `boolean`                                                        | `false`  | Hide the cursor while typing/deleting.                |\n78: | `cursorChar`              | `string \\| React.ReactNode`                                      | `\"\\|\"`   | Character or node rendered as the cursor.             |\n79: | `cursorClassName`         | `string`                                                         | `\"ml-1\"` | Classes applied to the cursor element.                |\n80: | `cursorAnimationVariants` | `{ initial: Variants[\"initial\"]; animate: Variants[\"animate\"] }` | blinking | Animation variants for the cursor.                    |\n\n(End of file - total 80 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Typewriter\ndescription: Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\n---\n\nimport { TypewriterPreview } from \"@/registry/new-york/typewriter-demo\";\n\n<ComponentPreview name=\"typewriter\">\n  <TypewriterPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/typewriter\"\n  __npm__=\"npx shadcn@latest add @prsui/typewriter\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/typewriter\"\n  __yarn__=\"yarn shadcn@latest add @prsui/typewriter\"",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/typewriter.mdx",
+                "text": "---\ntitle: Typewriter\ndescription: Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\n---\n\nimport { TypewriterPreview } from \"@/registry/new-york/typewriter-demo\";\n\n<ComponentPreview name=\"typewriter\">\n  <TypewriterPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/typewriter\"\n  __npm__=\"npx shadcn@latest add @prsui/typewriter\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/typewriter\"\n  __yarn__=\"yarn shadcn@latest add @prsui/typewriter\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/typewriter.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\n\"use client\";\n\nimport Typewriter from \"./typewriter\";\n\nexport const TypewriterPreview = () => (\n  <div className=\"flex flex-col items-center gap-2 text-center\">\n    <p className=\"text-3xl text-muted-foreground\">To seek the truth we must</p>\n    <p className=\"text-3xl font-medium text-foreground\">\n      <Typewriter\n        as=\"span\"\n        text={[\n          \"question\",\n          \"observe\",\n          \"doubt\",\n          \"discover\",\n          \"keep looking upward\",\n        ]}\n        speed={70}\n        waitTime={1500}\n        deleteSpeed={40}\n        cursorChar={\"_\"}\n      />\n    </p>\n  </div>\n);\n```\n\n## Props\n\n| Prop                      | Type                                                             | Default  | Description                                           |\n| ------------------------- | ---------------------------------------------------------------- | -------- | ----------------------------------------------------- |\n| `text`                    | `string \\| string[]`                                             | -        | Text to type. Pass an array to cycle through phrases. |\n| `as`                      | `ElementType`                                                    | `\"div\"`  | Element or component to render as.                    |\n| `speed`                   | `number`                                                         | `50`     | Typing speed in ms per character.                     |\n| `initialDelay`            | `number`                                                         | `0`      | Delay before typing starts in ms.                     |\n| `waitTime`                | `number`                                                         | `2000`   | Pause before deleting or moving to next phrase in ms. |\n| `deleteSpeed`             | `number`                                                         | `30`     | Deleting speed in ms per character.                   |\n| `loop`                    | `boolean`                                                        | `true`   | Whether to loop through the phrases.                  |\n| `className`               | `string`                                                         | -        | Classes applied to the wrapper element.               |\n| `showCursor`              | `boolean`                                                        | `true`   | Whether to show the cursor.                           |\n| `hideCursorOnType`        | `boolean`                                                        | `false`  | Hide the cursor while typing/deleting.                |\n| `cursorChar`              | `string \\| React.ReactNode`                                      | `\"\\|\"`   | Character or node rendered as the cursor.             |\n| `cursorClassName`         | `string`                                                         | `\"ml-1\"` | Classes applied to the cursor element.                |\n| `cursorAnimationVariants` | `{ initial: Variants[\"initial\"]; animate: Variants[\"animate\"] }` | blinking | Animation variants for the cursor.                    |",
+                "lineStart": 1,
+                "lineEnd": 80,
+                "totalLines": 80,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/typewriter.mdx",
+            "time": {
+              "start": 1784627127429,
+              "end": 1784627127448
+            }
+          },
+          "id": "prt_f8410e384001vNlNvdlpYgNvpN",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410d28c001nPk7fa3PCBIsOe"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_5e9ec146614b4be88c5f1a24",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "registry/new-york/*.tsx",
+              "path": "/home/himmel/personal/prsui"
+            },
+            "output": "/home/himmel/personal/prsui/registry/new-york/typewriter.tsx\n/home/himmel/personal/prsui/registry/new-york/typewriter-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/tooltip.tsx\n/home/himmel/personal/prsui/registry/new-york/tooltip-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/split-action.tsx\n/home/himmel/personal/prsui/registry/new-york/split-action-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx\n/home/himmel/personal/prsui/registry/new-york/mouse-follow.tsx\n/home/himmel/personal/prsui/registry/new-york/link.tsx\n/home/himmel/personal/prsui/registry/new-york/link-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/accordion.tsx\n/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx",
+            "metadata": {
+              "count": 12,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784627127776,
+              "end": 1784627127782
+            }
+          },
+          "id": "prt_f8410e4cb001Fm59B6Glm7fMqC",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410d28c001nPk7fa3PCBIsOe"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13606,
+            "input": 583,
+            "output": 134,
+            "reasoning": 25,
+            "cache": {
+              "write": 0,
+              "read": 12864
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8410e650001uS296gcDUE11By",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410d28c001nPk7fa3PCBIsOe"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 16333,
+          "input": 2757,
+          "output": 97,
+          "reasoning": 39,
+          "cache": {
+            "write": 0,
+            "read": 13440
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627127913,
+          "completed": 1784627134130
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8410e66900138lEdF0lhMImwN",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f8410f845001ux1dGqC86aZ59D",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410e66900138lEdF0lhMImwN"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I understand the pattern. Let me also check the content/docs/components/index.mdx to see how the component list is managed, and look at the public/r/ directory for generated registry files.",
+          "time": {
+            "start": 1784627132488,
+            "end": 1784627133111
+          },
+          "id": "prt_f8410f848001bjDQpxHJyWsm6p",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410e66900138lEdF0lhMImwN"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_f21284bd87fa4fa0a38c2d35",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/index.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/index.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Components\n3: description: Browse the components available in this registry.\n4: ---\n5: \n6: <ComponentsList />\n\n(End of file - total 6 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Components\ndescription: Browse the components available in this registry.\n---\n\n<ComponentsList />",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/index.mdx",
+                "text": "---\ntitle: Components\ndescription: Browse the components available in this registry.\n---\n\n<ComponentsList />",
+                "lineStart": 1,
+                "lineEnd": 6,
+                "totalLines": 6,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/index.mdx",
+            "time": {
+              "start": 1784627133266,
+              "end": 1784627133297
+            }
+          },
+          "id": "prt_f8410fab9001x52R8Cie3ftioz",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410e66900138lEdF0lhMImwN"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_7333f9b73ac947b19011beb9",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/public/r"
+            },
+            "output": "<path>/home/himmel/personal/prsui/public/r</path>\n<type>directory</type>\n<entries>\naccordion.json\nlink.json\nregistry.json\nsmooth-input.json\nsplit-action.json\ntooltip.json\ntypewriter.json\nyour-component.json\n\n(8 entries)\n</entries>",
+            "metadata": {
+              "preview": "accordion.json\nlink.json\nregistry.json\nsmooth-input.json\nsplit-action.json\ntooltip.json\ntypewriter.json\nyour-component.json",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui/public/r",
+                "entries": [
+                  "accordion.json",
+                  "link.json",
+                  "registry.json",
+                  "smooth-input.json",
+                  "split-action.json",
+                  "tooltip.json",
+                  "typewriter.json",
+                  "your-component.json"
+                ],
+                "offset": 1,
+                "totalEntries": 8,
+                "truncated": false
+              }
+            },
+            "title": "public/r",
+            "time": {
+              "start": 1784627133569,
+              "end": 1784627133578
+            }
+          },
+          "id": "prt_f8410fbab001wzqTTtKnCTSRjp",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410e66900138lEdF0lhMImwN"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_13e8f719e7284077a519686a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/(root)/index.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/(root)/index.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Introduction\n3: description: A shadcn registry by Pranjal Mandavkar, shipping polished, ready-to-install components.\n4: ---\n5: \n6: **prsui** is a [shadcn registry](https://ui.shadcn.com/docs/registry) by [Pranjal Mandavkar](https://x.com/pr5dev) — a curated collection of polished, ready-to-install components you can drop into any React project.\n7: \n8: ## Add the Registry\n9: \n10: First, add the prsui registry to your project:\n11: \n12: <CodeBlockCommand\n13:   __bun__=\"bunx --bun shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n14:   __npm__=\"npx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n15:   __pnpm__=\"pnpm dlx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n16:   __yarn__=\"yarn shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n17: />\n18: \n19: ## Components\n20: \n21: The registry currently ships:\n22: \n23: - **[Smooth Input](/docs/components/smooth-input)** - A smooth input component with a caret animation.\n24: \n25: ## FAQ\n26: \n27: <Accordion type=\"multiple\">\n28: \n29: <AccordionItem value=\"faq-1\">\n30: <AccordionTrigger>\n31: Why copy/paste instead of npm packages?\n32: </AccordionTrigger>\n33: <AccordionContent>\n34: \n35: The shadcn philosophy gives you **ownership** of the code. You can customize components to your exact needs without fighting library constraints.\n36: \n37: </AccordionContent>\n38: </AccordionItem>\n39: \n40: <AccordionItem value=\"faq-2\">\n41: <AccordionTrigger>\n42: Which frameworks are supported?\n43: </AccordionTrigger>\n44: <AccordionContent>\n45: \n46: Any React framework: Next.js, Remix, Astro, Gatsby, Vite, etc.\n47: \n48: </AccordionContent>\n49: </AccordionItem>\n50: \n51: <AccordionItem value=\"faq-3\">\n52: <AccordionTrigger>\n53: Can I request a component?\n54: </AccordionTrigger>\n55: <AccordionContent>\n56: \n57: Reach out to [Pranjal Mandavkar](https://x.com/pr5dev) with suggestions — more components are added over time.\n58: \n59: </AccordionContent>\n60: </AccordionItem>\n61: \n62: </Accordion>\n\n(End of file - total 62 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Introduction\ndescription: A shadcn registry by Pranjal Mandavkar, shipping polished, ready-to-install components.\n---\n\n**prsui** is a [shadcn registry](https://ui.shadcn.com/docs/registry) by [Pranjal Mandavkar](https://x.com/pr5dev) — a curated collection of polished, ready-to-install components you can drop into any React project.\n\n## Add the Registry\n\nFirst, add the prsui registry to your project:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n  __npm__=\"npx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n  __yarn__=\"yarn shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n/>\n\n## Components\n",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/(root)/index.mdx",
+                "text": "---\ntitle: Introduction\ndescription: A shadcn registry by Pranjal Mandavkar, shipping polished, ready-to-install components.\n---\n\n**prsui** is a [shadcn registry](https://ui.shadcn.com/docs/registry) by [Pranjal Mandavkar](https://x.com/pr5dev) — a curated collection of polished, ready-to-install components you can drop into any React project.\n\n## Add the Registry\n\nFirst, add the prsui registry to your project:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n  __npm__=\"npx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n  __yarn__=\"yarn shadcn@latest registry add @prsui=https://prsui.pr5.dev/r/{name}.json\"\n/>\n\n## Components\n\nThe registry currently ships:\n\n- **[Smooth Input](/docs/components/smooth-input)** - A smooth input component with a caret animation.\n\n## FAQ\n\n<Accordion type=\"multiple\">\n\n<AccordionItem value=\"faq-1\">\n<AccordionTrigger>\nWhy copy/paste instead of npm packages?\n</AccordionTrigger>\n<AccordionContent>\n\nThe shadcn philosophy gives you **ownership** of the code. You can customize components to your exact needs without fighting library constraints.\n\n</AccordionContent>\n</AccordionItem>\n\n<AccordionItem value=\"faq-2\">\n<AccordionTrigger>\nWhich frameworks are supported?\n</AccordionTrigger>\n<AccordionContent>\n\nAny React framework: Next.js, Remix, Astro, Gatsby, Vite, etc.\n\n</AccordionContent>\n</AccordionItem>\n\n<AccordionItem value=\"faq-3\">\n<AccordionTrigger>\nCan I request a component?\n</AccordionTrigger>\n<AccordionContent>\n\nReach out to [Pranjal Mandavkar](https://x.com/pr5dev) with suggestions — more components are added over time.\n\n</AccordionContent>\n</AccordionItem>\n\n</Accordion>",
+                "lineStart": 1,
+                "lineEnd": 62,
+                "totalLines": 62,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/(root)/index.mdx",
+            "time": {
+              "start": 1784627133914,
+              "end": 1784627133950
+            }
+          },
+          "id": "prt_f8410fce1001LRy2hpAGjCGTMG",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410e66900138lEdF0lhMImwN"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16333,
+            "input": 2757,
+            "output": 97,
+            "reasoning": 39,
+            "cache": {
+              "write": 0,
+              "read": 13440
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8410fe76001ZCGO8JL6eR7WaQ",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410e66900138lEdF0lhMImwN"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 17450,
+          "input": 1046,
+          "output": 180,
+          "reasoning": 32,
+          "cache": {
+            "write": 0,
+            "read": 16192
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627134134,
+          "completed": 1784627141129
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8410feb6001P8wpNI4Ud6sZaU",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f84111131001mFhXAy6rDXhv4w",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410feb6001P8wpNI4Ud6sZaU"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have a good understanding of the project structure. Let me also check if there's a demo file pattern by looking at one of the existing demo files.",
+          "time": {
+            "start": 1784627138867,
+            "end": 1784627139308
+          },
+          "id": "prt_f841111330016Zz0Mc5g8hUfoy",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410feb6001P8wpNI4Ud6sZaU"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_93c5c70506884045b5bfc77d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Understand project structure - how docs, demos, and registry components are organized",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add mouse-follow to registry.json",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Create mouse-follow-demo.tsx",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Create content/docs/components/mouse-follow.mdx",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Update content/docs/(root)/index.mdx to list mouse-follow",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Understand project structure - how docs, demos, and registry components are organized\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add mouse-follow to registry.json\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create mouse-follow-demo.tsx\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create content/docs/components/mouse-follow.mdx\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update content/docs/(root)/index.mdx to list mouse-follow\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Understand project structure - how docs, demos, and registry components are organized",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add mouse-follow to registry.json",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create mouse-follow-demo.tsx",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create content/docs/components/mouse-follow.mdx",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update content/docs/(root)/index.mdx to list mouse-follow",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "5 todos",
+            "time": {
+              "start": 1784627140856,
+              "end": 1784627140859
+            }
+          },
+          "id": "prt_f841112ef00109l42wJ1Zw73SO",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410feb6001P8wpNI4Ud6sZaU"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-finish",
+          "tokens": {
+            "total": 17450,
+            "input": 1046,
+            "output": 180,
+            "reasoning": 32,
+            "cache": {
+              "write": 0,
+              "read": 16192
+            }
+          },
+          "cost": 0,
+          "id": "prt_f841119e7001a6PFxtekiP0CYO",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8410feb6001P8wpNI4Ud6sZaU"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 17732,
+          "input": 460,
+          "output": 40,
+          "reasoning": 16,
+          "cache": {
+            "write": 0,
+            "read": 17216
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627141133,
+          "completed": 1784627143774
+        },
+        "finish": "tool-calls",
+        "id": "msg_f84111a0d001zwjpyFCclrk8o7",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f841121780013dNf9loNILPR0w",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84111a0d001zwjpyFCclrk8o7"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me also look at an existing demo to understand the pattern for creating demos.",
+          "time": {
+            "start": 1784627143034,
+            "end": 1784627143276
+          },
+          "id": "prt_f8411217a001BcsK75nAMOmhSS",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84111a0d001zwjpyFCclrk8o7"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_1f3cdbdcb5894be5a77d2708",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/typewriter-demo.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/typewriter-demo.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import Typewriter from \"./typewriter\";\n4: \n5: export const TypewriterPreview = () => (\n6:   <div className=\"flex flex-col items-center gap-2 text-center\">\n7:     <p className=\"text-3xl text-muted-foreground\">To seek the truth we must</p>\n8:     <p className=\"text-3xl font-medium text-foreground\">\n9:       <Typewriter\n10:         as=\"span\"\n11:         text={[\n12:           \"question\",\n13:           \"observe\",\n14:           \"doubt\",\n15:           \"discover\",\n16:           \"keep looking upward\",\n17:         ]}\n18:         speed={70}\n19:         waitTime={1500}\n20:         deleteSpeed={40}\n21:         cursorChar={\"_\"}\n22:       />\n23:     </p>\n24:   </div>\n25: );\n\n(End of file - total 25 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport Typewriter from \"./typewriter\";\n\nexport const TypewriterPreview = () => (\n  <div className=\"flex flex-col items-center gap-2 text-center\">\n    <p className=\"text-3xl text-muted-foreground\">To seek the truth we must</p>\n    <p className=\"text-3xl font-medium text-foreground\">\n      <Typewriter\n        as=\"span\"\n        text={[\n          \"question\",\n          \"observe\",\n          \"doubt\",\n          \"discover\",\n          \"keep looking upward\",\n        ]}\n        speed={70}\n        waitTime={1500}\n        deleteSpeed={40}",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/typewriter-demo.tsx",
+                "text": "\"use client\";\n\nimport Typewriter from \"./typewriter\";\n\nexport const TypewriterPreview = () => (\n  <div className=\"flex flex-col items-center gap-2 text-center\">\n    <p className=\"text-3xl text-muted-foreground\">To seek the truth we must</p>\n    <p className=\"text-3xl font-medium text-foreground\">\n      <Typewriter\n        as=\"span\"\n        text={[\n          \"question\",\n          \"observe\",\n          \"doubt\",\n          \"discover\",\n          \"keep looking upward\",\n        ]}\n        speed={70}\n        waitTime={1500}\n        deleteSpeed={40}\n        cursorChar={\"_\"}\n      />\n    </p>\n  </div>\n);",
+                "lineStart": 1,
+                "lineEnd": 25,
+                "totalLines": 25,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/typewriter-demo.tsx",
+            "time": {
+              "start": 1784627143527,
+              "end": 1784627143533
+            }
+          },
+          "id": "prt_f8411226f001OoKHf13W0Iunnq",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84111a0d001zwjpyFCclrk8o7"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-finish",
+          "tokens": {
+            "total": 17732,
+            "input": 460,
+            "output": 40,
+            "reasoning": 16,
+            "cache": {
+              "write": 0,
+              "read": 17216
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8411244d0010O9vwW78LHkeVG",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f84111a0d001zwjpyFCclrk8o7"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 19196,
+          "input": 363,
+          "output": 1072,
+          "reasoning": 97,
+          "cache": {
+            "write": 0,
+            "read": 17664
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627143777,
+          "completed": 1784627163690
+        },
+        "finish": "tool-calls",
+        "id": "msg_f841124610011RaqjgE7QC9lfr",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "type": "step-start",
+          "id": "prt_f84113cab001dqUsOnW3eI4347",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have everything I need. Let me also check how the component is exported from the registry to understand the import pattern for the demo. The mouse-follow component exports `SimpleMouseFollow` and `SpringMouseFollow` as named exports.\n\nLet me now:\n1. Add the mouse-follow entry to registry.json\n2. Create the demo file\n3. Create the MDX docs file\n4. Update the root index.mdx\n\nLet me do these in parallel where possible.",
+          "time": {
+            "start": 1784627150002,
+            "end": 1784627151043
+          },
+          "id": "prt_f84113cb2001hjH77POlbZ5O0c",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "type": "text",
+          "text": "Now I'll make all the changes. Let me add the registry entry, create the demo, create the docs MDX, and update the root index.",
+          "time": {
+            "start": 1784627151049,
+            "end": 1784627163617
+          },
+          "id": "prt_f841140c9001JQFhQjN6h9edJ0",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_7dbe156d6daf4e72a5d388d7",
+          "state": {
+            "status": "error",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "oldString": "      \"dependencies\": [\"framer-motion\"]\n    }\n  ]\n}",
+              "newString": "      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"mouse-follow\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Mouse Follow\",\n      \"description\": \"Animated cursor-following component with spring physics and opacity transitions.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/mouse-follow.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/mouse-follow.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    }\n  ]\n}"
+            },
+            "error": "Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.",
+            "time": {
+              "start": 1784627153903,
+              "end": 1784627153926
+            }
+          },
+          "id": "prt_f84114284001fVo4vAXNMuxh4x",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_dcd459b7ee39429b833fe639",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/mouse-follow-demo.tsx",
+              "content": "\"use client\";\n\nimport { SimpleMouseFollow, SpringMouseFollow } from \"./mouse-follow\";\n\nexport const MouseFollowPreview = () => (\n  <div className=\"flex flex-col items-center gap-4\">\n    <h4 className=\"text-sm text-muted-foreground\">Simple Follow</h4>\n    <SimpleMouseFollow />\n    <h4 className=\"text-sm text-muted-foreground\">Spring Follow</h4>\n    <SpringMouseFollow />\n  </div>\n);\n"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/registry/new-york/mouse-follow-demo.tsx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "registry/new-york/mouse-follow-demo.tsx",
+            "time": {
+              "start": 1784627155327,
+              "end": 1784627155346
+            }
+          },
+          "id": "prt_f84114c50001m8F7DjM2uactxx",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_260c779a4a2b44e0b0df0270",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/mouse-follow.mdx",
+              "content": "---\ntitle: Mouse Follow\ndescription: Animated cursor-following component with spring physics and opacity transitions.\n---\n\nimport { MouseFollowPreview } from \"@/registry/new-york/mouse-follow-demo\";\n\n<ComponentPreview name=\"mouse-follow\">\n  <MouseFollowPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/mouse-follow\"\n  __npm__=\"npx shadcn@latest add @prsui/mouse-follow\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/mouse-follow\"\n  __yarn__=\"yarn shadcn@latest add @prsui/mouse-follow\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/mouse-follow.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\n\"use client\";\n\nimport { SimpleMouseFollow, SpringMouseFollow } from \"./mouse-follow\";\n\nexport const MouseFollowPreview = () => (\n  <div className=\"flex flex-col items-center gap-4\">\n    <SimpleMouseFollow />\n    <SpringMouseFollow />\n  </div>\n);\n```\n\n## Exports\n\n| Export                | Description                                                                 |\n| --------------------- | --------------------------------------------------------------------------- |\n| `SimpleMouseFollow`   | Basic mouse-following dot with opacity fade in/out on pointer enter/leave.  |\n| `SpringMouseFollow`   | Spring-physics mouse-following dot with scale and opacity spring animation. |\n\n## Spring Config\n\nThe `SpringMouseFollow` uses the following spring configuration:\n\n| Property   | Value | Description                                                |\n| ---------- | ----- | ---------------------------------------------------------- |\n| `mass`     | `0.1` | Lower mass = snappier motion; higher mass = lethargic.     |\n| `damping`  | `10`  | Controls bounce — higher damping = less bounce.            |\n| `stiffness`| `131` | Like a rubber band — higher stiffness = faster return.     |\n"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/content/docs/components/mouse-follow.mdx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "content/docs/components/mouse-follow.mdx",
+            "time": {
+              "start": 1784627161188,
+              "end": 1784627161201
+            }
+          },
+          "id": "prt_f8411519a001YZ9ifyvCcRqNO0",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_c17349ebcb654537bd276dd6",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/(root)/index.mdx",
+              "oldString": "- **[Smooth Input](/docs/components/smooth-input)** - A smooth input component with a caret animation.",
+              "newString": "- **[Smooth Input](/docs/components/smooth-input)** - A smooth input component with a caret animation.\n- **[Mouse Follow](/docs/components/mouse-follow)** - Animated cursor-following component with spring physics and opacity transitions."
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/content/docs/(root)/index.mdx\n===================================================================\n--- /home/himmel/personal/prsui/content/docs/(root)/index.mdx\n+++ /home/himmel/personal/prsui/content/docs/(root)/index.mdx\n@@ -20,8 +20,9 @@\n \n The registry currently ships:\n \n - **[Smooth Input](/docs/components/smooth-input)** - A smooth input component with a caret animation.\n+- **[Mouse Follow](/docs/components/mouse-follow)** - Animated cursor-following component with spring physics and opacity transitions.\n \n ## FAQ\n \n <Accordion type=\"multiple\">\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/content/docs/(root)/index.mdx",
+                "patch": "Index: /home/himmel/personal/prsui/content/docs/(root)/index.mdx\n===================================================================\n--- /home/himmel/personal/prsui/content/docs/(root)/index.mdx\n+++ /home/himmel/personal/prsui/content/docs/(root)/index.mdx\n@@ -20,8 +20,9 @@\n \n The registry currently ships:\n \n - **[Smooth Input](/docs/components/smooth-input)** - A smooth input component with a caret animation.\n+- **[Mouse Follow](/docs/components/mouse-follow)** - Animated cursor-following component with spring physics and opacity transitions.\n \n ## FAQ\n \n <Accordion type=\"multiple\">\n",
+                "additions": 1,
+                "deletions": 0
+              },
+              "truncated": false
+            },
+            "title": "content/docs/(root)/index.mdx",
+            "time": {
+              "start": 1784627163126,
+              "end": 1784627163130
+            }
+          },
+          "id": "prt_f8411688b00123Jim61NZpTSJe",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "ff25d83f959f38d0937607c4bee232681b191bf1",
+          "type": "step-finish",
+          "tokens": {
+            "total": 19196,
+            "input": 363,
+            "output": 1072,
+            "reasoning": 97,
+            "cache": {
+              "write": 0,
+              "read": 17664
+            }
+          },
+          "cost": 0,
+          "id": "prt_f84117203001CtoT9jN2QPHZqc",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        },
+        {
+          "type": "patch",
+          "hash": "3daf4285bd848b47d0501f9a7e6006ce99f6d033",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/(root)/index.mdx",
+            "/home/himmel/personal/prsui/content/docs/components/mouse-follow.mdx",
+            "/home/himmel/personal/prsui/registry/new-york/mouse-follow-demo.tsx"
+          ],
+          "id": "prt_f84117224001KP2WY5RHEOUcDN",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f841124610011RaqjgE7QC9lfr"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 19393,
+          "input": 1317,
+          "output": 55,
+          "reasoning": 37,
+          "cache": {
+            "write": 0,
+            "read": 17984
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627163694,
+          "completed": 1784627173088
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8411722e0015uwEkZmd22Nt1q",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": [
+        {
+          "snapshot": "ff25d83f959f38d0937607c4bee232681b191bf1",
+          "type": "step-start",
+          "id": "prt_f84119379001B6bpvIWslC4dOF",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8411722e0015uwEkZmd22Nt1q"
+        },
+        {
+          "type": "reasoning",
+          "text": "The registry.json edit failed. Let me check the exact content more carefully - the last entry doesn't end with a comma, so I need to match the closing brace and bracket differently.",
+          "time": {
+            "start": 1784627172219,
+            "end": 1784627172224
+          },
+          "id": "prt_f8411937b001wERvEepOZ9hgOQ",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8411722e0015uwEkZmd22Nt1q"
+        },
+        {
+          "type": "text",
+          "text": "The registry.json edit failed. Let me check the exact ending:",
+          "time": {
+            "start": 1784627172226,
+            "end": 1784627173039
+          },
+          "id": "prt_f84119382001EFE5sjc1eN6fxv",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8411722e0015uwEkZmd22Nt1q"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_25a631dcea5b45fc90bac9fb",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "offset": 95
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry.json</path>\n<type>file</type>\n<content>\n95:       \"files\": [\n96:         {\n97:           \"path\": \"registry/new-york/link.tsx\",\n98:           \"type\": \"registry:ui\",\n99:           \"target\": \"components/ui/link.tsx\"\n100:         }\n101:       ]\n102:     }\n103:   ]\n104: }\n\n(End of file - total 104 lines)\n</content>",
+            "metadata": {
+              "preview": "      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/link.tsx\"\n        }\n      ]\n    }\n  ]\n}",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry.json",
+                "text": "      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/link.tsx\"\n        }\n      ]\n    }\n  ]\n}",
+                "lineStart": 95,
+                "lineEnd": 104,
+                "totalLines": 104,
+                "truncated": false
+              }
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784627172735,
+              "end": 1784627172772
+            }
+          },
+          "id": "prt_f84119462001k1C4A3CMfFteLv",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8411722e0015uwEkZmd22Nt1q"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "ff25d83f959f38d0937607c4bee232681b191bf1",
+          "type": "step-finish",
+          "tokens": {
+            "total": 19393,
+            "input": 1317,
+            "output": 55,
+            "reasoning": 37,
+            "cache": {
+              "write": 0,
+              "read": 17984
+            }
+          },
+          "cost": 0,
+          "id": "prt_f841196bc001U1df2C2fBDaD15",
+          "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln",
+          "messageID": "msg_f8411722e0015uwEkZmd22Nt1q"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f84107a03001r7eCkfbP5GP89g",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784627173096,
+          "completed": 1784627209283
+        },
+        "id": "msg_f841196e8001xVwrQ3OLhU6R2v",
+        "sessionID": "ses_07c00aa2effeljJI5xxC4Pnzln"
+      },
+      "parts": []
+    }
+  ]
+}
