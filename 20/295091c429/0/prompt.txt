@@ -1,0 +1,17 @@
+added new component @registry/new-york/mouse-follow.tsx update docs and demo, then run pnpm fix
+
+---
+
+demo is only showing springmousefollow, it should also show simple mouse follow
+
+---
+
+first simple then spring, and user should be able to scroll inside preview box/container
+
+---
+
+preview box shouldn't be that big
+
+---
+
+not that preview box, but the demo preview box
