@@ -1,0 +1,128 @@
+added new component @registry/new-york/editable-chip.tsx update docs and demo, then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx</path>
+<type>file</type>
+<content>
+1: 'use client';
+2: 
+3: import {
+4:   useState,
+5:   useRef,
+6:   useEffect,
+7:   type FC,
+8:   type ChangeEvent,
+9:   type KeyboardEvent,
+10:   type MouseEvent,
+11: } from 'react';
+12: import { motion, AnimatePresence } from 'motion/react';
+13: 
+14: import { BiSolidPencil } from 'react-icons/bi';
+15: import { Check } from 'lucide-react';
+16: import { cn } from '@/lib/utils';
+17: 
+18: interface EditableChipProps {
+19:   defaultLabel?: string;
+20:   showThemeToggle?: boolean;
+21:   onChange?: (value: string) => void;
+22: }
+23: 
+24: export const EditableChip: FC<EditableChipProps> = ({
+25:   defaultLabel = 'Watchlist',
+26:   onChange,
+27: }) => {
+28:   const [isEditing, setIsEditing] = useState(false);
+29:   const [label, setLabel] = useState<string>(defaultLabel);
+30: 
+31:   const inputRef = useRef<HTMLInputElement>(null);
+32: 
+33:   useEffect(() => {
+34:     if (isEditing && inputRef.current) {
+35:       requestAnimationFrame(() => {
+36:         inputRef.current?.focus();
+37:         inputRef.current?.select();
+38:       });
+39:     }
+40:   }, [isEditing]);
+41: 
+42:   const handleSave = (e: MouseEvent | KeyboardEvent) => {
+43:     e.stopPropagation();
+44:     const finalValue = label.trim() === '' ? 'Untitled' : label;
+45:     setLabel(finalValue);
+46:     setIsEditing(false);
+47:     onChange?.(finalValue);
+48:   };
+49: 
+50:   const handleEdit = () => {
+51:     setIsEditing(true);
+52:   };
+53: 
+54:   return (
+55:     <motion.div layout>
+56:       <div
+57:         className={cn(
+58:           `relative flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full border border-zinc-200 py-1 pr-1 transition-all duration-300 ease-in-out select-none dark:border-zinc-700 dark:bg-zinc-900`,
+59:           isEditing && 'gap-8 ring-2 ring-black dark:ring-white',
+60:         )}
+61:       >
+62:         <motion.input
+63:           layout="position"
+64:           key="input"
+65:           ref={inputRef}
+66:           type="text"
+67:           value={label}
+68:           readOnly={!isEditing}
+69:           onChange={(e: ChangeEvent<HTMLInputElement>) =>
+70:             setLabel(e.target.value)
+71:           }
+72:           onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>
+73:             e.key === 'Enter' && handleSave(e)
+74:           }
+75: 
+76:           onClick={(e: MouseEvent) => e.stopPropagation()}
+77:           className="ml-4 w-32 border-none bg-transparent text-lg font-medium text-[#262626] capitalize outline-none selection:bg-[#B6B6B6] dark:text-zinc-100 dark:selection:bg-zinc-700"
+78:         />
+79: 
+80:         <AnimatePresence mode="popLayout">
+81:           {isEditing ? (
+82:             <motion.button
+83:               key="done"
+84:               initial={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}
+85:               animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+86:               exit={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}
+87:               layout="position"
+88:               onClick={handleSave}
+89:               transition={{
+90:                 type: 'spring',
+91:                 bounce: 0,
+92:                 duration: 0.4,
+93:               }}
+94:               className="rounded-full bg-black p-1 text-white transition-colors dark:bg-zinc-100 dark:text-zinc-950"
+95:             >
+96:               <Check size={26} />
+97:             </motion.button>
+98:           ) : (
+99:             <motion.button
+100:               key="edit"
+101:               initial={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}
+102:               animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+103:               exit={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}
+104:               layout="position"
+105:               onClick={handleEdit}
+106:               transition={{
+107:                 type: 'spring',
+108:                 bounce: 0,
+109:                 duration: 0.4,
+110:               }}
+111:               className="rounded-full bg-[#F0EFF6] p-1 text-[#696871] transition-colors dark:bg-zinc-800 dark:text-zinc-400 hover:dark:bg-zinc-700"
+112:             >
+113:               <BiSolidPencil size={26} />
+114:             </motion.button>
+115:           )}
+116:         </AnimatePresence>
+117:       </div>
+118:     </motion.div>
+119:   );
+120: };
+
+(End of file - total 120 lines)
+</content>

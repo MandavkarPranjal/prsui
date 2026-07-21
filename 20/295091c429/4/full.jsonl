@@ -1,0 +1,1960 @@
+{
+  "info": {
+    "id": "ses_07ac41142ffeddbVHcJxVQEWuA",
+    "slug": "sunny-garden",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "New session - 2026-07-21T15:12:05.312Z",
+    "agent": "build",
+    "model": {
+      "id": "mimo-v2.5-free",
+      "providerID": "opencode"
+    },
+    "version": "1.18.4",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 24379,
+      "output": 2883,
+      "reasoning": 565,
+      "cache": {
+        "read": 234752,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1784646725312,
+      "updated": 1784646949101
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784646725522
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "mimo-v2.5-free"
+        },
+        "summary": {
+          "diffs": [
+            {
+              "file": "content/docs/components/editable-chip.mdx",
+              "patch": "Index: content/docs/components/editable-chip.mdx\n===================================================================\n--- content/docs/components/editable-chip.mdx\t\n+++ content/docs/components/editable-chip.mdx\t\n@@ -0,0 +1,55 @@\n+---\n+title: Editable Chip\n+description: An inline-editable chip component with animated transitions between display and edit modes.\n+---\n+\n+import { EditableChipPreview } from \"@/registry/new-york/editable-chip-demo\";\n+\n+<ComponentPreview name=\"editable-chip\">\n+  <EditableChipPreview />\n+</ComponentPreview>\n+\n+## Installation\n+\n+If you've already added the prsui registry, use the short command:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add @prsui/editable-chip\"\n+  __npm__=\"npx shadcn@latest add @prsui/editable-chip\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/editable-chip\"\n+  __yarn__=\"yarn shadcn@latest add @prsui/editable-chip\"\n+/>\n+\n+Otherwise, use the full registry URL:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n+  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n+  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n+/>\n+\n+## Usage\n+\n+After you add the component with the CLI, import it from your UI folder:\n+\n+```tsx\n+import { EditableChip } from \"@/components/ui/editable-chip\";\n+\n+export function MyComponent() {\n+  return (\n+    <EditableChip\n+      defaultLabel=\"Watchlist\"\n+      onChange={(value) => console.log(value)}\n+    />\n+  );\n+}\n+```\n+\n+## Props\n+\n+| Prop              | Type                      | Default       | Description                               |\n+| ----------------- | ------------------------- | ------------- | ----------------------------------------- |\n+| `defaultLabel`    | `string`                  | `\"Watchlist\"` | Initial text displayed in the chip        |\n+| `showThemeToggle` | `boolean`                 | -             | Whether to show a theme toggle (reserved) |\n+| `onChange`        | `(value: string) => void` | -             | Callback fired when the label is saved    |\n",
+              "additions": 55,
+              "deletions": 0,
+              "status": "added"
+            },
+            {
+              "file": "content/docs/components/meta.json",
+              "patch": "Index: content/docs/components/meta.json\n===================================================================\n--- content/docs/components/meta.json\t\n+++ content/docs/components/meta.json\t\n@@ -1,12 +1,13 @@\n {\n   \"title\": \"Components\",\n   \"pages\": [\n     \"index\",\n     \"smooth-input\",\n     \"split-action\",\n     \"tooltip\",\n     \"accordion\",\n     \"typewriter\",\n-    \"link\"\n+    \"link\",\n+    \"editable-chip\"\n   ]\n }\n",
+              "additions": 2,
+              "deletions": 1,
+              "status": "modified"
+            },
+            {
+              "file": "registry.json",
+              "patch": "Index: registry.json\n===================================================================\n--- registry.json\t\n+++ registry.json\t\n@@ -1,104 +1,118 @@\n {\n   \"name\": \"prsui\",\n   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n   \"items\": [\n     {\n       \"name\": \"smooth-input\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Smooth Input\",\n       \"description\": \"A smooth input component with a caret animation.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/smooth-input.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/smooth-input.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\"]\n     },\n     {\n       \"name\": \"split-action\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Split Action\",\n       \"description\": \"Interactive component for split actions.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/split-action.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/split-action.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"tooltip\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Tooltip\",\n       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/tooltip.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/tooltip.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         },\n         {\n           \"path\": \"lib/hooks/use-hover-capable.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/hooks/use-hover-capable.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"accordion\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Accordion\",\n       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/accordion.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/accordion.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"typewriter\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Typewriter\",\n       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/typewriter.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/typewriter.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"link\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Link\",\n       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/link.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/link.tsx\"\n         }\n       ]\n+    },\n+    {\n+      \"name\": \"editable-chip\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Editable Chip\",\n+      \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/editable-chip.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/ui/editable-chip.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n     }\n   ]\n }\n",
+              "additions": 14,
+              "deletions": 0,
+              "status": "modified"
+            },
+            {
+              "file": "registry/new-york/editable-chip-demo.tsx",
+              "patch": "Index: registry/new-york/editable-chip-demo.tsx\n===================================================================\n--- registry/new-york/editable-chip-demo.tsx\t\n+++ registry/new-york/editable-chip-demo.tsx\t\n@@ -0,0 +1,9 @@\n+\"use client\";\n+\n+import { EditableChip } from \"./editable-chip\";\n+\n+export const EditableChipPreview = () => (\n+  <div className=\"flex min-h-96 w-full items-center justify-center\">\n+    <EditableChip defaultLabel=\"Watchlist\" />\n+  </div>\n+);\n",
+              "additions": 9,
+              "deletions": 0,
+              "status": "added"
+            },
+            {
+              "file": "registry/new-york/editable-chip.tsx",
+              "patch": "Index: registry/new-york/editable-chip.tsx\n===================================================================\n--- registry/new-york/editable-chip.tsx\t\n+++ registry/new-york/editable-chip.tsx\t\n@@ -1,120 +1,112 @@\n-'use client';\n+\"use client\";\n \n-import {\n-  useState,\n-  useRef,\n-  useEffect,\n-  type FC,\n-  type ChangeEvent,\n-  type KeyboardEvent,\n-  type MouseEvent,\n-} from 'react';\n-import { motion, AnimatePresence } from 'motion/react';\n+import { Check } from \"lucide-react\";\n+import { motion, AnimatePresence } from \"motion/react\";\n+import { useState, useRef, useEffect } from \"react\";\n+import type { FC, ChangeEvent, KeyboardEvent, MouseEvent } from \"react\";\n+import { BiSolidPencil } from \"react-icons/bi\";\n \n-import { BiSolidPencil } from 'react-icons/bi';\n-import { Check } from 'lucide-react';\n-import { cn } from '@/lib/utils';\n+import { cn } from \"@/lib/utils\";\n \n interface EditableChipProps {\n   defaultLabel?: string;\n   showThemeToggle?: boolean;\n   onChange?: (value: string) => void;\n }\n \n export const EditableChip: FC<EditableChipProps> = ({\n-  defaultLabel = 'Watchlist',\n+  defaultLabel = \"Watchlist\",\n   onChange,\n }) => {\n   const [isEditing, setIsEditing] = useState(false);\n   const [label, setLabel] = useState<string>(defaultLabel);\n \n   const inputRef = useRef<HTMLInputElement>(null);\n \n   useEffect(() => {\n     if (isEditing && inputRef.current) {\n       requestAnimationFrame(() => {\n         inputRef.current?.focus();\n         inputRef.current?.select();\n       });\n     }\n   }, [isEditing]);\n \n   const handleSave = (e: MouseEvent | KeyboardEvent) => {\n     e.stopPropagation();\n-    const finalValue = label.trim() === '' ? 'Untitled' : label;\n+    const finalValue = label.trim() === \"\" ? \"Untitled\" : label;\n     setLabel(finalValue);\n     setIsEditing(false);\n     onChange?.(finalValue);\n   };\n \n   const handleEdit = () => {\n     setIsEditing(true);\n   };\n \n   return (\n     <motion.div layout>\n       <div\n         className={cn(\n           `relative flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full border border-zinc-200 py-1 pr-1 transition-all duration-300 ease-in-out select-none dark:border-zinc-700 dark:bg-zinc-900`,\n-          isEditing && 'gap-8 ring-2 ring-black dark:ring-white',\n+          isEditing && \"gap-8 ring-2 ring-black dark:ring-white\"\n         )}\n       >\n         <motion.input\n           layout=\"position\"\n           key=\"input\"\n           ref={inputRef}\n           type=\"text\"\n           value={label}\n           readOnly={!isEditing}\n           onChange={(e: ChangeEvent<HTMLInputElement>) =>\n             setLabel(e.target.value)\n           }\n           onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>\n-            e.key === 'Enter' && handleSave(e)\n+            e.key === \"Enter\" && handleSave(e)\n           }\n-\n           onClick={(e: MouseEvent) => e.stopPropagation()}\n           className=\"ml-4 w-32 border-none bg-transparent text-lg font-medium text-[#262626] capitalize outline-none selection:bg-[#B6B6B6] dark:text-zinc-100 dark:selection:bg-zinc-700\"\n         />\n \n         <AnimatePresence mode=\"popLayout\">\n           {isEditing ? (\n             <motion.button\n               key=\"done\"\n-              initial={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n-              animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}\n-              exit={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n+              initial={{ filter: \"blur(4px)\", opacity: 0, scale: 0 }}\n+              animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n+              exit={{ filter: \"blur(4px)\", opacity: 0, scale: 0 }}\n               layout=\"position\"\n               onClick={handleSave}\n               transition={{\n-                type: 'spring',\n                 bounce: 0,\n                 duration: 0.4,\n+                type: \"spring\",\n               }}\n               className=\"rounded-full bg-black p-1 text-white transition-colors dark:bg-zinc-100 dark:text-zinc-950\"\n             >\n               <Check size={26} />\n             </motion.button>\n           ) : (\n             <motion.button\n               key=\"edit\"\n-              initial={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n-              animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}\n-              exit={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n+              initial={{ filter: \"blur(4px)\", opacity: 0, scale: 0 }}\n+              animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n+              exit={{ filter: \"blur(4px)\", opacity: 0, scale: 0 }}\n               layout=\"position\"\n               onClick={handleEdit}\n               transition={{\n-                type: 'spring',\n                 bounce: 0,\n                 duration: 0.4,\n+                type: \"spring\",\n               }}\n               className=\"rounded-full bg-[#F0EFF6] p-1 text-[#696871] transition-colors dark:bg-zinc-800 dark:text-zinc-400 hover:dark:bg-zinc-700\"\n             >\n               <BiSolidPencil size={26} />\n             </motion.button>\n           )}\n         </AnimatePresence>\n       </div>\n     </motion.div>\n   );\n };\n",
+              "additions": 19,
+              "deletions": 27,
+              "status": "modified"
+            }
+          ]
+        },
+        "id": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "added new component @registry/new-york/editable-chip.tsx update docs and demo, then run pnpm fix",
+          "id": "prt_f853bf06f001kHJgeroWiwgRZv",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bef8f001KLVMVja9lN7OYF"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "Called the Read tool with the following input: {\"filePath\":\"/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx\"}",
+          "id": "prt_f853bf0700015DPQnVNN1ThFGH",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bef8f001KLVMVja9lN7OYF"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "<path>/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx</path>\n<type>file</type>\n<content>\n1: 'use client';\n2: \n3: import {\n4:   useState,\n5:   useRef,\n6:   useEffect,\n7:   type FC,\n8:   type ChangeEvent,\n9:   type KeyboardEvent,\n10:   type MouseEvent,\n11: } from 'react';\n12: import { motion, AnimatePresence } from 'motion/react';\n13: \n14: import { BiSolidPencil } from 'react-icons/bi';\n15: import { Check } from 'lucide-react';\n16: import { cn } from '@/lib/utils';\n17: \n18: interface EditableChipProps {\n19:   defaultLabel?: string;\n20:   showThemeToggle?: boolean;\n21:   onChange?: (value: string) => void;\n22: }\n23: \n24: export const EditableChip: FC<EditableChipProps> = ({\n25:   defaultLabel = 'Watchlist',\n26:   onChange,\n27: }) => {\n28:   const [isEditing, setIsEditing] = useState(false);\n29:   const [label, setLabel] = useState<string>(defaultLabel);\n30: \n31:   const inputRef = useRef<HTMLInputElement>(null);\n32: \n33:   useEffect(() => {\n34:     if (isEditing && inputRef.current) {\n35:       requestAnimationFrame(() => {\n36:         inputRef.current?.focus();\n37:         inputRef.current?.select();\n38:       });\n39:     }\n40:   }, [isEditing]);\n41: \n42:   const handleSave = (e: MouseEvent | KeyboardEvent) => {\n43:     e.stopPropagation();\n44:     const finalValue = label.trim() === '' ? 'Untitled' : label;\n45:     setLabel(finalValue);\n46:     setIsEditing(false);\n47:     onChange?.(finalValue);\n48:   };\n49: \n50:   const handleEdit = () => {\n51:     setIsEditing(true);\n52:   };\n53: \n54:   return (\n55:     <motion.div layout>\n56:       <div\n57:         className={cn(\n58:           `relative flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full border border-zinc-200 py-1 pr-1 transition-all duration-300 ease-in-out select-none dark:border-zinc-700 dark:bg-zinc-900`,\n59:           isEditing && 'gap-8 ring-2 ring-black dark:ring-white',\n60:         )}\n61:       >\n62:         <motion.input\n63:           layout=\"position\"\n64:           key=\"input\"\n65:           ref={inputRef}\n66:           type=\"text\"\n67:           value={label}\n68:           readOnly={!isEditing}\n69:           onChange={(e: ChangeEvent<HTMLInputElement>) =>\n70:             setLabel(e.target.value)\n71:           }\n72:           onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>\n73:             e.key === 'Enter' && handleSave(e)\n74:           }\n75: \n76:           onClick={(e: MouseEvent) => e.stopPropagation()}\n77:           className=\"ml-4 w-32 border-none bg-transparent text-lg font-medium text-[#262626] capitalize outline-none selection:bg-[#B6B6B6] dark:text-zinc-100 dark:selection:bg-zinc-700\"\n78:         />\n79: \n80:         <AnimatePresence mode=\"popLayout\">\n81:           {isEditing ? (\n82:             <motion.button\n83:               key=\"done\"\n84:               initial={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n85:               animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}\n86:               exit={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n87:               layout=\"position\"\n88:               onClick={handleSave}\n89:               transition={{\n90:                 type: 'spring',\n91:                 bounce: 0,\n92:                 duration: 0.4,\n93:               }}\n94:               className=\"rounded-full bg-black p-1 text-white transition-colors dark:bg-zinc-100 dark:text-zinc-950\"\n95:             >\n96:               <Check size={26} />\n97:             </motion.button>\n98:           ) : (\n99:             <motion.button\n100:               key=\"edit\"\n101:               initial={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n102:               animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}\n103:               exit={{ opacity: 0, filter: 'blur(4px)', scale: 0 }}\n104:               layout=\"position\"\n105:               onClick={handleEdit}\n106:               transition={{\n107:                 type: 'spring',\n108:                 bounce: 0,\n109:                 duration: 0.4,\n110:               }}\n111:               className=\"rounded-full bg-[#F0EFF6] p-1 text-[#696871] transition-colors dark:bg-zinc-800 dark:text-zinc-400 hover:dark:bg-zinc-700\"\n112:             >\n113:               <BiSolidPencil size={26} />\n114:             </motion.button>\n115:           )}\n116:         </AnimatePresence>\n117:       </div>\n118:     </motion.div>\n119:   );\n120: };\n\n(End of file - total 120 lines)\n</content>",
+          "id": "prt_f853bf0700024gGadTKPrnsk77",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bef8f001KLVMVja9lN7OYF"
+        },
+        {
+          "type": "file",
+          "mime": "text/plain",
+          "filename": "registry/new-york/editable-chip.tsx",
+          "url": "file:///home/himmel/personal/prsui/registry/new-york/editable-chip.tsx",
+          "source": {
+            "text": {
+              "value": "@registry/new-york/editable-chip.tsx",
+              "start": 20,
+              "end": 56
+            },
+            "type": "file",
+            "path": "registry/new-york/editable-chip.tsx"
+          },
+          "id": "prt_f853bf070003REEePoeqYCrN1i",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bef8f001KLVMVja9lN7OYF"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12799,
+          "input": 10913,
+          "output": 27,
+          "reasoning": 67,
+          "cache": {
+            "write": 0,
+            "read": 1792
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646725907,
+          "completed": 1784646732589
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853bf112001DVJfKN3kpu2Gq6",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "type": "step-start",
+          "id": "prt_f853c04aa001K4fFiHoeZp6RHv",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bf112001DVJfKN3kpu2Gq6"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to:\n1. Update docs for the new `@registry/new-york/editable-chip.tsx` component\n2. Update demo for the component\n3. Run `pnpm fix`\n\nI need to first explore the codebase to understand the structure and see how other components are documented and demoed.",
+          "time": {
+            "start": 1784646730925,
+            "end": 1784646732133
+          },
+          "id": "prt_f853c04ad001Yy6lkYt5I7qPa2",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bf112001DVJfKN3kpu2Gq6"
+        },
+        {
+          "type": "tool",
+          "tool": "skill",
+          "callID": "call_59f55d68acf74766a554ce8b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "name": "launch-shadcn-registry"
+            },
+            "output": "<skill_content name=\"launch-shadcn-registry\">\n# Skill: launch-shadcn-registry\n\n# Launch shadcn Registry\n\nOrchestrate listing and announcing a custom shadcn/ui registry across official and community directories, then draft platform-specific social posts.\n\n## Before You Start\n\nConfirm the user wants a **full launch** or a **subset** (e.g. official directory only, or social drafts only). Default to the full workflow unless they narrow scope.\n\nCollect or infer a **registry profile**. If missing fields, ask before generating artifacts. Use [templates/registry-profile.example.json](templates/registry-profile.example.json) as the shape; validate against [templates/registry-profile.schema.json](templates/registry-profile.schema.json).\n\nRequired profile fields:\n\n| Field | Purpose |\n|-------|---------|\n| `scope` | Registry scope, e.g. `@ogimagecn` |\n| `name` | Display name |\n| `homepage` | Marketing/docs URL |\n| `registryBaseUrl` | Base URL for JSON files (no trailing slash) |\n| `componentUrlPattern` | URL pattern with `{name}` placeholder, e.g. `https://example.com/r/{name}.json` |\n| `description` | One sentence (≤160 chars) for directories |\n| `descriptionLong` | 2–3 sentences for awesome lists and social |\n| `githubUrl` | Source repo |\n| `githubUsername` | For avatar URLs and filenames |\n| `distribution` | `open-source` or `premium` |\n| `categories` | Tags for shadcntemplates / awesome lists |\n| `installExample` | e.g. `npx shadcn@latest add @scope/component-name` |\n| `logo` | Inline SVG string for official directory (optional but recommended) |\n| `registryIndexPath` | Path to registry index relative to `registryBaseUrl`, defaults to `/registry.json` (optional) |\n| `sampleComponents` | Array of component slugs to validate during preflight, e.g. `[\"og-image\"]` (optional) |\n| `features` | Bullet points for shadcntemplates and social posts (optional) |\n\n## Workflow Overview\n\nCopy this checklist and track progress:\n\n```\nLaunch Progress:\n- [ ] Phase 1: Preflight validation\n- [ ] Phase 2: Generate directory artifacts\n- [ ] Phase 3: Open GitHub PRs (user approval per PR)\n- [ ] Phase 4: Draft social posts\n- [ ] Phase 5: Post-launch follow-up\n```\n\n## Phase 1: Preflight\n\nRead [references/preflight.md](references/preflight.md) and run validation before generating any PRs.\n\n```bash\nbash scripts/validate-registry.sh <registryBaseUrl> [sample-component-name]\n```\n\nFix all blockers before continuing. Common failures:\n\n- `registry.json` not public or wrong path\n- Component JSON 404\n- Duplicate `@scope` in official directory\n- `description` too long or marketing-heavy for official listing\n\nFetch the official directory to check duplicates:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/v4/registry/directory.json | grep -i \"<scope>\"\n```\n\n## Phase 2: Generate Artifacts\n\nFrom the registry profile, generate all submission files. Read the relevant reference **only for targets the user wants**:\n\n| Target | Reference | Output |\n|--------|-----------|--------|\n| Official shadcn-ui/ui | [references/shadcn-ui-official.md](references/shadcn-ui-official.md) | JSON entry + PR body |\n| registry.directory | [references/registry-directory.md](references/registry-directory.md) | JSON entry + PR body |\n| shadcntemplates | [references/shadcntemplates.md](references/shadcntemplates.md) | `content/{author}-{name}.md` |\n| birobirobiro awesome | [references/awesome-birobirobiro.md](references/awesome-birobirobiro.md) | README table row |\n| bytefer awesome | [references/awesome-bytefer.md](references/awesome-bytefer.md) | README table row |\n\nPresent artifacts grouped by repo. Include:\n\n1. Exact file path to create or edit\n2. Full content to add (not diffs alone)\n3. Suggested PR title and body\n\n### PR title convention\n\nUse `feat(registry): add <scope>` for official shadcn-ui/ui (matches [PR #10896](https://github.com/shadcn-ui/ui/pull/10896)). Use `docs: add <name> to <section>` for awesome lists and `feat: add <name> registry` for registry.directory.\n\n## Phase 3: Open GitHub PRs\n\nUse `gh` for all GitHub operations. **Ask the user before creating each PR** unless they explicitly asked to open all PRs.\n\nStandard fork-and-PR flow per repo:\n\n```bash\n# Example: official shadcn-ui/ui\ngh repo fork shadcn-ui/ui --clone=false\ngit clone https://github.com/<user>/ui.git /tmp/ui-registry-pr\ncd /tmp/ui-registry-pr\ngit remote add upstream https://github.com/shadcn-ui/ui.git\ngit fetch upstream && git checkout -b feat/<scope>-directory upstream/main\n# edit apps/v4/registry/directory.json — append entry at end of array\ngit add apps/v4/registry/directory.json\ngit commit -m \"feat(registry): add <scope>\"\ngit push -u origin HEAD\ngh pr create --repo shadcn-ui/ui --title \"feat(registry): add <scope>\" --body \"$(cat <<'EOF'\n## Summary\nAdds <scope> to the community registry directory.\n\n- **Registry URL**: `<componentUrlPattern>`\n- **Homepage**: <homepage>\n- **Description**: <description>\n\n## Test plan\n- [ ] `curl <registryBaseUrl>/registry.json` returns valid JSON\n- [ ] `npx shadcn@latest add <installExample>` installs successfully\nEOF\n)\"\n```\n\n**Recommended PR order:**\n\n1. Official `shadcn-ui/ui` (highest leverage; may take maintainer review)\n2. `rbadillap/registry.directory`\n3. `shadcnblocks/shadcntemplates`\n4. `birobirobiro/awesome-shadcn-ui` and `bytefer/awesome-shadcn-ui` (can be parallel)\n\nTrack PR URLs in the launch checklist. Do not draft social posts as \"published\" until the registry is live and at least one directory listing is merged or submitted.\n\n## Phase 4: Social Drafts\n\nRead platform references and produce **ready-to-paste drafts** (user posts manually):\n\n| Platform | Reference |\n|----------|-----------|\n| Reddit r/shadcn | [references/social/reddit.md](references/social/reddit.md) |\n| X | [references/social/x.md](references/social/x.md) |\n| Dev.to | [references/social/devto.md](references/social/devto.md) |\n| Hacker News | [references/social/hackernews.md](references/social/hackernews.md) |\n\nTailor each draft from the registry profile. Include the install command, homepage, and GitHub link. Avoid hype; lead with the concrete problem the registry solves.\n\n**Timing:** Draft social posts after preflight passes. Suggest posting after the official directory PR is merged (or at minimum after `registry.json` is live).\n\n## Phase 5: Post-Launch\n\nAfter PRs are open or merged:\n\n1. Share PR links with the user in a summary table (repo, PR URL, status)\n2. Remind user to respond to review comments within 48h\n3. After official merge, suggest updating social drafts to mention \"now listed in the shadcn registry directory\"\n4. If a PR is rejected, read maintainer feedback and adjust description or registry format — do not resubmit unchanged\n\n## Rules\n\n- Never submit to directories before preflight passes\n- Never claim listings are live until PRs are merged\n- Never auto-post to Reddit, X, Dev.to, or HN — drafts only\n- Keep official `directory.json` entry at the **end** of the array (append only)\n- One registry profile drives all artifacts — do not invent different descriptions per platform without user approval\n- For premium registries on shadcntemplates, note the one-free / $100 multi-premium policy; do not promise approval\n\n## Example\n\n**User:** \"Launch @ogimagecn — https://ogimagecn.vercel.app\"\n\n**Agent:**\n\n1. Build profile from site + `curl https://ogimagecn.vercel.app/r/registry.json`\n2. Run `validate-registry.sh https://ogimagecn.vercel.app og-image`\n3. Generate JSON for official directory, registry.directory, shadcntemplates markdown, awesome list rows\n4. Ask: \"Open PRs to all 5 repos?\"\n5. On approval, create PRs via `gh`\n6. Deliver Reddit, X, Dev.to, and HN drafts\n\n## Additional Resources\n\n- Registry profile schema: [templates/registry-profile.schema.json](templates/registry-profile.schema.json)\n- Example profile: [templates/registry-profile.example.json](templates/registry-profile.example.json)\n- Validation script: [scripts/validate-registry.sh](scripts/validate-registry.sh)\n\nBase directory for this skill: /home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry\nRelative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.\nNote: file list is sampled.\n\n<skill_files>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/shadcntemplates.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/shadcn-ui-official.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/registry-directory.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/preflight.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/awesome-bytefer.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/awesome-birobirobiro.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/social/x.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/social/reddit.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/social/hackernews.md</file>\n<file>/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry/references/social/devto.md</file>\n</skill_files>\n</skill_content>",
+            "metadata": {
+              "name": "launch-shadcn-registry",
+              "dir": "/home/himmel/personal/prsui/.agents/skills/launch-shadcn-registry",
+              "truncated": false
+            },
+            "title": "Loaded skill: launch-shadcn-registry",
+            "time": {
+              "start": 1784646732394,
+              "end": 1784646732411
+            }
+          },
+          "id": "prt_f853c0967001Qwq2GOJyF8fo9B",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bf112001DVJfKN3kpu2Gq6"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12799,
+            "input": 10913,
+            "output": 27,
+            "reasoning": 67,
+            "cache": {
+              "write": 0,
+              "read": 1792
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853c0b0e001BEsnFIaxM63t02",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853bf112001DVJfKN3kpu2Gq6"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 15473,
+          "input": 2512,
+          "output": 197,
+          "reasoning": 92,
+          "cache": {
+            "write": 0,
+            "read": 12672
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646732599,
+          "completed": 1784646829137
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853c0b37001mhu4Qdqt01clhj",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "type": "step-start",
+          "id": "prt_f853c1b0e0015b3mHiYCXeFBF9",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853c0b37001mhu4Qdqt01clhj"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to update docs and demo for a new component `@registry/new-york/editable-chip.tsx` and then run `pnpm fix`. This is not about launching a registry - it's about updating documentation and demo files for a newly added component within an existing registry project.\n\nLet me explore the codebase to understand:\n1. How docs are structured\n2. How demos are structured\n3. What patterns exist for other components",
+          "time": {
+            "start": 1784646736659,
+            "end": 1784646738367
+          },
+          "id": "prt_f853c1b1300158Io11Ir02TcON",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853c0b37001mhu4Qdqt01clhj"
+        },
+        {
+          "type": "tool",
+          "tool": "task",
+          "callID": "call_1a2e1452588a471993e51b96",
+          "state": {
+            "status": "completed",
+            "input": {
+              "description": "Explore codebase structure",
+              "prompt": "Explore the /home/himmel/personal/prsui codebase to understand:\n1. How documentation pages are structured (look for docs/, content/, app/docs/ patterns)\n2. How demo pages/components are structured\n3. Find examples of existing component docs and demos to understand the pattern\n4. Check if there's already an editable-chip doc or demo file\n5. Look at the registry structure to understand how components are registered\n\nReturn:\n- The directory structure for docs and demos\n- Examples of existing component doc files (full content of 1-2 examples)\n- Examples of existing demo files (full content of 1-2 examples)\n- The registry index file content (registry.json or similar)\n- Any existing editable-chip references",
+              "subagent_type": "explore"
+            },
+            "output": "<task id=\"ses_07ac3d21cffemdutBygcGu3VWg\" state=\"completed\">\n<task_result>\nHere are the complete findings from the codebase exploration.\n\n---\n\n## 1. Directory Structure for Docs and Demos\n\n```\n/home/himmel/personal/prsui/\n├── content/\n│   └── docs/\n│       ├── meta.json                          # Root nav: pages [\"(root)\", \"components\"]\n│       ├── (root)/\n│       │   ├── index.mdx                      # Homepage\n│       │   └── meta.json\n│       └── components/\n│           ├── meta.json                      # Nav order: [\"index\",\"smooth-input\",\"split-action\",\"tooltip\",\"accordion\",\"typewriter\",\"link\"]\n│           ├── index.mdx                      # <ComponentsList /> listing\n│           ├── accordion.mdx\n│           ├── link.mdx\n│           ├── smooth-input.mdx\n│           ├── split-action.mdx\n│           ├── tooltip.mdx\n│           └── typewriter.mdx\n│\n├── registry/\n│   └── new-york/\n│       ├── accordion.tsx           # Component source\n│       ├── accordion-demo.tsx      # Demo/preview for docs\n│       ├── editable-chip.tsx       # <-- EXISTS (no demo, no doc)\n│       ├── link.tsx\n│       ├── link-demo.tsx\n│       ├── smooth-input.tsx        # (no demo file)\n│       ├── split-action.tsx\n│       ├── split-action-demo.tsx\n│       ├── tooltip.tsx\n│       ├── tooltip-demo.tsx\n│       ├── typewriter.tsx\n│       └── typewriter-demo.tsx\n│\n├── registry.json                   # Source of truth for shadcn registry\n├── public/r/registry.json          # Built/deployed copy (identical)\n└── lib/registry.ts                 # Helper: getRegistryUiSourceCandidates()\n```\n\n**Key pattern**: No `examples/` directory exists. Demos live as `<name>-demo.tsx` files directly in `registry/new-york/` alongside the component source.\n\n---\n\n## 2. Component Doc File Examples (full content)\n\n### Example 1: `/home/himmel/personal/prsui/content/docs/components/accordion.mdx`\n\n```mdx\n---\ntitle: Accordion\ndescription: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n---\n\nimport { BouncyAccordionPreview } from \"@/registry/new-york/accordion-demo\";\n\n<ComponentPreview name=\"accordion\">\n  <BouncyAccordionPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n  __npm__=\"npx shadcn@latest add @prsui/accordion\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n  __yarn__=\"yarn shadcn@latest add @prsui/accordion\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n// code block with import + usage example\n\n## Props\n\n| Prop | Type | Default | Description |\n| ... | ... | ... | ... |\n```\n\n### Example 2: `/home/himmel/personal/prsui/content/docs/components/typewriter.mdx`\n\nSame structure: frontmatter, import demo, `<ComponentPreview>`, Installation (short + URL), Usage code block, Props table.\n\n**The consistent doc MDX pattern is:**\n1. YAML frontmatter with `title` and `description`\n2. Import the demo component from `@/registry/new-york/<name>-demo`\n3. `<ComponentPreview name=\"<name>\"><DemoComponent /></ComponentPreview>`\n4. `## Installation` with two `<CodeBlockCommand>` blocks (short + URL)\n5. `## Usage` with a code block showing import and basic usage\n6. `## Props` as a markdown table\n\n---\n\n## 3. Demo File Examples (full content)\n\n### Example 1: `/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx`\n\n```tsx\n\"use client\";\n\nimport { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\nimport { Accordion } from \"./accordion\";\n\nconst items = [ /* ... */ ];\n\nexport const BouncyAccordionPreview = function BouncyAccordionPreview() {\n  return (\n    <div className=\"flex min-h-96 w-full items-center justify-center\">\n      <div className=\"w-full max-w-sm\">\n        <Accordion items={items} defaultValue=\"platform\" />\n      </div>\n    </div>\n  );\n};\n```\n\n### Example 2: `/home/himmel/personal/prsui/registry/new-york/tooltip-demo.tsx`\n\n```tsx\n\"use client\";\n\nimport { Heart, Settings, Share, Trash2 } from \"lucide-react\";\nimport { Tooltip } from \"./tooltip\";\n\nexport const TooltipPreview = () => (\n  <div className=\"flex flex-col items-center gap-12\">\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <Tooltip content=\"Like this post\" side=\"top\">\n        <button type=\"button\" aria-label=\"Like this post\" className=\"inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground press\">\n          <Heart className=\"h-4 w-4\" />\n        </button>\n      </Tooltip>\n      {/* ... more tooltips */}\n    </div>\n    <p className=\"text-xs text-muted-foreground\">Hover or focus each button. Content fades and un-blurs in.</p>\n  </div>\n);\n```\n\n**The consistent demo pattern is:**\n1. `\"use client\"` directive at top\n2. Import the component from the sibling file (`./accordion`, `./tooltip`, etc.)\n3. Export a named component (e.g., `AccordionPreview`, `BouncyAccordionPreview`, `TooltipPreview`)\n4. Simple wrapper div with Tailwind layout classes\n5. Renders the component with realistic example data/props\n\n---\n\n## 4. Registry Structure\n\n### `/home/himmel/personal/prsui/registry.json` (root, source of truth)\n\nEach entry follows this schema:\n```json\n{\n  \"name\": \"<kebab-case-name>\",\n  \"type\": \"registry:ui\",\n  \"title\": \"<Title Case Name>\",\n  \"description\": \"...\",\n  \"files\": [\n    {\n      \"path\": \"registry/new-york/<name>.tsx\",\n      \"type\": \"registry:ui\",\n      \"target\": \"components/ui/<name>.tsx\"\n    }\n  ],\n  \"dependencies\": [\"motion\", \"lucide-react\", ...]\n}\n```\n\n**Key observations:**\n- The registry has 6 registered components: `smooth-input`, `split-action`, `tooltip`, `accordion`, `typewriter`, `link`\n- `tooltip` and `accordion` also register lib files (`lib/ease.ts`, `lib/hooks/use-hover-capable.ts`)\n- Demo files are NOT listed in the registry -- only the main component file is registered\n- The `lib/registry.ts` helper resolves sources from `registry/new-york/<name>.tsx`\n\n---\n\n## 5. Editable-Chip Status\n\n**Existing files found:**\n- `/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx` -- the component source exists (120 lines, uses `motion/react`, `react-icons/bi`, `lucide-react`)\n\n**What is MISSING (not yet created):**\n- No `registry/new-york/editable-chip-demo.tsx` demo file\n- No `content/docs/components/editable-chip.mdx` doc page\n- No entry in `registry.json` for `editable-chip`\n- No entry in `content/docs/components/meta.json` pages list\n- No entry in `public/r/registry.json`\n\nIn short: the component source code is in place, but it has not been wired into the docs, the demo system, or the registry yet.\n</task_result>\n</task>",
+            "metadata": {
+              "parentSessionId": "ses_07ac41142ffeddbVHcJxVQEWuA",
+              "sessionId": "ses_07ac3d21cffemdutBygcGu3VWg",
+              "model": {
+                "modelID": "mimo-v2.5-free",
+                "providerID": "opencode"
+              },
+              "truncated": false
+            },
+            "title": "Explore codebase structure",
+            "time": {
+              "start": 1784646741488,
+              "end": 1784646828958
+            }
+          },
+          "id": "prt_f853c21c3001Sgjn802wc8Ay2K",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853c0b37001mhu4Qdqt01clhj"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "type": "step-finish",
+          "tokens": {
+            "total": 15473,
+            "input": 2512,
+            "output": 197,
+            "reasoning": 92,
+            "cache": {
+              "write": 0,
+              "read": 12672
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853d83ef0019r03hxw9TMBKDz",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853c0b37001mhu4Qdqt01clhj"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 17732,
+          "input": 2202,
+          "output": 270,
+          "reasoning": 92,
+          "cache": {
+            "write": 0,
+            "read": 15168
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646829144,
+          "completed": 1784646841618
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853d8458001xRJAR8Ij2aM7ye",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "type": "step-start",
+          "id": "prt_f853d9e27001NfqtzXCDoD71LB",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have a clear picture. I need to:\n\n1. Create `registry/new-york/editable-chip-demo.tsx` - the demo component\n2. Create `content/docs/components/editable-chip.mdx` - the docs page\n3. Add entry to `registry.json`\n4. Add entry to `content/docs/components/meta.json`\n5. Run `pnpm fix`\n\nLet me read the existing files I need to modify first.",
+          "time": {
+            "start": 1784646835753,
+            "end": 1784646837606
+          },
+          "id": "prt_f853d9e29001OkI1Lr1kyrL0Dj",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_c39ccd65df45405bab0bd1fd",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create editable-chip-demo.tsx\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create editable-chip.mdx docs page\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to registry.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to content/docs/components/meta.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "5 todos",
+            "time": {
+              "start": 1784646839034,
+              "end": 1784646839039
+            }
+          },
+          "id": "prt_f853da5690013HOe10SThV4zIp",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_6ccd9c668c5f4ee8ae15e7c1",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"name\": \"prsui\",\n3:   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n4:   \"items\": [\n5:     {\n6:       \"name\": \"smooth-input\",\n7:       \"type\": \"registry:ui\",\n8:       \"title\": \"Smooth Input\",\n9:       \"description\": \"A smooth input component with a caret animation.\",\n10:       \"files\": [\n11:         {\n12:           \"path\": \"registry/new-york/smooth-input.tsx\",\n13:           \"type\": \"registry:ui\",\n14:           \"target\": \"components/ui/smooth-input.tsx\"\n15:         }\n16:       ],\n17:       \"dependencies\": [\"framer-motion\"]\n18:     },\n19:     {\n20:       \"name\": \"split-action\",\n21:       \"type\": \"registry:ui\",\n22:       \"title\": \"Split Action\",\n23:       \"description\": \"Interactive component for split actions.\",\n24:       \"files\": [\n25:         {\n26:           \"path\": \"registry/new-york/split-action.tsx\",\n27:           \"type\": \"registry:ui\",\n28:           \"target\": \"components/ui/split-action.tsx\"\n29:         }\n30:       ],\n31:       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n32:     },\n33:     {\n34:       \"name\": \"tooltip\",\n35:       \"type\": \"registry:ui\",\n36:       \"title\": \"Tooltip\",\n37:       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n38:       \"files\": [\n39:         {\n40:           \"path\": \"registry/new-york/tooltip.tsx\",\n41:           \"type\": \"registry:ui\",\n42:           \"target\": \"components/ui/tooltip.tsx\"\n43:         },\n44:         {\n45:           \"path\": \"lib/ease.ts\",\n46:           \"type\": \"registry:lib\",\n47:           \"target\": \"lib/ease.ts\"\n48:         },\n49:         {\n50:           \"path\": \"lib/hooks/use-hover-capable.ts\",\n51:           \"type\": \"registry:lib\",\n52:           \"target\": \"lib/hooks/use-hover-capable.ts\"\n53:         }\n54:       ],\n55:       \"dependencies\": [\"motion\"]\n56:     },\n57:     {\n58:       \"name\": \"accordion\",\n59:       \"type\": \"registry:ui\",\n60:       \"title\": \"Accordion\",\n61:       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n62:       \"files\": [\n63:         {\n64:           \"path\": \"registry/new-york/accordion.tsx\",\n65:           \"type\": \"registry:ui\",\n66:           \"target\": \"components/ui/accordion.tsx\"\n67:         },\n68:         {\n69:           \"path\": \"lib/ease.ts\",\n70:           \"type\": \"registry:lib\",\n71:           \"target\": \"lib/ease.ts\"\n72:         }\n73:       ],\n74:       \"dependencies\": [\"motion\", \"lucide-react\"]\n75:     },\n76:     {\n77:       \"name\": \"typewriter\",\n78:       \"type\": \"registry:ui\",\n79:       \"title\": \"Typewriter\",\n80:       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n81:       \"files\": [\n82:         {\n83:           \"path\": \"registry/new-york/typewriter.tsx\",\n84:           \"type\": \"registry:ui\",\n85:           \"target\": \"components/ui/typewriter.tsx\"\n86:         }\n87:       ],\n88:       \"dependencies\": [\"motion\"]\n89:     },\n90:     {\n91:       \"name\": \"link\",\n92:       \"type\": \"registry:ui\",\n93:       \"title\": \"Link\",\n94:       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n95:       \"files\": [\n96:         {\n97:           \"path\": \"registry/new-york/link.tsx\",\n98:           \"type\": \"registry:ui\",\n99:           \"target\": \"components/ui/link.tsx\"\n100:         }\n101:       ]\n102:     }\n103:   ]\n104: }\n\n(End of file - total 104 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry.json",
+                "text": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Split Action\",\n      \"description\": \"Interactive component for split actions.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/split-action.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/split-action.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"tooltip\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Tooltip\",\n      \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/tooltip.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/tooltip.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        },\n        {\n          \"path\": \"lib/hooks/use-hover-capable.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/hooks/use-hover-capable.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"accordion\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Accordion\",\n      \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/accordion.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/accordion.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"typewriter\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Typewriter\",\n      \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/typewriter.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/typewriter.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"link\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Link\",\n      \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/link.tsx\"\n        }\n      ]\n    }\n  ]\n}",
+                "lineStart": 1,
+                "lineEnd": 104,
+                "totalLines": 104,
+                "truncated": false
+              }
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784646839509,
+              "end": 1784646839515
+            }
+          },
+          "id": "prt_f853dab6d001nGTfEDDYYc57Ny",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_59147bcbedaf4849a9d00218",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/meta.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/meta.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"title\": \"Components\",\n3:   \"pages\": [\n4:     \"index\",\n5:     \"smooth-input\",\n6:     \"split-action\",\n7:     \"tooltip\",\n8:     \"accordion\",\n9:     \"typewriter\",\n10:     \"link\"\n11:   ]\n12: }\n\n(End of file - total 12 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"title\": \"Components\",\n  \"pages\": [\n    \"index\",\n    \"smooth-input\",\n    \"split-action\",\n    \"tooltip\",\n    \"accordion\",\n    \"typewriter\",\n    \"link\"\n  ]\n}",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/meta.json",
+                "text": "{\n  \"title\": \"Components\",\n  \"pages\": [\n    \"index\",\n    \"smooth-input\",\n    \"split-action\",\n    \"tooltip\",\n    \"accordion\",\n    \"typewriter\",\n    \"link\"\n  ]\n}",
+                "lineStart": 1,
+                "lineEnd": 12,
+                "totalLines": 12,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/meta.json",
+            "time": {
+              "start": 1784646839925,
+              "end": 1784646839931
+            }
+          },
+          "id": "prt_f853dad53001AQhOkIWoZbegdK",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_4bd00d49d0cf40a39afb043a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/accordion.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/accordion.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Accordion\n3: description: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n4: ---\n5: \n6: import { BouncyAccordionPreview } from \"@/registry/new-york/accordion-demo\";\n7: \n8: <ComponentPreview name=\"accordion\">\n9:   <BouncyAccordionPreview />\n10: </ComponentPreview>\n11: \n12: ## Installation\n13: \n14: If you've already added the prsui registry, use the short command:\n15: \n16: <CodeBlockCommand\n17:   __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n18:   __npm__=\"npx shadcn@latest add @prsui/accordion\"\n19:   __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n20:   __yarn__=\"yarn shadcn@latest add @prsui/accordion\"\n21: />\n22: \n23: Otherwise, use the full registry URL:\n24: \n25: <CodeBlockCommand\n26:   __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n27:   __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n28:   __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n29:   __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n30: />\n31: \n32: ## Usage\n33: \n34: After you add the component with the CLI, import it from your UI folder:\n35: \n36: ```tsx\n37: import { Accordion, type AccordionItem } from \"@/components/ui/accordion\";\n38: \n39: const items: AccordionItem[] = [\n40:   {\n41:     id: \"item-1\",\n42:     title: \"First question\",\n43:     description: \"Answer to the first question.\",\n44:   },\n45:   {\n46:     id: \"item-2\",\n47:     title: \"Second question\",\n48:     description: \"Answer to the second question.\",\n49:   },\n50: ];\n51: \n52: export function MyComponent() {\n53:   return <Accordion items={items} defaultValue=\"item-1\" />;\n54: }\n55: ```\n56: \n57: ## Props\n58: \n59: | Prop            | Type                              | Default | Description                                           |\n60: | --------------- | --------------------------------- | ------- | ----------------------------------------------------- |\n61: | `items`         | `AccordionItem[]`                 | -       | Array of accordion items                              |\n62: | `value`         | `string \\| null`                  | -       | Controlled currently open item id                     |\n63: | `defaultValue`  | `string \\| null`                  | `null`  | Initially open item id                                |\n64: | `onValueChange` | `(value: string \\| null) => void` | -       | Callback fired when the open item changes             |\n65: | `collapsible`   | `boolean`                         | `true`  | When false, an open item cannot be closed by clicking |\n66: | `className`     | `string`                          | -       | Classes applied to the root wrapper                   |\n67: | `classNames`    | `AccordionClassNames`             | -       | Override classes for individual sub-elements          |\n68: \n69: ### AccordionItem\n70: \n71: | Field         | Type        | Description                              |\n72: | ------------- | ----------- | ---------------------------------------- |\n73: | `id`          | `string`    | Unique identifier for the item           |\n74: | `title`       | `ReactNode` | Content shown in the trigger row         |\n75: | `description` | `ReactNode` | Content revealed when the item is open   |\n76: | `icon`        | `ReactNode` | Optional icon displayed before the title |\n77: | `disabled`    | `boolean`   | Disables the item                        |\n78: \n79: ### AccordionClassNames\n80: \n81: | Key           | Description                  |\n82: | ------------- | ---------------------------- |\n83: | `root`        | Wrapper around all items     |\n84: | `item`        | Each accordion row container |\n85: | `trigger`     | The clickable button row     |\n86: | `icon`        | The icon wrapper span        |\n87: | `title`       | The title text span          |\n88: | `chevron`     | The chevron rotation wrapper |\n89: | `content`     | The animated content wrapper |\n90: | `description` | The description text div     |\n\n(End of file - total 90 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Accordion\ndescription: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n---\n\nimport { BouncyAccordionPreview } from \"@/registry/new-york/accordion-demo\";\n\n<ComponentPreview name=\"accordion\">\n  <BouncyAccordionPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n  __npm__=\"npx shadcn@latest add @prsui/accordion\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n  __yarn__=\"yarn shadcn@latest add @prsui/accordion\"",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/accordion.mdx",
+                "text": "---\ntitle: Accordion\ndescription: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n---\n\nimport { BouncyAccordionPreview } from \"@/registry/new-york/accordion-demo\";\n\n<ComponentPreview name=\"accordion\">\n  <BouncyAccordionPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n  __npm__=\"npx shadcn@latest add @prsui/accordion\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n  __yarn__=\"yarn shadcn@latest add @prsui/accordion\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\nimport { Accordion, type AccordionItem } from \"@/components/ui/accordion\";\n\nconst items: AccordionItem[] = [\n  {\n    id: \"item-1\",\n    title: \"First question\",\n    description: \"Answer to the first question.\",\n  },\n  {\n    id: \"item-2\",\n    title: \"Second question\",\n    description: \"Answer to the second question.\",\n  },\n];\n\nexport function MyComponent() {\n  return <Accordion items={items} defaultValue=\"item-1\" />;\n}\n```\n\n## Props\n\n| Prop            | Type                              | Default | Description                                           |\n| --------------- | --------------------------------- | ------- | ----------------------------------------------------- |\n| `items`         | `AccordionItem[]`                 | -       | Array of accordion items                              |\n| `value`         | `string \\| null`                  | -       | Controlled currently open item id                     |\n| `defaultValue`  | `string \\| null`                  | `null`  | Initially open item id                                |\n| `onValueChange` | `(value: string \\| null) => void` | -       | Callback fired when the open item changes             |\n| `collapsible`   | `boolean`                         | `true`  | When false, an open item cannot be closed by clicking |\n| `className`     | `string`                          | -       | Classes applied to the root wrapper                   |\n| `classNames`    | `AccordionClassNames`             | -       | Override classes for individual sub-elements          |\n\n### AccordionItem\n\n| Field         | Type        | Description                              |\n| ------------- | ----------- | ---------------------------------------- |\n| `id`          | `string`    | Unique identifier for the item           |\n| `title`       | `ReactNode` | Content shown in the trigger row         |\n| `description` | `ReactNode` | Content revealed when the item is open   |\n| `icon`        | `ReactNode` | Optional icon displayed before the title |\n| `disabled`    | `boolean`   | Disables the item                        |\n\n### AccordionClassNames\n\n| Key           | Description                  |\n| ------------- | ---------------------------- |\n| `root`        | Wrapper around all items     |\n| `item`        | Each accordion row container |\n| `trigger`     | The clickable button row     |\n| `icon`        | The icon wrapper span        |\n| `title`       | The title text span          |\n| `chevron`     | The chevron rotation wrapper |\n| `content`     | The animated content wrapper |\n| `description` | The description text div     |",
+                "lineStart": 1,
+                "lineEnd": 90,
+                "totalLines": 90,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/accordion.mdx",
+            "time": {
+              "start": 1784646840301,
+              "end": 1784646840314
+            }
+          },
+          "id": "prt_f853daea50018T3cLaoj8vjxcq",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_4aad80b43fb14c15966ab339",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n4: \n5: import { Accordion } from \"./accordion\";\n6: \n7: const items = [\n8:   {\n9:     description:\n10:       \"This is a demo platform used to showcase features and test UI components during development.\",\n11:     icon: <LayoutGrid className=\"h-4 w-4\" />,\n12:     id: \"platform\",\n13:     title: \"What is this platform?\",\n14:   },\n15:   {\n16:     description:\n17:       \"Yes. You can switch between light and dark themes from the settings menu.\",\n18:     icon: <SunMoon className=\"h-4 w-4\" />,\n19:     id: \"mode\",\n20:     title: \"Is there a dark mode?\",\n21:   },\n22:   {\n23:     description:\n24:       \"The latest versions of Chrome, Firefox, Safari, and Edge are officially supported.\",\n25:     icon: <Info className=\"h-4 w-4\" />,\n26:     id: \"support\",\n27:     title: \"What browsers are supported?\",\n28:   },\n29:   {\n30:     description:\n31:       \"This is a demo environment, so some sections intentionally use sample text and mock data.\",\n32:     icon: <Space className=\"h-4 w-4\" />,\n33:     id: \"placeholder\",\n34:     title: \"Why am I seeing placeholder content?\",\n35:   },\n36:   {\n37:     description:\n38:       \"Check the documentation or contact the project maintainers for additional information.\",\n39:     icon: <BookOpen className=\"h-4 w-4\" />,\n40:     id: \"learn\",\n41:     title: \"Where can I learn more?\",\n42:   },\n43:   {\n44:     description:\n45:       \"Use the feedback form or contact the development team with steps to reproduce the issue.\",\n46:     icon: <Bug className=\"h-4 w-4\" />,\n47:     id: \"bug\",\n48:     title: \"How do I report a bug?\",\n49:   },\n50: ];\n51: \n52: export const BouncyAccordionPreview = function BouncyAccordionPreview() {\n53:   return (\n54:     <div className=\"flex min-h-96 w-full items-center justify-center\">\n55:       <div className=\"w-full max-w-sm\">\n56:         <Accordion items={items} defaultValue=\"platform\" />\n57:       </div>\n58:     </div>\n59:   );\n60: };\n\n(End of file - total 60 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n\nimport { Accordion } from \"./accordion\";\n\nconst items = [\n  {\n    description:\n      \"This is a demo platform used to showcase features and test UI components during development.\",\n    icon: <LayoutGrid className=\"h-4 w-4\" />,\n    id: \"platform\",\n    title: \"What is this platform?\",\n  },\n  {\n    description:\n      \"Yes. You can switch between light and dark themes from the settings menu.\",\n    icon: <SunMoon className=\"h-4 w-4\" />,\n    id: \"mode\",\n    title: \"Is there a dark mode?\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx",
+                "text": "\"use client\";\n\nimport { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n\nimport { Accordion } from \"./accordion\";\n\nconst items = [\n  {\n    description:\n      \"This is a demo platform used to showcase features and test UI components during development.\",\n    icon: <LayoutGrid className=\"h-4 w-4\" />,\n    id: \"platform\",\n    title: \"What is this platform?\",\n  },\n  {\n    description:\n      \"Yes. You can switch between light and dark themes from the settings menu.\",\n    icon: <SunMoon className=\"h-4 w-4\" />,\n    id: \"mode\",\n    title: \"Is there a dark mode?\",\n  },\n  {\n    description:\n      \"The latest versions of Chrome, Firefox, Safari, and Edge are officially supported.\",\n    icon: <Info className=\"h-4 w-4\" />,\n    id: \"support\",\n    title: \"What browsers are supported?\",\n  },\n  {\n    description:\n      \"This is a demo environment, so some sections intentionally use sample text and mock data.\",\n    icon: <Space className=\"h-4 w-4\" />,\n    id: \"placeholder\",\n    title: \"Why am I seeing placeholder content?\",\n  },\n  {\n    description:\n      \"Check the documentation or contact the project maintainers for additional information.\",\n    icon: <BookOpen className=\"h-4 w-4\" />,\n    id: \"learn\",\n    title: \"Where can I learn more?\",\n  },\n  {\n    description:\n      \"Use the feedback form or contact the development team with steps to reproduce the issue.\",\n    icon: <Bug className=\"h-4 w-4\" />,\n    id: \"bug\",\n    title: \"How do I report a bug?\",\n  },\n];\n\nexport const BouncyAccordionPreview = function BouncyAccordionPreview() {\n  return (\n    <div className=\"flex min-h-96 w-full items-center justify-center\">\n      <div className=\"w-full max-w-sm\">\n        <Accordion items={items} defaultValue=\"platform\" />\n      </div>\n    </div>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 60,
+                "totalLines": 60,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/accordion-demo.tsx",
+            "time": {
+              "start": 1784646841301,
+              "end": 1784646841316
+            }
+          },
+          "id": "prt_f853db00c001GHGveZtjCyK3rc",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "type": "step-finish",
+          "tokens": {
+            "total": 17732,
+            "input": 2202,
+            "output": 270,
+            "reasoning": 92,
+            "cache": {
+              "write": 0,
+              "read": 15168
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853db4fd00101eRHm01575Td2",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853d8458001xRJAR8Ij2aM7ye"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 21395,
+          "input": 3692,
+          "output": 263,
+          "reasoning": 96,
+          "cache": {
+            "write": 0,
+            "read": 17344
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646841623,
+          "completed": 1784646854786
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853db517001FDgkHKArpEsRIz",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "type": "step-start",
+          "id": "prt_f853dd4a900189hx3RyYfT4VVd",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853db517001FDgkHKArpEsRIz"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have all the context I need. Let me also check the `lib/utils.ts` to understand what `cn` is, and check the component's dependencies more carefully.\n\nThe editable-chip.tsx uses:\n- `motion/react` (motion)\n- `react-icons/bi` (react-icons)\n- `lucide-react` (lucide-react)\n- `@/lib/utils` (cn - already available)\n\nNow let me create all the files.",
+          "time": {
+            "start": 1784646849708,
+            "end": 1784646851191
+          },
+          "id": "prt_f853dd4ac001OeAITysYby0zq3",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853db517001FDgkHKArpEsRIz"
+        },
+        {
+          "type": "text",
+          "text": "Now I have the full picture. Let me create all the files.",
+          "time": {
+            "start": 1784646851194,
+            "end": 1784646854690
+          },
+          "id": "prt_f853dda7a001PYIRTAy5yfZU2r",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853db517001FDgkHKArpEsRIz"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_32db1d10fe9045cd91bb0a60",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create editable-chip-demo.tsx\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create editable-chip.mdx docs page\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to registry.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to content/docs/components/meta.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "5 todos",
+            "time": {
+              "start": 1784646853156,
+              "end": 1784646853159
+            }
+          },
+          "id": "prt_f853ddb9f001hb0anEgzoPSxV7",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853db517001FDgkHKArpEsRIz"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_292a84666c5f4bbb86f82f45",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/editable-chip-demo.tsx",
+              "content": "\"use client\";\n\nimport { EditableChip } from \"./editable-chip\";\n\nexport const EditableChipPreview = () => (\n  <div className=\"flex min-h-96 w-full items-center justify-center\">\n    <EditableChip defaultLabel=\"Watchlist\" />\n  </div>\n);\n"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/registry/new-york/editable-chip-demo.tsx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "registry/new-york/editable-chip-demo.tsx",
+            "time": {
+              "start": 1784646854595,
+              "end": 1784646854606
+            }
+          },
+          "id": "prt_f853de2b5001PUEYuU4U1EFJA3",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853db517001FDgkHKArpEsRIz"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4ea29344772ce6c1b82ae94550a8d19ed85ec0c1",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21395,
+            "input": 3692,
+            "output": 263,
+            "reasoning": 96,
+            "cache": {
+              "write": 0,
+              "read": 17344
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853de8690015hoEln7RbAijPe",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853db517001FDgkHKArpEsRIz"
+        },
+        {
+          "type": "patch",
+          "hash": "3d3fdcd9668ea620de10053808520e541884e6fa",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/editable-chip-demo.tsx"
+          ],
+          "id": "prt_f853de87f001VKuHsTDVPaXYRQ",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853db517001FDgkHKArpEsRIz"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 22292,
+          "input": 608,
+          "output": 677,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 20992
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646854792,
+          "completed": 1784646877822
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853de8880010p4lRSm7HogmPq",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "4ea29344772ce6c1b82ae94550a8d19ed85ec0c1",
+          "type": "step-start",
+          "id": "prt_f853e1633001P351S6eBIHAW40",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853de8880010p4lRSm7HogmPq"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me create the docs page and update registry.json and meta.json.",
+          "time": {
+            "start": 1784646866485,
+            "end": 1784646866893
+          },
+          "id": "prt_f853e1635001aqTw9uM38HMxQD",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853de8880010p4lRSm7HogmPq"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_2e1a243f8d0944609fecb91e",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create editable-chip-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create editable-chip.mdx docs page\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to registry.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to content/docs/components/meta.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "4 todos",
+            "time": {
+              "start": 1784646868576,
+              "end": 1784646868578
+            }
+          },
+          "id": "prt_f853e17d0001JXqNsUYFvAR3K4",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853de8880010p4lRSm7HogmPq"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_c6466666a5a14428b2441c7d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "content": "---\ntitle: Editable Chip\ndescription: An inline-editable chip component with animated transitions between display and edit modes.\n---\n\nimport { EditableChipPreview } from \"@/registry/new-york/editable-chip-demo\";\n\n<ComponentPreview name=\"editable-chip\">\n  <EditableChipPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/editable-chip\"\n  __npm__=\"npx shadcn@latest add @prsui/editable-chip\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/editable-chip\"\n  __yarn__=\"yarn shadcn@latest add @prsui/editable-chip\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\nimport { EditableChip } from \"@/components/ui/editable-chip\";\n\nexport function MyComponent() {\n  return (\n    <EditableChip\n      defaultLabel=\"Watchlist\"\n      onChange={(value) => console.log(value)}\n    />\n  );\n}\n```\n\n## Props\n\n| Prop            | Type                   | Default       | Description                                      |\n| --------------- | ---------------------- | ------------- | ------------------------------------------------ |\n| `defaultLabel`  | `string`               | `\"Watchlist\"` | Initial text displayed in the chip               |\n| `showThemeToggle` | `boolean`            | -             | Whether to show a theme toggle (reserved)        |\n| `onChange`       | `(value: string) => void` | -          | Callback fired when the label is saved           |\n",
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/editable-chip.mdx"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/content/docs/components/editable-chip.mdx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "content/docs/components/editable-chip.mdx",
+            "time": {
+              "start": 1784646877677,
+              "end": 1784646877684
+            }
+          },
+          "id": "prt_f853e1eb0001Epdb93ECfO2WjB",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853de8880010p4lRSm7HogmPq"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "de2f03869488eecfcabaff5adaf43a2f0e721d22",
+          "type": "step-finish",
+          "tokens": {
+            "total": 22292,
+            "input": 608,
+            "output": 677,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 20992
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853e425b001uBvyIr5Ruf0YWM",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853de8880010p4lRSm7HogmPq"
+        },
+        {
+          "type": "patch",
+          "hash": "4ea29344772ce6c1b82ae94550a8d19ed85ec0c1",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/components/editable-chip.mdx"
+          ],
+          "id": "prt_f853e427b001pl9zPc5CX0Zabf",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853de8880010p4lRSm7HogmPq"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 23058,
+          "input": 929,
+          "output": 551,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 21568
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646877828,
+          "completed": 1784646892285
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853e4284001z3dBLRTJ8O9ivi",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "de2f03869488eecfcabaff5adaf43a2f0e721d22",
+          "type": "step-start",
+          "id": "prt_f853e5bfd001NbKEPmLh1ftw39",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e4284001z3dBLRTJ8O9ivi"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me update registry.json and meta.json.",
+          "time": {
+            "start": 1784646884351,
+            "end": 1784646884563
+          },
+          "id": "prt_f853e5bff001ZkMtQ4BCsIfzEW",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e4284001z3dBLRTJ8O9ivi"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_9987a810bc994670899a4aef",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create editable-chip-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create editable-chip.mdx docs page\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to registry.json\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to content/docs/components/meta.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "3 todos",
+            "time": {
+              "start": 1784646886452,
+              "end": 1784646886456
+            }
+          },
+          "id": "prt_f853e5cd4001QTTBNz3rSpUWqG",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e4284001z3dBLRTJ8O9ivi"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_4686ad00a1024401be8c2359",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "oldString": "    {\n      \"name\": \"link\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Link\",\n      \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/link.tsx\"\n        }\n      ]\n    }\n  ]\n}",
+              "newString": "    {\n      \"name\": \"link\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Link\",\n      \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/link.tsx\"\n        }\n      ]\n    },\n    {\n      \"name\": \"editable-chip\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Editable Chip\",\n      \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/editable-chip.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/ui/editable-chip.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n    }\n  ]\n}"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -98,7 +98,21 @@\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/link.tsx\"\n         }\n       ]\n+    },\n+    {\n+      \"name\": \"editable-chip\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Editable Chip\",\n+      \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/editable-chip.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/ui/editable-chip.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n     }\n   ]\n }\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry.json",
+                "patch": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -98,7 +98,21 @@\n           \"type\": \"registry:ui\",\n           \"target\": \"components/ui/link.tsx\"\n         }\n       ]\n+    },\n+    {\n+      \"name\": \"editable-chip\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Editable Chip\",\n+      \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/editable-chip.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/ui/editable-chip.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n     }\n   ]\n }\n",
+                "additions": 14,
+                "deletions": 0
+              },
+              "truncated": false
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784646891131,
+              "end": 1784646891136
+            }
+          },
+          "id": "prt_f853e647b001qRYqxyNfp0BxjH",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e4284001z3dBLRTJ8O9ivi"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_8a1a80133d434c559e121597",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/meta.json",
+              "oldString": "    \"link\"\n  ]",
+              "newString": "    \"link\",\n    \"editable-chip\"\n  ]"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/content/docs/components/meta.json\n===================================================================\n--- /home/himmel/personal/prsui/content/docs/components/meta.json\n+++ /home/himmel/personal/prsui/content/docs/components/meta.json\n@@ -6,7 +6,8 @@\n     \"split-action\",\n     \"tooltip\",\n     \"accordion\",\n     \"typewriter\",\n-    \"link\"\n+    \"link\",\n+    \"editable-chip\"\n   ]\n }\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/content/docs/components/meta.json",
+                "patch": "Index: /home/himmel/personal/prsui/content/docs/components/meta.json\n===================================================================\n--- /home/himmel/personal/prsui/content/docs/components/meta.json\n+++ /home/himmel/personal/prsui/content/docs/components/meta.json\n@@ -6,7 +6,8 @@\n     \"split-action\",\n     \"tooltip\",\n     \"accordion\",\n     \"typewriter\",\n-    \"link\"\n+    \"link\",\n+    \"editable-chip\"\n   ]\n }\n",
+                "additions": 2,
+                "deletions": 1
+              },
+              "truncated": false
+            },
+            "title": "content/docs/components/meta.json",
+            "time": {
+              "start": 1784646892169,
+              "end": 1784646892174
+            }
+          },
+          "id": "prt_f853e76ae001nFeT00lCXNjyla",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e4284001z3dBLRTJ8O9ivi"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "2b4c1b4aa464d7fcc302625d3e560a18c51547fd",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23058,
+            "input": 929,
+            "output": 551,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 21568
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853e7ae5001lr6cV6mDsk4JD1",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e4284001z3dBLRTJ8O9ivi"
+        },
+        {
+          "type": "patch",
+          "hash": "de2f03869488eecfcabaff5adaf43a2f0e721d22",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/components/meta.json",
+            "/home/himmel/personal/prsui/registry.json"
+          ],
+          "id": "prt_f853e7afb001PPthYYVCoIqRhH",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e4284001z3dBLRTJ8O9ivi"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 23489,
+          "input": 821,
+          "output": 195,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 22464
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646892289,
+          "completed": 1784646903081
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853e7b010013oia9iSRxj0TAi",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "2b4c1b4aa464d7fcc302625d3e560a18c51547fd",
+          "type": "step-start",
+          "id": "prt_f853e82e80015ufEnjRQcX44NJ",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e7b010013oia9iSRxj0TAi"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me run `pnpm fix`.",
+          "time": {
+            "start": 1784646894314,
+            "end": 1784646894535
+          },
+          "id": "prt_f853e82ea001Kqen0IOk0jcCyg",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e7b010013oia9iSRxj0TAi"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_bb2fa4728e1d4d1fa62f42b2",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "in_progress"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create editable-chip-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create editable-chip.mdx docs page\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to registry.json\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to content/docs/components/meta.json\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "in_progress",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "1 todos",
+            "time": {
+              "start": 1784646896566,
+              "end": 1784646896568
+            }
+          },
+          "id": "prt_f853e83c9001F2wLXUrFBPtb5I",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e7b010013oia9iSRxj0TAi"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_a708ba3b53e54d6fb2577ac9",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "pnpm fix",
+              "workdir": "/home/himmel/personal/prsui",
+              "timeout": 120000
+            },
+            "output": "✓ Lockfile passes supply-chain policies (verified 5d ago)\nLockfile is up to date, resolution step is skipped\nPackages: -1\n-\n\ndependencies:\n- react-icons 5.7.0\n\n. postinstall$ fumadocs-mdx\n. postinstall: [MDX] generated files in 13.23168499999997ms\n. postinstall: Done\n. prepare$ lefthook install\n. prepare: sync hooks: ✔️ (pre-commit)\n. prepare: Done\nDone in 2.1s using pnpm v11.15.1\n$ ultracite fix\n(node:46002) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784646901508 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1011ms on 183 files using 8 threads.\n(node:46108) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784646902657 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n  x eslint-plugin-import(consistent-type-specifier-style): Prefer using a top-level type-only import instead of inline type specifiers.\n    ,-[registry/new-york/editable-chip.tsx:10:3]\n  9 |   type FC,\n 10 |   type ChangeEvent,\n    :   ^^^^^^^^^^^^^^^^\n 11 |   type KeyboardEvent,\n    `----\n  help: Replace inline type specifiers with a top‐level import type statement.\n\n  x eslint-plugin-import(consistent-type-specifier-style): Prefer using a top-level type-only import instead of inline type specifiers.\n    ,-[registry/new-york/editable-chip.tsx:11:3]\n 10 |   type ChangeEvent,\n 11 |   type KeyboardEvent,\n    :   ^^^^^^^^^^^^^^^^^^\n 12 |   type MouseEvent,\n    `----\n  help: Replace inline type specifiers with a top‐level import type statement.\n\n  x eslint-plugin-import(consistent-type-specifier-style): Prefer using a top-level type-only import instead of inline type specifiers.\n    ,-[registry/new-york/editable-chip.tsx:12:3]\n 11 |   type KeyboardEvent,\n 12 |   type MouseEvent,\n    :   ^^^^^^^^^^^^^^^\n 13 | } from \"react\";\n    `----\n  help: Replace inline type specifiers with a top‐level import type statement.\n\nFound 0 warnings and 3 errors.\nFinished in 256ms on 156 files with 453 rules using 8 threads.\n[ELIFECYCLE] Command failed with exit code 1.\n",
+            "metadata": {
+              "output": "✓ Lockfile passes supply-chain policies (verified 5d ago)\nLockfile is up to date, resolution step is skipped\nPackages: -1\n-\n\ndependencies:\n- react-icons 5.7.0\n\n. postinstall$ fumadocs-mdx\n. postinstall: [MDX] generated files in 13.23168499999997ms\n. postinstall: Done\n. prepare$ lefthook install\n. prepare: sync hooks: ✔️ (pre-commit)\n. prepare: Done\nDone in 2.1s using pnpm v11.15.1\n$ ultracite fix\n(node:46002) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784646901508 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1011ms on 183 files using 8 threads.\n(node:46108) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784646902657 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n  x eslint-plugin-import(consistent-type-specifier-style): Prefer using a top-level type-only import instead of inline type specifiers.\n    ,-[registry/new-york/editable-chip.tsx:10:3]\n  9 |   type FC,\n 10 |   type ChangeEvent,\n    :   ^^^^^^^^^^^^^^^^\n 11 |   type KeyboardEvent,\n    `----\n  help: Replace inline type specifiers with a top‐level import type statement.\n\n  x eslint-plugin-import(consistent-type-specifier-style): Prefer using a top-level type-only import instead of inline type specifiers.\n    ,-[registry/new-york/editable-chip.tsx:11:3]\n 10 |   type ChangeEvent,\n 11 |   type KeyboardEvent,\n    :   ^^^^^^^^^^^^^^^^^^\n 12 |   type MouseEvent,\n    `----\n  help: Replace inline type specifiers with a top‐level import type statement.\n\n  x eslint-plugin-import(consistent-type-specifier-style): Prefer using a top-level type-only import instead of inline type specifiers.\n    ,-[registry/new-york/editable-chip.tsx:12:3]\n 11 |   type KeyboardEvent,\n 12 |   type MouseEvent,\n    :   ^^^^^^^^^^^^^^^\n 13 | } from \"react\";\n    `----\n  help: Replace inline type specifiers with a top‐level import type statement.\n\nFound 0 warnings and 3 errors.\nFinished in 256ms on 156 files with 453 rules using 8 threads.\n[ELIFECYCLE] Command failed with exit code 1.\n",
+              "exit": 1,
+              "truncated": false
+            },
+            "title": "pnpm fix",
+            "time": {
+              "start": 1784646902953,
+              "end": 1784646902992
+            }
+          },
+          "id": "prt_f853e8c8a0017ELaUWFKG5pm1B",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e7b010013oia9iSRxj0TAi"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e2baeef52bf72e7370c31ffc033799cf2de543b6",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23489,
+            "input": 821,
+            "output": 195,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 22464
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853ea503001T1kk2lERi4xofY",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e7b010013oia9iSRxj0TAi"
+        },
+        {
+          "type": "patch",
+          "hash": "2b4c1b4aa464d7fcc302625d3e560a18c51547fd",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/components/editable-chip.mdx",
+            "/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx"
+          ],
+          "id": "prt_f853ea526001HNWx9oi20aOvD3",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853e7b010013oia9iSRxj0TAi"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 24633,
+          "input": 1220,
+          "output": 147,
+          "reasoning": 34,
+          "cache": {
+            "write": 0,
+            "read": 23232
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646903084,
+          "completed": 1784646913405
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853ea52c001HdubhtTZv2A8wT",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "e2baeef52bf72e7370c31ffc033799cf2de543b6",
+          "type": "step-start",
+          "id": "prt_f853ebfaf001L7QB46SmM3iNJ0",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ea52c001HdubhtTZv2A8wT"
+        },
+        {
+          "type": "reasoning",
+          "text": "The linter found 3 errors in the editable-chip.tsx file about inline type specifiers. I need to fix these by using top-level type imports instead.",
+          "time": {
+            "start": 1784646909873,
+            "end": 1784646910565
+          },
+          "id": "prt_f853ebfb1001vteqjJpDTGE12d",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ea52c001HdubhtTZv2A8wT"
+        },
+        {
+          "type": "text",
+          "text": "Lint errors in `editable-chip.tsx` — fixing the type import style.",
+          "time": {
+            "start": 1784646910568,
+            "end": 1784646913364
+          },
+          "id": "prt_f853ec268001DHrUYDMVSx22pb",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ea52c001HdubhtTZv2A8wT"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_03aa32d08cc54635ba87439e",
+          "state": {
+            "status": "error",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx",
+              "oldString": "import {\n  useState,\n  useRef,\n  useEffect,\n  type FC,\n  type ChangeEvent,\n  type KeyboardEvent,\n  type MouseEvent,\n} from 'react';",
+              "newString": "import {\n  useState,\n  useRef,\n  useEffect,\n} from 'react';\nimport type {\n  FC,\n  ChangeEvent,\n  KeyboardEvent,\n  MouseEvent,\n} from 'react';"
+            },
+            "error": "Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.",
+            "time": {
+              "start": 1784646913297,
+              "end": 1784646913303
+            }
+          },
+          "id": "prt_f853ec558001xQxMqcVcL5PIlu",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ea52c001HdubhtTZv2A8wT"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e2baeef52bf72e7370c31ffc033799cf2de543b6",
+          "type": "step-finish",
+          "tokens": {
+            "total": 24633,
+            "input": 1220,
+            "output": 147,
+            "reasoning": 34,
+            "cache": {
+              "write": 0,
+              "read": 23232
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853ecd60001YmQ1Q1KGIsiPZQ",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ea52c001HdubhtTZv2A8wT"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 24750,
+          "input": 234,
+          "output": 50,
+          "reasoning": 18,
+          "cache": {
+            "write": 0,
+            "read": 24448
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646913409,
+          "completed": 1784646919373
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853ecd81001d1hgoivhN6gNJW",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "e2baeef52bf72e7370c31ffc033799cf2de543b6",
+          "type": "step-start",
+          "id": "prt_f853ee0e20010TR4i34K1lpvAp",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ecd81001d1hgoivhN6gNJW"
+        },
+        {
+          "type": "reasoning",
+          "text": "The whitespace might be different. Let me read the file again to see the exact content.",
+          "time": {
+            "start": 1784646918377,
+            "end": 1784646918710
+          },
+          "id": "prt_f853ee0e9001JQr1JPiBjmjVUN",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ecd81001d1hgoivhN6gNJW"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_24bdd51fbe0b469e864f08d3",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx",
+              "limit": 15
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { Check } from \"lucide-react\";\n4: import { motion, AnimatePresence } from \"motion/react\";\n5: import { useState, useRef, useEffect } from 'react';\n6: import type { FC, ChangeEvent, KeyboardEvent, MouseEvent } from 'react';\n7: import { BiSolidPencil } from \"react-icons/bi\";\n8: \n9: import { cn } from \"@/lib/utils\";\n10: \n11: interface EditableChipProps {\n12:   defaultLabel?: string;\n13:   showThemeToggle?: boolean;\n14:   onChange?: (value: string) => void;\n15: }\n\n(Showing lines 1-15 of 112. Use offset=16 to continue.)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { Check } from \"lucide-react\";\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { useState, useRef, useEffect } from 'react';\nimport type { FC, ChangeEvent, KeyboardEvent, MouseEvent } from 'react';\nimport { BiSolidPencil } from \"react-icons/bi\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface EditableChipProps {\n  defaultLabel?: string;\n  showThemeToggle?: boolean;\n  onChange?: (value: string) => void;\n}",
+              "truncated": true,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx",
+                "text": "\"use client\";\n\nimport { Check } from \"lucide-react\";\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { useState, useRef, useEffect } from 'react';\nimport type { FC, ChangeEvent, KeyboardEvent, MouseEvent } from 'react';\nimport { BiSolidPencil } from \"react-icons/bi\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface EditableChipProps {\n  defaultLabel?: string;\n  showThemeToggle?: boolean;\n  onChange?: (value: string) => void;\n}",
+                "lineStart": 1,
+                "lineEnd": 15,
+                "totalLines": 112,
+                "truncated": true
+              }
+            },
+            "title": "registry/new-york/editable-chip.tsx",
+            "time": {
+              "start": 1784646919210,
+              "end": 1784646919217
+            }
+          },
+          "id": "prt_f853ee2380010LQSARvNiyk57d",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ecd81001d1hgoivhN6gNJW"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e2baeef52bf72e7370c31ffc033799cf2de543b6",
+          "type": "step-finish",
+          "tokens": {
+            "total": 24750,
+            "input": 234,
+            "output": 50,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 24448
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853ee4ae001oOnQfGkEyZHhZV",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ecd81001d1hgoivhN6gNJW"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 25185,
+          "input": 345,
+          "output": 88,
+          "reasoning": 112,
+          "cache": {
+            "write": 0,
+            "read": 24640
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646919378,
+          "completed": 1784646935109
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853ee4d2001gYC4ggCum4MSPM",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "e2baeef52bf72e7370c31ffc033799cf2de543b6",
+          "type": "step-start",
+          "id": "prt_f853f069c001Nz5RAcCWu2vaKC",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ee4d2001gYC4ggCum4MSPM"
+        },
+        {
+          "type": "reasoning",
+          "text": "Oh, the file has already been formatted by `pnpm fix`. The linter errors were from before the fix ran. Let me check if `pnpm fix` actually fixed these automatically. Looking at the output, the fix command ran `ultracite fix` which is a formatter/linter. Let me re-read the file to see its current state.\n\nActually wait - the file now looks clean. The linter reported errors but the `fix` command might have auto-fixed them. Let me re-run `pnpm fix` to verify.",
+          "time": {
+            "start": 1784646928030,
+            "end": 1784646931603
+          },
+          "id": "prt_f853f069e001R1EcF14UPCdyt8",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ee4d2001gYC4ggCum4MSPM"
+        },
+        {
+          "type": "text",
+          "text": "The file was already auto-fixed by the formatter. Let me verify it passes now.\n\n",
+          "time": {
+            "start": 1784646931605,
+            "end": 1784646933005
+          },
+          "id": "prt_f853f1495001wetUBTiayNACi3",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ee4d2001gYC4ggCum4MSPM"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_6bcfc8d9930e4e8387185727",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "pnpm fix",
+              "timeout": 120000,
+              "workdir": "/home/himmel/personal/prsui"
+            },
+            "output": "$ ultracite fix\n(node:46273) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784646933639 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1062ms on 183 files using 8 threads.\n(node:46367) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784646934821 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFound 0 warnings and 0 errors.\nFinished in 175ms on 156 files with 453 rules using 8 threads.\n",
+            "metadata": {
+              "output": "$ ultracite fix\n(node:46273) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784646933639 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1062ms on 183 files using 8 threads.\n(node:46367) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784646934821 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFound 0 warnings and 0 errors.\nFinished in 175ms on 156 files with 453 rules using 8 threads.\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "pnpm fix",
+            "time": {
+              "start": 1784646934992,
+              "end": 1784646935037
+            }
+          },
+          "id": "prt_f853f16cf001SKRMFvopvtEvxq",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ee4d2001gYC4ggCum4MSPM"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "1a8501c846fe3b71fb8a3a3cafa631cf4a605420",
+          "type": "step-finish",
+          "tokens": {
+            "total": 25185,
+            "input": 345,
+            "output": 88,
+            "reasoning": 112,
+            "cache": {
+              "write": 0,
+              "read": 24640
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853f2226001xvIY9M4F9ofw1b",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ee4d2001gYC4ggCum4MSPM"
+        },
+        {
+          "type": "patch",
+          "hash": "e2baeef52bf72e7370c31ffc033799cf2de543b6",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx"
+          ],
+          "id": "prt_f853f2242001xlN3FNiPx34iTo",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853ee4d2001gYC4ggCum4MSPM"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 25653,
+          "input": 542,
+          "output": 141,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 24960
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646935114,
+          "completed": 1784646949092
+        },
+        "finish": "tool-calls",
+        "id": "msg_f853f224a0015KP5RWxn3AzjdS",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "1a8501c846fe3b71fb8a3a3cafa631cf4a605420",
+          "type": "step-start",
+          "id": "prt_f853f510e001FSIoKKyf8o1CQi",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f224a0015KP5RWxn3AzjdS"
+        },
+        {
+          "type": "reasoning",
+          "text": "All clean. Let me update the todo list.",
+          "time": {
+            "start": 1784646947089,
+            "end": 1784646947291
+          },
+          "id": "prt_f853f5111001JEg6LKHLdsrba3",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f224a0015KP5RWxn3AzjdS"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_2a3ede73a0024153b07ef05c",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "completed"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create editable-chip-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create editable-chip.mdx docs page\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to registry.json\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add entry to content/docs/components/meta.json\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create editable-chip-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create editable-chip.mdx docs page",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to registry.json",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add entry to content/docs/components/meta.json",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "completed",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "0 todos",
+            "time": {
+              "start": 1784646948961,
+              "end": 1784646948965
+            }
+          },
+          "id": "prt_f853f51de001oARc4uoOJ8hhho",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f224a0015KP5RWxn3AzjdS"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "1a8501c846fe3b71fb8a3a3cafa631cf4a605420",
+          "type": "step-finish",
+          "tokens": {
+            "total": 25653,
+            "input": 542,
+            "output": 141,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 24960
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853f58ce001U7773Pvxkn4wTI",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f224a0015KP5RWxn3AzjdS"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f853bef8f001KLVMVja9lN7OYF",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 26120,
+          "input": 361,
+          "output": 277,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 25472
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784646949097,
+          "completed": 1784646956177
+        },
+        "finish": "stop",
+        "id": "msg_f853f58e90016fb0Q0DJkVF9o5",
+        "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA"
+      },
+      "parts": [
+        {
+          "snapshot": "1a8501c846fe3b71fb8a3a3cafa631cf4a605420",
+          "type": "step-start",
+          "id": "prt_f853f6608001t1X59QD0u4kvyV",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f58e90016fb0Q0DJkVF9o5"
+        },
+        {
+          "type": "reasoning",
+          "text": "All done. Let me summarize what was done.",
+          "time": {
+            "start": 1784646952458,
+            "end": 1784646952475
+          },
+          "id": "prt_f853f660a001ry1k4yddIJa4D2",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f58e90016fb0Q0DJkVF9o5"
+        },
+        {
+          "type": "text",
+          "text": "All done. Here's what was created/updated:\n\n- **`registry/new-york/editable-chip-demo.tsx`** — demo component\n- **`content/docs/components/editable-chip.mdx`** — docs page with installation, usage, and props\n- **`registry.json`** — added `editable-chip` entry with dependencies (`motion`, `react-icons`, `lucide-react`)\n- **`content/docs/components/meta.json`** — added `\"editable-chip\"` to the pages list\n- `pnpm fix` ran clean — 0 errors, 0 warnings\n\n\n\n\n",
+          "time": {
+            "start": 1784646952477,
+            "end": 1784646956139
+          },
+          "id": "prt_f853f661d001CZHm27mGQUFUW4",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f58e90016fb0Q0DJkVF9o5"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "1a8501c846fe3b71fb8a3a3cafa631cf4a605420",
+          "type": "step-finish",
+          "tokens": {
+            "total": 26120,
+            "input": 361,
+            "output": 277,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 25472
+            }
+          },
+          "cost": 0,
+          "id": "prt_f853f7477001zelA5EG7asF6xF",
+          "sessionID": "ses_07ac41142ffeddbVHcJxVQEWuA",
+          "messageID": "msg_f853f58e90016fb0Q0DJkVF9o5"
+        }
+      ]
+    }
+  ]
+}
