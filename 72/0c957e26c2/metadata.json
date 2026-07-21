@@ -3,7 +3,7 @@
   "checkpoint_id": "720c957e26c2",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 2,
+  "checkpoints_count": 8,
   "files_touched": [
     "content/docs/components/inline-toast.mdx",
     "content/docs/components/meta.json",
@@ -18,13 +18,20 @@
       "compact_transcript": "/72/0c957e26c2/0/transcript.jsonl",
       "content_hash": "/72/0c957e26c2/0/content_hash.txt",
       "prompt": "/72/0c957e26c2/0/prompt.txt"
+    },
+    {
+      "metadata": "/72/0c957e26c2/1/metadata.json",
+      "transcript": "/72/0c957e26c2/1/full.jsonl",
+      "compact_transcript": "/72/0c957e26c2/1/transcript.jsonl",
+      "content_hash": "/72/0c957e26c2/1/content_hash.txt",
+      "prompt": "/72/0c957e26c2/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 18496,
+    "input_tokens": 53853,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 288640,
-    "output_tokens": 3913,
-    "api_call_count": 14
+    "cache_read_tokens": 1811712,
+    "output_tokens": 12054,
+    "api_call_count": 50
   }
 }
