@@ -3,7 +3,7 @@
   "checkpoint_id": "20295091c429",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 45,
+  "checkpoints_count": 55,
   "files_touched": [
     "content/docs/components/editable-chip.mdx",
     "content/docs/components/meta.json",
@@ -56,13 +56,20 @@
       "compact_transcript": "/20/295091c429/5/transcript.jsonl",
       "content_hash": "/20/295091c429/5/content_hash.txt",
       "prompt": "/20/295091c429/5/prompt.txt"
+    },
+    {
+      "metadata": "/20/295091c429/6/metadata.json",
+      "transcript": "/20/295091c429/6/full.jsonl",
+      "compact_transcript": "/20/295091c429/6/transcript.jsonl",
+      "content_hash": "/20/295091c429/6/content_hash.txt",
+      "prompt": "/20/295091c429/6/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 111016,
+    "input_tokens": 148917,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 1945024,
-    "output_tokens": 25995,
-    "api_call_count": 138
+    "cache_read_tokens": 3350016,
+    "output_tokens": 35813,
+    "api_call_count": 188
   }
 }

@@ -1,0 +1,158 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "20295091c429",
+  "session_id": "ses_07c90bd03ffeodv5p1vE4Ig4OK",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-21T15:21:18.626398326Z",
+  "branch": "main",
+  "checkpoints_count": 10,
+  "save_step_count": 10,
+  "files_touched": [
+    "content/docs/components/meta.json",
+    "public/r/registry.json",
+    "registry.json"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "ddd672495eb5",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 37901,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1404992,
+    "output_tokens": 9818,
+    "api_call_count": 50
+  },
+  "session_metrics": {
+    "turn_count": 10
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-21T15:21:18.602924094Z",
+    "agent_lines": 17,
+    "agent_removed": 1,
+    "human_added": 169,
+    "human_modified": 6,
+    "human_removed": 0,
+    "total_committed": 186,
+    "total_lines_changed": 193,
+    "agent_percentage": 9.32642487046632,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 41,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "registry/new-york/progresive-blur.tsx": 41
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 28,
+      "user_lines_removed": 0,
+      "agent_lines_added": 130,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "public/r/progresive-blur.json": 15,
+        "public/r/registry.json": 13
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 17,
+      "user_lines_removed": 2,
+      "agent_lines_added": 151,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "public/r/progresive-blur.json": 15,
+        "registry/new-york/progresive-blur-demo.tsx": 2
+      },
+      "user_removed_per_file": {
+        "registry/new-york/progresive-blur-demo.tsx": 2
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 17,
+      "user_lines_removed": 2,
+      "agent_lines_added": 149,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "public/r/progresive-blur.json": 15,
+        "registry/new-york/progresive-blur-demo.tsx": 2
+      },
+      "user_removed_per_file": {
+        "registry/new-york/progresive-blur-demo.tsx": 2
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 15,
+      "user_lines_removed": 5,
+      "agent_lines_added": 170,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "public/r/progresive-blur.json": 15
+      },
+      "user_removed_per_file": {
+        "registry/new-york/progresive-blur-demo.tsx": 5
+      }
+    },
+    {
+      "checkpoint_number": 6,
+      "user_lines_added": 15,
+      "user_lines_removed": 0,
+      "agent_lines_added": 164,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "public/r/progresive-blur.json": 15
+      }
+    },
+    {
+      "checkpoint_number": 7,
+      "user_lines_added": 15,
+      "user_lines_removed": 0,
+      "agent_lines_added": 161,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "public/r/progresive-blur.json": 15
+      }
+    },
+    {
+      "checkpoint_number": 8,
+      "user_lines_added": 15,
+      "user_lines_removed": 0,
+      "agent_lines_added": 161,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "public/r/progresive-blur.json": 15
+      }
+    },
+    {
+      "checkpoint_number": 9,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 10,
+      "user_lines_added": 12,
+      "user_lines_removed": 8,
+      "agent_lines_added": 172,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "content/docs/components/progresive-blur.mdx": 7,
+        "registry/new-york/progresive-blur-demo.tsx": 2,
+        "registry/new-york/progresive-blur.tsx": 3
+      },
+      "user_removed_per_file": {
+        "content/docs/components/progresive-blur.mdx": 6,
+        "registry/new-york/progresive-blur-demo.tsx": 2
+      }
+    }
+  ]
+}

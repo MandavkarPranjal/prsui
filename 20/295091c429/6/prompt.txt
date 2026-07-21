@@ -1,0 +1,49 @@
+added new component @registry/new-york/progresive-blur.tsx update docs and demo for it and run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/progresive-blur.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/progresive-blur.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: type ProgressiveBlurProps = {
+4:   className?: string;
+5:   backgroundColor?: string;
+6:   position?: "top" | "bottom";
+7:   height?: string;
+8:   blurAmount?: string;
+9: };
+10: 
+11: const ProgressiveBlur = ({
+12:   className = "",
+13:   backgroundColor = "#f5f4f3",
+14:   position = "top",
+15:   height = "150px",
+16:   blurAmount = "4px",
+17: }: ProgressiveBlurProps) => {
+18:   const isTop = position === "top";
+19: 
+20:   return (
+21:     <div
+22:       className={`pointer-events-none absolute left-0 w-full select-none ${className}`}
+23:       style={{
+24:         [isTop ? "top" : "bottom"]: 0,
+25:         height,
+26:         background: isTop
+27:           ? `linear-gradient(to top, transparent, ${backgroundColor})`
+28:           : `linear-gradient(to bottom, transparent, ${backgroundColor})`,
+29:         maskImage: isTop
+30:           ? `linear-gradient(to bottom, ${backgroundColor} 50%, transparent)`
+31:           : `linear-gradient(to top, ${backgroundColor} 50%, transparent)`,
+32:         WebkitBackdropFilter: `blur(${blurAmount})`,
+33:         backdropFilter: `blur(${blurAmount})`,
+34:         WebkitUserSelect: "none",
+35:         userSelect: "none",
+36:       }}
+37:     />
+38:   );
+39: };
+40: 
+41: export { ProgressiveBlur };
+
+(End of file - total 41 lines)
+</content>
