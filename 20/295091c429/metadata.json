@@ -3,13 +3,16 @@
   "checkpoint_id": "20295091c429",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 34,
+  "checkpoints_count": 35,
   "files_touched": [
+    "content/docs/components/editable-chip.mdx",
     "content/docs/components/meta.json",
     "package.json",
     "pnpm-lock.yaml",
     "public/r/registry.json",
-    "registry.json"
+    "registry.json",
+    "registry/new-york/editable-chip-demo.tsx",
+    "registry/new-york/editable-chip.tsx"
   ],
   "sessions": [
     {
@@ -25,13 +28,20 @@
       "compact_transcript": "/20/295091c429/1/transcript.jsonl",
       "content_hash": "/20/295091c429/1/content_hash.txt",
       "prompt": "/20/295091c429/1/prompt.txt"
+    },
+    {
+      "metadata": "/20/295091c429/2/metadata.json",
+      "transcript": "/20/295091c429/2/full.jsonl",
+      "compact_transcript": "/20/295091c429/2/transcript.jsonl",
+      "content_hash": "/20/295091c429/2/content_hash.txt",
+      "prompt": "/20/295091c429/2/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 19126,
+    "input_tokens": 49588,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 373120,
-    "output_tokens": 5830,
-    "api_call_count": 62
+    "cache_read_tokens": 1124992,
+    "output_tokens": 15500,
+    "api_call_count": 93
   }
 }
