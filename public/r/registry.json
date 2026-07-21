@@ -113,6 +113,20 @@
         }
       ],
       "dependencies": ["motion", "react-icons", "lucide-react"]
+    },
+    {
+      "name": "inline-toast",
+      "type": "registry:ui",
+      "title": "Inline Toast",
+      "description": "An inline copy toast component with animated feedback when copying code to clipboard.",
+      "files": [
+        {
+          "path": "registry/new-york/inline-toast.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/inline-toast.tsx"
+        }
+      ],
+      "dependencies": ["motion", "react-icons"]
     }
   ]
 }

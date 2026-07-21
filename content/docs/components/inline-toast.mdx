@@ -1,0 +1,49 @@
+---
+title: Inline Toast
+description: An inline copy toast component with animated feedback when copying code to clipboard.
+---
+
+import { InlineToastPreview } from "@/registry/new-york/inline-toast-demo";
+
+<ComponentPreview name="inline-toast">
+  <InlineToastPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/inline-toast"
+  __npm__="npx shadcn@latest add @prsui/inline-toast"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/inline-toast"
+  __yarn__="yarn shadcn@latest add @prsui/inline-toast"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/inline-toast.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/inline-toast.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/inline-toast.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/inline-toast.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { InlineToast } from "@/components/ui/inline-toast";
+
+export function MyComponent() {
+  return <InlineToast code="CPT8456Y9" copyDuration={2000}/>;
+}
+```
+
+## Props
+
+| Prop           | Type     | Default | Description                                    |
+| -------------- | -------- | ------- | ---------------------------------------------- |
+| `code`         | `string` | -       | The code string to display and copy            |
+| `copyDuration` | `number` | `2000`  | Duration in ms to show the copied confirmation |
