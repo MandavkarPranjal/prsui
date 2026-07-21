@@ -1,0 +1,55 @@
+---
+title: Editable Chip
+description: An inline-editable chip component with animated transitions between display and edit modes.
+---
+
+import { EditableChipPreview } from "@/registry/new-york/editable-chip-demo";
+
+<ComponentPreview name="editable-chip">
+  <EditableChipPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/editable-chip"
+  __npm__="npx shadcn@latest add @prsui/editable-chip"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/editable-chip"
+  __yarn__="yarn shadcn@latest add @prsui/editable-chip"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/editable-chip.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { EditableChip } from "@/components/ui/editable-chip";
+
+export function MyComponent() {
+  return (
+    <EditableChip
+      defaultLabel="Watchlist"
+      onChange={(value) => console.log(value)}
+    />
+  );
+}
+```
+
+## Props
+
+| Prop              | Type                      | Default       | Description                               |
+| ----------------- | ------------------------- | ------------- | ----------------------------------------- |
+| `defaultLabel`    | `string`                  | `"Watchlist"` | Initial text displayed in the chip        |
+| `showThemeToggle` | `boolean`                 | -             | Whether to show a theme toggle (reserved) |
+| `onChange`        | `(value: string) => void` | -             | Callback fired when the label is saved    |

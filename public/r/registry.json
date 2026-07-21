@@ -99,6 +99,20 @@
           "target": "components/ui/link.tsx"
         }
       ]
+    },
+    {
+      "name": "editable-chip",
+      "type": "registry:ui",
+      "title": "Editable Chip",
+      "description": "An inline-editable chip component with animated transitions between display and edit modes.",
+      "files": [
+        {
+          "path": "registry/new-york/editable-chip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/editable-chip.tsx"
+        }
+      ],
+      "dependencies": ["motion", "react-icons", "lucide-react"]
     }
   ]
 }
