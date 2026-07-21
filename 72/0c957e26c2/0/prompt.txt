@@ -1,0 +1,117 @@
+added new component @registry/new-york/inline-toast.tsx update docs and demo, then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx</path>
+<type>file</type>
+<content>
+1: 'use client';
+2: 
+3: import { useState, type FC } from 'react';
+4: import { motion, AnimatePresence } from 'motion/react';
+5: import { IoCheckmarkCircle } from 'react-icons/io5';
+6: 
+7: export interface InlineCopyToastProps {
+8:   code: string;
+9:   copyDuration?: number;
+10: }
+11: 
+12: export const InlineToast: FC<InlineCopyToastProps> = ({
+13:   code,
+14:   copyDuration = 2000,
+15: }) => {
+16:   const [copied, setCopied] = useState<boolean>(false);
+17: 
+18:   const handleCopy = async (): Promise<void> => {
+19:     await navigator.clipboard.writeText(code);
+20:     setCopied(true);
+21: 
+22:     setTimeout(() => {
+23:       setCopied(false);
+24:     }, copyDuration);
+25:   };
+26: 
+27:   return (
+28:     <motion.div
+29:       layout="position"
+30:       transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+31:       className="relative flex h-16 min-w-[320px] items-center justify-center overflow-hidden rounded-full border border-[#ecebeb2b] bg-[#F6F6F6] pl-7 pr-2 shadow-sm dark:bg-zinc-900"
+32:     >
+33:       <AnimatePresence>
+34:         {copied && (
+35:           <motion.div
+36:             initial={{ x: '-100%' }}
+37:             animate={{ x: '0%' }}
+38:             transition={{
+39:               duration: copyDuration / 1000,
+40:               ease: 'linear',
+41:             }}
+42:             className="absolute inset-0 bg-[#F0F0F0] dark:bg-zinc-800"
+43:           />
+44:         )}
+45:       </AnimatePresence>
+46: 
+47:       <div className="z-10 flex w-full items-center justify-between gap-7">
+48:         <AnimatePresence mode="popLayout">
+49:           {!copied ? (
+50:             <motion.div
+51:               key="copy"
+52:               initial={{ opacity: 0, filter: 'blur(4px)', scale: 0.95 }}
+53:               animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+54:               exit={{ opacity: 0, filter: 'blur(4px)', scale: 0.95 }}
+55:               transition={{
+56:                 type: 'spring',
+57:                 bounce: 0,
+58:                 duration: 0.4,
+59:               }}
+60:               className="flex w-full items-center justify-between"
+61:             >
+62:               <span className="text-xl font-bold tracking-wide text-[#868686] dark:text-zinc-500">
+63:                 {code}
+64:               </span>
+65: 
+66:               <motion.button
+67:                 onClick={handleCopy}
+68:                 whileHover={{ y: -1, scale: 1.04 }}
+69:                 whileTap={{ scale: 0.96 }}
+70:                 transition={{
+71:                   type: 'spring',
+72:                   stiffness: 350,
+73:                   damping: 18,
+74:                 }}
+75:                 className="relative cursor-pointer overflow-hidden rounded-full bg-[#FEFEFE] px-[26px] py-2.5 text-base font-semibold text-black shadow-[0_6px_12px_rgba(0,0,0,0.08)] dark:bg-zinc-100"
+76:               >
+77:                 <motion.span
+78:                   initial={{ x: '-120%' }}
+79:                   whileHover={{ x: '120%' }}
+80:                   transition={{ duration: 0.6, ease: 'easeInOut' }}
+81:                   className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent"
+82:                 />
+83: 
+84:                 <span className="relative z-10">Copy</span>
+85:               </motion.button>
+86:             </motion.div>
+87:           ) : (
+88:             <motion.div
+89:               key="copied"
+90:               initial={{ opacity: 0, filter: 'blur(4px)', scale: 1.1 }}
+91:               animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+92:               exit={{ opacity: 0, filter: 'blur(4px)', scale: 1.1 }}
+93:               transition={{
+94:                 type: 'spring',
+95:                 bounce: 0,
+96:                 duration: 0.4,
+97:               }}
+98:               className="flex w-full items-center justify-center gap-2 text-black dark:text-white"
+99:             >
+100:               <IoCheckmarkCircle size={28} />
+101:               <span className="text-lg font-bold">Code Copied!</span>
+102:             </motion.div>
+103:           )}
+104:         </AnimatePresence>
+105:       </div>
+106:     </motion.div>
+107:   );
+108: };
+109: 
+
+(End of file - total 109 lines)
+</content>
