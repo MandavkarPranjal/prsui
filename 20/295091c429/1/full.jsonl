@@ -1,0 +1,6 @@
+{"type":"session","version":3,"id":"019f8530-9ff1-7009-b830-7aab77a2bac8","timestamp":"2026-07-21T14:59:44.241Z","cwd":"/home/himmel/personal/prsui"}
+{"type":"model_change","id":"a400637b","parentId":null,"timestamp":"2026-07-21T14:59:44.602Z","provider":"opencode","modelId":"deepseek-v4-flash-free"}
+{"type":"thinking_level_change","id":"9f06f206","parentId":"a400637b","timestamp":"2026-07-21T14:59:44.603Z","thinkingLevel":"high"}
+{"type":"model_change","id":"9769839d","parentId":"9f06f206","timestamp":"2026-07-21T15:00:37.347Z","provider":"opencode","modelId":"mimo-v2.5-free"}
+{"type":"message","id":"7be3945d","parentId":"9769839d","timestamp":"2026-07-21T15:01:00.881Z","message":{"role":"user","content":[{"type":"text","text":"added new component @registry/new-york/editable-chip.tsx , update docs and demo for it and then run pnpm fix"}],"timestamp":1784646060772}}
+{"type":"message","id":"99a45c38","parentId":"7be3945d","timestamp":"2026-07-21T15:01:01.774Z","message":{"role":"assistant","content":[],"api":"openai-completions","provider":"opencode","model":"mimo-v2.5-free","usage":{"input":0,"output":0,"cacheRead":0,"cacheWrite":0,"totalTokens":0,"cost":{"input":0,"output":0,"cacheRead":0,"cacheWrite":0,"total":0}},"stopReason":"error","timestamp":1784646060949,"errorMessage":"401: {\"type\":\"ModelError\",\"message\":\"No provider available\"}"}}

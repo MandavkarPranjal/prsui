@@ -1,0 +1,1 @@
+{"v":1,"agent":"pi","cli_version":"0.8.42","type":"user","ts":"2026-07-21T15:01:00.881Z","content":[{"text":"added new component @registry/new-york/editable-chip.tsx , update docs and demo for it and then run pnpm fix"}]}
