@@ -11,6 +11,7 @@
     "editable-chip",
     "inline-toast",
     "view-on-map",
-    "logo-marquee"
+    "logo-marquee",
+    "logo-grid"
   ]
 }

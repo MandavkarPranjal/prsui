@@ -155,6 +155,20 @@
         }
       ],
       "dependencies": ["motion", "react-use-measure"]
+    },
+    {
+      "name": "logo-grid",
+      "type": "registry:ui",
+      "title": "Logo Grid",
+      "description": "A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.",
+      "files": [
+        {
+          "path": "registry/new-york/logo-grid.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/logo-grid.tsx"
+        }
+      ],
+      "dependencies": ["lucide-react"]
     }
   ]
 }

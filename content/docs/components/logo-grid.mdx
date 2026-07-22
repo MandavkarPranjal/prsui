@@ -1,0 +1,75 @@
+---
+title: Logo Grid
+description: A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.
+---
+
+import { LogoGridPreview } from "@/registry/new-york/logo-grid-demo";
+
+<ComponentPreview name="logo-grid">
+  <LogoGridPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/logo-grid"
+  __npm__="npx shadcn@latest add @prsui/logo-grid"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/logo-grid"
+  __yarn__="yarn shadcn@latest add @prsui/logo-grid"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { LogoGrid, type Logo } from "@/components/prsui/logo-grid";
+
+const logos: Logo[] = [
+  { src: "https://svgl.app/library/nvidia-wordmark-light.svg", alt: "Nvidia" },
+  { src: "https://svgl.app/library/supabase_wordmark_light.svg", alt: "Supabase" },
+  { src: "https://svgl.app/library/openai_wordmark_light.svg", alt: "OpenAI" },
+  { src: "https://svgl.app/library/vercel_wordmark.svg", alt: "Vercel" },
+  { src: "https://svgl.app/library/github_wordmark_light.svg", alt: "GitHub" },
+  { src: "https://svgl.app/library/clerk-wordmark-light.svg", alt: "Clerk" },
+  { src: "https://svgl.app/library/turso-wordmark-light.svg", alt: "Turso" },
+  { src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg", alt: "Claude" },
+];
+
+export function MyComponent() {
+  return (
+    <div className="p-2 w-full">
+      <LogoGrid logos={logos} />
+    </div>
+  );
+};
+```
+
+## Props
+
+### Logo
+
+| Field    | Type     | Default | Description            |
+| -------- | -------- | ------- | ---------------------- |
+| `src`    | `string` | -       | Image URL for the logo |
+| `alt`    | `string` | -       | Alt text for the image |
+| `width`  | `number` | -       | Optional width         |
+| `height` | `number` | -       | Optional height        |
+
+### LogoGrid
+
+| Prop        | Type     | Default | Description                    |
+| ----------- | -------- | ------- | ------------------------------ |
+| `logos`     | `Logo[]` | -       | Array of logo objects (max 8)  |
+| `className` | `string` | -       | Classes applied to the wrapper |
