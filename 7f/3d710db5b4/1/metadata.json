@@ -1,0 +1,39 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "7f3d710db5b4",
+  "session_id": "ses_07ac41142ffeddbVHcJxVQEWuA",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-22T09:30:55.417637595Z",
+  "branch": "main",
+  "checkpoints_count": 6,
+  "save_step_count": 1,
+  "files_touched": [
+    "public/r/editable-chip.json"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "0ce534892c58",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 59736,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1757824,
+    "output_tokens": 11024,
+    "api_call_count": 48
+  },
+  "session_metrics": {
+    "turn_count": 7
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-22T09:30:55.37988112Z",
+    "agent_lines": 0,
+    "agent_removed": 1,
+    "human_added": 22,
+    "human_modified": 1,
+    "human_removed": 0,
+    "total_committed": 23,
+    "total_lines_changed": 46,
+    "agent_percentage": 2.1739130434782608,
+    "metric_version": 2
+  }
+}

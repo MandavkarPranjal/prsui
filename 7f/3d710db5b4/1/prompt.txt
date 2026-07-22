@@ -1,0 +1,145 @@
+@registry/new-york/editable-chip.tsx should use @public/r/smooth-input.json while editing
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import { Check } from "lucide-react";
+4: import { motion, AnimatePresence } from "motion/react";
+5: import { useState, useRef, useEffect } from "react";
+6: import type { FC, ChangeEvent, KeyboardEvent, MouseEvent } from "react";
+7: import { BiSolidPencil } from "react-icons/bi";
+8: 
+9: import { cn } from "@/lib/utils";
+10: 
+11: interface EditableChipProps {
+12:   defaultLabel?: string;
+13:   showThemeToggle?: boolean;
+14:   onChange?: (value: string) => void;
+15: }
+16: 
+17: export const EditableChip: FC<EditableChipProps> = ({
+18:   defaultLabel = "Watchlist",
+19:   onChange,
+20: }) => {
+21:   const [isEditing, setIsEditing] = useState(false);
+22:   const [label, setLabel] = useState<string>(defaultLabel);
+23: 
+24:   const inputRef = useRef<HTMLInputElement>(null);
+25: 
+26:   useEffect(() => {
+27:     if (isEditing && inputRef.current) {
+28:       requestAnimationFrame(() => {
+29:         inputRef.current?.focus();
+30:         inputRef.current?.select();
+31:       });
+32:     }
+33:   }, [isEditing]);
+34: 
+35:   const handleSave = (e: MouseEvent | KeyboardEvent) => {
+36:     e.stopPropagation();
+37:     const finalValue = label.trim() === "" ? "Untitled" : label;
+38:     setLabel(finalValue);
+39:     setIsEditing(false);
+40:     onChange?.(finalValue);
+41:   };
+42: 
+43:   const handleEdit = () => {
+44:     setIsEditing(true);
+45:   };
+46: 
+47:   return (
+48:     <motion.div layout>
+49:       <div
+50:         className={cn(
+51:           `relative flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full border border-zinc-200 py-1 pr-1 transition-all duration-300 ease-in-out select-none dark:border-zinc-700 dark:bg-zinc-900`,
+52:           isEditing && "gap-8 ring-2 ring-black dark:ring-white"
+53:         )}
+54:       >
+55:         <motion.input
+56:           layout="position"
+57:           key="input"
+58:           ref={inputRef}
+59:           type="text"
+60:           value={label}
+61:           readOnly={!isEditing}
+62:           onChange={(e: ChangeEvent<HTMLInputElement>) =>
+63:             setLabel(e.target.value)
+64:           }
+65:           onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>
+66:             e.key === "Enter" && handleSave(e)
+67:           }
+68:           onClick={(e: MouseEvent) => e.stopPropagation()}
+69:           className="ml-4 w-32 border-none bg-transparent text-lg font-medium text-[#262626] capitalize outline-none selection:bg-[#B6B6B6] dark:text-zinc-100 dark:selection:bg-zinc-700"
+70:         />
+71: 
+72:         <AnimatePresence mode="popLayout">
+73:           {isEditing ? (
+74:             <motion.button
+75:               key="done"
+76:               initial={{ filter: "blur(4px)", opacity: 0, scale: 0 }}
+77:               animate={{ filter: "blur(0px)", opacity: 1, scale: 1 }}
+78:               exit={{ filter: "blur(4px)", opacity: 0, scale: 0 }}
+79:               layout="position"
+80:               onClick={handleSave}
+81:               transition={{
+82:                 bounce: 0,
+83:                 duration: 0.4,
+84:                 type: "spring",
+85:               }}
+86:               className="rounded-full bg-black p-1 text-white transition-colors dark:bg-zinc-100 dark:text-zinc-950"
+87:             >
+88:               <Check size={26} />
+89:             </motion.button>
+90:           ) : (
+91:             <motion.button
+92:               key="edit"
+93:               initial={{ filter: "blur(4px)", opacity: 0, scale: 0 }}
+94:               animate={{ filter: "blur(0px)", opacity: 1, scale: 1 }}
+95:               exit={{ filter: "blur(4px)", opacity: 0, scale: 0 }}
+96:               layout="position"
+97:               onClick={handleEdit}
+98:               transition={{
+99:                 bounce: 0,
+100:                 duration: 0.4,
+101:                 type: "spring",
+102:               }}
+103:               className="rounded-full bg-[#F0EFF6] p-1 text-[#696871] transition-colors dark:bg-zinc-800 dark:text-zinc-400 hover:dark:bg-zinc-700"
+104:             >
+105:               <BiSolidPencil size={26} />
+106:             </motion.button>
+107:           )}
+108:         </AnimatePresence>
+109:       </div>
+110:     </motion.div>
+111:   );
+112: };
+
+(End of file - total 112 lines)
+</content>
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/public/r/smooth-input.json"}
+<path>/home/himmel/personal/prsui/public/r/smooth-input.json</path>
+<type>file</type>
+<content>
+1: {
+2:   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+3:   "name": "smooth-input",
+4:   "title": "Smooth Input",
+5:   "description": "A smooth input component with a caret animation.",
+6:   "dependencies": [
+7:     "framer-motion"
+8:   ],
+9:   "files": [
+10:     {
+11:       "path": "registry/new-york/smooth-input.tsx",
+12:       "content": "\"use client\";\n\nimport {\n  motion,\n  useMotionValue,\n  useReducedMotion,\n  useSpring,\n} from \"framer-motion\";\nimport React, { useEffect, useRef, useState } from \"react\";\nimport type { ComponentPropsWithoutRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype InputFieldProps = ComponentPropsWithoutRef<\"input\"> & {\n  wrapperClassName?: string;\n};\n\ntype SmoothInputType = \"text\" | \"password\";\n\ntype SmoothInputProps = Omit<InputFieldProps, \"type\"> & {\n  type?: SmoothInputType;\n};\n\nconst PASSWORD_CHAR = /firefox|fxios/i.test(navigator.userAgent)\n  ? \"\\u25CF\"\n  : \"\\u2022\";\n\nconst scrollCaretIntoView = (\n  target: HTMLInputElement,\n  absoluteWidth: number\n) => {\n  const styles = window.getComputedStyle(target);\n  const paddingLeft = Number.parseFloat(styles.paddingLeft) || 0;\n  const paddingRight = Number.parseFloat(styles.paddingRight) || 0;\n  const maxScroll = Math.max(0, target.scrollWidth - target.clientWidth);\n  const visibleRight = target.scrollLeft + target.clientWidth - paddingRight;\n  const visibleLeft = target.scrollLeft + paddingLeft;\n\n  if (absoluteWidth > visibleRight) {\n    target.scrollLeft = Math.min(\n      absoluteWidth - target.clientWidth + paddingRight,\n      maxScroll\n    );\n    return;\n  }\n\n  if (absoluteWidth < visibleLeft) {\n    target.scrollLeft = Math.max(0, absoluteWidth - paddingLeft);\n  }\n};\n\nconst getCaretIndex = (target: HTMLInputElement) => {\n  const selectionStart = target.selectionStart ?? 0;\n  const selectionEnd = target.selectionEnd ?? 0;\n\n  if (selectionStart === selectionEnd) {\n    return selectionStart;\n  }\n\n  return target.selectionDirection === \"backward\"\n    ? selectionStart\n    : selectionEnd;\n};\n\nconst SmoothInput = ({\n  className,\n  wrapperClassName,\n  value,\n  defaultValue,\n  onChange,\n  onBlur,\n  type = \"text\",\n  placeholder = \"Enter text...\",\n  style,\n  ...props\n}: SmoothInputProps) => {\n  const [in... (line truncated to 2000 chars)
+13:       "type": "registry:ui",
+14:       "target": "components/ui/smooth-input.tsx"
+15:     }
+16:   ],
+17:   "type": "registry:ui"
+18: }
+
+(End of file - total 18 lines)
+</content>
