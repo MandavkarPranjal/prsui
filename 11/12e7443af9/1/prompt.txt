@@ -1,0 +1,9 @@
+Explore the /home/himmel/personal/prsui project to understand:
+1. The overall project structure (list top-level files and directories)
+2. How existing components in registry/new-york/ are structured (read 2-3 example .tsx files)
+3. How documentation is organized (look in docs/ or content/ directories)
+4. How demos are set up (look for demo files or patterns)
+5. How pnpm fix works (check package.json scripts)
+6. Look for any registry configuration files (registry.json, registry/index.ts, etc.)
+
+Return all findings in detail including file paths, content samples, and patterns used.
