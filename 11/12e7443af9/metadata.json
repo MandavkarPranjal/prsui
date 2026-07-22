@@ -3,8 +3,13 @@
   "checkpoint_id": "1112e7443af9",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 4,
+  "checkpoints_count": 8,
   "files_touched": [
+    "content/docs/components/inline-toast.mdx",
+    "content/docs/components/view-on-map.mdx",
+    "public/r/registry.json",
+    "registry.json",
+    "registry/new-york/view-on-map-demo.tsx",
     "registry/new-york/view-on-map.tsx"
   ],
   "sessions": [
@@ -21,13 +26,20 @@
       "compact_transcript": "/11/12e7443af9/1/transcript.jsonl",
       "content_hash": "/11/12e7443af9/1/content_hash.txt",
       "prompt": "/11/12e7443af9/1/prompt.txt"
+    },
+    {
+      "metadata": "/11/12e7443af9/2/metadata.json",
+      "transcript": "/11/12e7443af9/2/full.jsonl",
+      "compact_transcript": "/11/12e7443af9/2/transcript.jsonl",
+      "content_hash": "/11/12e7443af9/2/content_hash.txt",
+      "prompt": "/11/12e7443af9/2/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 21877,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 2
+    "cache_read_tokens": 390976,
+    "output_tokens": 5713,
+    "api_call_count": 21
   }
 }

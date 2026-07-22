@@ -1,0 +1,9 @@
+added new component @registry/new-york/view-on-map.tsx update docs and demo, then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx</path>
+<type>file</type>
+<content>
+
+
+(End of file - total 0 lines)
+</content>
