@@ -11,7 +11,7 @@
         {
           "path": "registry/new-york/smooth-input.tsx",
           "type": "registry:ui",
-          "target": "components/ui/smooth-input.tsx"
+          "target": "components/prsui/smooth-input.tsx"
         }
       ],
       "dependencies": ["framer-motion"]
@@ -25,7 +25,7 @@
         {
           "path": "registry/new-york/split-action.tsx",
           "type": "registry:ui",
-          "target": "components/ui/split-action.tsx"
+          "target": "components/prsui/split-action.tsx"
         }
       ],
       "dependencies": ["framer-motion", "lucide-react"]
@@ -39,7 +39,7 @@
         {
           "path": "registry/new-york/tooltip.tsx",
           "type": "registry:ui",
-          "target": "components/ui/tooltip.tsx"
+          "target": "components/prsui/tooltip.tsx"
         },
         {
           "path": "lib/ease.ts",
@@ -63,7 +63,7 @@
         {
           "path": "registry/new-york/accordion.tsx",
           "type": "registry:ui",
-          "target": "components/ui/accordion.tsx"
+          "target": "components/prsui/accordion.tsx"
         },
         {
           "path": "lib/ease.ts",
@@ -82,7 +82,7 @@
         {
           "path": "registry/new-york/typewriter.tsx",
           "type": "registry:ui",
-          "target": "components/ui/typewriter.tsx"
+          "target": "components/prsui/typewriter.tsx"
         }
       ],
       "dependencies": ["motion"]
@@ -96,7 +96,7 @@
         {
           "path": "registry/new-york/link.tsx",
           "type": "registry:ui",
-          "target": "components/ui/link.tsx"
+          "target": "components/prsui/link.tsx"
         }
       ]
     },
@@ -109,7 +109,7 @@
         {
           "path": "registry/new-york/editable-chip.tsx",
           "type": "registry:ui",
-          "target": "components/ui/editable-chip.tsx"
+          "target": "components/prsui/editable-chip.tsx"
         }
       ],
       "dependencies": ["motion", "react-icons", "lucide-react"]
@@ -123,7 +123,7 @@
         {
           "path": "registry/new-york/inline-toast.tsx",
           "type": "registry:ui",
-          "target": "components/ui/inline-toast.tsx"
+          "target": "components/prsui/inline-toast.tsx"
         }
       ],
       "dependencies": ["motion", "react-icons"]
