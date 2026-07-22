@@ -10,6 +10,7 @@
     "link",
     "editable-chip",
     "inline-toast",
-    "view-on-map"
+    "view-on-map",
+    "logo-marquee"
   ]
 }

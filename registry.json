@@ -141,6 +141,20 @@
         }
       ],
       "dependencies": ["motion", "react-icons", "lucide-react"]
+    },
+    {
+      "name": "logo-marquee",
+      "type": "registry:ui",
+      "title": "Logo Marquee",
+      "description": "An infinite scrolling logo marquee with smooth animation and hover pause.",
+      "files": [
+        {
+          "path": "registry/new-york/logo-marquee.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/logo-marquee.tsx"
+        }
+      ],
+      "dependencies": ["motion", "react-use-measure"]
     }
   ]
 }

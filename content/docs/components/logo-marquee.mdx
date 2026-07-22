@@ -1,0 +1,83 @@
+---
+title: Logo Marquee
+description: An infinite scrolling logo marquee with smooth animation and hover pause.
+---
+
+import { LogoMarqueePreview } from "@/registry/new-york/logo-marquee-demo";
+
+<ComponentPreview name="logo-marquee">
+  <LogoMarqueePreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/logo-marquee"
+  __npm__="npx shadcn@latest add @prsui/logo-marquee"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/logo-marquee"
+  __yarn__="yarn shadcn@latest add @prsui/logo-marquee"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { LogoMarquee, type Logo } from "@/components/prsui/logo-marquee";
+
+const logos: Logo[] = [
+  {
+    alt: "Vercel",
+    src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg",
+  },
+  {
+    alt: "Next.js",
+    src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg",
+  },
+];
+
+export function MyComponent() {
+  return <LogoMarquee logos={logos} />;
+}
+```
+
+## Props
+
+### Logo
+
+| Field    | Type     | Default  | Description            |
+| -------- | -------- | -------- | ---------------------- |
+| `src`    | `string` | -        | Image URL for the logo |
+| `alt`    | `string` | -        | Alt text for the image |
+| `width`  | `number` | `"auto"` | Optional width         |
+| `height` | `number` | `"auto"` | Optional height        |
+
+### LogoMarquee
+
+| Prop        | Type     | Default | Description                    |
+| ----------- | -------- | ------- | ------------------------------ |
+| `logos`     | `Logo[]` | -       | Array of logo objects          |
+| `className` | `string` | -       | Classes applied to the wrapper |
+
+### InfiniteSlider (internal)
+
+| Prop              | Type                         | Default        | Description                          |
+| ----------------- | ---------------------------- | -------------- | ------------------------------------ |
+| `children`        | `React.ReactNode`            | -              | Content to scroll                    |
+| `gap`             | `number`                     | `16`           | Gap between items in px              |
+| `duration`        | `number`                     | `25`           | Animation duration in seconds        |
+| `durationOnHover` | `number`                     | -              | Duration when hovered (slows down)   |
+| `direction`       | `"horizontal" \| "vertical"` | `"horizontal"` | Scroll direction                     |
+| `reverse`         | `boolean`                    | `false`        | Reverse scroll direction             |
+| `className`       | `string`                     | -              | Classes applied to the outer wrapper |
