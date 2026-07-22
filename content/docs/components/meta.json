@@ -9,6 +9,7 @@
     "typewriter",
     "link",
     "editable-chip",
-    "inline-toast"
+    "inline-toast",
+    "view-on-map"
   ]
 }

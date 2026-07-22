@@ -1,0 +1,56 @@
+---
+title: View On Map
+description: An animated map preview component that expands from a pill button into an embedded Google Map view.
+---
+
+import { ViewOnMapPreview } from "@/registry/new-york/view-on-map-demo";
+
+<ComponentPreview name="view-on-map">
+  <ViewOnMapPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/view-on-map"
+  __npm__="npx shadcn@latest add @prsui/view-on-map"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/view-on-map"
+  __yarn__="yarn shadcn@latest add @prsui/view-on-map"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/view-on-map.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/view-on-map.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/view-on-map.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/view-on-map.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { ViewOnMap } from "@/components/ui/view-on-map";
+
+export function MyComponent() {
+  return (
+    <ViewOnMap
+      address="Boston Public Garden"
+      mapImageUrl="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop"
+    />
+  );
+}
+```
+
+## Props
+
+| Prop           | Type     | Default | Description                                      |
+| -------------- | -------- | ------- | ------------------------------------------------ |
+| `locationName` | `string` | -       | Optional location name (reserved for future use) |
+| `address`      | `string` | -       | The address to display on the map                |
+| `mapImageUrl`  | `string` | -       | Background image URL for the pill button         |
+| `className`    | `string` | `""`    | Additional CSS classes                           |

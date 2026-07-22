@@ -127,6 +127,20 @@
         }
       ],
       "dependencies": ["motion", "react-icons"]
+    },
+    {
+      "name": "view-on-map",
+      "type": "registry:ui",
+      "title": "View On Map",
+      "description": "An animated map preview component that expands from a pill button into an embedded Google Map view.",
+      "files": [
+        {
+          "path": "registry/new-york/view-on-map.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/view-on-map.tsx"
+        }
+      ],
+      "dependencies": ["motion", "react-icons", "lucide-react"]
     }
   ]
 }
