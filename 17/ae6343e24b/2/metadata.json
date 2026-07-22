@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "17ae6343e24b",
+  "session_id": "ses_075a94726ffeAgCThywrWl3VHb",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-22T16:36:45.693923809Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "registry.json"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "0229d18f097a",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 14449,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 374656,
+    "output_tokens": 3300,
+    "api_call_count": 20
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-22T16:36:45.679881083Z",
+    "agent_lines": 14,
+    "agent_removed": 0,
+    "human_added": 184,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 198,
+    "total_lines_changed": 199,
+    "agent_percentage": 7.035175879396985,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 153,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "registry/new-york/logo-marquee.tsx": 153
+      }
+    }
+  ]
+}

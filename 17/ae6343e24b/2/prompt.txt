@@ -1,0 +1,161 @@
+added new component @registry/new-york/logo-marquee.tsx update docs and demo, then pnpm fix and don't use <Image /> from "next/image"
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import { useMotionValue, animate, motion } from "motion/react";
+4: import React, { memo, useState, useEffect } from "react";
+5: import useMeasure from "react-use-measure";
+6: 
+7: import { cn } from "@/lib/utils";
+8: 
+9: export interface Logo {
+10:   src: string;
+11:   alt: string;
+12:   width?: number;
+13:   height?: number;
+14: }
+15: 
+16: interface InfiniteSliderProps {
+17:   children: React.ReactNode;
+18:   gap?: number;
+19:   duration?: number;
+20:   durationOnHover?: number;
+21:   direction?: "horizontal" | "vertical";
+22:   reverse?: boolean;
+23:   className?: string;
+24: }
+25: 
+26: const InfiniteSlider = memo(function InfiniteSlider({
+27:   children,
+28:   gap = 16,
+29:   duration = 25,
+30:   durationOnHover,
+31:   direction = "horizontal",
+32:   reverse = false,
+33:   className,
+34: }: InfiniteSliderProps) {
+35:   const [currentDuration, setCurrentDuration] = useState(duration);
+36:   const [ref, { width, height }] = useMeasure();
+37:   const translation = useMotionValue(0);
+38:   const [isTransitioning, setIsTransitioning] = useState(false);
+39:   const [key, setKey] = useState(0);
+40: 
+41:   useEffect(() => {
+42:     const size = direction === "horizontal" ? width : height;
+43:     const contentSize = size + gap;
+44:     const from = reverse ? -contentSize / 2 : 0;
+45:     const to = reverse ? 0 : -contentSize / 2;
+46: 
+47:     let controls;
+48: 
+49:     if (isTransitioning) {
+50:       controls = animate(translation, [translation.get(), to], {
+51:         duration:
+52:           currentDuration * Math.abs((translation.get() - to) / contentSize),
+53:         ease: "linear",
+54:         onComplete: () => {
+55:           setIsTransitioning(false);
+56:           setKey((prev) => prev + 1);
+57:         },
+58:       });
+59:     } else {
+60:       controls = animate(translation, [from, to], {
+61:         duration: currentDuration,
+62:         ease: "linear",
+63:         onRepeat: () => translation.set(from),
+64:         repeat: Infinity,
+65:         repeatDelay: 0,
+66:         repeatType: "loop",
+67:       });
+68:     }
+69: 
+70:     return controls?.stop;
+71:   }, [
+72:     key,
+73:     translation,
+74:     currentDuration,
+75:     width,
+76:     height,
+77:     gap,
+78:     isTransitioning,
+79:     direction,
+80:     reverse,
+81:   ]);
+82: 
+83:   const hoverProps = durationOnHover
+84:     ? {
+85:         onHoverEnd: () => {
+86:           setIsTransitioning(true);
+87:           setCurrentDuration(duration);
+88:         },
+89:         onHoverStart: () => {
+90:           setIsTransitioning(true);
+91:           setCurrentDuration(durationOnHover);
+92:         },
+93:       }
+94:     : {};
+95: 
+96:   return (
+97:     <div className={cn("overflow-hidden", className)}>
+98:       <motion.div
+99:         ref={ref}
+100:         className="flex w-max"
+101:         style={{
+102:           ...(direction === "horizontal"
+103:             ? { x: translation }
+104:             : { y: translation }),
+105:           flexDirection: direction === "horizontal" ? "row" : "column",
+106:           gap: `${gap}px`,
+107:         }}
+108:         {...hoverProps}
+109:       >
+110:         {children}
+111:         {children}
+112:       </motion.div>
+113:     </div>
+114:   );
+115: });
+116: 
+117: const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {
+118:   return (
+119:     <img
+120:       alt={logo.alt}
+121:       src={logo.src}
+122:       width={logo.width ?? "auto"}
+123:       height={logo.height ?? "auto"}
+124:       loading="lazy"
+125:       className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
+126:     />
+127:   );
+128: });
+129: 
+130: export const LogoMarquee = memo(function LogoMarquee({
+131:   logos,
+132:   className,
+133: }: {
+134:   logos: Logo[];
+135:   className?: string;
+136: }) {
+137:   return (
+138:     <div
+139:       className={cn(
+140:         "max-w-7xl mx-auto overflow-hidden py-4 mask-[linear-gradient(to_right,transparent,black_25%,black_75%,transparent)]",
+141:         className
+142:       )}
+143:     >
+144:       <InfiniteSlider gap={42} reverse duration={80} durationOnHover={25}>
+145:         {[...logos, ...logos].map((logo, i) => (
+146:           <LogoImage key={`${logo.alt}-${i}`} logo={logo} />
+147:         ))}
+148:       </InfiniteSlider>
+149:     </div>
+150:   );
+151: });
+152: 
+153: LogoMarquee.displayName = "LogoMarquee";
+
+(End of file - total 153 lines)
+</content>
