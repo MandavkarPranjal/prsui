@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "1112e7443af9",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "registry/new-york/view-on-map.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/11/12e7443af9/0/metadata.json",
+      "transcript": "/11/12e7443af9/0/full.jsonl",
+      "compact_transcript": "/11/12e7443af9/0/transcript.jsonl",
+      "content_hash": "/11/12e7443af9/0/content_hash.txt",
+      "prompt": "/11/12e7443af9/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 1
+  }
+}

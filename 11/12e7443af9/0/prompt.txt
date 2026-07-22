@@ -1,0 +1,11 @@
+Explore this codebase to understand:
+1. How component documentation is structured (look at content/docs/ or similar)
+2. How demos are organized for registry components
+3. Find an example of an existing component's docs page and demo to understand the pattern
+
+Return:
+- The directory structure for docs
+- The directory structure for demos
+- A full example of a similar component's docs markdown file
+- A full example of a similar component's demo file
+- Any index or registry files that list components
