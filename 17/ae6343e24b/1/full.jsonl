@@ -1,0 +1,1658 @@
+{
+  "info": {
+    "id": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+    "slug": "kind-squid",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "New session - 2026-07-22T15:12:26.376Z",
+    "agent": "build",
+    "model": {
+      "id": "mimo-v2.5-free",
+      "providerID": "opencode"
+    },
+    "version": "1.18.4",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 12796,
+      "output": 2781,
+      "reasoning": 422,
+      "cache": {
+        "read": 179712,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1784733146377,
+      "updated": 1784733327345
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784733146626
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "mimo-v2.5-free"
+        },
+        "summary": {
+          "diffs": [
+            {
+              "file": "content/docs/components/logo-grid.mdx",
+              "patch": "Index: content/docs/components/logo-grid.mdx\n===================================================================\n--- content/docs/components/logo-grid.mdx\t\n+++ content/docs/components/logo-grid.mdx\t\n@@ -0,0 +1,71 @@\n+---\n+title: Logo Grid\n+description: A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.\n+---\n+\n+import { LogoGridPreview } from \"@/registry/new-york/logo-grid-demo\";\n+\n+<ComponentPreview name=\"logo-grid\">\n+  <LogoGridPreview />\n+</ComponentPreview>\n+\n+## Installation\n+\n+If you've already added the prsui registry, use the short command:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add @prsui/logo-grid\"\n+  __npm__=\"npx shadcn@latest add @prsui/logo-grid\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/logo-grid\"\n+  __yarn__=\"yarn shadcn@latest add @prsui/logo-grid\"\n+/>\n+\n+Otherwise, use the full registry URL:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n+  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n+  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n+/>\n+\n+## Usage\n+\n+After you add the component with the CLI, import it from your UI folder:\n+\n+```tsx\n+import { LogoGrid, type Logo } from \"@/components/prsui/logo-grid\";\n+\n+const logos: Logo[] = [\n+  {\n+    alt: \"Vercel\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n+  },\n+  {\n+    alt: \"Next.js\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n+  },\n+];\n+\n+export function MyComponent() {\n+  return <LogoGrid logos={logos} />;\n+}\n+```\n+\n+## Props\n+\n+### Logo\n+\n+| Field    | Type     | Default | Description            |\n+| -------- | -------- | ------- | ---------------------- |\n+| `src`    | `string` | -       | Image URL for the logo |\n+| `alt`    | `string` | -       | Alt text for the image |\n+| `width`  | `number` | -       | Optional width         |\n+| `height` | `number` | -       | Optional height        |\n+\n+### LogoGrid\n+\n+| Prop        | Type     | Default | Description                    |\n+| ----------- | -------- | ------- | ------------------------------ |\n+| `logos`     | `Logo[]` | -       | Array of logo objects (max 8)  |\n+| `className` | `string` | -       | Classes applied to the wrapper |\n",
+              "additions": 71,
+              "deletions": 0,
+              "status": "added"
+            },
+            {
+              "file": "content/docs/components/meta.json",
+              "patch": "Index: content/docs/components/meta.json\n===================================================================\n--- content/docs/components/meta.json\t\n+++ content/docs/components/meta.json\t\n@@ -1,16 +1,17 @@\n {\n   \"title\": \"Components\",\n   \"pages\": [\n     \"index\",\n     \"smooth-input\",\n     \"split-action\",\n     \"tooltip\",\n     \"accordion\",\n     \"typewriter\",\n     \"link\",\n     \"editable-chip\",\n     \"inline-toast\",\n     \"view-on-map\",\n-    \"logo-marquee\"\n+    \"logo-marquee\",\n+    \"logo-grid\"\n   ]\n }\n",
+              "additions": 2,
+              "deletions": 1,
+              "status": "modified"
+            },
+            {
+              "file": "registry.json",
+              "patch": "Index: registry.json\n===================================================================\n--- registry.json\t\n+++ registry.json\t\n@@ -1,160 +1,174 @@\n {\n   \"name\": \"prsui\",\n   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n   \"items\": [\n     {\n       \"name\": \"smooth-input\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Smooth Input\",\n       \"description\": \"A smooth input component with a caret animation.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/smooth-input.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/smooth-input.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\"]\n     },\n     {\n       \"name\": \"split-action\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Split Action\",\n       \"description\": \"Interactive component for split actions.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/split-action.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/split-action.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"tooltip\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Tooltip\",\n       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/tooltip.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/tooltip.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         },\n         {\n           \"path\": \"lib/hooks/use-hover-capable.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/hooks/use-hover-capable.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"accordion\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Accordion\",\n       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/accordion.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/accordion.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"typewriter\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Typewriter\",\n       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/typewriter.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/typewriter.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"link\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Link\",\n       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/link.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/link.tsx\"\n         }\n       ]\n     },\n     {\n       \"name\": \"editable-chip\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Editable Chip\",\n       \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/editable-chip.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/editable-chip.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"inline-toast\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Inline Toast\",\n       \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/inline-toast.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/inline-toast.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\"]\n     },\n     {\n       \"name\": \"view-on-map\",\n       \"type\": \"registry:ui\",\n       \"title\": \"View On Map\",\n       \"description\": \"An animated map preview component that expands from a pill button into an embedded Google Map view.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/view-on-map.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/view-on-map.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"logo-marquee\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Logo Marquee\",\n       \"description\": \"An infinite scrolling logo marquee with smooth animation and hover pause.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/logo-marquee.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/logo-marquee.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-use-measure\"]\n+    },\n+    {\n+      \"name\": \"logo-grid\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Logo Grid\",\n+      \"description\": \"A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/logo-grid.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/prsui/logo-grid.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"lucide-react\"]\n     }\n   ]\n }\n",
+              "additions": 14,
+              "deletions": 0,
+              "status": "modified"
+            },
+            {
+              "file": "registry/new-york/logo-grid-demo.tsx",
+              "patch": "Index: registry/new-york/logo-grid-demo.tsx\n===================================================================\n--- registry/new-york/logo-grid-demo.tsx\t\n+++ registry/new-york/logo-grid-demo.tsx\t\n@@ -0,0 +1,47 @@\n+\"use client\";\n+\n+import { LogoGrid } from \"./logo-grid\";\n+import type { Logo } from \"./logo-grid\";\n+\n+const logos: Logo[] = [\n+  {\n+    alt: \"Vercel\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n+  },\n+  {\n+    alt: \"Next.js\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n+  },\n+  {\n+    alt: \"React\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg\",\n+  },\n+  {\n+    alt: \"TypeScript\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg\",\n+  },\n+  {\n+    alt: \"Tailwind CSS\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg\",\n+  },\n+  {\n+    alt: \"GitHub\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg\",\n+  },\n+  {\n+    alt: \"Figma\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg\",\n+  },\n+  {\n+    alt: \"GitLab\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg\",\n+  },\n+];\n+\n+export const LogoGridPreview = function LogoGridPreview() {\n+  return (\n+    <div className=\"flex w-full items-center justify-center p-4 md:p-8\">\n+      <LogoGrid logos={logos} />\n+    </div>\n+  );\n+};\n",
+              "additions": 47,
+              "deletions": 0,
+              "status": "added"
+            }
+          ]
+        },
+        "id": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "added new component @registry/new-york/logo-grid.tsx update docs and demo, run pnpm fix and don't use <Image /> from \"next/image\"",
+          "id": "prt_f8a629f14001u208rGIQfwQCWE",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629e00001CFSo0BZ7GPlDau"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "Called the Read tool with the following input: {\"filePath\":\"/home/himmel/personal/prsui/registry/new-york/logo-grid.tsx\"}",
+          "id": "prt_f8a629f14002tMoFZZktzMvOI4",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629e00001CFSo0BZ7GPlDau"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "<path>/home/himmel/personal/prsui/registry/new-york/logo-grid.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { PlusIcon } from \"lucide-react\";\n4: import React, { memo, useMemo } from \"react\";\n5: \n6: import { cn } from \"@/lib/utils\";\n7: \n8: export interface Logo {\n9:   src: string;\n10:   alt: string;\n11:   width?: number;\n12:   height?: number;\n13: }\n14: \n15: const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n16:   return (\n17:     <img\n18:       alt={logo.alt}\n19:       src={logo.src}\n20:       width={logo.width}\n21:       height={logo.height}\n22:       loading=\"lazy\"\n23:       className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n24:     />\n25:   );\n26: });\n27: \n28: type LogoCardProps = React.ComponentProps<\"div\"> & { logo: Logo };\n29: \n30: const LogoCard = memo(function LogoCard({\n31:   logo,\n32:   className,\n33:   children,\n34:   ...props\n35: }: LogoCardProps) {\n36:   return (\n37:     <div\n38:       className={cn(\n39:         \"relative flex items-center justify-center bg-background px-4 py-8 md:p-8\",\n40:         className\n41:       )}\n42:       {...props}\n43:     >\n44:       <LogoImage logo={logo} />\n45:       {children}\n46:     </div>\n47:   );\n48: });\n49: \n50: export const LogoGrid = memo(function LogoGrid({\n51:   logos,\n52:   className,\n53: }: {\n54:   logos: Logo[];\n55:   className?: string;\n56: }) {\n57:   const gridLogos = useMemo(() => logos.slice(0, 8), [logos]);\n58: \n59:   return (\n60:     <div\n61:       className={cn(\n62:         \"relative grid grid-cols-2 border-x md:grid-cols-4\",\n63:         className\n64:       )}\n65:     >\n66:       <div className=\"-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t\" />\n67: \n68:       {gridLogos.map((logo, i) => {\n69:         const isHighlighted = i === 0 || i === 2 || i === 5 || i === 7;\n70: \n71:         return (\n72:           <LogoCard\n73:             key={logo.alt}\n74:             logo={logo}\n75:             className={cn(\n76:               i < 4 && \"border-b\",\n77:               (i === 4 || i === 5) && \"border-b md:border-b-0\",\n78:               (i === 0 || i === 2 || i === 4 || i === 6) && \"border-r\",\n79:               (i === 1 || i === 5) && \"md:border-r\",\n80:               isHighlighted\n81:                 ? \"bg-secondary dark:bg-secondary/30\"\n82:                 : \"bg-background\"\n83:             )}\n84:           >\n85:             {(i === 0 || i === 1 || i === 2) && (\n86:               <PlusIcon\n87:                 className=\"-right-[12.5px] -bottom-[12.5px] absolute z-10 hidden size-6 md:block text-slate-800 dark:text-slate-300\"\n88:                 strokeWidth={1}\n89:               />\n90:             )}\n91:             {(i === 0 || i === 2 || i === 4) && (\n92:               <PlusIcon\n93:                 className=\"-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 md:hidden text-slate-800 dark:text-slate-300\"\n94:                 strokeWidth={1}\n95:               />\n96:             )}\n97:           </LogoCard>\n98:         );\n99:       })}\n100: \n101:       <div className=\"-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b\" />\n102:     </div>\n103:   );\n104: });\n105: \n106: LogoGrid.displayName = \"LogoGrid\";\n\n(End of file - total 106 lines)\n</content>",
+          "id": "prt_f8a629f14003UyVbzezHPfEruK",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629e00001CFSo0BZ7GPlDau"
+        },
+        {
+          "type": "file",
+          "mime": "text/plain",
+          "filename": "registry/new-york/logo-grid.tsx",
+          "url": "file:///home/himmel/personal/prsui/registry/new-york/logo-grid.tsx",
+          "source": {
+            "text": {
+              "value": "@registry/new-york/logo-grid.tsx",
+              "start": 20,
+              "end": 52
+            },
+            "type": "file",
+            "path": "registry/new-york/logo-grid.tsx"
+          },
+          "id": "prt_f8a629f14004urIcfOWCMWRMRS",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629e00001CFSo0BZ7GPlDau"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12717,
+          "input": 2230,
+          "output": 148,
+          "reasoning": 99,
+          "cache": {
+            "write": 0,
+            "read": 10240
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733147094,
+          "completed": 1784733257714
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a629fd6001qLv23K112UvQg5",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "type": "step-start",
+          "id": "prt_f8a62a9db001bf6E8wukNC62Xv",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629fd6001qLv23K112UvQg5"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to:\n1. Update docs and demo for the new `@registry/new-york/logo-grid.tsx` component\n2. Run `pnpm fix`\n3. Not use `<Image />` from \"next/image\"\n\nI need to explore the codebase to understand:\n1. How other components have their docs and demos structured\n2. Where the docs and demos are located\n3. The pattern for updating them\n\nLet me start by exploring the codebase structure.",
+          "time": {
+            "start": 1784733149667,
+            "end": 1784733151405
+          },
+          "id": "prt_f8a62a9e3001j5HcnV3Xp1QdXc",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629fd6001qLv23K112UvQg5"
+        },
+        {
+          "type": "tool",
+          "tool": "task",
+          "callID": "call_a8c7b7c09e164d5eb3dc40d7",
+          "state": {
+            "status": "completed",
+            "input": {
+              "description": "Explore codebase structure",
+              "prompt": "Explore the codebase structure to understand how docs and demos are organized for registry components. I need to understand:\n\n1. Where are the docs and demo files located for existing components?\n2. What is the pattern/structure for component documentation and demos?\n3. Look at a few existing components to see how they're documented\n\nFocus on finding:\n- Documentation files (likely in a docs folder or similar)\n- Demo files for components\n- The registry structure\n\nReturn a comprehensive summary of the file structure and patterns used.",
+              "subagent_type": "explore"
+            },
+            "output": "<task id=\"ses_0759d4569ffei935bmbUy9pDQF\" state=\"completed\">\n<task_result>\nNow I have a thorough understanding of the codebase structure. Here is a comprehensive summary.\n\n---\n\n## Comprehensive Summary: Docs and Demo Organization for Registry Components\n\n### 1. Top-Level Directory Structure\n\n```\n/home/himmel/personal/prsui/\n  content/docs/          -- MDX documentation pages (rendered via Fumadocs)\n  registry/new-york/     -- Component source code AND demo files\n  registry.json          -- Registry manifest defining all components\n  components/            -- Site-level UI components (docs layout, navigation, etc.)\n  source.config.ts       -- Fumadocs MDX configuration\n  lib/docs.ts            -- Docs directory constants and helpers\n```\n\n### 2. Documentation Files\n\n**Location:** `/home/himmel/personal/prsui/content/docs/components/`\n\n**Files (one MDX per component):**\n- `/home/himmel/personal/prsui/content/docs/components/accordion.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/editable-chip.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/index.mdx` (listing page)\n- `/home/himmel/personal/prsui/content/docs/components/inline-toast.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/link.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/smooth-input.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/split-action.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/tooltip.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/typewriter.mdx`\n- `/home/himmel/personal/prsui/content/docs/components/view-on-map.mdx`\n\n**Navigation metadata:**\n- `/home/himmel/personal/prsui/content/docs/meta.json` -- defines top-level sections: `[\"(root)\", \"components\"]`\n- `/home/himmel/personal/prsui/content/docs/components/meta.json` -- defines sidebar order of component pages\n\n### 3. Demo Files\n\n**Location:** `/home/himmel/personal/prsui/registry/new-york/`\n\n**Pattern:** Each component has TWO files -- the component itself and a `*-demo.tsx` file:\n- `accordion.tsx` (component) + `accordion-demo.tsx` (demo)\n- `typewriter.tsx` (component) + `typewriter-demo.tsx` (demo)\n- `inline-toast.tsx` (component) + `inline-toast-demo.tsx` (demo)\n- `logo-marquee.tsx` (component) + `logo-marquee-demo.tsx` (demo)\n- `editable-chip.tsx` (component) + `editable-chip-demo.tsx` (demo)\n- `link.tsx` (component) + `link-demo.tsx` (demo)\n- `split-action.tsx` (component) + `split-action-demo.tsx` (demo)\n- `tooltip.tsx` (component) + `tooltip-demo.tsx` (demo)\n- `view-on-map.tsx` (component) + `view-on-map-demo.tsx` (demo)\n- `smooth-input.tsx` (component, NO separate demo file -- demo is inlined in the MDX)\n\n### 4. Registry Manifest\n\n**File:** `/home/himmel/personal/prsui/registry.json`\n\nEach component entry has this shape:\n```json\n{\n  \"name\": \"accordion\",\n  \"type\": \"registry:ui\",\n  \"title\": \"Accordion\",\n  \"description\": \"Animated accordion with spring physics...\",\n  \"files\": [\n    {\n      \"path\": \"registry/new-york/accordion.tsx\",\n      \"type\": \"registry:ui\",\n      \"target\": \"components/prsui/accordion.tsx\"\n    }\n  ],\n  \"dependencies\": [\"motion\", \"lucide-react\"]\n}\n```\n\nKey points:\n- `type` is always `\"registry:ui\"` for components (and `\"registry:lib\"` for utility files).\n- `files` maps source paths to their installation `target` paths (always `components/prsui/<name>.tsx`).\n- Some components include additional library files (e.g., `lib/ease.ts`, `lib/hooks/use-hover-capable.ts`).\n- Demo files are NOT listed in `registry.json` -- they are only referenced from the MDX docs.\n\n### 5. MDX Documentation Pattern\n\nEvery component MDX file follows this exact structure:\n\n```mdx\n---\ntitle: <Human-readable title>\ndescription: <One-line description>\n---\n\nimport { <DemoComponent> } from \"@/registry/new-york/<component-name>-demo\";\n\n<ComponentPreview name=\"<component-slug>\">\n  <DemoComponent />\n</ComponentPreview>\n\n## Installation\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/<component-name>\"\n  __npm__=\"npx shadcn@latest add @prsui/<component-name>\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/<component-name>\"\n  __yarn__=\"yarn shadcn@latest add @prsui/<component-name>\"\n/>\n\n(Alternative with full URL pointing to registry JSON)\n\n## Usage\n\n(Code example showing how to import and use the component)\n\n## Props\n\n(Table of props with Type, Default, Description columns)\n```\n\n**Key patterns observed:**\n\n1. **Frontmatter:** Always `title` + `description`.\n2. **Demo import:** Always imports from `@/registry/new-york/<component>-demo`.\n3. **Preview wrapper:** Always uses `<ComponentPreview name=\"...\">` (a custom component at `/home/himmel/personal/prsui/components/component-preview.tsx` that renders a styled demo box with a code toggle).\n4. **Installation section:** Always shows two install paths -- short form (`@prsui/<name>`) and full URL form (`https://prsui.pr5.dev/r/<name>.json`).\n5. **Usage section:** Shows a code block with the recommended import path (`@/components/ui/<name>` or `@/components/prsui/<name>`).\n6. **Props section:** Markdown table with columns: Prop | Type | Default | Description. Some components have additional sub-type tables (e.g., `AccordionItem`, `Logo`).\n\n### 6. Demo File Pattern\n\nEvery demo file in `registry/new-york/` follows this structure:\n\n```tsx\n\"use client\";\n\nimport { <Component> } from \"./<component-name>\";\n// (optionally import types)\n\nexport const <ComponentPreview> = () => (\n  <div className=\"flex min-h-96 w-full items-center justify-center\">\n    <Component prop1=\"value1\" prop2={value2} />\n  </div>\n);\n```\n\nKey patterns:\n1. Always starts with `\"use client\";` directive.\n2. Imports the component via relative path (`./<component>`).\n3. Exports a named function component (e.g., `BouncyAccordionPreview`, `TypewriterPreview`, `InlineToastPreview`).\n4. The export name convention is `<Something>Preview`.\n5. Wraps the component in a centered flex container, typically with `min-h-96` for consistent preview height.\n6. Provides realistic sample data (e.g., FAQ items for accordion, logo arrays for marquee).\n\n**Exception:** `smooth-input` has no separate demo file; it imports the component directly in the MDX and renders it inline within `<ComponentPreview>`.\n\n### 7. How It All Connects\n\n```\nregistry.json (manifest)\n  |\n  |-- Lists each component with source path + target install path + dependencies\n  \nregistry/new-york/<component>.tsx (source)\n  |-- The actual React component code users install\n  \nregistry/new-york/<component>-demo.tsx (demo)\n  |-- Showcases the component with sample data\n  |-- Imported by the MDX doc file\n  \ncontent/docs/components/<component>.mdx (documentation)\n  |-- Frontmatter (title, description)\n  |-- Imports demo from registry/new-york/<component>-demo\n  |-- Renders via <ComponentPreview> component\n  |-- Installation, Usage, Props sections\n  \ncontent/docs/components/meta.json (navigation)\n  |-- Controls sidebar ordering of component pages\n  \ncontent/docs/meta.json (top-level nav)\n  |-- Defines doc sections: (root) + components\n```\n\n### 8. Site Infrastructure (Supporting Files)\n\n- `/home/himmel/personal/prsui/source.config.ts` -- Fumadocs MDX configuration, points to `content/docs` directory.\n- `/home/himmel/personal/prsui/lib/docs.ts` -- Exports `DOCS_DIR = \"content/docs\"`, plus helpers like `isComponentsFolder`.\n- `/home/himmel/personal/prsui/components/component-preview.tsx` -- The `<ComponentPreview>` wrapper used in all MDX files; renders a demo/code toggle.\n- `/home/himmel/personal/prsui/components/components-list.tsx` -- The `<ComponentsList />` component used in the index page to auto-generate a grid of all component links.\n- `/home/himmel/personal/prsui/app/(app)/docs/[[...slug]]/page.tsx` -- The Next.js catch-all page that renders docs.\n</task_result>\n</task>",
+            "metadata": {
+              "parentSessionId": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+              "sessionId": "ses_0759d4569ffei935bmbUy9pDQF",
+              "model": {
+                "modelID": "mimo-v2.5-free",
+                "providerID": "opencode"
+              },
+              "truncated": false
+            },
+            "title": "Explore codebase structure",
+            "time": {
+              "start": 1784733153948,
+              "end": 1784733257583
+            }
+          },
+          "id": "prt_f8a62b0b4001wvlHFOksa2WqHP",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629fd6001qLv23K112UvQg5"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12717,
+            "input": 2230,
+            "output": 148,
+            "reasoning": 99,
+            "cache": {
+              "write": 0,
+              "read": 10240
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a644fad0010BeWPUMWj4OVtj",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a629fd6001qLv23K112UvQg5"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 15025,
+          "input": 2344,
+          "output": 134,
+          "reasoning": 131,
+          "cache": {
+            "write": 0,
+            "read": 12416
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733257717,
+          "completed": 1784733265923
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a644ff5001YIff9DyIe7Z8dE",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "type": "step-start",
+          "id": "prt_f8a64649f0016f0uO64ouG13t2",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a644ff5001YIff9DyIe7Z8dE"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I understand the structure. I need to:\n\n1. Create a demo file: `registry/new-york/logo-grid-demo.tsx`\n2. Create a docs file: `content/docs/components/logo-grid.mdx`\n3. Update `content/docs/components/meta.json` to include the new component\n4. Run `pnpm fix`\n5. Make sure I don't use `<Image />` from \"next/image\" (the component already uses `<img>` so that's fine)\n\nLet me first look at an existing component to understand the exact pattern better, then look at the logo-marquee component since it's similar (both are logo-related).",
+          "time": {
+            "start": 1784733263009,
+            "end": 1784733264708
+          },
+          "id": "prt_f8a6464a1001bErKzpx0auqJ0V",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a644ff5001YIff9DyIe7Z8dE"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_1e631a44fa5d403ead487c0a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { LogoMarquee } from \"./logo-marquee\";\n4: import type { Logo } from \"./logo-marquee\";\n5: \n6: const logos: Logo[] = [\n7:   {\n8:     alt: \"Vercel\",\n9:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n10:   },\n11:   {\n12:     alt: \"Next.js\",\n13:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n14:   },\n15:   {\n16:     alt: \"React\",\n17:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg\",\n18:   },\n19:   {\n20:     alt: \"TypeScript\",\n21:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg\",\n22:   },\n23:   {\n24:     alt: \"Tailwind CSS\",\n25:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg\",\n26:   },\n27:   {\n28:     alt: \"GitHub\",\n29:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg\",\n30:   },\n31:   {\n32:     alt: \"Figma\",\n33:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg\",\n34:   },\n35:   {\n36:     alt: \"GitLab\",\n37:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg\",\n38:   },\n39: ];\n40: \n41: export const LogoMarqueePreview = function LogoMarqueePreview() {\n42:   return (\n43:     <div className=\"flex w-full items-center justify-center\">\n44:       <LogoMarquee logos={logos} />\n45:     </div>\n46:   );\n47: };\n\n(End of file - total 47 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { LogoMarquee } from \"./logo-marquee\";\nimport type { Logo } from \"./logo-marquee\";\n\nconst logos: Logo[] = [\n  {\n    alt: \"Vercel\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n  },\n  {\n    alt: \"Next.js\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n  },\n  {\n    alt: \"React\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg\",\n  },\n  {\n    alt: \"TypeScript\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx",
+                "text": "\"use client\";\n\nimport { LogoMarquee } from \"./logo-marquee\";\nimport type { Logo } from \"./logo-marquee\";\n\nconst logos: Logo[] = [\n  {\n    alt: \"Vercel\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n  },\n  {\n    alt: \"Next.js\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n  },\n  {\n    alt: \"React\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg\",\n  },\n  {\n    alt: \"TypeScript\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg\",\n  },\n  {\n    alt: \"Tailwind CSS\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg\",\n  },\n  {\n    alt: \"GitHub\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg\",\n  },\n  {\n    alt: \"Figma\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg\",\n  },\n  {\n    alt: \"GitLab\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg\",\n  },\n];\n\nexport const LogoMarqueePreview = function LogoMarqueePreview() {\n  return (\n    <div className=\"flex w-full items-center justify-center\">\n      <LogoMarquee logos={logos} />\n    </div>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 47,
+                "totalLines": 47,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/logo-marquee-demo.tsx",
+            "time": {
+              "start": 1784733264939,
+              "end": 1784733264946
+            }
+          },
+          "id": "prt_f8a646b4b001piBnrro5z6r9vg",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a644ff5001YIff9DyIe7Z8dE"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_45a483e9e4544204b61a5c1a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Logo Marquee\n3: description: An infinite scrolling logo marquee with smooth animation and hover pause.\n4: ---\n5: \n6: import { LogoMarqueePreview } from \"@/registry/new-york/logo-marquee-demo\";\n7: \n8: <ComponentPreview name=\"logo-marquee\">\n9:   <LogoMarqueePreview />\n10: </ComponentPreview>\n11: \n12: ## Installation\n13: \n14: If you've already added the prsui registry, use the short command:\n15: \n16: <CodeBlockCommand\n17:   __bun__=\"bunx --bun shadcn@latest add @prsui/logo-marquee\"\n18:   __npm__=\"npx shadcn@latest add @prsui/logo-marquee\"\n19:   __pnpm__=\"pnpm dlx shadcn@latest add @prsui/logo-marquee\"\n20:   __yarn__=\"yarn shadcn@latest add @prsui/logo-marquee\"\n21: />\n22: \n23: Otherwise, use the full registry URL:\n24: \n25: <CodeBlockCommand\n26:   __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n27:   __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n28:   __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n29:   __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n30: />\n31: \n32: ## Usage\n33: \n34: After you add the component with the CLI, import it from your UI folder:\n35: \n36: ```tsx\n37: import { LogoMarquee, type Logo } from \"@/components/prsui/logo-marquee\";\n38: \n39: const logos: Logo[] = [\n40:   {\n41:     alt: \"Vercel\",\n42:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n43:   },\n44:   {\n45:     alt: \"Next.js\",\n46:     src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n47:   },\n48: ];\n49: \n50: export function MyComponent() {\n51:   return <LogoMarquee logos={logos} />;\n52: }\n53: ```\n54: \n55: ## Props\n56: \n57: ### Logo\n58: \n59: | Field    | Type     | Default  | Description            |\n60: | -------- | -------- | -------- | ---------------------- |\n61: | `src`    | `string` | -        | Image URL for the logo |\n62: | `alt`    | `string` | -        | Alt text for the image |\n63: | `width`  | `number` | `\"auto\"` | Optional width         |\n64: | `height` | `number` | `\"auto\"` | Optional height        |\n65: \n66: ### LogoMarquee\n67: \n68: | Prop        | Type     | Default | Description                    |\n69: | ----------- | -------- | ------- | ------------------------------ |\n70: | `logos`     | `Logo[]` | -       | Array of logo objects          |\n71: | `className` | `string` | -       | Classes applied to the wrapper |\n72: \n73: ### InfiniteSlider (internal)\n74: \n75: | Prop              | Type                         | Default        | Description                          |\n76: | ----------------- | ---------------------------- | -------------- | ------------------------------------ |\n77: | `children`        | `React.ReactNode`            | -              | Content to scroll                    |\n78: | `gap`             | `number`                     | `16`           | Gap between items in px              |\n79: | `duration`        | `number`                     | `25`           | Animation duration in seconds        |\n80: | `durationOnHover` | `number`                     | -              | Duration when hovered (slows down)   |\n81: | `direction`       | `\"horizontal\" \\| \"vertical\"` | `\"horizontal\"` | Scroll direction                     |\n82: | `reverse`         | `boolean`                    | `false`        | Reverse scroll direction             |\n83: | `className`       | `string`                     | -              | Classes applied to the outer wrapper |\n\n(End of file - total 83 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Logo Marquee\ndescription: An infinite scrolling logo marquee with smooth animation and hover pause.\n---\n\nimport { LogoMarqueePreview } from \"@/registry/new-york/logo-marquee-demo\";\n\n<ComponentPreview name=\"logo-marquee\">\n  <LogoMarqueePreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/logo-marquee\"\n  __npm__=\"npx shadcn@latest add @prsui/logo-marquee\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/logo-marquee\"\n  __yarn__=\"yarn shadcn@latest add @prsui/logo-marquee\"",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx",
+                "text": "---\ntitle: Logo Marquee\ndescription: An infinite scrolling logo marquee with smooth animation and hover pause.\n---\n\nimport { LogoMarqueePreview } from \"@/registry/new-york/logo-marquee-demo\";\n\n<ComponentPreview name=\"logo-marquee\">\n  <LogoMarqueePreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/logo-marquee\"\n  __npm__=\"npx shadcn@latest add @prsui/logo-marquee\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/logo-marquee\"\n  __yarn__=\"yarn shadcn@latest add @prsui/logo-marquee\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\nimport { LogoMarquee, type Logo } from \"@/components/prsui/logo-marquee\";\n\nconst logos: Logo[] = [\n  {\n    alt: \"Vercel\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n  },\n  {\n    alt: \"Next.js\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n  },\n];\n\nexport function MyComponent() {\n  return <LogoMarquee logos={logos} />;\n}\n```\n\n## Props\n\n### Logo\n\n| Field    | Type     | Default  | Description            |\n| -------- | -------- | -------- | ---------------------- |\n| `src`    | `string` | -        | Image URL for the logo |\n| `alt`    | `string` | -        | Alt text for the image |\n| `width`  | `number` | `\"auto\"` | Optional width         |\n| `height` | `number` | `\"auto\"` | Optional height        |\n\n### LogoMarquee\n\n| Prop        | Type     | Default | Description                    |\n| ----------- | -------- | ------- | ------------------------------ |\n| `logos`     | `Logo[]` | -       | Array of logo objects          |\n| `className` | `string` | -       | Classes applied to the wrapper |\n\n### InfiniteSlider (internal)\n\n| Prop              | Type                         | Default        | Description                          |\n| ----------------- | ---------------------------- | -------------- | ------------------------------------ |\n| `children`        | `React.ReactNode`            | -              | Content to scroll                    |\n| `gap`             | `number`                     | `16`           | Gap between items in px              |\n| `duration`        | `number`                     | `25`           | Animation duration in seconds        |\n| `durationOnHover` | `number`                     | -              | Duration when hovered (slows down)   |\n| `direction`       | `\"horizontal\" \\| \"vertical\"` | `\"horizontal\"` | Scroll direction                     |\n| `reverse`         | `boolean`                    | `false`        | Reverse scroll direction             |\n| `className`       | `string`                     | -              | Classes applied to the outer wrapper |",
+                "lineStart": 1,
+                "lineEnd": 83,
+                "totalLines": 83,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/logo-marquee.mdx",
+            "time": {
+              "start": 1784733265271,
+              "end": 1784733265286
+            }
+          },
+          "id": "prt_f8a646c8b001TZ7319jhRjobc0",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a644ff5001YIff9DyIe7Z8dE"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_3c310a077700411f8477ed14",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/meta.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/meta.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"title\": \"Components\",\n3:   \"pages\": [\n4:     \"index\",\n5:     \"smooth-input\",\n6:     \"split-action\",\n7:     \"tooltip\",\n8:     \"accordion\",\n9:     \"typewriter\",\n10:     \"link\",\n11:     \"editable-chip\",\n12:     \"inline-toast\",\n13:     \"view-on-map\",\n14:     \"logo-marquee\"\n15:   ]\n16: }\n\n(End of file - total 16 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"title\": \"Components\",\n  \"pages\": [\n    \"index\",\n    \"smooth-input\",\n    \"split-action\",\n    \"tooltip\",\n    \"accordion\",\n    \"typewriter\",\n    \"link\",\n    \"editable-chip\",\n    \"inline-toast\",\n    \"view-on-map\",\n    \"logo-marquee\"\n  ]\n}",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/meta.json",
+                "text": "{\n  \"title\": \"Components\",\n  \"pages\": [\n    \"index\",\n    \"smooth-input\",\n    \"split-action\",\n    \"tooltip\",\n    \"accordion\",\n    \"typewriter\",\n    \"link\",\n    \"editable-chip\",\n    \"inline-toast\",\n    \"view-on-map\",\n    \"logo-marquee\"\n  ]\n}",
+                "lineStart": 1,
+                "lineEnd": 16,
+                "totalLines": 16,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/meta.json",
+            "time": {
+              "start": 1784733265615,
+              "end": 1784733265621
+            }
+          },
+          "id": "prt_f8a646dc7001q5awKP25vaiUIc",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a644ff5001YIff9DyIe7Z8dE"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_14112d9f0246460d859f0cbd",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"name\": \"prsui\",\n3:   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n4:   \"items\": [\n5:     {\n6:       \"name\": \"smooth-input\",\n7:       \"type\": \"registry:ui\",\n8:       \"title\": \"Smooth Input\",\n9:       \"description\": \"A smooth input component with a caret animation.\",\n10:       \"files\": [\n11:         {\n12:           \"path\": \"registry/new-york/smooth-input.tsx\",\n13:           \"type\": \"registry:ui\",\n14:           \"target\": \"components/prsui/smooth-input.tsx\"\n15:         }\n16:       ],\n17:       \"dependencies\": [\"framer-motion\"]\n18:     },\n19:     {\n20:       \"name\": \"split-action\",\n21:       \"type\": \"registry:ui\",\n22:       \"title\": \"Split Action\",\n23:       \"description\": \"Interactive component for split actions.\",\n24:       \"files\": [\n25:         {\n26:           \"path\": \"registry/new-york/split-action.tsx\",\n27:           \"type\": \"registry:ui\",\n28:           \"target\": \"components/prsui/split-action.tsx\"\n29:         }\n30:       ],\n31:       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n32:     },\n33:     {\n34:       \"name\": \"tooltip\",\n35:       \"type\": \"registry:ui\",\n36:       \"title\": \"Tooltip\",\n37:       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n38:       \"files\": [\n39:         {\n40:           \"path\": \"registry/new-york/tooltip.tsx\",\n41:           \"type\": \"registry:ui\",\n42:           \"target\": \"components/prsui/tooltip.tsx\"\n43:         },\n44:         {\n45:           \"path\": \"lib/ease.ts\",\n46:           \"type\": \"registry:lib\",\n47:           \"target\": \"lib/ease.ts\"\n48:         },\n49:         {\n50:           \"path\": \"lib/hooks/use-hover-capable.ts\",\n51:           \"type\": \"registry:lib\",\n52:           \"target\": \"lib/hooks/use-hover-capable.ts\"\n53:         }\n54:       ],\n55:       \"dependencies\": [\"motion\"]\n56:     },\n57:     {\n58:       \"name\": \"accordion\",\n59:       \"type\": \"registry:ui\",\n60:       \"title\": \"Accordion\",\n61:       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n62:       \"files\": [\n63:         {\n64:           \"path\": \"registry/new-york/accordion.tsx\",\n65:           \"type\": \"registry:ui\",\n66:           \"target\": \"components/prsui/accordion.tsx\"\n67:         },\n68:         {\n69:           \"path\": \"lib/ease.ts\",\n70:           \"type\": \"registry:lib\",\n71:           \"target\": \"lib/ease.ts\"\n72:         }\n73:       ],\n74:       \"dependencies\": [\"motion\", \"lucide-react\"]\n75:     },\n76:     {\n77:       \"name\": \"typewriter\",\n78:       \"type\": \"registry:ui\",\n79:       \"title\": \"Typewriter\",\n80:       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n81:       \"files\": [\n82:         {\n83:           \"path\": \"registry/new-york/typewriter.tsx\",\n84:           \"type\": \"registry:ui\",\n85:           \"target\": \"components/prsui/typewriter.tsx\"\n86:         }\n87:       ],\n88:       \"dependencies\": [\"motion\"]\n89:     },\n90:     {\n91:       \"name\": \"link\",\n92:       \"type\": \"registry:ui\",\n93:       \"title\": \"Link\",\n94:       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n95:       \"files\": [\n96:         {\n97:           \"path\": \"registry/new-york/link.tsx\",\n98:           \"type\": \"registry:ui\",\n99:           \"target\": \"components/prsui/link.tsx\"\n100:         }\n101:       ]\n102:     },\n103:     {\n104:       \"name\": \"editable-chip\",\n105:       \"type\": \"registry:ui\",\n106:       \"title\": \"Editable Chip\",\n107:       \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n108:       \"files\": [\n109:         {\n110:           \"path\": \"registry/new-york/editable-chip.tsx\",\n111:           \"type\": \"registry:ui\",\n112:           \"target\": \"components/prsui/editable-chip.tsx\"\n113:         }\n114:       ],\n115:       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n116:     },\n117:     {\n118:       \"name\": \"inline-toast\",\n119:       \"type\": \"registry:ui\",\n120:       \"title\": \"Inline Toast\",\n121:       \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n122:       \"files\": [\n123:         {\n124:           \"path\": \"registry/new-york/inline-toast.tsx\",\n125:           \"type\": \"registry:ui\",\n126:           \"target\": \"components/prsui/inline-toast.tsx\"\n127:         }\n128:       ],\n129:       \"dependencies\": [\"motion\", \"react-icons\"]\n130:     },\n131:     {\n132:       \"name\": \"view-on-map\",\n133:       \"type\": \"registry:ui\",\n134:       \"title\": \"View On Map\",\n135:       \"description\": \"An animated map preview component that expands from a pill button into an embedded Google Map view.\",\n136:       \"files\": [\n137:         {\n138:           \"path\": \"registry/new-york/view-on-map.tsx\",\n139:           \"type\": \"registry:ui\",\n140:           \"target\": \"components/prsui/view-on-map.tsx\"\n141:         }\n142:       ],\n143:       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n144:     },\n145:     {\n146:       \"name\": \"logo-marquee\",\n147:       \"type\": \"registry:ui\",\n148:       \"title\": \"Logo Marquee\",\n149:       \"description\": \"An infinite scrolling logo marquee with smooth animation and hover pause.\",\n150:       \"files\": [\n151:         {\n152:           \"path\": \"registry/new-york/logo-marquee.tsx\",\n153:           \"type\": \"registry:ui\",\n154:           \"target\": \"components/prsui/logo-marquee.tsx\"\n155:         }\n156:       ],\n157:       \"dependencies\": [\"motion\", \"react-use-measure\"]\n158:     }\n159:   ]\n160: }\n\n(End of file - total 160 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry.json",
+                "text": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Split Action\",\n      \"description\": \"Interactive component for split actions.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/split-action.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/split-action.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"tooltip\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Tooltip\",\n      \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/tooltip.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/tooltip.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        },\n        {\n          \"path\": \"lib/hooks/use-hover-capable.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/hooks/use-hover-capable.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"accordion\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Accordion\",\n      \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/accordion.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/accordion.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"typewriter\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Typewriter\",\n      \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/typewriter.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/typewriter.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"link\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Link\",\n      \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/link.tsx\"\n        }\n      ]\n    },\n    {\n      \"name\": \"editable-chip\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Editable Chip\",\n      \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/editable-chip.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/editable-chip.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"inline-toast\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Inline Toast\",\n      \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/inline-toast.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/inline-toast.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-icons\"]\n    },\n    {\n      \"name\": \"view-on-map\",\n      \"type\": \"registry:ui\",\n      \"title\": \"View On Map\",\n      \"description\": \"An animated map preview component that expands from a pill button into an embedded Google Map view.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/view-on-map.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/view-on-map.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"logo-marquee\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Logo Marquee\",\n      \"description\": \"An infinite scrolling logo marquee with smooth animation and hover pause.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/logo-marquee.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/logo-marquee.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-use-measure\"]\n    }\n  ]\n}",
+                "lineStart": 1,
+                "lineEnd": 160,
+                "totalLines": 160,
+                "truncated": false
+              }
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784733265834,
+              "end": 1784733265839
+            }
+          },
+          "id": "prt_f8a646eff001gFioxpS5I8gLDI",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a644ff5001YIff9DyIe7Z8dE"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "type": "step-finish",
+          "tokens": {
+            "total": 15025,
+            "input": 2344,
+            "output": 134,
+            "reasoning": 131,
+            "cache": {
+              "write": 0,
+              "read": 12416
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a646ff0001KgLxA6z7xD4nRD",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a644ff5001YIff9DyIe7Z8dE"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 18888,
+          "input": 3940,
+          "output": 149,
+          "reasoning": 79,
+          "cache": {
+            "write": 0,
+            "read": 14720
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733265926,
+          "completed": 1784733274360
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a647006001JvWZf181fQiYNX",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "type": "step-start",
+          "id": "prt_f8a648885001MWTXIvihdtJqIE",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a647006001JvWZf181fQiYNX"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have all the information I need. Let me create:\n\n1. Demo file: `registry/new-york/logo-grid-demo.tsx`\n2. Docs file: `content/docs/components/logo-grid.mdx`\n3. Update `content/docs/components/meta.json` to include `logo-grid`\n4. Update `registry.json` to include the new component\n\nLet me create these files now.",
+          "time": {
+            "start": 1784733272199,
+            "end": 1784733273148
+          },
+          "id": "prt_f8a648887001VKt6FAkV2OmobX",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a647006001JvWZf181fQiYNX"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_13768baa9af84de4ba8fc50c",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-grid-demo.tsx in registry/new-york/\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-grid.mdx in content/docs/components/\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update meta.json to include logo-grid\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update registry.json to include logo-grid component\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "5 todos",
+            "time": {
+              "start": 1784733274235,
+              "end": 1784733274237
+            }
+          },
+          "id": "prt_f8a648c3e00107m42tz0PZlRZL",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a647006001JvWZf181fQiYNX"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "type": "step-finish",
+          "tokens": {
+            "total": 18888,
+            "input": 3940,
+            "output": 149,
+            "reasoning": 79,
+            "cache": {
+              "write": 0,
+              "read": 14720
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a6490e6001n52Qr6gMPgQi5w",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a647006001JvWZf181fQiYNX"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 19467,
+          "input": 452,
+          "output": 383,
+          "reasoning": 8,
+          "cache": {
+            "write": 0,
+            "read": 18624
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733274363,
+          "completed": 1784733288651
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a6490fb001RcLYDQTq3pPoEh",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "type": "step-start",
+          "id": "prt_f8a64b928001iKc3NybzeHJfEa",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6490fb001RcLYDQTq3pPoEh"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me create the demo file first.",
+          "time": {
+            "start": 1784733284650,
+            "end": 1784733284774
+          },
+          "id": "prt_f8a64b92a001Bm3I3pR6lMXXqZ",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6490fb001RcLYDQTq3pPoEh"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_848ea0edac2646a1b021bff8",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/logo-grid-demo.tsx",
+              "content": "\"use client\";\n\nimport { LogoGrid } from \"./logo-grid\";\nimport type { Logo } from \"./logo-grid\";\n\nconst logos: Logo[] = [\n  {\n    alt: \"Vercel\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n  },\n  {\n    alt: \"Next.js\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n  },\n  {\n    alt: \"React\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg\",\n  },\n  {\n    alt: \"TypeScript\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg\",\n  },\n  {\n    alt: \"Tailwind CSS\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg\",\n  },\n  {\n    alt: \"GitHub\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg\",\n  },\n  {\n    alt: \"Figma\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg\",\n  },\n  {\n    alt: \"GitLab\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg\",\n  },\n];\n\nexport const LogoGridPreview = function LogoGridPreview() {\n  return (\n    <div className=\"flex w-full items-center justify-center p-4 md:p-8\">\n      <LogoGrid logos={logos} />\n    </div>\n  );\n};\n"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/registry/new-york/logo-grid-demo.tsx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "registry/new-york/logo-grid-demo.tsx",
+            "time": {
+              "start": 1784733288519,
+              "end": 1784733288539
+            }
+          },
+          "id": "prt_f8a64b9a8001lnleK1r2NNEXcx",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6490fb001RcLYDQTq3pPoEh"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "238f9bcf7d64d1a3330ca8a2068ddb29798e770a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 19467,
+            "input": 452,
+            "output": 383,
+            "reasoning": 8,
+            "cache": {
+              "write": 0,
+              "read": 18624
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a64c8b5001l6X1fMpPUxh3dV",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6490fb001RcLYDQTq3pPoEh"
+        },
+        {
+          "type": "patch",
+          "hash": "cafb5a9f7bdb2cbad864387c6ef13415f42fab33",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/logo-grid-demo.tsx"
+          ],
+          "id": "prt_f8a64c8c9001I7Fdup7dXJw1eW",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6490fb001RcLYDQTq3pPoEh"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 20291,
+          "input": 426,
+          "output": 783,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 19072
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733288654,
+          "completed": 1784733303140
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a64c8ce0017A6VdcIhCvYYnq",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "238f9bcf7d64d1a3330ca8a2068ddb29798e770a",
+          "type": "step-start",
+          "id": "prt_f8a64e244001BSXesFHuZYPQfc",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a64c8ce0017A6VdcIhCvYYnq"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me create the MDX docs file.",
+          "time": {
+            "start": 1784733295174,
+            "end": 1784733295362
+          },
+          "id": "prt_f8a64e246001hnXGNjalpKX1wk",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a64c8ce0017A6VdcIhCvYYnq"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_da093c62f7914e9db5f33395",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-grid-demo.tsx in registry/new-york/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-grid.mdx in content/docs/components/\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update meta.json to include logo-grid\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update registry.json to include logo-grid component\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "4 todos",
+            "time": {
+              "start": 1784733297415,
+              "end": 1784733297418
+            }
+          },
+          "id": "prt_f8a64e304001r1Dpcu44EqTx3A",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a64c8ce0017A6VdcIhCvYYnq"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_06a4096dc89c452fa377cc2d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "content": "---\ntitle: Logo Grid\ndescription: A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.\n---\n\nimport { LogoGridPreview } from \"@/registry/new-york/logo-grid-demo\";\n\n<ComponentPreview name=\"logo-grid\">\n  <LogoGridPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/logo-grid\"\n  __npm__=\"npx shadcn@latest add @prsui/logo-grid\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/logo-grid\"\n  __yarn__=\"yarn shadcn@latest add @prsui/logo-grid\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/logo-grid.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\nimport { LogoGrid, type Logo } from \"@/components/prsui/logo-grid\";\n\nconst logos: Logo[] = [\n  {\n    alt: \"Vercel\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n  },\n  {\n    alt: \"Next.js\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n  },\n];\n\nexport function MyComponent() {\n  return <LogoGrid logos={logos} />;\n}\n```\n\n## Props\n\n### Logo\n\n| Field    | Type     | Default | Description            |\n| -------- | -------- | ------- | ---------------------- |\n| `src`    | `string` | -       | Image URL for the logo |\n| `alt`    | `string` | -       | Alt text for the image |\n| `width`  | `number` | -       | Optional width         |\n| `height` | `number` | -       | Optional height        |\n\n### LogoGrid\n\n| Prop        | Type     | Default | Description                    |\n| ----------- | -------- | ------- | ------------------------------ |\n| `logos`     | `Logo[]` | -       | Array of logo objects (max 8)  |\n| `className` | `string` | -       | Classes applied to the wrapper |\n",
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/logo-grid.mdx"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/content/docs/components/logo-grid.mdx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "content/docs/components/logo-grid.mdx",
+            "time": {
+              "start": 1784733303044,
+              "end": 1784733303053
+            }
+          },
+          "id": "prt_f8a64ebbe001OzdoAORk8VBXmW",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a64c8ce0017A6VdcIhCvYYnq"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e8da5ffae494580e753012842ac8822257c43d9a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 20291,
+            "input": 426,
+            "output": 783,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 19072
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a65014f0017TjSaYedMLNDNZ",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a64c8ce0017A6VdcIhCvYYnq"
+        },
+        {
+          "type": "patch",
+          "hash": "238f9bcf7d64d1a3330ca8a2068ddb29798e770a",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/components/logo-grid.mdx"
+          ],
+          "id": "prt_f8a650162001NLY1hrN4gY2gFZ",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a64c8ce0017A6VdcIhCvYYnq"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 20732,
+          "input": 1047,
+          "output": 219,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 19456
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733303144,
+          "completed": 1784733308088
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a650168001MFI5ma65bkpCLN",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "e8da5ffae494580e753012842ac8822257c43d9a",
+          "type": "step-start",
+          "id": "prt_f8a650bd9001Cg66AKDJ7YXME8",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a650168001MFI5ma65bkpCLN"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me update meta.json and registry.json.",
+          "time": {
+            "start": 1784733305819,
+            "end": 1784733306008
+          },
+          "id": "prt_f8a650bdb001CxouLAMFmNysGw",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a650168001MFI5ma65bkpCLN"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_6366e6b077734b63ab87fe94",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-grid-demo.tsx in registry/new-york/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-grid.mdx in content/docs/components/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update meta.json to include logo-grid\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update registry.json to include logo-grid component\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "3 todos",
+            "time": {
+              "start": 1784733307332,
+              "end": 1784733307335
+            }
+          },
+          "id": "prt_f8a650c9a001d1ail2f2QZTH5z",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a650168001MFI5ma65bkpCLN"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_ff0faaddca9e41979103bd2e",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/meta.json",
+              "oldString": "    \"logo-marquee\"\n  ]",
+              "newString": "    \"logo-marquee\",\n    \"logo-grid\"\n  ]"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/content/docs/components/meta.json\n===================================================================\n--- /home/himmel/personal/prsui/content/docs/components/meta.json\n+++ /home/himmel/personal/prsui/content/docs/components/meta.json\n@@ -10,7 +10,8 @@\n     \"link\",\n     \"editable-chip\",\n     \"inline-toast\",\n     \"view-on-map\",\n-    \"logo-marquee\"\n+    \"logo-marquee\",\n+    \"logo-grid\"\n   ]\n }\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/content/docs/components/meta.json",
+                "patch": "Index: /home/himmel/personal/prsui/content/docs/components/meta.json\n===================================================================\n--- /home/himmel/personal/prsui/content/docs/components/meta.json\n+++ /home/himmel/personal/prsui/content/docs/components/meta.json\n@@ -10,7 +10,8 @@\n     \"link\",\n     \"editable-chip\",\n     \"inline-toast\",\n     \"view-on-map\",\n-    \"logo-marquee\"\n+    \"logo-marquee\",\n+    \"logo-grid\"\n   ]\n }\n",
+                "additions": 2,
+                "deletions": 1
+              },
+              "truncated": false
+            },
+            "title": "content/docs/components/meta.json",
+            "time": {
+              "start": 1784733308015,
+              "end": 1784733308017
+            }
+          },
+          "id": "prt_f8a6511d3001uhlA5SedbwTHKx",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a650168001MFI5ma65bkpCLN"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "daf254def80bf94982c6e703406094c7eaffcb6f",
+          "type": "step-finish",
+          "tokens": {
+            "total": 20732,
+            "input": 1047,
+            "output": 219,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 19456
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a6514a3001c0LSaamylQOHQn",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a650168001MFI5ma65bkpCLN"
+        },
+        {
+          "type": "patch",
+          "hash": "e8da5ffae494580e753012842ac8822257c43d9a",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/components/meta.json"
+          ],
+          "id": "prt_f8a6514b60017zLJ7wPFYllV6p",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a650168001MFI5ma65bkpCLN"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 21287,
+          "input": 463,
+          "output": 337,
+          "reasoning": 7,
+          "cache": {
+            "write": 0,
+            "read": 20480
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733308091,
+          "completed": 1784733315419
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a6514bb0010lrviRihXDLesC",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "daf254def80bf94982c6e703406094c7eaffcb6f",
+          "type": "step-start",
+          "id": "prt_f8a651ef200112LnTrjcLHhSnV",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6514bb0010lrviRihXDLesC"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me update registry.json.",
+          "time": {
+            "start": 1784733310708,
+            "end": 1784733310881
+          },
+          "id": "prt_f8a651ef4001HWc8S6YAYsDRRZ",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6514bb0010lrviRihXDLesC"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_668c4f3ac6f847b9a6b6173b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-grid-demo.tsx in registry/new-york/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-grid.mdx in content/docs/components/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update meta.json to include logo-grid\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update registry.json to include logo-grid component\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "2 todos",
+            "time": {
+              "start": 1784733312935,
+              "end": 1784733312937
+            }
+          },
+          "id": "prt_f8a651fa30015f579ct9nzO8V4",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6514bb0010lrviRihXDLesC"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_ce923af8acd24f39b458d120",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "oldString": "      \"dependencies\": [\"motion\", \"react-use-measure\"]\n    }\n  ]\n}",
+              "newString": "      \"dependencies\": [\"motion\", \"react-use-measure\"]\n    },\n    {\n      \"name\": \"logo-grid\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Logo Grid\",\n      \"description\": \"A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/logo-grid.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/logo-grid.tsx\"\n        }\n      ],\n      \"dependencies\": [\"lucide-react\"]\n    }\n  ]\n}"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -154,7 +154,21 @@\n           \"target\": \"components/prsui/logo-marquee.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-use-measure\"]\n+    },\n+    {\n+      \"name\": \"logo-grid\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Logo Grid\",\n+      \"description\": \"A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/logo-grid.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/prsui/logo-grid.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"lucide-react\"]\n     }\n   ]\n }\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry.json",
+                "patch": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -154,7 +154,21 @@\n           \"target\": \"components/prsui/logo-marquee.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-use-measure\"]\n+    },\n+    {\n+      \"name\": \"logo-grid\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Logo Grid\",\n+      \"description\": \"A responsive grid layout for displaying logos with highlighted cells and plus icon decorations.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/logo-grid.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/prsui/logo-grid.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"lucide-react\"]\n     }\n   ]\n }\n",
+                "additions": 14,
+                "deletions": 0
+              },
+              "truncated": false
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784733315322,
+              "end": 1784733315325
+            }
+          },
+          "id": "prt_f8a6527ab001qtM0DArnjDG6r1",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6514bb0010lrviRihXDLesC"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d42109691ab7a2988c0bfafef9198af4f00cee42",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21287,
+            "input": 463,
+            "output": 337,
+            "reasoning": 7,
+            "cache": {
+              "write": 0,
+              "read": 20480
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a653134001H4Q1RoNu7HwUQB",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6514bb0010lrviRihXDLesC"
+        },
+        {
+          "type": "patch",
+          "hash": "daf254def80bf94982c6e703406094c7eaffcb6f",
+          "files": [
+            "/home/himmel/personal/prsui/registry.json"
+          ],
+          "id": "prt_f8a6531590018zHCauBcuJVEcW",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a6514bb0010lrviRihXDLesC"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 21709,
+          "input": 570,
+          "output": 202,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 20928
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733315422,
+          "completed": 1784733322304
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a65315e001WyuirxsGa4ttvy",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "d42109691ab7a2988c0bfafef9198af4f00cee42",
+          "type": "step-start",
+          "id": "prt_f8a653c71001Z9906aIvUWTkkQ",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a65315e001WyuirxsGa4ttvy"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me run `pnpm fix`.",
+          "time": {
+            "start": 1784733318259,
+            "end": 1784733318286
+          },
+          "id": "prt_f8a653c73001ViXGvvfWQq8qhw",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a65315e001WyuirxsGa4ttvy"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_9feb4abad71b482d8ad55885",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "in_progress"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-grid-demo.tsx in registry/new-york/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-grid.mdx in content/docs/components/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update meta.json to include logo-grid\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update registry.json to include logo-grid component\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "in_progress",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "1 todos",
+            "time": {
+              "start": 1784733319633,
+              "end": 1784733319636
+            }
+          },
+          "id": "prt_f8a653c9000139uIjkX9kJCGtE",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a65315e001WyuirxsGa4ttvy"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_8886d0551cfb4061b4db3229",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "pnpm fix",
+              "timeout": 120000,
+              "workdir": "/home/himmel/personal/prsui"
+            },
+            "output": "$ ultracite fix\n(node:120623) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784733320940 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 938ms on 195 files using 8 threads.\n(node:120718) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784733322017 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n  ! eslint-plugin-next(no-img-element): Using `<img>` could result in slower LCP and higher bandwidth.\n    ,-[registry/new-york/logo-grid.tsx:17:6]\n 16 |   return (\n 17 |     <img\n    :      ^|^\n    :       `-- Use `<Image />` from `next/image` instead.\n 18 |       alt={logo.alt}\n    `----\n  help: Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images.\n  note: See https://nextjs.org/docs/messages/no-img-element\n\nFound 1 warning and 0 errors.\nFinished in 210ms on 164 files with 453 rules using 8 threads.\n",
+            "metadata": {
+              "output": "$ ultracite fix\n(node:120623) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784733320940 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 938ms on 195 files using 8 threads.\n(node:120718) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784733322017 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n  ! eslint-plugin-next(no-img-element): Using `<img>` could result in slower LCP and higher bandwidth.\n    ,-[registry/new-york/logo-grid.tsx:17:6]\n 16 |   return (\n 17 |     <img\n    :      ^|^\n    :       `-- Use `<Image />` from `next/image` instead.\n 18 |       alt={logo.alt}\n    `----\n  help: Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images.\n  note: See https://nextjs.org/docs/messages/no-img-element\n\nFound 1 warning and 0 errors.\nFinished in 210ms on 164 files with 453 rules using 8 threads.\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "pnpm fix",
+            "time": {
+              "start": 1784733322220,
+              "end": 1784733322257
+            }
+          },
+          "id": "prt_f8a654211001mFLI1j2hbPU7Cw",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a65315e001WyuirxsGa4ttvy"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d42109691ab7a2988c0bfafef9198af4f00cee42",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21709,
+            "input": 570,
+            "output": 202,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 20928
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a654c2c001j5Z8GlB9SmM8ky",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a65315e001WyuirxsGa4ttvy"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 22560,
+          "input": 913,
+          "output": 148,
+          "reasoning": 59,
+          "cache": {
+            "write": 0,
+            "read": 21440
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733322310,
+          "completed": 1784733327339
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a654c46001gd31XFmWcztd1F",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "d42109691ab7a2988c0bfafef9198af4f00cee42",
+          "type": "step-start",
+          "id": "prt_f8a6557e90010dxSiB5GG5AxJn",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a654c46001gd31XFmWcztd1F"
+        },
+        {
+          "type": "reasoning",
+          "text": "The lint ran successfully. There's a warning about using `<img>` instead of `<Image />` from `next/image`, but the user explicitly said \"don't use `<Image />` from 'next/image'\" so this is expected and correct.\n\nLet me mark the final task as completed.",
+          "time": {
+            "start": 1784733325291,
+            "end": 1784733325997
+          },
+          "id": "prt_f8a6557eb00110Hguo1rpOrzdh",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a654c46001gd31XFmWcztd1F"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_6978293a639d4fe2bb0e9629",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "high",
+                  "status": "completed"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-grid-demo.tsx in registry/new-york/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-grid.mdx in content/docs/components/\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update meta.json to include logo-grid\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Update registry.json to include logo-grid component\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-grid-demo.tsx in registry/new-york/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-grid.mdx in content/docs/components/",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update meta.json to include logo-grid",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Update registry.json to include logo-grid component",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "completed",
+                  "priority": "high"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "0 todos",
+            "time": {
+              "start": 1784733327270,
+              "end": 1784733327273
+            }
+          },
+          "id": "prt_f8a655ab3001jXVpJqcPldHXiG",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a654c46001gd31XFmWcztd1F"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d42109691ab7a2988c0bfafef9198af4f00cee42",
+          "type": "step-finish",
+          "tokens": {
+            "total": 22560,
+            "input": 913,
+            "output": 148,
+            "reasoning": 59,
+            "cache": {
+              "write": 0,
+              "read": 21440
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a655fda001iwJG0WmSnN50u6",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a654c46001gd31XFmWcztd1F"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a629e00001CFSo0BZ7GPlDau",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 23035,
+          "input": 411,
+          "output": 278,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 22336
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784733327343,
+          "completed": 1784733341458
+        },
+        "finish": "stop",
+        "id": "msg_f8a655fef001u5109j8EMKjyBs",
+        "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl"
+      },
+      "parts": [
+        {
+          "snapshot": "d42109691ab7a2988c0bfafef9198af4f00cee42",
+          "type": "step-start",
+          "id": "prt_f8a6585a6001fWE5YQ8bfhdBLq",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a655fef001u5109j8EMKjyBs"
+        },
+        {
+          "type": "reasoning",
+          "text": "All done. Let me summarize what was done.",
+          "time": {
+            "start": 1784733337001,
+            "end": 1784733337142
+          },
+          "id": "prt_f8a6585a90018xCz5Xqa9KaiCi",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a655fef001u5109j8EMKjyBs"
+        },
+        {
+          "type": "text",
+          "text": "Done. Here's what was updated:\n\n- **`registry/new-york/logo-grid-demo.tsx`** — Demo with 8 sample logos\n- **`content/docs/components/logo-grid.mdx`** — Full docs with installation, usage, and props\n- **`content/docs/components/meta.json`** — Added `logo-grid` to sidebar\n- **`registry.json`** — Added `logo-grid` component entry with `lucide-react` dependency\n- **`pnpm fix`** — Ran successfully (1 warning about `<img>` vs `<Image />` which is intentional per your request)\n\n\n\n",
+          "time": {
+            "start": 1784733337144,
+            "end": 1784733341422
+          },
+          "id": "prt_f8a6586380014SDFA5yp0LxJhy",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a655fef001u5109j8EMKjyBs"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "d42109691ab7a2988c0bfafef9198af4f00cee42",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23035,
+            "input": 411,
+            "output": 278,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 22336
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a6596fd001NWpfrD33qobjH7",
+          "sessionID": "ses_0759d62f9ffeyiLRyxZXvpofVl",
+          "messageID": "msg_f8a655fef001u5109j8EMKjyBs"
+        }
+      ]
+    }
+  ]
+}
