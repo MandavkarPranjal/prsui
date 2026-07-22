@@ -1,0 +1,88 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "7f3d710db5b4",
+  "session_id": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-22T09:30:53.596668497Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "save_step_count": 2,
+  "files_touched": [
+    "public/r/accordion.json",
+    "public/r/editable-chip.json",
+    "public/r/inline-toast.json",
+    "public/r/link.json",
+    "public/r/registry.json",
+    "public/r/smooth-input.json",
+    "public/r/split-action.json",
+    "public/r/tooltip.json",
+    "public/r/typewriter.json",
+    "registry.json"
+  ],
+  "agent": "OpenCode",
+  "model": "deepseek-v4-flash-free",
+  "turn_id": "f1d09cf93b78",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 13529,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 40064,
+    "output_tokens": 789,
+    "api_call_count": 4
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-22T09:30:53.589504224Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 6,
+    "human_removed": 24,
+    "total_committed": 0,
+    "total_lines_changed": 30,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 24,
+      "user_lines_removed": 24,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "public/r/accordion.json": 1,
+        "public/r/editable-chip.json": 1,
+        "public/r/inline-toast.json": 1,
+        "public/r/link.json": 1,
+        "public/r/registry.json": 8,
+        "public/r/smooth-input.json": 1,
+        "public/r/split-action.json": 1,
+        "public/r/tooltip.json": 1,
+        "public/r/typewriter.json": 1,
+        "registry.json": 8
+      },
+      "user_removed_per_file": {
+        "public/r/accordion.json": 1,
+        "public/r/editable-chip.json": 1,
+        "public/r/inline-toast.json": 1,
+        "public/r/link.json": 1,
+        "public/r/registry.json": 8,
+        "public/r/smooth-input.json": 1,
+        "public/r/split-action.json": 1,
+        "public/r/tooltip.json": 1,
+        "public/r/typewriter.json": 1,
+        "registry.json": 8
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 24,
+      "agent_lines_removed": 24
+    }
+  ]
+}

@@ -1,0 +1,607 @@
+{
+  "info": {
+    "id": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+    "slug": "misty-knight",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "New session - 2026-07-22T09:25:46.230Z",
+    "agent": "build",
+    "model": {
+      "id": "deepseek-v4-flash-free",
+      "providerID": "opencode",
+      "variant": "max"
+    },
+    "version": "1.18.4",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 13529,
+      "output": 789,
+      "reasoning": 232,
+      "cache": {
+        "read": 40064,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1784712346230,
+      "updated": 1784712471010
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784712346378
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "deepseek-v4-flash-free",
+          "variant": "max"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_f89253b0a001nA46pvODIZHg9X",
+        "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "what will happen with changes i have done with @registry.json ",
+          "id": "prt_f89253b75001fzCSE7mxbgvV9U",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253b0a001nA46pvODIZHg9X"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "Called the Read tool with the following input: {\"filePath\":\"/home/himmel/personal/prsui/registry.json\"}",
+          "id": "prt_f89253b75002OMDPC0v7zlZE6m",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253b0a001nA46pvODIZHg9X"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "<path>/home/himmel/personal/prsui/registry.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"name\": \"prsui\",\n3:   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n4:   \"items\": [\n5:     {\n6:       \"name\": \"smooth-input\",\n7:       \"type\": \"registry:ui\",\n8:       \"title\": \"Smooth Input\",\n9:       \"description\": \"A smooth input component with a caret animation.\",\n10:       \"files\": [\n11:         {\n12:           \"path\": \"registry/new-york/smooth-input.tsx\",\n13:           \"type\": \"registry:ui\",\n14:           \"target\": \"components/prsui/smooth-input.tsx\"\n15:         }\n16:       ],\n17:       \"dependencies\": [\"framer-motion\"]\n18:     },\n19:     {\n20:       \"name\": \"split-action\",\n21:       \"type\": \"registry:ui\",\n22:       \"title\": \"Split Action\",\n23:       \"description\": \"Interactive component for split actions.\",\n24:       \"files\": [\n25:         {\n26:           \"path\": \"registry/new-york/split-action.tsx\",\n27:           \"type\": \"registry:ui\",\n28:           \"target\": \"components/prsui/split-action.tsx\"\n29:         }\n30:       ],\n31:       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n32:     },\n33:     {\n34:       \"name\": \"tooltip\",\n35:       \"type\": \"registry:ui\",\n36:       \"title\": \"Tooltip\",\n37:       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n38:       \"files\": [\n39:         {\n40:           \"path\": \"registry/new-york/tooltip.tsx\",\n41:           \"type\": \"registry:ui\",\n42:           \"target\": \"components/prsui/tooltip.tsx\"\n43:         },\n44:         {\n45:           \"path\": \"lib/ease.ts\",\n46:           \"type\": \"registry:lib\",\n47:           \"target\": \"lib/ease.ts\"\n48:         },\n49:         {\n50:           \"path\": \"lib/hooks/use-hover-capable.ts\",\n51:           \"type\": \"registry:lib\",\n52:           \"target\": \"lib/hooks/use-hover-capable.ts\"\n53:         }\n54:       ],\n55:       \"dependencies\": [\"motion\"]\n56:     },\n57:     {\n58:       \"name\": \"accordion\",\n59:       \"type\": \"registry:ui\",\n60:       \"title\": \"Accordion\",\n61:       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n62:       \"files\": [\n63:         {\n64:           \"path\": \"registry/new-york/accordion.tsx\",\n65:           \"type\": \"registry:ui\",\n66:           \"target\": \"components/prsui/accordion.tsx\"\n67:         },\n68:         {\n69:           \"path\": \"lib/ease.ts\",\n70:           \"type\": \"registry:lib\",\n71:           \"target\": \"lib/ease.ts\"\n72:         }\n73:       ],\n74:       \"dependencies\": [\"motion\", \"lucide-react\"]\n75:     },\n76:     {\n77:       \"name\": \"typewriter\",\n78:       \"type\": \"registry:ui\",\n79:       \"title\": \"Typewriter\",\n80:       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n81:       \"files\": [\n82:         {\n83:           \"path\": \"registry/new-york/typewriter.tsx\",\n84:           \"type\": \"registry:ui\",\n85:           \"target\": \"components/psrui/typewriter.tsx\"\n86:         }\n87:       ],\n88:       \"dependencies\": [\"motion\"]\n89:     },\n90:     {\n91:       \"name\": \"link\",\n92:       \"type\": \"registry:ui\",\n93:       \"title\": \"Link\",\n94:       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n95:       \"files\": [\n96:         {\n97:           \"path\": \"registry/new-york/link.tsx\",\n98:           \"type\": \"registry:ui\",\n99:           \"target\": \"components/psrui/link.tsx\"\n100:         }\n101:       ]\n102:     },\n103:     {\n104:       \"name\": \"editable-chip\",\n105:       \"type\": \"registry:ui\",\n106:       \"title\": \"Editable Chip\",\n107:       \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n108:       \"files\": [\n109:         {\n110:           \"path\": \"registry/new-york/editable-chip.tsx\",\n111:           \"type\": \"registry:ui\",\n112:           \"target\": \"components/psrui/editable-chip.tsx\"\n113:         }\n114:       ],\n115:       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n116:     },\n117:     {\n118:       \"name\": \"inline-toast\",\n119:       \"type\": \"registry:ui\",\n120:       \"title\": \"Inline Toast\",\n121:       \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n122:       \"files\": [\n123:         {\n124:           \"path\": \"registry/new-york/inline-toast.tsx\",\n125:           \"type\": \"registry:ui\",\n126:           \"target\": \"components/prsui/inline-toast.tsx\"\n127:         }\n128:       ],\n129:       \"dependencies\": [\"motion\", \"react-icons\"]\n130:     }\n131:   ]\n132: }\n\n(End of file - total 132 lines)\n</content>",
+          "id": "prt_f89253b75003nIaM4Fpgo7Rvwd",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253b0a001nA46pvODIZHg9X"
+        },
+        {
+          "type": "file",
+          "mime": "text/plain",
+          "filename": "registry.json",
+          "url": "file:///home/himmel/personal/prsui/registry.json",
+          "source": {
+            "text": {
+              "value": "@registry.json",
+              "start": 47,
+              "end": 61
+            },
+            "type": "file",
+            "path": "registry.json"
+          },
+          "id": "prt_f89253b75004mD0UBumvbdtdwI",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253b0a001nA46pvODIZHg9X"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f89253b0a001nA46pvODIZHg9X",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "variant": "max",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12568,
+          "input": 12356,
+          "output": 131,
+          "reasoning": 81,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "deepseek-v4-flash-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784712346635,
+          "completed": 1784712351047
+        },
+        "finish": "tool-calls",
+        "id": "msg_f89253c0b0016btlIBC0x4Rigg",
+        "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj"
+      },
+      "parts": [
+        {
+          "snapshot": "5b71b6295e2b9838d94a1c805c40061f779b41a8",
+          "type": "step-start",
+          "id": "prt_f8925455a0013AB0B7LcSsMkXS",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253c0b0016btlIBC0x4Rigg"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user is asking about what will happen with their changes to `registry.json`. They seem to want to understand the impact of their modifications to this file. Let me look at the context - they mentioned `@registry.json` which is likely referring to the `registry.json` file they've been working with.\n\nLet me check if there are any changes using git diff to see what they've actually changed.",
+          "time": {
+            "start": 1784712349516,
+            "end": 1784712350381
+          },
+          "id": "prt_f8925474c001RkwluIj85uGF7m",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253c0b0016btlIBC0x4Rigg"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_00_k8BEiCnwQNvVfOT5ZkvE0253",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "git diff registry.json",
+              "workdir": "/home/himmel/personal/prsui"
+            },
+            "output": "diff --git i/registry.json w/registry.json\nindex 8049f46..2252d36 100644\n--- i/registry.json\n+++ w/registry.json\n@@ -11,7 +11,7 @@\n         {\n           \"path\": \"registry/new-york/smooth-input.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/smooth-input.tsx\"\n+          \"target\": \"components/prsui/smooth-input.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\"]\n@@ -25,7 +25,7 @@\n         {\n           \"path\": \"registry/new-york/split-action.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/split-action.tsx\"\n+          \"target\": \"components/prsui/split-action.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n@@ -39,7 +39,7 @@\n         {\n           \"path\": \"registry/new-york/tooltip.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/tooltip.tsx\"\n+          \"target\": \"components/prsui/tooltip.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n@@ -63,7 +63,7 @@\n         {\n           \"path\": \"registry/new-york/accordion.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/accordion.tsx\"\n+          \"target\": \"components/prsui/accordion.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n@@ -82,7 +82,7 @@\n         {\n           \"path\": \"registry/new-york/typewriter.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/typewriter.tsx\"\n+          \"target\": \"components/psrui/typewriter.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n@@ -96,7 +96,7 @@\n         {\n           \"path\": \"registry/new-york/link.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/link.tsx\"\n+          \"target\": \"components/psrui/link.tsx\"\n         }\n       ]\n     },\n@@ -109,7 +109,7 @@\n         {\n           \"path\": \"registry/new-york/editable-chip.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/editable-chip.tsx\"\n+          \"target\": \"components/psrui/editable-chip.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n@@ -123,7 +123,7 @@\n         {\n           \"path\": \"registry/new-york/inline-toast.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/inline-toast.tsx\"\n+          \"target\": \"components/prsui/inline-toast.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\"]\n",
+            "metadata": {
+              "output": "diff --git i/registry.json w/registry.json\nindex 8049f46..2252d36 100644\n--- i/registry.json\n+++ w/registry.json\n@@ -11,7 +11,7 @@\n         {\n           \"path\": \"registry/new-york/smooth-input.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/smooth-input.tsx\"\n+          \"target\": \"components/prsui/smooth-input.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\"]\n@@ -25,7 +25,7 @@\n         {\n           \"path\": \"registry/new-york/split-action.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/split-action.tsx\"\n+          \"target\": \"components/prsui/split-action.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n@@ -39,7 +39,7 @@\n         {\n           \"path\": \"registry/new-york/tooltip.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/tooltip.tsx\"\n+          \"target\": \"components/prsui/tooltip.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n@@ -63,7 +63,7 @@\n         {\n           \"path\": \"registry/new-york/accordion.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/accordion.tsx\"\n+          \"target\": \"components/prsui/accordion.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n@@ -82,7 +82,7 @@\n         {\n           \"path\": \"registry/new-york/typewriter.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/typewriter.tsx\"\n+          \"target\": \"components/psrui/typewriter.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n@@ -96,7 +96,7 @@\n         {\n           \"path\": \"registry/new-york/link.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/link.tsx\"\n+          \"target\": \"components/psrui/link.tsx\"\n         }\n       ]\n     },\n@@ -109,7 +109,7 @@\n         {\n           \"path\": \"registry/new-york/editable-chip.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/editable-chip.tsx\"\n+          \"target\": \"components/psrui/editable-chip.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n@@ -123,7 +123,7 @@\n         {\n           \"path\": \"registry/new-york/inline-toast.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/ui/inline-toast.tsx\"\n+          \"target\": \"components/prsui/inline-toast.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\"]\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git diff registry.json",
+            "time": {
+              "start": 1784712350684,
+              "end": 1784712350693
+            }
+          },
+          "id": "prt_f89254ab3001fkrvbeu8zL7mXb",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253c0b0016btlIBC0x4Rigg"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_01_Fb9zesXtHEiSMA8t3T1E5600",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "git log --oneline -5",
+              "workdir": "/home/himmel/personal/prsui"
+            },
+            "output": "e14bd4f new: inline toast\n421f10a new: editable chip\n3851425 new: link\n8757917 new: typewriter\neaa3318 new: accordion\n",
+            "metadata": {
+              "output": "e14bd4f new: inline toast\n421f10a new: editable chip\n3851425 new: link\n8757917 new: typewriter\neaa3318 new: accordion\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "git log --oneline -5",
+            "time": {
+              "start": 1784712350906,
+              "end": 1784712350910
+            }
+          },
+          "id": "prt_f89254be8001xeRxI5SYrbCoWs",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253c0b0016btlIBC0x4Rigg"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "5b71b6295e2b9838d94a1c805c40061f779b41a8",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12568,
+            "input": 12356,
+            "output": 131,
+            "reasoning": 81,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_f89254d2f001S364Q0fUdaHDe7",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89253c0b0016btlIBC0x4Rigg"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f89253b0a001nA46pvODIZHg9X",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "variant": "max",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13687,
+          "input": 824,
+          "output": 207,
+          "reasoning": 112,
+          "cache": {
+            "write": 0,
+            "read": 12544
+          }
+        },
+        "modelID": "deepseek-v4-flash-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784712351055,
+          "completed": 1784712355507
+        },
+        "finish": "stop",
+        "id": "msg_f89254d4f001xpLfOSxYDAMxNu",
+        "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj"
+      },
+      "parts": [
+        {
+          "snapshot": "5b71b6295e2b9838d94a1c805c40061f779b41a8",
+          "type": "step-start",
+          "id": "prt_f892552a7001GsXQCeRkqDRpDp",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89254d4f001xpLfOSxYDAMxNu"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user has changed the `target` paths in `registry.json` from `components/ui/` to `components/prsui/` (and `components/psrui/` for some). These changes mean that when someone installs components from this registry using `shadcn add`, the files will be placed in `components/prsui/` (or `psrui/`) instead of `components/ui/`.\n\nLet me also check if there are corresponding registry files that need to exist and if there's a build/validation step.",
+          "time": {
+            "start": 1784712353037,
+            "end": 1784712353997
+          },
+          "id": "prt_f8925550d001iSQw3ED610Xka0",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89254d4f001xpLfOSxYDAMxNu"
+        },
+        {
+          "type": "text",
+          "text": "Your changes update the `target` paths in `registry.json` so that when users install these components via `shadcn add`, they land in `components/prsui/` (or `psrui/` for some) instead of `components/ui/`.\n\nHowever, I notice **inconsistency**: `typewriter`, `link`, and `editable-chip` use `components/psrui/` (no `s` after `p`), while the rest use `components/prsui/`. You probably want all to be `prsui`:\n\n| Component | Current target | Likely intended |\n|---|---|---|\n| smooth-input, split-action, tooltip, accordion, inline-toast | `components/prsui/` | ✅ consistent |\n| typewriter, link, editable-chip | `components/psrui/` | `components/prsui/` |\n\nWant me to fix the three that say `psrui` to `prsui`?",
+          "time": {
+            "start": 1784712354004,
+            "end": 1784712355463
+          },
+          "id": "prt_f892558d3001aOMy200IWuSwxN",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89254d4f001xpLfOSxYDAMxNu"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "5b71b6295e2b9838d94a1c805c40061f779b41a8",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13687,
+            "input": 824,
+            "output": 207,
+            "reasoning": 112,
+            "cache": {
+              "write": 0,
+              "read": 12544
+            }
+          },
+          "cost": 0,
+          "id": "prt_f89255e93001adn07BoNEyQuiA",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89254d4f001xpLfOSxYDAMxNu"
+        }
+      ]
+    },
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784712467844
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "deepseek-v4-flash-free",
+          "variant": "max"
+        },
+        "summary": {
+          "diffs": [
+            {
+              "file": "registry.json",
+              "patch": "Index: registry.json\n===================================================================\n--- registry.json\t\n+++ registry.json\t\n@@ -1,132 +1,132 @@\n {\n   \"name\": \"prsui\",\n   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n   \"items\": [\n     {\n       \"name\": \"smooth-input\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Smooth Input\",\n       \"description\": \"A smooth input component with a caret animation.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/smooth-input.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/smooth-input.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\"]\n     },\n     {\n       \"name\": \"split-action\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Split Action\",\n       \"description\": \"Interactive component for split actions.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/split-action.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/split-action.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"tooltip\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Tooltip\",\n       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/tooltip.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/tooltip.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         },\n         {\n           \"path\": \"lib/hooks/use-hover-capable.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/hooks/use-hover-capable.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"accordion\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Accordion\",\n       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/accordion.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/accordion.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"typewriter\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Typewriter\",\n       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/typewriter.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/psrui/typewriter.tsx\"\n+          \"target\": \"components/prsui/typewriter.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"link\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Link\",\n       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/link.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/psrui/link.tsx\"\n+          \"target\": \"components/prsui/link.tsx\"\n         }\n       ]\n     },\n     {\n       \"name\": \"editable-chip\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Editable Chip\",\n       \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/editable-chip.tsx\",\n           \"type\": \"registry:ui\",\n-          \"target\": \"components/psrui/editable-chip.tsx\"\n+          \"target\": \"components/prsui/editable-chip.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"inline-toast\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Inline Toast\",\n       \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/inline-toast.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/inline-toast.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\"]\n     }\n   ]\n }\n",
+              "additions": 3,
+              "deletions": 3,
+              "status": "modified"
+            }
+          ]
+        },
+        "id": "msg_f89271584001O8arrVvS91lN6q",
+        "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "yes and also fix the inconsistency",
+          "id": "prt_f89271587001FdvegWude9L0f4",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f89271584001O8arrVvS91lN6q"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f89271584001O8arrVvS91lN6q",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "variant": "max",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 14049,
+          "input": 164,
+          "output": 290,
+          "reasoning": 27,
+          "cache": {
+            "write": 0,
+            "read": 13568
+          }
+        },
+        "modelID": "deepseek-v4-flash-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784712467935,
+          "completed": 1784712471002
+        },
+        "finish": "tool-calls",
+        "id": "msg_f892715df001IbBEDGmL7hn5Zk",
+        "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj"
+      },
+      "parts": [
+        {
+          "snapshot": "5b71b6295e2b9838d94a1c805c40061f779b41a8",
+          "type": "step-start",
+          "id": "prt_f892719e4001G3NAajMKntyFKM",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892715df001IbBEDGmL7hn5Zk"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to fix the three entries that have `components/psrui/` to `components/prsui/`.",
+          "time": {
+            "start": 1784712469393,
+            "end": 1784712469792
+          },
+          "id": "prt_f89271b91001JD65aKmK6t4eMx",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892715df001IbBEDGmL7hn5Zk"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_00_sgsF0efg78Meae4Ko6TR4797",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "oldString": "components/psrui/typewriter.tsx",
+              "newString": "components/prsui/typewriter.tsx"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -81,9 +81,9 @@\n   \"files\": [\n     {\n       \"path\": \"registry/new-york/typewriter.tsx\",\n       \"type\": \"registry:ui\",\n-      \"target\": \"components/psrui/typewriter.tsx\"\n+      \"target\": \"components/prsui/typewriter.tsx\"\n     }\n   ],\n   \"dependencies\": [\"motion\"]\n },\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry.json",
+                "patch": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -81,9 +81,9 @@\n   \"files\": [\n     {\n       \"path\": \"registry/new-york/typewriter.tsx\",\n       \"type\": \"registry:ui\",\n-      \"target\": \"components/psrui/typewriter.tsx\"\n+      \"target\": \"components/prsui/typewriter.tsx\"\n     }\n   ],\n   \"dependencies\": [\"motion\"]\n },\n",
+                "additions": 1,
+                "deletions": 1
+              },
+              "truncated": false
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784712470088,
+              "end": 1784712470094
+            }
+          },
+          "id": "prt_f89271d24001RvorCZlshS59nA",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892715df001IbBEDGmL7hn5Zk"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_01_51Pf9Qoim8BYADo6olPV0974",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "oldString": "components/psrui/link.tsx",
+              "newString": "components/prsui/link.tsx"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -95,9 +95,9 @@\n   \"files\": [\n     {\n       \"path\": \"registry/new-york/link.tsx\",\n       \"type\": \"registry:ui\",\n-      \"target\": \"components/psrui/link.tsx\"\n+      \"target\": \"components/prsui/link.tsx\"\n     }\n   ]\n },\n {\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry.json",
+                "patch": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -95,9 +95,9 @@\n   \"files\": [\n     {\n       \"path\": \"registry/new-york/link.tsx\",\n       \"type\": \"registry:ui\",\n-      \"target\": \"components/psrui/link.tsx\"\n+      \"target\": \"components/prsui/link.tsx\"\n     }\n   ]\n },\n {\n",
+                "additions": 1,
+                "deletions": 1
+              },
+              "truncated": false
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784712470428,
+              "end": 1784712470435
+            }
+          },
+          "id": "prt_f89271e50001b4mc6tJtq9ya21",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892715df001IbBEDGmL7hn5Zk"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_02_7OCQAO4yJMcedZiKW1pv4766",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "oldString": "components/psrui/editable-chip.tsx",
+              "newString": "components/prsui/editable-chip.tsx"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -108,9 +108,9 @@\n   \"files\": [\n     {\n       \"path\": \"registry/new-york/editable-chip.tsx\",\n       \"type\": \"registry:ui\",\n-      \"target\": \"components/psrui/editable-chip.tsx\"\n+      \"target\": \"components/prsui/editable-chip.tsx\"\n     }\n   ],\n   \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n },\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry.json",
+                "patch": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -108,9 +108,9 @@\n   \"files\": [\n     {\n       \"path\": \"registry/new-york/editable-chip.tsx\",\n       \"type\": \"registry:ui\",\n-      \"target\": \"components/psrui/editable-chip.tsx\"\n+      \"target\": \"components/prsui/editable-chip.tsx\"\n     }\n   ],\n   \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n },\n",
+                "additions": 1,
+                "deletions": 1
+              },
+              "truncated": false
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784712470824,
+              "end": 1784712470827
+            }
+          },
+          "id": "prt_f89271fd1001AY6h2bXToM1eEP",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892715df001IbBEDGmL7hn5Zk"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4bcacc08c59e3cbcf595bc6ad71992ca5eb349bb",
+          "type": "step-finish",
+          "tokens": {
+            "total": 14049,
+            "input": 164,
+            "output": 290,
+            "reasoning": 27,
+            "cache": {
+              "write": 0,
+              "read": 13568
+            }
+          },
+          "cost": 0,
+          "id": "prt_f892721aa001V7zsjNJCUDhQ9b",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892715df001IbBEDGmL7hn5Zk"
+        },
+        {
+          "type": "patch",
+          "hash": "5b71b6295e2b9838d94a1c805c40061f779b41a8",
+          "files": [
+            "/home/himmel/personal/prsui/registry.json"
+          ],
+          "id": "prt_f892721d8001bJEQOfbHufyFs6",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892715df001IbBEDGmL7hn5Zk"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f89271584001O8arrVvS91lN6q",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "variant": "max",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 14310,
+          "input": 185,
+          "output": 161,
+          "reasoning": 12,
+          "cache": {
+            "write": 0,
+            "read": 13952
+          }
+        },
+        "modelID": "deepseek-v4-flash-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784712471005,
+          "completed": 1784712474011
+        },
+        "finish": "stop",
+        "id": "msg_f892721dd0013iIWc7tKd6V8xn",
+        "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj"
+      },
+      "parts": [
+        {
+          "snapshot": "4bcacc08c59e3cbcf595bc6ad71992ca5eb349bb",
+          "type": "step-start",
+          "id": "prt_f8927269a001UFxfkuNywtu9Bf",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892721dd0013iIWc7tKd6V8xn"
+        },
+        {
+          "type": "reasoning",
+          "text": "All three edits applied successfully. Let me verify the result.",
+          "time": {
+            "start": 1784712472652,
+            "end": 1784712472919
+          },
+          "id": "prt_f8927284c001cufQ8ujk82YLNd",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892721dd0013iIWc7tKd6V8xn"
+        },
+        {
+          "type": "text",
+          "text": "All three fixed. All 8 components now consistently target `components/prsui/`. Here's the final state:\n\n| Component | target |\n|---|---|\n| smooth-input | `components/prsui/smooth-input.tsx` |\n| split-action | `components/prsui/split-action.tsx` |\n| tooltip | `components/prsui/tooltip.tsx` |\n| accordion | `components/prsui/accordion.tsx` |\n| typewriter | `components/prsui/typewriter.tsx` |\n| link | `components/prsui/link.tsx` |\n| editable-chip | `components/prsui/editable-chip.tsx` |\n| inline-toast | `components/prsui/inline-toast.tsx` |",
+          "time": {
+            "start": 1784712472926,
+            "end": 1784712473898
+          },
+          "id": "prt_f8927295e001PJcZ4JHeiQGAL5",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892721dd0013iIWc7tKd6V8xn"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "4bcacc08c59e3cbcf595bc6ad71992ca5eb349bb",
+          "type": "step-finish",
+          "tokens": {
+            "total": 14310,
+            "input": 185,
+            "output": 161,
+            "reasoning": 12,
+            "cache": {
+              "write": 0,
+              "read": 13952
+            }
+          },
+          "cost": 0,
+          "id": "prt_f89272d7a001YgQng0gLb2jhm0",
+          "sessionID": "ses_076dac589ffecRH0ZsNrZ2AYQj",
+          "messageID": "msg_f892721dd0013iIWc7tKd6V8xn"
+        }
+      ]
+    }
+  ]
+}

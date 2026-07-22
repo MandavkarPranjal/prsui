@@ -1,0 +1,140 @@
+what will happen with changes i have done with @registry.json 
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry.json"}
+<path>/home/himmel/personal/prsui/registry.json</path>
+<type>file</type>
+<content>
+1: {
+2:   "name": "prsui",
+3:   "homepage": "https://github.com/MandavkarPranjal/prsui",
+4:   "items": [
+5:     {
+6:       "name": "smooth-input",
+7:       "type": "registry:ui",
+8:       "title": "Smooth Input",
+9:       "description": "A smooth input component with a caret animation.",
+10:       "files": [
+11:         {
+12:           "path": "registry/new-york/smooth-input.tsx",
+13:           "type": "registry:ui",
+14:           "target": "components/prsui/smooth-input.tsx"
+15:         }
+16:       ],
+17:       "dependencies": ["framer-motion"]
+18:     },
+19:     {
+20:       "name": "split-action",
+21:       "type": "registry:ui",
+22:       "title": "Split Action",
+23:       "description": "Interactive component for split actions.",
+24:       "files": [
+25:         {
+26:           "path": "registry/new-york/split-action.tsx",
+27:           "type": "registry:ui",
+28:           "target": "components/prsui/split-action.tsx"
+29:         }
+30:       ],
+31:       "dependencies": ["framer-motion", "lucide-react"]
+32:     },
+33:     {
+34:       "name": "tooltip",
+35:       "type": "registry:ui",
+36:       "title": "Tooltip",
+37:       "description": "Accessible animated tooltip with spring physics and portal rendering.",
+38:       "files": [
+39:         {
+40:           "path": "registry/new-york/tooltip.tsx",
+41:           "type": "registry:ui",
+42:           "target": "components/prsui/tooltip.tsx"
+43:         },
+44:         {
+45:           "path": "lib/ease.ts",
+46:           "type": "registry:lib",
+47:           "target": "lib/ease.ts"
+48:         },
+49:         {
+50:           "path": "lib/hooks/use-hover-capable.ts",
+51:           "type": "registry:lib",
+52:           "target": "lib/hooks/use-hover-capable.ts"
+53:         }
+54:       ],
+55:       "dependencies": ["motion"]
+56:     },
+57:     {
+58:       "name": "accordion",
+59:       "type": "registry:ui",
+60:       "title": "Accordion",
+61:       "description": "Animated accordion with spring physics, group morphing, and accessible ARIA attributes.",
+62:       "files": [
+63:         {
+64:           "path": "registry/new-york/accordion.tsx",
+65:           "type": "registry:ui",
+66:           "target": "components/prsui/accordion.tsx"
+67:         },
+68:         {
+69:           "path": "lib/ease.ts",
+70:           "type": "registry:lib",
+71:           "target": "lib/ease.ts"
+72:         }
+73:       ],
+74:       "dependencies": ["motion", "lucide-react"]
+75:     },
+76:     {
+77:       "name": "typewriter",
+78:       "type": "registry:ui",
+79:       "title": "Typewriter",
+80:       "description": "Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.",
+81:       "files": [
+82:         {
+83:           "path": "registry/new-york/typewriter.tsx",
+84:           "type": "registry:ui",
+85:           "target": "components/psrui/typewriter.tsx"
+86:         }
+87:       ],
+88:       "dependencies": ["motion"]
+89:     },
+90:     {
+91:       "name": "link",
+92:       "type": "registry:ui",
+93:       "title": "Link",
+94:       "description": "Animated link components with underline hover effects and customizable icons.",
+95:       "files": [
+96:         {
+97:           "path": "registry/new-york/link.tsx",
+98:           "type": "registry:ui",
+99:           "target": "components/psrui/link.tsx"
+100:         }
+101:       ]
+102:     },
+103:     {
+104:       "name": "editable-chip",
+105:       "type": "registry:ui",
+106:       "title": "Editable Chip",
+107:       "description": "An inline-editable chip component with animated transitions between display and edit modes.",
+108:       "files": [
+109:         {
+110:           "path": "registry/new-york/editable-chip.tsx",
+111:           "type": "registry:ui",
+112:           "target": "components/psrui/editable-chip.tsx"
+113:         }
+114:       ],
+115:       "dependencies": ["motion", "react-icons", "lucide-react"]
+116:     },
+117:     {
+118:       "name": "inline-toast",
+119:       "type": "registry:ui",
+120:       "title": "Inline Toast",
+121:       "description": "An inline copy toast component with animated feedback when copying code to clipboard.",
+122:       "files": [
+123:         {
+124:           "path": "registry/new-york/inline-toast.tsx",
+125:           "type": "registry:ui",
+126:           "target": "components/prsui/inline-toast.tsx"
+127:         }
+128:       ],
+129:       "dependencies": ["motion", "react-icons"]
+130:     }
+131:   ]
+132: }
+
+(End of file - total 132 lines)
+</content>
