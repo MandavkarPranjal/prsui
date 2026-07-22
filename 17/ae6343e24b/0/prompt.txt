@@ -1,0 +1,55 @@
+[Image 1] make @registry/new-york/logo-grid-demo.tsx like this
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/logo-grid-demo.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/logo-grid-demo.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import { LogoGrid } from "./logo-grid";
+4: import type { Logo } from "./logo-grid";
+5: 
+6: const logos: Logo[] = [
+7:   {
+8:     alt: "Vercel",
+9:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg",
+10:   },
+11:   {
+12:     alt: "Next.js",
+13:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg",
+14:   },
+15:   {
+16:     alt: "React",
+17:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg",
+18:   },
+19:   {
+20:     alt: "TypeScript",
+21:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg",
+22:   },
+23:   {
+24:     alt: "Tailwind CSS",
+25:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg",
+26:   },
+27:   {
+28:     alt: "GitHub",
+29:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+30:   },
+31:   {
+32:     alt: "Figma",
+33:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg",
+34:   },
+35:   {
+36:     alt: "GitLab",
+37:     src: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg",
+38:   },
+39: ];
+40: 
+41: export const LogoGridPreview = function LogoGridPreview() {
+42:   return (
+43:     <div className="flex w-full items-center justify-center p-4 md:p-8">
+44:       <LogoGrid logos={logos} />
+45:     </div>
+46:   );
+47: };
+
+(End of file - total 47 lines)
+</content>

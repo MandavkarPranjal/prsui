@@ -1,0 +1,86 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "17ae6343e24b",
+  "session_id": "ses_0755ca6e5ffeLF4yQK5YbzJxQL",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-22T16:36:43.881940422Z",
+  "branch": "main",
+  "checkpoints_count": 3,
+  "save_step_count": 3,
+  "files_touched": [
+    "content/docs/components/logo-grid.mdx",
+    "content/docs/components/meta.json",
+    "public/r/logo-grid.json",
+    "public/r/registry.json",
+    "registry.json",
+    "registry/new-york/logo-grid-demo.tsx",
+    "registry/new-york/logo-grid.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "5b1ad6a07bce",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 4064,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 35840,
+    "output_tokens": 659,
+    "api_call_count": 3
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-22T16:36:43.87791695Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 26,
+    "human_removed": 20,
+    "total_committed": 0,
+    "total_lines_changed": 46,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 273,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "content/docs/components/logo-grid.mdx": 71,
+        "content/docs/components/meta.json": 2,
+        "public/r/logo-grid.json": 18,
+        "public/r/registry.json": 14,
+        "registry.json": 14,
+        "registry/new-york/logo-grid-demo.tsx": 47,
+        "registry/new-york/logo-grid.tsx": 107
+      },
+      "user_removed_per_file": {
+        "content/docs/components/meta.json": 1
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 273,
+      "agent_lines_removed": 1
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 2,
+      "user_lines_removed": 7,
+      "agent_lines_added": 278,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "registry/new-york/logo-grid-demo.tsx": 2
+      },
+      "user_removed_per_file": {
+        "registry/new-york/logo-grid-demo.tsx": 7
+      }
+    }
+  ]
+}
