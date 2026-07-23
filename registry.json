@@ -169,6 +169,20 @@
         }
       ],
       "dependencies": ["lucide-react"]
+    },
+    {
+      "name": "github-stars",
+      "type": "registry:ui",
+      "title": "GitHub Stars",
+      "description": "Animated GitHub star count button with hover effects and spring physics.",
+      "files": [
+        {
+          "path": "registry/new-york/github-stars.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/github-stars.tsx"
+        }
+      ],
+      "dependencies": [ "motion", "class-variance-authority"]
     }
   ]
 }

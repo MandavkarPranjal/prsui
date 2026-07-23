@@ -12,6 +12,7 @@
     "inline-toast",
     "view-on-map",
     "logo-marquee",
-    "logo-grid"
+    "logo-grid",
+    "github-stars"
   ]
 }

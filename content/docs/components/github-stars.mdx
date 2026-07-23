@@ -1,0 +1,51 @@
+---
+title: GitHub Stars
+description: Animated GitHub star count button with hover effects and spring physics.
+---
+
+import { GitHubStarsDemo } from "@/demo/github-stars-demo";
+
+<ComponentPreview name="github-stars">
+  <GitHubStarsDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/github-stars"
+  __npm__="npx shadcn@latest add @prsui/github-stars"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/github-stars"
+  __yarn__="yarn shadcn@latest add @prsui/github-stars"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/github-stars.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/github-stars.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/github-stars.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/github-stars.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { GitHubStars } from "@/components/ui/github-stars";
+
+export function MyComponent() {
+  return <GitHubStars repo="vercel/next.js" />;
+}
+```
+
+## Props
+
+| Prop        | Type                        | Default     | Description                                   |
+| ----------- | --------------------------- | ----------- | --------------------------------------------- |
+| `repo`      | `string`                    | -           | GitHub repository in `owner/repo` format      |
+| `size`      | `"sm" \| "default" \| "lg"` | `"default"` | Button size variant                           |
+| `className` | `string`                    | -           | Additional CSS classes merged onto the button |
+| `locales`   | `Intl.LocalesArgument`      | `"en-US"`   | Locale for number formatting                  |
