@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KY83SC0W02JAS5MRNG82AKHE",
+  "session_id": "ses_07019d074ffeMyzGm7rcVykSxB",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-23T18:28:47.746870888Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "826a322d2dae",
+  "checkpoint_transcript_start": 6,
+  "transcript_lines_at_start": 6,
+  "compact_transcript_start": 6,
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  },
+  "session_metrics": {
+    "turn_count": 1
+  }
+}
