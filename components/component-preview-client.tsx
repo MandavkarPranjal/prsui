@@ -1,0 +1,61 @@
+"use client";
+
+import { RotateCw } from "lucide-react";
+import type { ReactNode } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+export const ComponentPreviewClient = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
+  const [previewKey, setPreviewKey] = useState(0);
+
+  const handleRestart = useCallback(() => {
+    setPreviewKey((prev) => prev + 1);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "r" || event.key === "R") {
+        handleRestart();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleRestart]);
+
+  return (
+    <div
+      className={cn(
+        "group relative flex min-h-[350px] items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-muted/30 p-12 backdrop-blur-sm",
+        className
+      )}
+    >
+      <div className="pointer-events-none absolute inset-0 [background-image:radial-gradient(circle,currentColor_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.06]" />
+      <div className="absolute right-4 top-4 z-50">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={handleRestart}
+          className="h-8 w-8 active:scale-95 duration-300 ease-out transition-[scale,background-color,opacity] group/restart-button"
+          aria-label="Restart demo"
+        >
+          <RotateCw className="h-4 w-4 group-hover/restart-button:rotate-45 duration-300 ease-out transition-transform" />
+        </Button>
+      </div>
+      <div
+        key={previewKey}
+        className="relative z-10 flex w-full items-center justify-center isolate"
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
