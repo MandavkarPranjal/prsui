@@ -1,0 +1,1 @@
+in @components/component-preview.tsx the preview box is too bad, it should look good and it should cover more that half of height
