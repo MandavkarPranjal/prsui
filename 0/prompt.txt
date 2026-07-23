@@ -1,0 +1,108 @@
+remove lenis from @demo/text-highlight-demo.tsx 
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/demo/text-highlight-demo.tsx"}
+<path>/home/himmel/personal/prsui/demo/text-highlight-demo.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import Lenis from "lenis";
+4: import type { Transition } from "motion";
+5: import { useEffect, useRef } from "react";
+6: 
+7: import { TextHighlighter } from "@/registry/new-york/text-highlight";
+8: 
+9: export default function TextHighlighterDemo() {
+10:   const containerRef = useRef<HTMLDivElement | null>(null);
+11: 
+12:   const transition = { bounce: 0, delay: 0.4, duration: 1, type: "spring" };
+13:   const highlightClass = "rounded-[0.3em] px-px";
+14:   const highlightColor = "#f8c4c4";
+15:   const inViewOptions = { amount: 0.1, initial: true, once: true };
+16: 
+17:   useEffect(() => {
+18:     if (!containerRef.current) { return; }
+19: 
+20:     const lenis = new Lenis({
+21:       autoRaf: true,
+22:       duration: 1.2,
+23:       gestureOrientation: "vertical",
+24:       orientation: "vertical",
+25:       smoothWheel: true,
+26:       touchMultiplier: 2,
+27:       wrapper: containerRef.current,
+28:     });
+29: 
+30:     return () => {
+31:       lenis.destroy();
+32:     };
+33:   }, []);
+34: 
+35:   return (
+36:     <div className="w-full h-full bg-background relative p-0">
+37:       <div
+38:         className="h-[calc(100%-1rem)] w-[calc(100%-1rem)] m-2 z-10 bg-white overflow-scroll rounded-xl"
+39:         ref={containerRef}
+40:       >
+41:         <div className="max-w-md mx-auto px-4 mt-16 pb-20 p-0 text-black">
+42:           <h1 className="text-4xl font-medium mb-10 font-calendas tracking-tight">
+43:             Typeface alphabets
+44:           </h1>
+45: 
+46:           <div className="text leading-normal space-y-4 font-overusedGrotesk ">
+47:             <p className="whitespace-break-spaces">
+48:               The present-day designer has a host of printing types at his
+49:               disposal.{" "}
+50:               <TextHighlighter
+51:                 className={highlightClass}
+52:                 transition={transition as Transition}
+53:                 highlightColor={highlightColor}
+54:                 useInViewOptions={inViewOptions}
+55:               >
+56:                 Since Gutenberg first invented movable type in 1436-55
+57:               </TextHighlighter>{" "}
+58:               hundreds of different types have been designed and cast in lead.{" "}
+59:               <TextHighlighter
+60:                 className={highlightClass}
+61:                 transition={transition as Transition}
+62:                 highlightColor={highlightColor}
+63:                 useInViewOptions={inViewOptions}
+64:                 direction="rtl"
+65:               >
+66:                 The most recent technical developments
+67:               </TextHighlighter>{" "}
+68:               with computer and photo-typesetting have once again brought new
+69:               faces on the market.{" "}
+70:             </p>
+71: 
+72:             <p className="whitespace-break-spaces">
+73:               <TextHighlighter
+74:                 className={highlightClass}
+75:                 transition={transition as Transition}
+76:                 highlightColor={highlightColor}
+77:                 useInViewOptions={inViewOptions}
+78:                 direction="btt"
+79:               >
+80:                 The choice is up to the designer
+81:               </TextHighlighter>{" "}
+82:               to use good or poor typefaces for his design work. Knowledge of
+83:               the quality of a typeface is of the greatest importance for the{" "}
+84:               <TextHighlighter
+85:                 className={highlightClass}
+86:                 transition={transition as Transition}
+87:                 highlightColor={highlightColor}
+88:                 useInViewOptions={inViewOptions}
+89:                 direction="ttb"
+90:               >
+91:                 functional, aesthetic and psychological effect
+92:               </TextHighlighter>{" "}
+93:               of printed matter.
+94:             </p>
+95:           </div>
+96:         </div>
+97:       </div>
+98:     </div>
+99:   );
+100: }
+
+(End of file - total 100 lines)
+</content>
