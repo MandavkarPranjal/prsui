@@ -1,43 +1,18 @@
 "use client";
 
-import Lenis from "lenis";
 import type { Transition } from "motion";
-import { useEffect, useRef } from "react";
 
 import { TextHighlighter } from "@/registry/new-york/text-highlight";
 
 export default function TextHighlighterDemo() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
   const transition = { bounce: 0, delay: 0.4, duration: 1, type: "spring" };
   const highlightClass = "rounded-[0.3em] px-px";
   const highlightColor = "#f8c4c4";
   const inViewOptions = { amount: 0.1, initial: true, once: true };
 
-  useEffect(() => {
-    if (!containerRef.current) {return;}
-
-    const lenis = new Lenis({
-      autoRaf: true,
-      duration: 1.2,
-      gestureOrientation: "vertical",
-      orientation: "vertical",
-      smoothWheel: true,
-      touchMultiplier: 2,
-      wrapper: containerRef.current,
-    });
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   return (
     <div className="w-full h-full bg-background relative p-0">
-      <div
-        className="h-[calc(100%-1rem)] w-[calc(100%-1rem)] m-2 z-10 bg-white overflow-scroll rounded-xl"
-        ref={containerRef}
-      >
+      <div className="h-[calc(100%-1rem)] w-[calc(100%-1rem)] m-2 z-10 bg-white overflow-scroll rounded-xl">
         <div className="max-w-md mx-auto px-4 mt-16 pb-20 p-0 text-black">
           <h1 className="text-4xl font-medium mb-10 font-calendas tracking-tight">
             Typeface alphabets
