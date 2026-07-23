@@ -1,0 +1,100 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KY83FC8EKQTPY3J2N5SB2M3A",
+  "session_id": "ses_0700d0dddffepiV3KdeAriZWEJ",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-23T18:23:21.83754588Z",
+  "branch": "main",
+  "checkpoints_count": 4,
+  "save_step_count": 4,
+  "files_touched": [
+    "content/docs/components/meta.json",
+    "content/docs/components/text-highlight.mdx",
+    "demo/text-highlight-demo.tsx",
+    "public/r/registry.json",
+    "public/r/text-highlight.json",
+    "registry.json",
+    "registry/new-york/text-highlight.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "60dff9d6fead",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 31280,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 986816,
+    "output_tokens": 4990,
+    "api_call_count": 36
+  },
+  "session_metrics": {
+    "turn_count": 4
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-23T18:23:21.807763228Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 15,
+    "human_modified": 55,
+    "human_removed": 0,
+    "total_committed": 15,
+    "total_lines_changed": 70,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 636,
+      "user_lines_removed": 3,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "content/docs/components/meta.json": 2,
+        "content/docs/components/text-highlight.mdx": 75,
+        "demo/text-highlight-demo.tsx": 277,
+        "package.json": 1,
+        "pnpm-lock.yaml": 21,
+        "public/r/registry.json": 15,
+        "public/r/text-highlight.json": 18,
+        "registry.json": 15,
+        "registry/new-york/text-highlight.tsx": 187,
+        "styles/globals.css": 3,
+        "styles/themes.css": 22
+      },
+      "user_removed_per_file": {
+        "content/docs/components/meta.json": 1,
+        "public/r/registry.json": 1,
+        "registry.json": 1
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 811,
+      "agent_lines_removed": 32
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 83,
+      "user_lines_removed": 112,
+      "agent_lines_added": 745,
+      "agent_lines_removed": 32,
+      "user_added_per_file": {
+        "components/component-preview-client.tsx": 58,
+        "components/component-preview.tsx": 25
+      },
+      "user_removed_per_file": {
+        "components/component-preview.tsx": 112
+      }
+    }
+  ]
+}
