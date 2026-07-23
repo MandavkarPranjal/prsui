@@ -1,0 +1,6 @@
+Search the codebase at /home/himmel/personal/prsui for documentation and demo files related to the "github-stars" component. Look for:
+1. Any markdown/MDX files mentioning "github-stars" or "GitHubStars"
+2. Any demo files or example files for github-stars
+3. Check the registry directory structure to understand how docs/demos are organized for other components
+
+Return the file paths and a summary of what each file contains.

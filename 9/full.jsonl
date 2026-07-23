@@ -1,0 +1,1361 @@
+{
+  "info": {
+    "id": "ses_0721898a0ffeUx5kw4KilWiT97",
+    "slug": "stellar-orchid",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "parentID": "ses_0721ee49cffeQcOpuA5lWrQKl8",
+    "title": "Find github-stars docs/demo (@explore subagent)",
+    "agent": "explore",
+    "model": {
+      "id": "mimo-v2.5-free",
+      "providerID": "opencode",
+      "variant": "default"
+    },
+    "version": "1.18.4",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 12447,
+      "output": 1725,
+      "reasoning": 382,
+      "cache": {
+        "read": 52992,
+        "write": 0
+      }
+    },
+    "permission": [
+      {
+        "permission": "todowrite",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "task",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "compress",
+        "pattern": "*",
+        "action": "deny"
+      }
+    ],
+    "time": {
+      "created": 1784792180575,
+      "updated": 1784792260278
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784792180582
+        },
+        "agent": "explore",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "mimo-v2.5-free"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_f8de76765001ESvthslnQgLzep",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "Search the codebase at /home/himmel/personal/prsui for documentation and demo files related to the \"github-stars\" component. Look for:\n1. Any markdown/MDX files mentioning \"github-stars\" or \"GitHubStars\"\n2. Any demo files or example files for github-stars\n3. Check the registry directory structure to understand how docs/demos are organized for other components\n\nReturn the file paths and a summary of what each file contains.",
+          "id": "prt_f8de76769001LW6EJBg5MkSNNZ",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de76765001ESvthslnQgLzep"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 4008,
+          "input": 3837,
+          "output": 109,
+          "reasoning": 62,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792180697,
+          "completed": 1784792185873
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8de767d9001AQCAOq71c81bP0",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de773a8001aUUthJuWN96bet",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de767d9001AQCAOq71c81bP0"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to search for documentation and demo files related to the \"github-stars\" component in the codebase at /home/himmel/personal/prsui. Let me start by searching for markdown/MDX files mentioning \"github-stars\" or \"GitHubStars\" and also look for demo files.",
+          "time": {
+            "start": 1784792183724,
+            "end": 1784792184704
+          },
+          "id": "prt_f8de773ac001vJpuZbG0j3f9Pj",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de767d9001AQCAOq71c81bP0"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_b2d55befeea442f9aafaffb7",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "github-stars|GitHubStars",
+              "include": "*.{md,mdx}"
+            },
+            "output": "No files found",
+            "metadata": {
+              "matches": 0,
+              "truncated": false
+            },
+            "title": "github-stars|GitHubStars",
+            "time": {
+              "start": 1784792185017,
+              "end": 1784792185037
+            }
+          },
+          "id": "prt_f8de77785001TRzKkSIMbuyctI",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de767d9001AQCAOq71c81bP0"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_5e33b28fc5f14b93b0ca0120",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/*github-stars*"
+            },
+            "output": "/home/himmel/personal/prsui/registry/new-york/github-stars.tsx\n/home/himmel/personal/prsui/components/github-stars.tsx",
+            "metadata": {
+              "count": 2,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784792185346,
+              "end": 1784792185365
+            }
+          },
+          "id": "prt_f8de7791d0016SPtcyQieFzGpF",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de767d9001AQCAOq71c81bP0"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_c3803722e31049ce99d6b6bd",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/*GitHubStars*"
+            },
+            "output": "No files found",
+            "metadata": {
+              "count": 0,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784792185505,
+              "end": 1784792185518
+            }
+          },
+          "id": "prt_f8de77a3f001ADKM1ADgh20Rg9",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de767d9001AQCAOq71c81bP0"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_bf17f468bf1048558a7feaba",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/registry/**"
+            },
+            "output": "/home/himmel/personal/prsui/registry/new-york/github-stars.tsx\n/home/himmel/personal/prsui/registry/new-york/logo-grid.tsx\n/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx\n/home/himmel/personal/prsui/registry/new-york/typewriter.tsx\n/home/himmel/personal/prsui/registry/new-york/tooltip.tsx\n/home/himmel/personal/prsui/registry/new-york/split-action.tsx\n/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx\n/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n/home/himmel/personal/prsui/registry/new-york/link.tsx\n/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx\n/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx\n/home/himmel/personal/prsui/registry/new-york/accordion.tsx",
+            "metadata": {
+              "count": 12,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784792185748,
+              "end": 1784792185766
+            }
+          },
+          "id": "prt_f8de77ae6001wSrbqnAVgrlJR0",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de767d9001AQCAOq71c81bP0"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 4008,
+            "input": 3837,
+            "output": 109,
+            "reasoning": 62,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de77bf9001XfZkuhJCVg8S5R",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de767d9001AQCAOq71c81bP0"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 4446,
+          "input": 518,
+          "output": 123,
+          "reasoning": 29,
+          "cache": {
+            "write": 0,
+            "read": 3776
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792185876,
+          "completed": 1784792193030
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8de77c14001RMm5epxfM86N63",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de790d9001CbsINu9izHAT96",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de77c14001RMm5epxfM86N63"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me also search more broadly for demo files and documentation. Let me check for any markdown/MDX files and also look at the structure.",
+          "time": {
+            "start": 1784792191195,
+            "end": 1784792191826
+          },
+          "id": "prt_f8de790db001MkJ3wwcs3TqpRD",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de77c14001RMm5epxfM86N63"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_89b1db27bd2c4b21986d6262",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/*.{md,mdx}"
+            },
+            "output": "/home/himmel/personal/prsui/README.md\n/home/himmel/personal/prsui/content/docs/components/view-on-map.mdx\n/home/himmel/personal/prsui/content/docs/components/typewriter.mdx\n/home/himmel/personal/prsui/content/docs/components/tooltip.mdx\n/home/himmel/personal/prsui/content/docs/components/split-action.mdx\n/home/himmel/personal/prsui/content/docs/components/smooth-input.mdx\n/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx\n/home/himmel/personal/prsui/content/docs/components/logo-grid.mdx\n/home/himmel/personal/prsui/content/docs/components/link.mdx\n/home/himmel/personal/prsui/content/docs/components/inline-toast.mdx\n/home/himmel/personal/prsui/content/docs/components/index.mdx\n/home/himmel/personal/prsui/content/docs/components/editable-chip.mdx\n/home/himmel/personal/prsui/content/docs/components/accordion.mdx\n/home/himmel/personal/prsui/content/docs/(root)/index.mdx",
+            "metadata": {
+              "count": 14,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784792192029,
+              "end": 1784792192050
+            }
+          },
+          "id": "prt_f8de79354001omoTQjqxPgAwGw",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de77c14001RMm5epxfM86N63"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_7fb0d1be873b4c1486f3c31d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/github-stars.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/github-stars.tsx</path>\n<type>file</type>\n<content>\n1: import { cva } from \"class-variance-authority\";\n2: import type { VariantProps } from \"class-variance-authority\";\n3: \n4: import { cn } from \"@/lib/utils\";\n5: \n6: import { Tooltip } from \"./tooltip\";\n7: \n8: const githubStarsVariants = cva(\"gap-1.5 pr-1.5 pl-2\", {\n9:   defaultVariants: {\n10:     size: \"default\",\n11:   },\n12:   variants: {\n13:     size: {\n14:       default: \"h-9 text-sm\",\n15:       lg: \"h-10 text-base pr-2 pl-2.5\",\n16:       sm: \"h-8 text-xs\",\n17:     },\n18:   },\n19: });\n20: \n21: interface GitHubStarsProps extends VariantProps<typeof githubStarsVariants> {\n22:   repo: string;\n23:   className?: string;\n24:   locales?: Intl.LocalesArgument;\n25: }\n26: \n27: const getStarsCount = async (repo: string): Promise<number> => {\n28:   try {\n29:     const res = await fetch(`https://api.github.com/repos/${repo}`, {\n30:       next: { revalidate: 60 * 60 * 24 },\n31:     });\n32: \n33:     if (!res.ok) {\n34:       return 0;\n35:     }\n36: \n37:     const data = (await res.json()) as { stargazers_count: number };\n38:     return Number(data.stargazers_count);\n39:   } catch {\n40:     return 0;\n41:   }\n42: };\n43: \n44: export const GitHubStars = async ({\n45:   repo,\n46:   locales = \"en-US\",\n47:   className,\n48:   size,\n49: }: GitHubStarsProps) => {\n50:   const count = await getStarsCount(repo);\n51: \n52:   const formatted = new Intl.NumberFormat(locales, {\n53:     compactDisplay: \"short\",\n54:     notation: \"compact\",\n55:   })\n56:     .format(count)\n57:     .toLowerCase();\n58: \n59:   const full = new Intl.NumberFormat(locales).format(count);\n60: \n61:   return (\n62:     <Tooltip content={`${full} stars`}>\n63:       <button className={cn(githubStarsVariants({ size }), className)}>\n64:         <a\n65:           href={`https://github.com/${repo}`}\n66:           target=\"_blank\"\n67:           rel=\"noopener noreferrer\"\n68:         >\n69:           <svg\n70:             className=\"-translate-y-px\"\n71:             viewBox=\"0 0 24 24\"\n72:             width=\"16\"\n73:             height=\"16\"\n74:             aria-hidden=\"true\"\n75:           >\n76:             <path\n77:               d=\"M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12\"\n78:               fill=\"currentColor\"\n79:             />\n80:           </svg>\n81:           <span className=\"text-[0.8125rem] text-muted-foreground tabular-nums\">\n82:             {formatted}\n83:           </span>\n84:         </a>\n85:       </button>\n86:     </Tooltip>\n87:   );\n88: };\n\n(End of file - total 88 lines)\n</content>",
+            "metadata": {
+              "preview": "import { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport { Tooltip } from \"./tooltip\";\n\nconst githubStarsVariants = cva(\"gap-1.5 pr-1.5 pl-2\", {\n  defaultVariants: {\n    size: \"default\",\n  },\n  variants: {\n    size: {\n      default: \"h-9 text-sm\",\n      lg: \"h-10 text-base pr-2 pl-2.5\",\n      sm: \"h-8 text-xs\",\n    },\n  },\n});\n",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/github-stars.tsx",
+                "text": "import { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport { Tooltip } from \"./tooltip\";\n\nconst githubStarsVariants = cva(\"gap-1.5 pr-1.5 pl-2\", {\n  defaultVariants: {\n    size: \"default\",\n  },\n  variants: {\n    size: {\n      default: \"h-9 text-sm\",\n      lg: \"h-10 text-base pr-2 pl-2.5\",\n      sm: \"h-8 text-xs\",\n    },\n  },\n});\n\ninterface GitHubStarsProps extends VariantProps<typeof githubStarsVariants> {\n  repo: string;\n  className?: string;\n  locales?: Intl.LocalesArgument;\n}\n\nconst getStarsCount = async (repo: string): Promise<number> => {\n  try {\n    const res = await fetch(`https://api.github.com/repos/${repo}`, {\n      next: { revalidate: 60 * 60 * 24 },\n    });\n\n    if (!res.ok) {\n      return 0;\n    }\n\n    const data = (await res.json()) as { stargazers_count: number };\n    return Number(data.stargazers_count);\n  } catch {\n    return 0;\n  }\n};\n\nexport const GitHubStars = async ({\n  repo,\n  locales = \"en-US\",\n  className,\n  size,\n}: GitHubStarsProps) => {\n  const count = await getStarsCount(repo);\n\n  const formatted = new Intl.NumberFormat(locales, {\n    compactDisplay: \"short\",\n    notation: \"compact\",\n  })\n    .format(count)\n    .toLowerCase();\n\n  const full = new Intl.NumberFormat(locales).format(count);\n\n  return (\n    <Tooltip content={`${full} stars`}>\n      <button className={cn(githubStarsVariants({ size }), className)}>\n        <a\n          href={`https://github.com/${repo}`}\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          <svg\n            className=\"-translate-y-px\"\n            viewBox=\"0 0 24 24\"\n            width=\"16\"\n            height=\"16\"\n            aria-hidden=\"true\"\n          >\n            <path\n              d=\"M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12\"\n              fill=\"currentColor\"\n            />\n          </svg>\n          <span className=\"text-[0.8125rem] text-muted-foreground tabular-nums\">\n            {formatted}\n          </span>\n        </a>\n      </button>\n    </Tooltip>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 88,
+                "totalLines": 88,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/github-stars.tsx",
+            "time": {
+              "start": 1784792192379,
+              "end": 1784792192392
+            }
+          },
+          "id": "prt_f8de79450001e1yKixXyJLGiDL",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de77c14001RMm5epxfM86N63"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_1c2f7efc2b1f419f9d1672b5",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/github-stars.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/github-stars.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { GithubIcon } from \"@/components/icons\";\n4: import { buttonVariants } from \"@/components/ui/button\";\n5: import {\n6:   Tooltip,\n7:   TooltipContent,\n8:   TooltipTrigger,\n9: } from \"@/components/ui/tooltip\";\n10: import { LINK } from \"@/constants/links\";\n11: import { UTM_PARAMS } from \"@/constants/site\";\n12: import { useFeedback } from \"@/hooks/use-feedback\";\n13: import { addQueryParams } from \"@/lib/url\";\n14: import { cn } from \"@/lib/utils\";\n15: \n16: export const GitHubStars = ({\n17:   stargazersCount,\n18: }: {\n19:   stargazersCount: number;\n20: }) => {\n21:   const play = useFeedback({ sound: \"success\" });\n22: \n23:   return (\n24:     <Tooltip>\n25:       <TooltipTrigger asChild>\n26:         <a\n27:           className={cn(buttonVariants({ size: \"sm\", variant: \"ghost\" }))}\n28:           href={addQueryParams(LINK.GITHUB, UTM_PARAMS)}\n29:           onClick={play}\n30:           rel=\"noopener\"\n31:           target=\"_blank\"\n32:         >\n33:           <GithubIcon className=\"-translate-y-px\" />\n34:           <span className=\"text-muted-foreground text-xs tabular-nums\">\n35:             {new Intl.NumberFormat(\"en-US\", {\n36:               compactDisplay: \"short\",\n37:               notation: \"compact\",\n38:             })\n39:               .format(stargazersCount)\n40:               .toLowerCase()}\n41:           </span>\n42:         </a>\n43:       </TooltipTrigger>\n44:       <TooltipContent>\n45:         {new Intl.NumberFormat(\"en-US\").format(stargazersCount)} stars\n46:       </TooltipContent>\n47:     </Tooltip>\n48:   );\n49: };\n\n(End of file - total 49 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { GithubIcon } from \"@/components/icons\";\nimport { buttonVariants } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { LINK } from \"@/constants/links\";\nimport { UTM_PARAMS } from \"@/constants/site\";\nimport { useFeedback } from \"@/hooks/use-feedback\";\nimport { addQueryParams } from \"@/lib/url\";\nimport { cn } from \"@/lib/utils\";\n\nexport const GitHubStars = ({\n  stargazersCount,\n}: {\n  stargazersCount: number;\n}) => {",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/github-stars.tsx",
+                "text": "\"use client\";\n\nimport { GithubIcon } from \"@/components/icons\";\nimport { buttonVariants } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { LINK } from \"@/constants/links\";\nimport { UTM_PARAMS } from \"@/constants/site\";\nimport { useFeedback } from \"@/hooks/use-feedback\";\nimport { addQueryParams } from \"@/lib/url\";\nimport { cn } from \"@/lib/utils\";\n\nexport const GitHubStars = ({\n  stargazersCount,\n}: {\n  stargazersCount: number;\n}) => {\n  const play = useFeedback({ sound: \"success\" });\n\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <a\n          className={cn(buttonVariants({ size: \"sm\", variant: \"ghost\" }))}\n          href={addQueryParams(LINK.GITHUB, UTM_PARAMS)}\n          onClick={play}\n          rel=\"noopener\"\n          target=\"_blank\"\n        >\n          <GithubIcon className=\"-translate-y-px\" />\n          <span className=\"text-muted-foreground text-xs tabular-nums\">\n            {new Intl.NumberFormat(\"en-US\", {\n              compactDisplay: \"short\",\n              notation: \"compact\",\n            })\n              .format(stargazersCount)\n              .toLowerCase()}\n          </span>\n        </a>\n      </TooltipTrigger>\n      <TooltipContent>\n        {new Intl.NumberFormat(\"en-US\").format(stargazersCount)} stars\n      </TooltipContent>\n    </Tooltip>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 49,
+                "totalLines": 49,
+                "truncated": false
+              }
+            },
+            "title": "components/github-stars.tsx",
+            "time": {
+              "start": 1784792192643,
+              "end": 1784792192661
+            }
+          },
+          "id": "prt_f8de7959c001Nma6KC5F5FaWGc",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de77c14001RMm5epxfM86N63"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_788de964718643e6b20d435d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry</path>\n<type>directory</type>\n<entries>\nnew-york/\n\n(1 entries)\n</entries>",
+            "metadata": {
+              "preview": "new-york/",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui/registry",
+                "entries": [
+                  "new-york/"
+                ],
+                "offset": 1,
+                "totalEntries": 1,
+                "truncated": false
+              }
+            },
+            "title": "registry",
+            "time": {
+              "start": 1784792192935,
+              "end": 1784792192941
+            }
+          },
+          "id": "prt_f8de796d2001yfo32BKwovDzwA",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de77c14001RMm5epxfM86N63"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 4446,
+            "input": 518,
+            "output": 123,
+            "reasoning": 29,
+            "cache": {
+              "write": 0,
+              "read": 3776
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de797e70017WeAd3k1q0fpCX",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de77c14001RMm5epxfM86N63"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 7032,
+          "input": 2485,
+          "output": 116,
+          "reasoning": 143,
+          "cache": {
+            "write": 0,
+            "read": 4288
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792193033,
+          "completed": 1784792198458
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8de798090017niEBatlRO5YxZ",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de7a043001q0ALaeS4HX6oSF",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de798090017niEBatlRO5YxZ"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I can see that:\n1. There's a `github-stars.tsx` in the registry directory (`/home/himmel/personal/prsui/registry/new-york/github-stars.tsx`)\n2. There's also a `github-stars.tsx` in the components directory (`/home/himmel/personal/prsui/components/github-stars.tsx`)\n3. There are MDX files in `content/docs/components/` but none of them is for github-stars\n4. The registry directory only has a `new-york` subdirectory\n\nLet me search for any demo files and check if there are any other patterns that might indicate demo files. Also, let me look at the content structure more carefully.",
+          "time": {
+            "start": 1784792195141,
+            "end": 1784792197103
+          },
+          "id": "prt_f8de7a045001p8GYNMYrQIoYvD",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de798090017niEBatlRO5YxZ"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_3469c0641225497a8746ced1",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/*demo*"
+            },
+            "output": "/home/himmel/personal/prsui/demo/view-on-map-demo.tsx\n/home/himmel/personal/prsui/demo/typewriter-demo.tsx\n/home/himmel/personal/prsui/demo/tooltip-demo.tsx\n/home/himmel/personal/prsui/demo/split-action-demo.tsx\n/home/himmel/personal/prsui/demo/logo-marquee-demo.tsx\n/home/himmel/personal/prsui/demo/logo-grid-demo.tsx\n/home/himmel/personal/prsui/demo/link-demo.tsx\n/home/himmel/personal/prsui/demo/inline-toast-demo.tsx\n/home/himmel/personal/prsui/demo/editable-chip-demo.tsx\n/home/himmel/personal/prsui/demo/accordion-demo.tsx",
+            "metadata": {
+              "count": 10,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784792197212,
+              "end": 1784792197223
+            }
+          },
+          "id": "prt_f8de7a7f1001tGywdnHedSr2vo",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de798090017niEBatlRO5YxZ"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_90485d4029c54394af7015ca",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/*example*"
+            },
+            "output": "No files found",
+            "metadata": {
+              "count": 0,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784792197820,
+              "end": 1784792197846
+            }
+          },
+          "id": "prt_f8de7a8b5001YNHS89MAoWRD01",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de798090017niEBatlRO5YxZ"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_e94d05ab854749e5a83c56fc",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content</path>\n<type>directory</type>\n<entries>\ndocs/\n\n(1 entries)\n</entries>",
+            "metadata": {
+              "preview": "docs/",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui/content",
+                "entries": [
+                  "docs/"
+                ],
+                "offset": 1,
+                "totalEntries": 1,
+                "truncated": false
+              }
+            },
+            "title": "content",
+            "time": {
+              "start": 1784792197940,
+              "end": 1784792197947
+            }
+          },
+          "id": "prt_f8de7aabf0014TfiPu3mMylNJ0",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de798090017niEBatlRO5YxZ"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_50ee240ea2a141ed9751ef31",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "github-stars|GitHubStars",
+              "include": "*.{ts,tsx,js,jsx}"
+            },
+            "output": "Found 6 matches\n/home/himmel/personal/prsui/components/nav-item-github.tsx:\n  Line 3: import { GitHubStars } from \"./github-stars\";\n\n  Line 8:   return <GitHubStars stargazersCount={stargazersCount} />;\n\n\n/home/himmel/personal/prsui/components/github-stars.tsx:\n  Line 16: export const GitHubStars = ({\n\n\n/home/himmel/personal/prsui/registry/new-york/github-stars.tsx:\n  Line 21: interface GitHubStarsProps extends VariantProps<typeof githubStarsVariants> {\n\n  Line 44: export const GitHubStars = async ({\n\n  Line 49: }: GitHubStarsProps) => {\n",
+            "metadata": {
+              "matches": 6,
+              "truncated": false
+            },
+            "title": "github-stars|GitHubStars",
+            "time": {
+              "start": 1784792198342,
+              "end": 1784792198362
+            }
+          },
+          "id": "prt_f8de7ab7b0012hGXUoJGmZULu2",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de798090017niEBatlRO5YxZ"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 7032,
+            "input": 2485,
+            "output": 116,
+            "reasoning": 143,
+            "cache": {
+              "write": 0,
+              "read": 4288
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de7ad20001IPdm2Qhl4ugxLR",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de798090017niEBatlRO5YxZ"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 7570,
+          "input": 678,
+          "output": 128,
+          "reasoning": 44,
+          "cache": {
+            "write": 0,
+            "read": 6720
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792198464,
+          "completed": 1784792212732
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8de7ad400018bi8ajhChKvqi0",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de7d825001n9HbS27wPUCyIB",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7ad400018bi8ajhChKvqi0"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have a good picture. Let me also look at the demo directory structure and one of the demo files to understand the pattern, and also look at the content/docs/components to understand the pattern for MDX docs.",
+          "time": {
+            "start": 1784792209448,
+            "end": 1784792211452
+          },
+          "id": "prt_f8de7d828001CuscF9nDfrmwDG",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7ad400018bi8ajhChKvqi0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_6c766fdea1384ce3a253a464",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/demo"
+            },
+            "output": "<path>/home/himmel/personal/prsui/demo</path>\n<type>directory</type>\n<entries>\naccordion-demo.tsx\neditable-chip-demo.tsx\ninline-toast-demo.tsx\nlink-demo.tsx\nlogo-grid-demo.tsx\nlogo-marquee-demo.tsx\nsplit-action-demo.tsx\ntooltip-demo.tsx\ntypewriter-demo.tsx\nview-on-map-demo.tsx\n\n(10 entries)\n</entries>",
+            "metadata": {
+              "preview": "accordion-demo.tsx\neditable-chip-demo.tsx\ninline-toast-demo.tsx\nlink-demo.tsx\nlogo-grid-demo.tsx\nlogo-marquee-demo.tsx\nsplit-action-demo.tsx\ntooltip-demo.tsx\ntypewriter-demo.tsx\nview-on-map-demo.tsx",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui/demo",
+                "entries": [
+                  "accordion-demo.tsx",
+                  "editable-chip-demo.tsx",
+                  "inline-toast-demo.tsx",
+                  "link-demo.tsx",
+                  "logo-grid-demo.tsx",
+                  "logo-marquee-demo.tsx",
+                  "split-action-demo.tsx",
+                  "tooltip-demo.tsx",
+                  "typewriter-demo.tsx",
+                  "view-on-map-demo.tsx"
+                ],
+                "offset": 1,
+                "totalEntries": 10,
+                "truncated": false
+              }
+            },
+            "title": "demo",
+            "time": {
+              "start": 1784792211715,
+              "end": 1784792211718
+            }
+          },
+          "id": "prt_f8de7dfff001aqfKmYfaqYKdHC",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7ad400018bi8ajhChKvqi0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_ec0dab0538674754aea5f700",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/accordion.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/accordion.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Accordion\n3: description: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n4: ---\n5: \n6: import { BouncyAccordionPreview } from \"@/demo/accordion-demo\";\n7: \n8: <ComponentPreview name=\"accordion\">\n9:   <BouncyAccordionPreview />\n10: </ComponentPreview>\n11: \n12: ## Installation\n13: \n14: If you've already added the prsui registry, use the short command:\n15: \n16: <CodeBlockCommand\n17:   __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n18:   __npm__=\"npx shadcn@latest add @prsui/accordion\"\n19:   __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n20:   __yarn__=\"yarn shadcn@latest add @prsui/accordion\"\n21: />\n22: \n23: Otherwise, use the full registry URL:\n24: \n25: <CodeBlockCommand\n26:   __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n27:   __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n28:   __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n29:   __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n30: />\n31: \n32: ## Usage\n33: \n34: After you add the component with the CLI, import it from your UI folder:\n35: \n36: ```tsx\n37: import { Accordion, type AccordionItem } from \"@/components/ui/accordion\";\n38: \n39: const items: AccordionItem[] = [\n40:   {\n41:     id: \"item-1\",\n42:     title: \"First question\",\n43:     description: \"Answer to the first question.\",\n44:   },\n45:   {\n46:     id: \"item-2\",\n47:     title: \"Second question\",\n48:     description: \"Answer to the second question.\",\n49:   },\n50: ];\n51: \n52: export function MyComponent() {\n53:   return <Accordion items={items} defaultValue=\"item-1\" />;\n54: }\n55: ```\n56: \n57: ## Props\n58: \n59: | Prop            | Type                              | Default | Description                                           |\n60: | --------------- | --------------------------------- | ------- | ----------------------------------------------------- |\n61: | `items`         | `AccordionItem[]`                 | -       | Array of accordion items                              |\n62: | `value`         | `string \\| null`                  | -       | Controlled currently open item id                     |\n63: | `defaultValue`  | `string \\| null`                  | `null`  | Initially open item id                                |\n64: | `onValueChange` | `(value: string \\| null) => void` | -       | Callback fired when the open item changes             |\n65: | `collapsible`   | `boolean`                         | `true`  | When false, an open item cannot be closed by clicking |\n66: | `className`     | `string`                          | -       | Classes applied to the root wrapper                   |\n67: | `classNames`    | `AccordionClassNames`             | -       | Override classes for individual sub-elements          |\n68: \n69: ### AccordionItem\n70: \n71: | Field         | Type        | Description                              |\n72: | ------------- | ----------- | ---------------------------------------- |\n73: | `id`          | `string`    | Unique identifier for the item           |\n74: | `title`       | `ReactNode` | Content shown in the trigger row         |\n75: | `description` | `ReactNode` | Content revealed when the item is open   |\n76: | `icon`        | `ReactNode` | Optional icon displayed before the title |\n77: | `disabled`    | `boolean`   | Disables the item                        |\n78: \n79: ### AccordionClassNames\n80: \n81: | Key           | Description                  |\n82: | ------------- | ---------------------------- |\n83: | `root`        | Wrapper around all items     |\n84: | `item`        | Each accordion row container |\n85: | `trigger`     | The clickable button row     |\n86: | `icon`        | The icon wrapper span        |\n87: | `title`       | The title text span          |\n88: | `chevron`     | The chevron rotation wrapper |\n89: | `content`     | The animated content wrapper |\n90: | `description` | The description text div     |\n\n(End of file - total 90 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Accordion\ndescription: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n---\n\nimport { BouncyAccordionPreview } from \"@/demo/accordion-demo\";\n\n<ComponentPreview name=\"accordion\">\n  <BouncyAccordionPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n  __npm__=\"npx shadcn@latest add @prsui/accordion\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n  __yarn__=\"yarn shadcn@latest add @prsui/accordion\"",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/accordion.mdx",
+                "text": "---\ntitle: Accordion\ndescription: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n---\n\nimport { BouncyAccordionPreview } from \"@/demo/accordion-demo\";\n\n<ComponentPreview name=\"accordion\">\n  <BouncyAccordionPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n  __npm__=\"npx shadcn@latest add @prsui/accordion\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n  __yarn__=\"yarn shadcn@latest add @prsui/accordion\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\nimport { Accordion, type AccordionItem } from \"@/components/ui/accordion\";\n\nconst items: AccordionItem[] = [\n  {\n    id: \"item-1\",\n    title: \"First question\",\n    description: \"Answer to the first question.\",\n  },\n  {\n    id: \"item-2\",\n    title: \"Second question\",\n    description: \"Answer to the second question.\",\n  },\n];\n\nexport function MyComponent() {\n  return <Accordion items={items} defaultValue=\"item-1\" />;\n}\n```\n\n## Props\n\n| Prop            | Type                              | Default | Description                                           |\n| --------------- | --------------------------------- | ------- | ----------------------------------------------------- |\n| `items`         | `AccordionItem[]`                 | -       | Array of accordion items                              |\n| `value`         | `string \\| null`                  | -       | Controlled currently open item id                     |\n| `defaultValue`  | `string \\| null`                  | `null`  | Initially open item id                                |\n| `onValueChange` | `(value: string \\| null) => void` | -       | Callback fired when the open item changes             |\n| `collapsible`   | `boolean`                         | `true`  | When false, an open item cannot be closed by clicking |\n| `className`     | `string`                          | -       | Classes applied to the root wrapper                   |\n| `classNames`    | `AccordionClassNames`             | -       | Override classes for individual sub-elements          |\n\n### AccordionItem\n\n| Field         | Type        | Description                              |\n| ------------- | ----------- | ---------------------------------------- |\n| `id`          | `string`    | Unique identifier for the item           |\n| `title`       | `ReactNode` | Content shown in the trigger row         |\n| `description` | `ReactNode` | Content revealed when the item is open   |\n| `icon`        | `ReactNode` | Optional icon displayed before the title |\n| `disabled`    | `boolean`   | Disables the item                        |\n\n### AccordionClassNames\n\n| Key           | Description                  |\n| ------------- | ---------------------------- |\n| `root`        | Wrapper around all items     |\n| `item`        | Each accordion row container |\n| `trigger`     | The clickable button row     |\n| `icon`        | The icon wrapper span        |\n| `title`       | The title text span          |\n| `chevron`     | The chevron rotation wrapper |\n| `content`     | The animated content wrapper |\n| `description` | The description text div     |",
+                "lineStart": 1,
+                "lineEnd": 90,
+                "totalLines": 90,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/accordion.mdx",
+            "time": {
+              "start": 1784792212049,
+              "end": 1784792212068
+            }
+          },
+          "id": "prt_f8de7e15e001ZKyw72VwJnHyGu",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7ad400018bi8ajhChKvqi0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_42943f7a1e7d4a569fef6218",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/demo/accordion-demo.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/demo/accordion-demo.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n4: \n5: import { Accordion } from \"@/registry/new-york/accordion\";\n6: \n7: const items = [\n8:   {\n9:     description:\n10:       \"This is a demo platform used to showcase features and test UI components during development.\",\n11:     icon: <LayoutGrid className=\"h-4 w-4\" />,\n12:     id: \"platform\",\n13:     title: \"What is this platform?\",\n14:   },\n15:   {\n16:     description:\n17:       \"Yes. You can switch between light and dark themes from the settings menu.\",\n18:     icon: <SunMoon className=\"h-4 w-4\" />,\n19:     id: \"mode\",\n20:     title: \"Is there a dark mode?\",\n21:   },\n22:   {\n23:     description:\n24:       \"The latest versions of Chrome, Firefox, Safari, and Edge are officially supported.\",\n25:     icon: <Info className=\"h-4 w-4\" />,\n26:     id: \"support\",\n27:     title: \"What browsers are supported?\",\n28:   },\n29:   {\n30:     description:\n31:       \"This is a demo environment, so some sections intentionally use sample text and mock data.\",\n32:     icon: <Space className=\"h-4 w-4\" />,\n33:     id: \"placeholder\",\n34:     title: \"Why am I seeing placeholder content?\",\n35:   },\n36:   {\n37:     description:\n38:       \"Check the documentation or contact the project maintainers for additional information.\",\n39:     icon: <BookOpen className=\"h-4 w-4\" />,\n40:     id: \"learn\",\n41:     title: \"Where can I learn more?\",\n42:   },\n43:   {\n44:     description:\n45:       \"Use the feedback form or contact the development team with steps to reproduce the issue.\",\n46:     icon: <Bug className=\"h-4 w-4\" />,\n47:     id: \"bug\",\n48:     title: \"How do I report a bug?\",\n49:   },\n50: ];\n51: \n52: export const BouncyAccordionPreview = function BouncyAccordionPreview() {\n53:   return (\n54:     <div className=\"flex min-h-96 w-full items-center justify-center\">\n55:       <div className=\"w-full max-w-sm\">\n56:         <Accordion items={items} defaultValue=\"platform\" />\n57:       </div>\n58:     </div>\n59:   );\n60: };\n\n(End of file - total 60 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n\nimport { Accordion } from \"@/registry/new-york/accordion\";\n\nconst items = [\n  {\n    description:\n      \"This is a demo platform used to showcase features and test UI components during development.\",\n    icon: <LayoutGrid className=\"h-4 w-4\" />,\n    id: \"platform\",\n    title: \"What is this platform?\",\n  },\n  {\n    description:\n      \"Yes. You can switch between light and dark themes from the settings menu.\",\n    icon: <SunMoon className=\"h-4 w-4\" />,\n    id: \"mode\",\n    title: \"Is there a dark mode?\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/demo/accordion-demo.tsx",
+                "text": "\"use client\";\n\nimport { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n\nimport { Accordion } from \"@/registry/new-york/accordion\";\n\nconst items = [\n  {\n    description:\n      \"This is a demo platform used to showcase features and test UI components during development.\",\n    icon: <LayoutGrid className=\"h-4 w-4\" />,\n    id: \"platform\",\n    title: \"What is this platform?\",\n  },\n  {\n    description:\n      \"Yes. You can switch between light and dark themes from the settings menu.\",\n    icon: <SunMoon className=\"h-4 w-4\" />,\n    id: \"mode\",\n    title: \"Is there a dark mode?\",\n  },\n  {\n    description:\n      \"The latest versions of Chrome, Firefox, Safari, and Edge are officially supported.\",\n    icon: <Info className=\"h-4 w-4\" />,\n    id: \"support\",\n    title: \"What browsers are supported?\",\n  },\n  {\n    description:\n      \"This is a demo environment, so some sections intentionally use sample text and mock data.\",\n    icon: <Space className=\"h-4 w-4\" />,\n    id: \"placeholder\",\n    title: \"Why am I seeing placeholder content?\",\n  },\n  {\n    description:\n      \"Check the documentation or contact the project maintainers for additional information.\",\n    icon: <BookOpen className=\"h-4 w-4\" />,\n    id: \"learn\",\n    title: \"Where can I learn more?\",\n  },\n  {\n    description:\n      \"Use the feedback form or contact the development team with steps to reproduce the issue.\",\n    icon: <Bug className=\"h-4 w-4\" />,\n    id: \"bug\",\n    title: \"How do I report a bug?\",\n  },\n];\n\nexport const BouncyAccordionPreview = function BouncyAccordionPreview() {\n  return (\n    <div className=\"flex min-h-96 w-full items-center justify-center\">\n      <div className=\"w-full max-w-sm\">\n        <Accordion items={items} defaultValue=\"platform\" />\n      </div>\n    </div>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 60,
+                "totalLines": 60,
+                "truncated": false
+              }
+            },
+            "title": "demo/accordion-demo.tsx",
+            "time": {
+              "start": 1784792212313,
+              "end": 1784792212319
+            }
+          },
+          "id": "prt_f8de7e294001y4W5RfpAKpXQKE",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7ad400018bi8ajhChKvqi0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_29c3613c6042494eaf55571b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/nav-item-github.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/nav-item-github.tsx</path>\n<type>file</type>\n<content>\n1: import { getStargazerCount } from \"@/lib/github\";\n2: \n3: import { GitHubStars } from \"./github-stars\";\n4: \n5: export const NavItemGithub = async () => {\n6:   const stargazersCount = await getStargazerCount();\n7: \n8:   return <GitHubStars stargazersCount={stargazersCount} />;\n9: };\n\n(End of file - total 9 lines)\n</content>",
+            "metadata": {
+              "preview": "import { getStargazerCount } from \"@/lib/github\";\n\nimport { GitHubStars } from \"./github-stars\";\n\nexport const NavItemGithub = async () => {\n  const stargazersCount = await getStargazerCount();\n\n  return <GitHubStars stargazersCount={stargazersCount} />;\n};",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/nav-item-github.tsx",
+                "text": "import { getStargazerCount } from \"@/lib/github\";\n\nimport { GitHubStars } from \"./github-stars\";\n\nexport const NavItemGithub = async () => {\n  const stargazersCount = await getStargazerCount();\n\n  return <GitHubStars stargazersCount={stargazersCount} />;\n};",
+                "lineStart": 1,
+                "lineEnd": 9,
+                "totalLines": 9,
+                "truncated": false
+              }
+            },
+            "title": "components/nav-item-github.tsx",
+            "time": {
+              "start": 1784792212608,
+              "end": 1784792212613
+            }
+          },
+          "id": "prt_f8de7e390001nv1YFPtgUthV7W",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7ad400018bi8ajhChKvqi0"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 7570,
+            "input": 678,
+            "output": 128,
+            "reasoning": 44,
+            "cache": {
+              "write": 0,
+              "read": 6720
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de7e4d7001yd6MTNkqAVozWh",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7ad400018bi8ajhChKvqi0"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 9794,
+          "input": 2294,
+          "output": 107,
+          "reasoning": 33,
+          "cache": {
+            "write": 0,
+            "read": 7360
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792212738,
+          "completed": 1784792218225
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8de7e501001TWl2oaziQ3zZeK",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de7f568001JNQlRVjnx2L0eR",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7e501001TWl2oaziQ3zZeK"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me also check if there's a smooth-input demo file, since there's a smooth-input registry file but I didn't see it in the demo directory.",
+          "time": {
+            "start": 1784792216940,
+            "end": 1784792217196
+          },
+          "id": "prt_f8de7f56c001gyckipWpErjAoS",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7e501001TWl2oaziQ3zZeK"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_2a87f93dd1254ea9a36bbfb6",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "github.stars|github-stars",
+              "path": "/home/himmel/personal/prsui/content"
+            },
+            "output": "No files found",
+            "metadata": {
+              "matches": 0,
+              "truncated": false
+            },
+            "title": "github.stars|github-stars",
+            "time": {
+              "start": 1784792217503,
+              "end": 1784792217530
+            }
+          },
+          "id": "prt_f8de7f66e001VBb6V2BVqGh8sW",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7e501001TWl2oaziQ3zZeK"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_3d26a002af224c038b07991b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york</path>\n<type>directory</type>\n<entries>\naccordion.tsx\neditable-chip.tsx\ngithub-stars.tsx\ninline-toast.tsx\nlink.tsx\nlogo-grid.tsx\nlogo-marquee.tsx\nsmooth-input.tsx\nsplit-action.tsx\ntooltip.tsx\ntypewriter.tsx\nview-on-map.tsx\n\n(12 entries)\n</entries>",
+            "metadata": {
+              "preview": "accordion.tsx\neditable-chip.tsx\ngithub-stars.tsx\ninline-toast.tsx\nlink.tsx\nlogo-grid.tsx\nlogo-marquee.tsx\nsmooth-input.tsx\nsplit-action.tsx\ntooltip.tsx\ntypewriter.tsx\nview-on-map.tsx",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui/registry/new-york",
+                "entries": [
+                  "accordion.tsx",
+                  "editable-chip.tsx",
+                  "github-stars.tsx",
+                  "inline-toast.tsx",
+                  "link.tsx",
+                  "logo-grid.tsx",
+                  "logo-marquee.tsx",
+                  "smooth-input.tsx",
+                  "split-action.tsx",
+                  "tooltip.tsx",
+                  "typewriter.tsx",
+                  "view-on-map.tsx"
+                ],
+                "offset": 1,
+                "totalEntries": 12,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york",
+            "time": {
+              "start": 1784792217934,
+              "end": 1784792217941
+            }
+          },
+          "id": "prt_f8de7f7db001iWt15tfd47EXsO",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7e501001TWl2oaziQ3zZeK"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_b4eec9f5d5ad44c5b65cd9b7",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/index.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/index.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Components\n3: description: Browse the components available in this registry.\n4: ---\n5: \n6: <ComponentsList />\n\n(End of file - total 6 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Components\ndescription: Browse the components available in this registry.\n---\n\n<ComponentsList />",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/index.mdx",
+                "text": "---\ntitle: Components\ndescription: Browse the components available in this registry.\n---\n\n<ComponentsList />",
+                "lineStart": 1,
+                "lineEnd": 6,
+                "totalLines": 6,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/index.mdx",
+            "time": {
+              "start": 1784792218111,
+              "end": 1784792218133
+            }
+          },
+          "id": "prt_f8de7f950001t618ec9SuxbK4H",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7e501001TWl2oaziQ3zZeK"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 9794,
+            "input": 2294,
+            "output": 107,
+            "reasoning": 33,
+            "cache": {
+              "write": 0,
+              "read": 7360
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de7fa4d001lVRQUoE8AeLKzj",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7e501001TWl2oaziQ3zZeK"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 10062,
+          "input": 388,
+          "output": 56,
+          "reasoning": 18,
+          "cache": {
+            "write": 0,
+            "read": 9600
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792218228,
+          "completed": 1784792225160
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8de7fa74001pApnNloUZEXxmk",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de81200001C3uilVbmQ4PXXy",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7fa74001pApnNloUZEXxmk"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me also check the README to see if there's any mention of github-stars there.",
+          "time": {
+            "start": 1784792224258,
+            "end": 1784792224501
+          },
+          "id": "prt_f8de812020014UU6XecNn7LKwS",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7fa74001pApnNloUZEXxmk"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_f3229ad8a249415b90f646e5",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/README.md"
+            },
+            "output": "<path>/home/himmel/personal/prsui/README.md</path>\n<type>file</type>\n<content>\n1: <p align=\"center\">\n2:   <img src=\"https://prsui.pr5.dev/og\" alt=\"prsui banner\" />\n3: </p>\n4: \n5: <h1 align=\"center\">prsui</h1>\n6: \n7: <p align=\"center\">\n8:   A shadcn registry of polished, ready-to-install components by <a href=\"https://x.com/pr5dev\">Pranjal Mandavkar</a>. Includes documentation, landing page, and everything you need to browse and install components.\n9:   <br />\n10:   <br />\n11:   <a href=\"https://github.com/MandavkarPranjal/prsui\"><img src=\"https://www.shieldcn.dev/github/stars/MandavkarPranjal/prsui.svg?variant=secondary&size=xs&theme=zinc\" alt=\"GitHub Stars\" /></a>\n12:   <a href=\"https://github.com/MandavkarPranjal/prsui/actions\"><img src=\"https://www.shieldcn.dev/github/ci/MandavkarPranjal/prsui.svg?variant=secondary&size=xs&theme=zinc\" alt=\"CI\" /></a>\n13:   <a href=\"https://x.com/pr5dev\"><img src=\"https://www.shieldcn.dev/x/follow/pr5dev.svg?variant=branded&size=xs&theme=zinc\" alt=\"X Follow\" /></a>\n14: </p>\n15: \n16: ## Features\n17: \n18: - 📦 **Copy/paste ownership** - Install components and own the code\n19: - 📚 **Documentation site** - Beautiful docs powered by Fumadocs\n20: - 🎨 **Shadcn registry compatible** - Works with `npx shadcn add`\n21: - 🤖 **[Agent ready](https://www.mintlify.com/score/startercn)** - Includes `llms.txt`, `llms-full.txt`, agent skills discovery routes, and API catalog endpoints\n22: - 🔊 **[Web audio feedback](https://audio.raphaelsalaja.com/)** - Built-in sound effects powered by `@web-kits/audio`\n23: - 📳 **[Web haptics](https://haptics.lochie.me/)** - Optional haptic feedback hooks for supported devices via `web-haptics`\n24: - ✨ **[Motion animations](https://motion.dev/)** - `motion`-powered UI polish for copy states, text transitions, and interactive elements\n25: - 🎯 **[Animated icons](https://lucide-animated.com/)** - Reusable animated icons for navigation, sharing, sponsorship, and CTAs\n26: - 🔄 **[View transitions](https://nextjs.org/docs/app/api-reference/config/next-config-js/viewTransition)** - Next.js view transitions enabled for smoother navigation between pages\n27: - 🚀 **Deploy ready** - Deploy anywhere\n28: \n29: ## Built In\n30: \n31: - `Next.js 16` with the App Router\n32: - `React 19` and `TypeScript`\n33: - `Tailwind CSS 4`\n34: - `Fumadocs` for documentation\n35: - `shiki` + `rehype-pretty-code` for code blocks\n36: - `sonner` for toasts\n37: - `radix-ui` + `vaul` for accessible primitives\n38: - `@vercel/analytics` for analytics\n39: \n40: ## Usage\n41: \n42: Install any component with:\n43: \n44: ```bash\n45: npx shadcn@latest add https://prsui.pr5.dev/r/smooth-input.json\n46: ```\n47: \n48: ## Project Structure\n49: \n50: ```\n51: ├── registry/\n52: │   └── new-york/           # Your components go here\n53: │       └── smooth-input.tsx\n54: ├── registry.json           # Component registry manifest\n55: ├── content/docs/           # Documentation (MDX)\n56: ├── app/                    # Next.js app\n57: └── public/r/               # Built registry files (auto-generated)\n58: ```\n59: \n60: ## Scripts\n61: \n62: - `pnpm dev` - Start development server\n63: - `pnpm build` - Build for production\n64: - `pnpm registry:build` - Rebuild the component registry\n65: \n66: ## License\n67: \n68: [MIT](./LICENSE)\n\n(End of file - total 68 lines)\n</content>",
+            "metadata": {
+              "preview": "<p align=\"center\">\n  <img src=\"https://prsui.pr5.dev/og\" alt=\"prsui banner\" />\n</p>\n\n<h1 align=\"center\">prsui</h1>\n\n<p align=\"center\">\n  A shadcn registry of polished, ready-to-install components by <a href=\"https://x.com/pr5dev\">Pranjal Mandavkar</a>. Includes documentation, landing page, and everything you need to browse and install components.\n  <br />\n  <br />\n  <a href=\"https://github.com/MandavkarPranjal/prsui\"><img src=\"https://www.shieldcn.dev/github/stars/MandavkarPranjal/prsui.svg?variant=secondary&size=xs&theme=zinc\" alt=\"GitHub Stars\" /></a>\n  <a href=\"https://github.com/MandavkarPranjal/prsui/actions\"><img src=\"https://www.shieldcn.dev/github/ci/MandavkarPranjal/prsui.svg?variant=secondary&size=xs&theme=zinc\" alt=\"CI\" /></a>\n  <a href=\"https://x.com/pr5dev\"><img src=\"https://www.shieldcn.dev/x/follow/pr5dev.svg?variant=branded&size=xs&theme=zinc\" alt=\"X Follow\" /></a>\n</p>\n\n## Features\n\n- 📦 **Copy/paste ownership** - Install components and own the code\n- 📚 **Documentation site** - Beautiful docs powered by Fumadocs\n- 🎨 **Shadcn registry compatible** - Works with `npx shadcn add`",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/README.md",
+                "text": "<p align=\"center\">\n  <img src=\"https://prsui.pr5.dev/og\" alt=\"prsui banner\" />\n</p>\n\n<h1 align=\"center\">prsui</h1>\n\n<p align=\"center\">\n  A shadcn registry of polished, ready-to-install components by <a href=\"https://x.com/pr5dev\">Pranjal Mandavkar</a>. Includes documentation, landing page, and everything you need to browse and install components.\n  <br />\n  <br />\n  <a href=\"https://github.com/MandavkarPranjal/prsui\"><img src=\"https://www.shieldcn.dev/github/stars/MandavkarPranjal/prsui.svg?variant=secondary&size=xs&theme=zinc\" alt=\"GitHub Stars\" /></a>\n  <a href=\"https://github.com/MandavkarPranjal/prsui/actions\"><img src=\"https://www.shieldcn.dev/github/ci/MandavkarPranjal/prsui.svg?variant=secondary&size=xs&theme=zinc\" alt=\"CI\" /></a>\n  <a href=\"https://x.com/pr5dev\"><img src=\"https://www.shieldcn.dev/x/follow/pr5dev.svg?variant=branded&size=xs&theme=zinc\" alt=\"X Follow\" /></a>\n</p>\n\n## Features\n\n- 📦 **Copy/paste ownership** - Install components and own the code\n- 📚 **Documentation site** - Beautiful docs powered by Fumadocs\n- 🎨 **Shadcn registry compatible** - Works with `npx shadcn add`\n- 🤖 **[Agent ready](https://www.mintlify.com/score/startercn)** - Includes `llms.txt`, `llms-full.txt`, agent skills discovery routes, and API catalog endpoints\n- 🔊 **[Web audio feedback](https://audio.raphaelsalaja.com/)** - Built-in sound effects powered by `@web-kits/audio`\n- 📳 **[Web haptics](https://haptics.lochie.me/)** - Optional haptic feedback hooks for supported devices via `web-haptics`\n- ✨ **[Motion animations](https://motion.dev/)** - `motion`-powered UI polish for copy states, text transitions, and interactive elements\n- 🎯 **[Animated icons](https://lucide-animated.com/)** - Reusable animated icons for navigation, sharing, sponsorship, and CTAs\n- 🔄 **[View transitions](https://nextjs.org/docs/app/api-reference/config/next-config-js/viewTransition)** - Next.js view transitions enabled for smoother navigation between pages\n- 🚀 **Deploy ready** - Deploy anywhere\n\n## Built In\n\n- `Next.js 16` with the App Router\n- `React 19` and `TypeScript`\n- `Tailwind CSS 4`\n- `Fumadocs` for documentation\n- `shiki` + `rehype-pretty-code` for code blocks\n- `sonner` for toasts\n- `radix-ui` + `vaul` for accessible primitives\n- `@vercel/analytics` for analytics\n\n## Usage\n\nInstall any component with:\n\n```bash\nnpx shadcn@latest add https://prsui.pr5.dev/r/smooth-input.json\n```\n\n## Project Structure\n\n```\n├── registry/\n│   └── new-york/           # Your components go here\n│       └── smooth-input.tsx\n├── registry.json           # Component registry manifest\n├── content/docs/           # Documentation (MDX)\n├── app/                    # Next.js app\n└── public/r/               # Built registry files (auto-generated)\n```\n\n## Scripts\n\n- `pnpm dev` - Start development server\n- `pnpm build` - Build for production\n- `pnpm registry:build` - Rebuild the component registry\n\n## License\n\n[MIT](./LICENSE)",
+                "lineStart": 1,
+                "lineEnd": 68,
+                "totalLines": 68,
+                "truncated": false
+              }
+            },
+            "title": "README.md",
+            "time": {
+              "start": 1784792224723,
+              "end": 1784792224741
+            }
+          },
+          "id": "prt_f8de812f80010H02zwM8JyfhA7",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7fa74001pApnNloUZEXxmk"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_821a62b19ae94911922b6d02",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "github-stars|GitHubStars"
+            },
+            "output": "Found 6 matches\n/home/himmel/personal/prsui/registry/new-york/github-stars.tsx:\n  Line 21: interface GitHubStarsProps extends VariantProps<typeof githubStarsVariants> {\n\n  Line 44: export const GitHubStars = async ({\n\n  Line 49: }: GitHubStarsProps) => {\n\n\n/home/himmel/personal/prsui/components/nav-item-github.tsx:\n  Line 3: import { GitHubStars } from \"./github-stars\";\n\n  Line 8:   return <GitHubStars stargazersCount={stargazersCount} />;\n\n\n/home/himmel/personal/prsui/components/github-stars.tsx:\n  Line 16: export const GitHubStars = ({\n",
+            "metadata": {
+              "matches": 6,
+              "truncated": false
+            },
+            "title": "github-stars|GitHubStars",
+            "time": {
+              "start": 1784792225045,
+              "end": 1784792225055
+            }
+          },
+          "id": "prt_f8de81405001NGpJUWyDdli9D0",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7fa74001pApnNloUZEXxmk"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 10062,
+            "input": 388,
+            "output": 56,
+            "reasoning": 18,
+            "cache": {
+              "write": 0,
+              "read": 9600
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de815590011Sk3RcDzhn3kww",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de7fa74001pApnNloUZEXxmk"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 11422,
+          "input": 1342,
+          "output": 56,
+          "reasoning": 40,
+          "cache": {
+            "write": 0,
+            "read": 9984
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792225163,
+          "completed": 1784792235619
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8de8158b001jIYEeY1O8s0mMS",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de83783001eFfk15xNLM233D",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de8158b001jIYEeY1O8s0mMS"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me also check if there's a smooth-input demo file, since it's in the registry but not in the demo folder. Let me also check the lib/github file to understand the full picture.",
+          "time": {
+            "start": 1784792233861,
+            "end": 1784792235146
+          },
+          "id": "prt_f8de83785001ttlrOkGyLARNIG",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de8158b001jIYEeY1O8s0mMS"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_3d86783f90204736bc2ad90d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/demo/*smooth*"
+            },
+            "output": "No files found",
+            "metadata": {
+              "count": 0,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784792235247,
+              "end": 1784792235274
+            }
+          },
+          "id": "prt_f8de83c94001LlwLaZ1pW2UJLK",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de8158b001jIYEeY1O8s0mMS"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_92c8b0288c904a3f965abcda",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/lib/github.ts"
+            },
+            "output": "<path>/home/himmel/personal/prsui/lib/github.ts</path>\n<type>file</type>\n<content>\n1: import { unstable_cache } from \"next/cache\";\n2: \n3: import { GITHUB } from \"@/constants/links\";\n4: \n5: interface Stargazer {\n6:   login: string;\n7:   avatar_url: string;\n8: }\n9: \n10: export const getStargazers = unstable_cache(\n11:   async (): Promise<Stargazer[]> => {\n12:     try {\n13:       const pages: Stargazer[] = [];\n14:       let page = 1;\n15: \n16:       while (page <= 5) {\n17:         const response = await fetch(\n18:           `https://api.github.com/repos/${GITHUB.org}/${GITHUB.repo}/stargazers?per_page=100&page=${page}`,\n19:           {\n20:             headers: {\n21:               Accept: \"application/vnd.github+json\",\n22:               \"X-GitHub-Api-Version\": \"2022-11-28\",\n23:             },\n24:           }\n25:         );\n26: \n27:         if (!response.ok) {\n28:           break;\n29:         }\n30: \n31:         const data: Stargazer[] = await response.json();\n32:         if (data.length === 0) {\n33:           break;\n34:         }\n35: \n36:         pages.push(...data);\n37:         if (data.length < 100) {\n38:           break;\n39:         }\n40:         page += 1;\n41:       }\n42: \n43:       return pages.filter((s) => s.login !== GITHUB.user);\n44:     } catch {\n45:       return [];\n46:     }\n47:   },\n48:   [\"github-stargazers\"],\n49:   { revalidate: 86_400 }\n50: );\n51: \n52: export const getStargazerCount = unstable_cache(\n53:   async () => {\n54:     try {\n55:       const response = await fetch(\n56:         `https://api.github.com/repos/${GITHUB.org}/${GITHUB.repo}`,\n57:         {\n58:           headers: {\n59:             Accept: \"application/vnd.github+json\",\n60:             \"X-GitHub-Api-Version\": \"2022-11-28\",\n61:           },\n62:         }\n63:       );\n64: \n65:       if (!response.ok) {\n66:         return 0;\n67:       }\n68: \n69:       const json = (await response.json()) as { stargazers_count?: number };\n70:       return Number(json.stargazers_count) || 0;\n71:     } catch {\n72:       return 0;\n73:     }\n74:   },\n75:   [\"github-stargazer-count\"],\n76:   { revalidate: 86_400 }\n77: );\n\n(End of file - total 77 lines)\n</content>",
+            "metadata": {
+              "preview": "import { unstable_cache } from \"next/cache\";\n\nimport { GITHUB } from \"@/constants/links\";\n\ninterface Stargazer {\n  login: string;\n  avatar_url: string;\n}\n\nexport const getStargazers = unstable_cache(\n  async (): Promise<Stargazer[]> => {\n    try {\n      const pages: Stargazer[] = [];\n      let page = 1;\n\n      while (page <= 5) {\n        const response = await fetch(\n          `https://api.github.com/repos/${GITHUB.org}/${GITHUB.repo}/stargazers?per_page=100&page=${page}`,\n          {\n            headers: {",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/lib/github.ts",
+                "text": "import { unstable_cache } from \"next/cache\";\n\nimport { GITHUB } from \"@/constants/links\";\n\ninterface Stargazer {\n  login: string;\n  avatar_url: string;\n}\n\nexport const getStargazers = unstable_cache(\n  async (): Promise<Stargazer[]> => {\n    try {\n      const pages: Stargazer[] = [];\n      let page = 1;\n\n      while (page <= 5) {\n        const response = await fetch(\n          `https://api.github.com/repos/${GITHUB.org}/${GITHUB.repo}/stargazers?per_page=100&page=${page}`,\n          {\n            headers: {\n              Accept: \"application/vnd.github+json\",\n              \"X-GitHub-Api-Version\": \"2022-11-28\",\n            },\n          }\n        );\n\n        if (!response.ok) {\n          break;\n        }\n\n        const data: Stargazer[] = await response.json();\n        if (data.length === 0) {\n          break;\n        }\n\n        pages.push(...data);\n        if (data.length < 100) {\n          break;\n        }\n        page += 1;\n      }\n\n      return pages.filter((s) => s.login !== GITHUB.user);\n    } catch {\n      return [];\n    }\n  },\n  [\"github-stargazers\"],\n  { revalidate: 86_400 }\n);\n\nexport const getStargazerCount = unstable_cache(\n  async () => {\n    try {\n      const response = await fetch(\n        `https://api.github.com/repos/${GITHUB.org}/${GITHUB.repo}`,\n        {\n          headers: {\n            Accept: \"application/vnd.github+json\",\n            \"X-GitHub-Api-Version\": \"2022-11-28\",\n          },\n        }\n      );\n\n      if (!response.ok) {\n        return 0;\n      }\n\n      const json = (await response.json()) as { stargazers_count?: number };\n      return Number(json.stargazers_count) || 0;\n    } catch {\n      return 0;\n    }\n  },\n  [\"github-stargazer-count\"],\n  { revalidate: 86_400 }\n);",
+                "lineStart": 1,
+                "lineEnd": 77,
+                "totalLines": 77,
+                "truncated": false
+              }
+            },
+            "title": "lib/github.ts",
+            "time": {
+              "start": 1784792235529,
+              "end": 1784792235543
+            }
+          },
+          "id": "prt_f8de83d1a001yymzd6Dd4uGtow",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de8158b001jIYEeY1O8s0mMS"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 11422,
+            "input": 1342,
+            "output": 56,
+            "reasoning": 40,
+            "cache": {
+              "write": 0,
+              "read": 9984
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de83e4f001WqMFLblWbysq55",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de8158b001jIYEeY1O8s0mMS"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8de76765001ESvthslnQgLzep",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13212,
+          "input": 905,
+          "output": 1030,
+          "reasoning": 13,
+          "cache": {
+            "write": 0,
+            "read": 11264
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784792235624,
+          "completed": 1784792257814
+        },
+        "finish": "stop",
+        "id": "msg_f8de83e68001TCKVcUamiPKbuw",
+        "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97"
+      },
+      "parts": [
+        {
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-start",
+          "id": "prt_f8de85a2900177xazmAREut5Gt",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de83e68001TCKVcUamiPKbuw"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have a comprehensive picture. Let me summarize my findings.",
+          "time": {
+            "start": 1784792242731,
+            "end": 1784792242840
+          },
+          "id": "prt_f8de85a2b001nhSCNlbo4O8uFO",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de83e68001TCKVcUamiPKbuw"
+        },
+        {
+          "type": "text",
+          "text": "Here are the findings:\n\n---\n\n## Files Found Related to \"github-stars\"\n\n### 1. Registry Component (shadcn-style distributable)\n\n**`/home/himmel/personal/prsui/registry/new-york/github-stars.tsx`**\n\nThis is the distributable registry component. It is an **async server component** that fetches a GitHub repository's star count via the GitHub REST API (`https://api.github.com/repos/{repo}`), formats the count using `Intl.NumberFormat` with compact notation, and renders a button with the GitHub logo SVG, the formatted star count, and a `<Tooltip>` showing the full number. It supports `size` variants (`default`, `lg`, `sm`) via `class-variance-authority`, accepts a `repo` string prop (e.g. `\"owner/repo\"`), and has configurable `locales`.\n\n---\n\n### 2. Site-specific Component (internal use)\n\n**`/home/himmel/personal/prsui/components/github-stars.tsx`**\n\nThis is a **client component** (`\"use client\"`) used internally by the prsui site itself (not the distributable registry component). It accepts a pre-fetched `stargazersCount` number, renders a ghost button linking to the prsui GitHub repo (via `LINK.GITHUB` and `UTM_PARAMS`), displays the star count in compact format, and shows the full count in a tooltip. It also plays a \"success\" sound effect via a `useFeedback` hook on click.\n\n---\n\n### 3. Wrapper Component\n\n**`/home/himmel/personal/prsui/components/nav-item-github.tsx`**\n\nAn async server component that calls `getStargazerCount()` (from `@/lib/github`) and passes the result to the internal `<GitHubStars>` component. This is the navigation bar item that shows the project's live star count.\n\n---\n\n### 4. GitHub API Helper\n\n**`/home/himmel/personal/prsui/lib/github.ts`**\n\nProvides two cached functions: `getStargazers()` (fetches up to 500 individual stargazer profiles) and `getStargazerCount()` (fetches the repo's `stargazers_count`). Both use `unstable_cache` with a 24-hour revalidation. The repo is identified by `GITHUB.org` and `GITHUB.repo` constants.\n\n---\n\n## Files NOT Found (gaps in documentation/demos for github-stars)\n\n### No MDX Documentation File\n\nThere is **no** `content/docs/components/github-stars.mdx` file. Every other registry component has a corresponding MDX doc file:\n\n| Registry Component | MDX Doc |\n|---|---|\n| `accordion.tsx` | `content/docs/components/accordion.mdx` |\n| `editable-chip.tsx` | `content/docs/components/editable-chip.mdx` |\n| `inline-toast.tsx` | `content/docs/components/inline-toast.mdx` |\n| `link.tsx` | `content/docs/components/link.mdx` |\n| `logo-grid.tsx` | `content/docs/components/logo-grid.mdx` |\n| `logo-marquee.tsx` | `content/docs/components/logo-marquee.mdx` |\n| `split-action.tsx` | `content/docs/components/split-action.mdx` |\n| `tooltip.tsx` | `content/docs/components/tooltip.mdx` |\n| `typewriter.tsx` | `content/docs/components/typewriter.mdx` |\n| `view-on-map.tsx` | `content/docs/components/view-on-map.mdx` |\n| **`github-stars.tsx`** | **MISSING** |\n| `smooth-input.tsx` | **MISSING** |\n\n### No Demo File\n\nThere is **no** `demo/github-stars-demo.tsx` file. Every other registry component (except `smooth-input`) has a corresponding demo file in `/home/himmel/personal/prsui/demo/`, named `{component-name}-demo.tsx`.\n\n---\n\n## Registry Directory Structure Summary\n\nThe project follows a consistent three-part pattern for each distributable component:\n\n```\nregistry/new-york/{component}.tsx    -- The actual component code (distributable)\ncontent/docs/components/{component}.mdx -- MDX documentation with props table, usage, install commands\ndemo/{component}-demo.tsx            -- Interactive demo/preview imported by the MDX doc\n```\n\nThe MDX files follow a standard structure:\n1. YAML frontmatter with `title` and `description`\n2. Import of the demo component from `@/demo/`\n3. A `<ComponentPreview>` block wrapping the demo\n4. Installation instructions with shadcn CLI commands (both short and full URL forms)\n5. Usage code example\n6. Props table\n\nThe `github-stars` component is missing both its MDX documentation file and its demo file compared to the established pattern. The `smooth-input` component is similarly missing both files.",
+          "time": {
+            "start": 1784792242841,
+            "end": 1784792257760
+          },
+          "id": "prt_f8de85a99001itY5YgV1EIWUWe",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de83e68001TCKVcUamiPKbuw"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "4b8777029f85e44331e444071e5ab052623c7a95",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13212,
+            "input": 905,
+            "output": 1030,
+            "reasoning": 13,
+            "cache": {
+              "write": 0,
+              "read": 11264
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8de894f5001Rps6aAT5tixI1g",
+          "sessionID": "ses_0721898a0ffeUx5kw4KilWiT97",
+          "messageID": "msg_f8de83e68001TCKVcUamiPKbuw"
+        }
+      ]
+    }
+  ]
+}
