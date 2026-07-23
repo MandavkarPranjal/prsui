@@ -1,0 +1,1 @@
+first simple then spring, and user should be able to scroll inside preview box/container
