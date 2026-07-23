@@ -1,0 +1,16 @@
+I need to understand the project structure for adding a new component. Please do the following:
+
+1. Read registry.json to understand the registry format
+2. Read content/ directory to see docs structure
+3. Read demo/ directory to see demo structure
+4. Read one existing component's docs and demo (e.g., typewriter or github-stars) to understand the pattern
+5. Read package.json to see available scripts
+6. Check content/docs/ for existing component docs
+
+Return the full content of:
+- registry.json
+- The directory listing of content/
+- The directory listing of demo/
+- One example docs file and demo file
+- The scripts section from package.json
+- content/docs/ directory listing
