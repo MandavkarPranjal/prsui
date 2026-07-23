@@ -1,0 +1,1 @@
+Search the codebase for the component preview implementation. Look for files that contain "ComponentPreview" or "component-preview". Return the file paths and their locations. Be thorough - check both src/ and components/ directories.

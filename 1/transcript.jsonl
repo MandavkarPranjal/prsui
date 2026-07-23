@@ -1,0 +1,2 @@
+{"v":1,"agent":"opencode","cli_version":"0.8.42","type":"user","ts":"2026-07-23T17:08:17.456Z","content":[{"id":"prt_f8ff309b4001kXToFcVMSw2KFn","text":"Search the codebase for the component preview implementation. Look for files that contain \"ComponentPreview\" or \"component-preview\". Return the file paths and their locations. Be thorough - check both src/ and components/ directories."}]}
+{"v":1,"agent":"opencode","cli_version":"0.8.42","type":"assistant","ts":"2026-07-23T17:08:17.598Z","id":"msg_f8ff30a3e001vwxl3aj3wwP0Ji","content":[]}
