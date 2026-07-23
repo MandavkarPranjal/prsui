@@ -1,0 +1,20 @@
+## Error Type
+Console Error
+
+## Error Message
+Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).
+
+
+    at script (unknown:0:0)
+    at RootLayout (app/layout.tsx:25:7)
+
+## Code Frame
+  23 |     <head>
+  24 |       <JsonLdScripts />
+> 25 |       <script
+     |       ^
+  26 |         dangerouslySetInnerHTML={{
+  27 |           __html: `
+  28 |               try {
+
+Next.js version: 16.2.4 (Turbopack)
