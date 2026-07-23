@@ -2,7 +2,7 @@
 
 import { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from "lucide-react";
 
-import { Accordion } from "./accordion";
+import { Accordion } from "@/registry/new-york/accordion";
 
 const items = [
   {

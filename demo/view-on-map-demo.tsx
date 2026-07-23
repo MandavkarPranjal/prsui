@@ -1,6 +1,6 @@
 "use client";
 
-import { ViewOnMap } from "./view-on-map";
+import { ViewOnMap } from "@/registry/new-york/view-on-map";
 
 export const ViewOnMapPreview = () => (
   <div className="flex min-h-96 w-full items-center justify-center">

@@ -1,6 +1,12 @@
 "use client";
 
-import { Link01, Link02, Link03, Link04, Link05 } from "./link";
+import {
+  Link01,
+  Link02,
+  Link03,
+  Link04,
+  Link05,
+} from "@/registry/new-york/link";
 
 export const LinkDemo = () => (
   <div className="flex flex-col items-start gap-4">

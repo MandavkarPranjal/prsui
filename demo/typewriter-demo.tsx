@@ -1,6 +1,6 @@
 "use client";
 
-import Typewriter from "./typewriter";
+import Typewriter from "@/registry/new-york/typewriter";
 
 export const TypewriterPreview = () => (
   <div className="flex flex-col items-center gap-2 text-center">

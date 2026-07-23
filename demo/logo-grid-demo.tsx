@@ -1,7 +1,7 @@
 "use client";
 
-import { LogoGrid } from "./logo-grid";
-import type { Logo } from "./logo-grid";
+import { LogoGrid } from "@/registry/new-york/logo-grid";
+import type { Logo } from "@/registry/new-york/logo-grid";
 
 const logos: Logo[] = [
   { alt: "Nvidia", src: "https://svgl.app/library/nvidia-wordmark-light.svg" },

@@ -1,7 +1,7 @@
 "use client";
 
-import { LogoMarquee } from "./logo-marquee";
-import type { Logo } from "./logo-marquee";
+import { LogoMarquee } from "@/registry/new-york/logo-marquee";
+import type { Logo } from "@/registry/new-york/logo-marquee";
 
 const logos: Logo[] = [
   {

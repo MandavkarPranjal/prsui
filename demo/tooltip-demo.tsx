@@ -2,7 +2,7 @@
 
 import { Heart, Settings, Share, Trash2 } from "lucide-react";
 
-import { Tooltip } from "./tooltip";
+import { Tooltip } from "@/registry/new-york/tooltip";
 
 export const TooltipPreview = () => (
   <div className="flex flex-col items-center gap-12">

@@ -2,7 +2,7 @@
 
 import { PenTool, Share2 } from "lucide-react";
 
-import { SplitActions } from "./split-action";
+import { SplitActions } from "@/registry/new-york/split-action";
 
 export const SplitActionDemo = () => {
   const actions = [
