@@ -1,0 +1,55 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KY83FC8EKQTPY3J2N5SB2M3A",
+  "session_id": "ses_07043d73affeXD59M7bF3c5hxC",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-23T18:23:27.305463123Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "content/docs/components/meta.json",
+    "content/docs/components/text-highlight.mdx",
+    "demo/text-highlight-demo.tsx",
+    "registry.json",
+    "registry/new-york/text-highlight.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "51b696a21b0e",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 31039,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 499904,
+    "output_tokens": 4827,
+    "api_call_count": 22
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-23T18:23:27.288538469Z",
+    "agent_lines": 141,
+    "agent_removed": 2,
+    "human_added": 51,
+    "human_modified": 52,
+    "human_removed": 0,
+    "total_committed": 244,
+    "total_lines_changed": 247,
+    "agent_percentage": 57.89473684210527,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 168,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "registry/new-york/text-highlight.tsx": 168
+      }
+    }
+  ]
+}

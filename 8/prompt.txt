@@ -1,0 +1,176 @@
+add new component @registry/new-york/text-highlight.tsx update docs and demo, then pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/text-highlight.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/text-highlight.tsx</path>
+<type>file</type>
+<content>
+1: "use client"
+2: 
+3: import {
+4:   ElementType,
+5:   forwardRef,
+6:   useEffect,
+7:   useImperativeHandle,
+8:   useMemo,
+9:   useRef,
+10:   useState,
+11: } from "react"
+12: import { motion, Transition, useInView, UseInViewOptions } from "motion/react"
+13: 
+14: import { cn } from "@/lib/utils"
+15: 
+16: type HighlightDirection = "ltr" | "rtl" | "ttb" | "btt"
+17: 
+18: type TextHighlighterProps = {
+19:   children: React.ReactNode // The text content to be highlighted
+20:   as?: ElementType // HTML element to render as (default: "p")
+21:   triggerType?: "hover" | "ref" | "inView" | "auto" //How to trigger the animation (default: "inView")
+22:   transition?: Transition // Animation transition configuration (default: { duration: 0.4, type: "spring", bounce: 0 })
+23:   useInViewOptions?: UseInViewOptions // Options for useInView hook when triggerType is "inView"
+24:   className?: string // Class name for the container element
+25:   highlightColor?: string
+26:   // Highlight color (CSS color string). Also can be a function that returns a color string, eg: 'hsl(60, 90%, 68%)' (yellow)
+27:   direction?: HighlightDirection // Direction of the highlight animation (default: "ltr" (left to right))
+28: } & React.HTMLAttributes<HTMLElement>
+29: 
+30: export type TextHighlighterRef = {
+31:   animate: (direction?: HighlightDirection) => void // Trigger the highlight animation
+32:   reset: () => void // Reset the highlight animation
+33: }
+34: 
+35: export const TextHighlighter = forwardRef<
+36:   TextHighlighterRef,
+37:   TextHighlighterProps
+38: >(
+39:   (
+40:     {
+41:       children,
+42:       as = "span",
+43:       triggerType = "inView",
+44:       transition = { type: "spring", duration: 1, delay: 0, bounce: 0 },
+45:       useInViewOptions = {
+46:         once: true,
+47:         initial: false,
+48:         amount: 0.1,
+49:       },
+50:       className,
+51:       highlightColor = "hsl(25, 90%, 80%)",
+52:       direction = "ltr",
+53:       ...props
+54:     },
+55:     ref
+56:   ) => {
+57:     const componentRef = useRef<HTMLDivElement>(null)
+58:     const [isAnimating, setIsAnimating] = useState(false)
+59:     const [isHovered, setIsHovered] = useState(false)
+60:     const [currentDirection, setCurrentDirection] =
+61:       useState<HighlightDirection>(direction)
+62: 
+63:     // this allows us to change the direction whenever the direction prop changes
+64:     useEffect(() => {
+65:       setCurrentDirection(direction)
+66:     }, [direction])
+67: 
+68:     const isInView =
+69:       triggerType === "inView"
+70:         ? useInView(componentRef, useInViewOptions)
+71:         : false
+72: 
+73:     useImperativeHandle(ref, () => ({
+74:       animate: (animationDirection?: HighlightDirection) => {
+75:         if (animationDirection) {
+76:           setCurrentDirection(animationDirection)
+77:         }
+78:         setIsAnimating(true)
+79:       },
+80:       reset: () => setIsAnimating(false),
+81:     }))
+82: 
+83:     const shouldAnimate =
+84:       triggerType === "hover"
+85:         ? isHovered
+86:         : triggerType === "inView"
+87:           ? isInView
+88:           : triggerType === "ref"
+89:             ? isAnimating
+90:             : triggerType === "auto"
+91:               ? true
+92:               : false
+93: 
+94:     const ElementTag = as || "span"
+95: 
+96:     // Get background size based on direction
+97:     const getBackgroundSize = (animated: boolean) => {
+98:       switch (currentDirection) {
+99:         case "ltr":
+100:           return animated ? "100% 100%" : "0% 100%"
+101:         case "rtl":
+102:           return animated ? "100% 100%" : "0% 100%"
+103:         case "ttb":
+104:           return animated ? "100% 100%" : "100% 0%"
+105:         case "btt":
+106:           return animated ? "100% 100%" : "100% 0%"
+107:         default:
+108:           return animated ? "100% 100%" : "0% 100%"
+109:       }
+110:     }
+111: 
+112:     // Get background position based on direction
+113:     const getBackgroundPosition = () => {
+114:       switch (currentDirection) {
+115:         case "ltr":
+116:           return "0% 0%"
+117:         case "rtl":
+118:           return "100% 0%"
+119:         case "ttb":
+120:           return "0% 0%"
+121:         case "btt":
+122:           return "0% 100%"
+123:         default:
+124:           return "0% 0%"
+125:       }
+126:     }
+127: 
+128:     const animatedSize = useMemo(() => getBackgroundSize(shouldAnimate), [shouldAnimate, currentDirection])
+129:     const initialSize = useMemo(() => getBackgroundSize(false), [currentDirection])
+130:     const backgroundPosition = useMemo(() => getBackgroundPosition(), [currentDirection])
+131: 
+132:     const highlightStyle = {
+133:       backgroundImage: `linear-gradient(${highlightColor}, ${highlightColor})`,
+134:       backgroundRepeat: "no-repeat",
+135:       backgroundPosition: backgroundPosition,
+136:       backgroundSize: animatedSize,
+137:       boxDecorationBreak: "clone",
+138:       WebkitBoxDecorationBreak: "clone",
+139:     } as React.CSSProperties
+140: 
+141:     return (
+142:       <ElementTag
+143:         ref={componentRef}
+144:         onMouseEnter={() => triggerType === "hover" && setIsHovered(true)}
+145:         onMouseLeave={() => triggerType === "hover" && setIsHovered(false)}
+146:         {...props}
+147:       >
+148:         <motion.span
+149:           className={cn("inline", className)}
+150:           style={highlightStyle}
+151:           animate={{
+152:             backgroundSize: animatedSize,
+153:           }}
+154:           initial={{
+155:             backgroundSize: initialSize,
+156:           }}
+157:           transition={transition}
+158:         >
+159:           {children}
+160:         </motion.span>
+161:       </ElementTag>
+162:     )
+163:   }
+164: )
+165: 
+166: TextHighlighter.displayName = "TextHighlighter"
+167: 
+168: export default TextHighlighter
+
+(End of file - total 168 lines)
+</content>
