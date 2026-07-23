@@ -1,0 +1,23 @@
+## Error Type
+Runtime Error
+
+## Error Message
+Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `MDXContent`.
+
+
+    at _createMdxContent (content/docs/components/text-highlight.mdx.js?collection=docs:208:21)
+    at MDXContent (content/docs/components/text-highlight.mdx.js?collection=docs:691:8)
+    at Page (app/(app)/docs/[[...slug]]/page.tsx:191:17)
+
+## Code Frame
+  206 |     children: [_jsx(ComponentPreview, {
+  207 |       name: "text-highlight",
+> 208 |       children: _jsx(TextHighlightDemo, {})
+      |                     ^
+  209 |     }), "\n", _jsx(_components.h2, {
+  210 |       id: "installation",
+  211 |       children: "Installation"
+
+Next.js version: 16.2.4 (Turbopack)
