@@ -13,6 +13,7 @@
     "view-on-map",
     "logo-marquee",
     "logo-grid",
-    "github-stars"
+    "github-stars",
+    "text-highlight"
   ]
 }

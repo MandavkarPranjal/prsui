@@ -1,0 +1,75 @@
+---
+title: Text Highlight
+description: Animated text highlight with customizable direction, color, and trigger types.
+---
+
+import TextHighlighterDemo from "@/demo/text-highlight-demo";
+
+<ComponentPreview name="text-highlight">
+  <TextHighlighterDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/text-highlight"
+  __npm__="npx shadcn@latest add @prsui/text-highlight"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/text-highlight"
+  __yarn__="yarn shadcn@latest add @prsui/text-highlight"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/text-highlight.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/text-highlight.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/text-highlight.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/text-highlight.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import { TextHighlighter } from "@/components/prsui/text-highlight";
+
+export function MyComponent() {
+  return (
+    <TextHighlighter
+      as="p"
+      className="text-4xl font-medium"
+      highlightColor="hsl(25, 90%, 80%)"
+      direction="ltr"
+    >
+      Highlighted text
+    </TextHighlighter>
+  );
+}
+```
+
+## Props
+
+| Prop               | Type                                     | Default                   | Description                                              |
+| ------------------ | ---------------------------------------- | ------------------------- | -------------------------------------------------------- |
+| `children`         | `React.ReactNode`                        | -                         | The text content to be highlighted.                      |
+| `as`               | `ElementType`                            | `"span"`                  | HTML element to render as.                               |
+| `triggerType`      | `"hover" \| "ref" \| "inView" \| "auto"` | `"inView"`                | How to trigger the animation.                            |
+| `transition`       | `Transition`                             | `{ type: "spring", ... }` | Animation transition configuration.                      |
+| `useInViewOptions` | `UseInViewOptions`                       | `{ once: true, ... }`     | Options for useInView hook when triggerType is "inView". |
+| `className`        | `string`                                 | -                         | Class name for the container element.                    |
+| `highlightColor`   | `string`                                 | `"hsl(25, 90%, 80%)"`     | Highlight color (CSS color string).                      |
+| `direction`        | `"ltr" \| "rtl" \| "ttb" \| "btt"`       | `"ltr"`                   | Direction of the highlight animation.                    |
+
+## Ref Methods
+
+The component exposes a ref with the following methods:
+
+| Method                | Description                      |
+| --------------------- | -------------------------------- |
+| `animate(direction?)` | Trigger the highlight animation. |
+| `reset()`             | Reset the highlight animation.   |

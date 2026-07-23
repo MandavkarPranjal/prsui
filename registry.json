@@ -182,7 +182,21 @@
           "target": "components/prsui/github-stars.tsx"
         }
       ],
-      "dependencies": [ "motion", "class-variance-authority"]
+      "dependencies": ["motion", "class-variance-authority"]
+    },
+    {
+      "name": "text-highlight",
+      "type": "registry:ui",
+      "title": "Text Highlight",
+      "description": "Animated text highlight with customizable direction, color, and trigger types.",
+      "files": [
+        {
+          "path": "registry/new-york/text-highlight.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/text-highlight.tsx"
+        }
+      ],
+      "dependencies": ["motion"]
     }
   ]
 }
