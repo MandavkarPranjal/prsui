@@ -1,0 +1,1340 @@
+{
+  "info": {
+    "id": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+    "slug": "happy-circuit",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "parentID": "ses_0721ee49cffeQcOpuA5lWrQKl8",
+    "title": "Explore motion usage patterns (@explore subagent)",
+    "agent": "explore",
+    "model": {
+      "id": "mimo-v2.5-free",
+      "providerID": "opencode",
+      "variant": "default"
+    },
+    "version": "1.18.4",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 25212,
+      "output": 4627,
+      "reasoning": 133,
+      "cache": {
+        "read": 74816,
+        "write": 0
+      }
+    },
+    "permission": [
+      {
+        "permission": "todowrite",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "task",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "compress",
+        "pattern": "*",
+        "action": "deny"
+      }
+    ],
+    "time": {
+      "created": 1784796993143,
+      "updated": 1784797062105
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784796993163
+        },
+        "agent": "explore",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "mimo-v2.5-free"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_f8e30d68a001oIFtSvPp2FUc3x",
+        "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "Search the codebase at /home/himmel/personal/prsui for how motion/react or framer-motion is used in components. Find:\n1. Import patterns (motion/react vs framer-motion)\n2. How animations are applied (motion components, variants, etc.)\n3. Any existing animated button or icon components for reference\n4. Check what's in the `motion` and `framer-motion` packages in package.json\n\nReturn file paths and relevant code snippets showing the animation patterns used.",
+          "id": "prt_f8e30d690001cS3iO1krISlXZk",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d68a001oIFtSvPp2FUc3x"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8e30d68a001oIFtSvPp2FUc3x",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 4127,
+          "input": 773,
+          "output": 267,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 3072
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784796993318,
+          "completed": 1784796998695
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8e30d726001S6X1K3G4DZVW6u",
+        "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb"
+      },
+      "parts": [
+        {
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-start",
+          "id": "prt_f8e30df5d001dawlRLIFYgkJEz",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me search the codebase thoroughly for motion/framer-motion usage patterns.",
+          "time": {
+            "start": 1784796995423,
+            "end": 1784796995628
+          },
+          "id": "prt_f8e30df5f001NpNPTy7Y82npD3",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_21214f9843bd4a2e80fa964a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "from [\"']motion/react[\"']",
+              "path": "/home/himmel/personal/prsui"
+            },
+            "output": "Found 27 matches\n/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx:\n  Line 2: import { motion, AnimatePresence } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx:\n  Line 3: import { useMotionValue, animate, motion } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/registry/new-york/typewriter.tsx:\n  Line 3: import type { Variants } from \"motion/react\";\n\n  Line 4: import { motion } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/registry/new-york/tooltip.tsx:\n  Line 3: import { AnimatePresence, motion, useReducedMotion } from \"motion/react\";\n\n  Line 4: import type { Variants } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx:\n  Line 3: import { motion, AnimatePresence } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx:\n  Line 4: import { motion, AnimatePresence } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/registry/new-york/accordion.tsx:\n  Line 4: import { motion, useReducedMotion } from \"motion/react\";\n\n  Line 5: import type { Transition } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/copy-button.tsx:\n  Line 4: import type { HTMLMotionProps, Variants } from \"motion/react\";\n\n  Line 5: import { AnimatePresence, motion } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/ui/text-flip.tsx:\n  Line 3: import type { Transition, Variants } from \"motion/react\";\n\n  Line 4: import { AnimatePresence, motion } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx:\n  Line 3: import type { Variants } from \"motion/react\";\n\n  Line 4: import { motion, useAnimation } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx:\n  Line 3: import type { Variants } from \"motion/react\";\n\n  Line 4: import { motion, useAnimation } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/animated-icons/share.tsx:\n  Line 3: import type { Variants } from \"motion/react\";\n\n  Line 4: import { motion, useAnimation } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/animated-icons/arrow-left.tsx:\n  Line 3: import type { Variants } from \"motion/react\";\n\n  Line 4: import { motion, useAnimation } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx:\n  Line 3: import { motion, useAnimation } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/animated-icons/component.tsx:\n  Line 3: import type { Variants } from \"motion/react\";\n\n  Line 4: import { motion, useAnimation } from \"motion/react\";\n\n\n/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx:\n  Line 3: import type { Variants } from \"motion/react\";\n\n  Line 4: import { motion, useAnimation } from \"motion/react\";\n",
+            "metadata": {
+              "matches": 27,
+              "truncated": false
+            },
+            "title": "from [\"']motion/react[\"']",
+            "time": {
+              "start": 1784796995945,
+              "end": 1784796995992
+            }
+          },
+          "id": "prt_f8e30e034001zwRY5taUbAW2P3",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_dfb45058820e42a0a1ed98f1",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "from [\"']framer-motion[\"']",
+              "path": "/home/himmel/personal/prsui"
+            },
+            "output": "Found 2 matches\n/home/himmel/personal/prsui/registry/new-york/split-action.tsx:\n  Line 3: import { AnimatePresence, motion } from \"framer-motion\";\n\n\n/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx:\n  Line 8: } from \"framer-motion\";\n",
+            "metadata": {
+              "matches": 2,
+              "truncated": false
+            },
+            "title": "from [\"']framer-motion[\"']",
+            "time": {
+              "start": 1784796996742,
+              "end": 1784796996783
+            }
+          },
+          "id": "prt_f8e30e1a9001QNWMPBzpxNYqTx",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_18e0309b695243b8923cd6c5",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "from [\"']motion[\"']",
+              "path": "/home/himmel/personal/prsui"
+            },
+            "output": "No files found",
+            "metadata": {
+              "matches": 0,
+              "truncated": false
+            },
+            "title": "from [\"']motion[\"']",
+            "time": {
+              "start": 1784796997329,
+              "end": 1784796997353
+            }
+          },
+          "id": "prt_f8e30e489001G2rDf6Qa4EO72Q",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_a1ff9ca50d08470687656e35",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/package.json",
+              "path": "/home/himmel/personal/prsui"
+            },
+            "output": "/home/himmel/personal/prsui/package.json",
+            "metadata": {
+              "count": 1,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784796997603,
+              "end": 1784796997622
+            }
+          },
+          "id": "prt_f8e30e6d3001IEOVmIQ5ehOi4e",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_74e3d0bf15704d0494ed7e5d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "motion\\.",
+              "path": "/home/himmel/personal/prsui",
+              "include": "*.{tsx,ts,jsx,js}"
+            },
+            "output": "Found 70 matches\n/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx:\n  Line 49:               <motion.div\n\n  Line 56:                 <motion.div\n\n  Line 77:                 </motion.div>\n\n  Line 86:                 <motion.button\n\n  Line 93:                 </motion.button>\n\n  Line 94:               </motion.div>\n\n  Line 97:               <motion.div\n\n  Line 110:                 <motion.div\n\n  Line 120:                 <motion.div className=\"relative z-10 flex items-center space-x-3 px-4 py-4\">\n\n  Line 125:                 </motion.div>\n\n  Line 126:               </motion.div>\n\n\n/home/himmel/personal/prsui/registry/new-york/typewriter.tsx:\n  Line 123:         <motion.span\n\n  Line 136:         </motion.span>\n\n\n/home/himmel/personal/prsui/registry/new-york/tooltip.tsx:\n  Line 232:                   <motion.span\n\n  Line 246:                   </motion.span>\n\n\n/home/himmel/personal/prsui/registry/new-york/split-action.tsx:\n  Line 72:             <motion.button\n\n  Line 99:             </motion.button>\n\n  Line 106:               <motion.button\n\n  Line 146:               </motion.button>\n\n\n/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx:\n  Line 271:         <motion.div\n\n\n/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx:\n  Line 94:       <motion.div\n\n  Line 108:       </motion.div>\n\n\n/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx:\n  Line 29:     <motion.div\n\n  Line 36:           <motion.div\n\n  Line 51:             <motion.div\n\n  Line 65:             </motion.div>\n\n  Line 67:             <motion.div\n\n  Line 83:               <motion.button\n\n  Line 94:                 <motion.span\n\n  Line 102:               </motion.button>\n\n  Line 103:             </motion.div>\n\n  Line 107:     </motion.div>\n\n\n/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx:\n  Line 48:     <motion.div layout>\n\n  Line 55:         <motion.input\n\n  Line 74:             <motion.button\n\n  Line 89:             </motion.button>\n\n  Line 91:             <motion.button\n\n  Line 106:             </motion.button>\n\n  Line 110:     </motion.div>\n\n\n/home/himmel/personal/prsui/registry/new-york/accordion.tsx:\n  Line 197:     <motion.div\n\n  Line 203:       <motion.div\n\n  Line 237:           <motion.span\n\n  Line 247:           </motion.span>\n\n  Line 250:         <motion.div\n\n  Line 261:           <motion.div\n\n  Line 277:           </motion.div>\n\n  Line 278:         </motion.div>\n\n  Line 279:       </motion.div>\n\n  Line 280:     </motion.div>\n\n\n/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx:\n  Line 102:           <motion.path\n\n  Line 108:           <motion.path\n\n\n/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx:\n  Line 88:           <motion.rect\n\n\n/home/himmel/personal/prsui/components/ui/text-flip.tsx:\n  Line 15: type MotionElement = typeof motion.p | typeof motion.span | typeof motion.code;\n\n  Line 28:   as: Component = motion.p,\n\n\n/home/himmel/personal/prsui/components/animated-icons/share.tsx:\n  Line 86:           <motion.g animate={controls} variants={arrowVariants}>\n\n  Line 89:           </motion.g>\n\n\n/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx:\n  Line 62:       <motion.svg\n\n  Line 90:       </motion.svg>\n\n\n/home/himmel/personal/prsui/components/copy-button.tsx:\n  Line 96:           <motion.span key=\"done\" {...motionIconProps}>\n\n  Line 98:           </motion.span>\n\n  Line 100:           <motion.span key=\"idle\" {...motionIconProps}>\n\n  Line 102:           </motion.span>\n\n\n/home/himmel/personal/prsui/components/animated-icons/component.tsx:\n  Line 87:           <motion.path\n\n  Line 93:           <motion.path\n\n  Line 99:           <motion.path\n\n  Line 105:           <motion.path\n\n\n/home/himmel/personal/prsui/components/animated-icons/arrow-left.tsx:\n  Line 91:         <motion.path\n\n  Line 96:         <motion.path animate={controls} d=\"M19 12H5\" variants={shaftVariants} />\n\n\n/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx:\n  Line 91:         <motion.path animate={controls} d=\"M5 12h14\" variants={shaftVariants} />\n\n  Line 92:         <motion.path\n",
+            "metadata": {
+              "matches": 70,
+              "truncated": false
+            },
+            "title": "motion\\.",
+            "time": {
+              "start": 1784796997872,
+              "end": 1784796997898
+            }
+          },
+          "id": "prt_f8e30e7e6001ll3nsxukBb0gVp",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_daf5302b15624bb9aa645b7d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "variants",
+              "path": "/home/himmel/personal/prsui",
+              "include": "*.{tsx,ts,jsx,js}"
+            },
+            "output": "Found 30 matches\n/home/himmel/personal/prsui/registry/new-york/github-stars.tsx:\n  Line 12:   variants: {\n\n\n/home/himmel/personal/prsui/registry/new-york/typewriter.tsx:\n  Line 124:           variants={cursorAnimationVariants}\n\n\n/home/himmel/personal/prsui/registry/new-york/tooltip.tsx:\n  Line 190:   const variants = useMemo(\n\n  Line 235:                     variants={variants}\n\n\n/home/himmel/personal/prsui/lib/ease.ts:\n  Line 3: // Strong custom variants — defaults like `ease-in`/`ease-out` feel weak.\n\n\n/home/himmel/personal/prsui/lib/agent-discovery/directive.ts:\n  Line 4:   `For the complete documentation index, see llms.txt. Markdown variants are available by appending .md to any URL or sending an Accept: text/markdown header. An agent skill is available at ${ROUTES.AGENT_SKILLS_SITE_SKILL}.` as const;\n\n  Line 7:   `> For the complete documentation index, see [llms.txt](${ROUTES.LLMS}). Markdown variants are available by appending \\`.md\\` to any URL or sending an \\`Accept: text/markdown\\` header. An agent skill is available at [${ROUTES.AGENT_SKILLS_SITE_SKILL}](${ROUTES.AGENT_SKILLS_SITE_SKILL}).` as const;\n\n\n/home/himmel/personal/prsui/components/ui/toggle.tsx:\n  Line 18:     variants: {\n\n\n/home/himmel/personal/prsui/components/ui/text-flip.tsx:\n  Line 23:   variants?: Variants;\n\n  Line 33:   variants = defaultVariants,\n\n  Line 61:         variants={variants}\n\n\n/home/himmel/personal/prsui/components/ui/sidebar.tsx:\n  Line 248:           // Adjust the padding for floating and inset variants.\n\n  Line 499:     variants: {\n\n\n/home/himmel/personal/prsui/components/ui/button.tsx:\n  Line 18:     variants: {\n\n\n/home/himmel/personal/prsui/components/ui/badge.tsx:\n  Line 13:     variants: {\n\n\n/home/himmel/personal/prsui/components/ui/alert.tsx:\n  Line 12:     variants: {\n\n\n/home/himmel/personal/prsui/components/copy-button.tsx:\n  Line 30:   variants: motionIconVariants,\n\n\n/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx:\n  Line 106:             variants={INNER_WAVE_VARIANTS}\n\n  Line 112:             variants={OUTER_WAVE_VARIANTS}\n\n\n/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx:\n  Line 93:             variants={RECT_VARIANTS}\n\n\n/home/himmel/personal/prsui/components/animated-icons/share.tsx:\n  Line 86:           <motion.g animate={controls} variants={arrowVariants}>\n\n\n/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx:\n  Line 91:         <motion.path animate={controls} d=\"M5 12h14\" variants={shaftVariants} />\n\n  Line 95:           variants={headVariants}\n\n\n/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx:\n  Line 72:         variants={{\n\n\n/home/himmel/personal/prsui/components/animated-icons/component.tsx:\n  Line 91:             variants={TOP_VARIANTS}\n\n  Line 97:             variants={RIGHT_VARIANTS}\n\n  Line 103:             variants={BOTTOM_VARIANTS}\n\n  Line 109:             variants={LEFT_VARIANTS}\n\n\n/home/himmel/personal/prsui/components/animated-icons/arrow-left.tsx:\n  Line 94:           variants={headVariants}\n\n  Line 96:         <motion.path animate={controls} d=\"M19 12H5\" variants={shaftVariants} />\n",
+            "metadata": {
+              "matches": 30,
+              "truncated": false
+            },
+            "title": "variants",
+            "time": {
+              "start": 1784796998531,
+              "end": 1784796998549
+            }
+          },
+          "id": "prt_f8e30e8f2001hiypIq6e8FR8w7",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 4127,
+            "input": 773,
+            "output": 267,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 3072
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8e30ec09001WTuHmDblMmKEN2",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30d726001S6X1K3G4DZVW6u"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8e30d68a001oIFtSvPp2FUc3x",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 7405,
+          "input": 3292,
+          "output": 245,
+          "reasoning": 28,
+          "cache": {
+            "write": 0,
+            "read": 3840
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784796998698,
+          "completed": 1784797003816
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8e30ec2a001uJjvS17IvahjL8",
+        "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb"
+      },
+      "parts": [
+        {
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-start",
+          "id": "prt_f8e30f505001iM9u6GBoO3s4Yi",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "reasoning",
+          "text": "Good, now let me read the package.json to see what's listed there, and also read some of the key files for detailed patterns.",
+          "time": {
+            "start": 1784797000970,
+            "end": 1784797001445
+          },
+          "id": "prt_f8e30f50a001mO9uxAFJwYNNO4",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "text",
+          "text": "Now let me read the package.json and key component files for detailed patterns:",
+          "time": {
+            "start": 1784797001448,
+            "end": 1784797003755
+          },
+          "id": "prt_f8e30f6e7001PpBX1D1f705iWo",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_8d8bc718a9284cd991805b56",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/package.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/package.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"name\": \"prsui\",\n3:   \"version\": \"0.1.0\",\n4:   \"private\": true,\n5:   \"scripts\": {\n6:     \"dev\": \"next dev\",\n7:     \"build\": \"pnpm registry:build && next build\",\n8:     \"start\": \"next start\",\n9:     \"typecheck\": \"tsc --noEmit\",\n10:     \"registry:build\": \"shadcn build registry.json --output ./public/r\",\n11:     \"postinstall\": \"fumadocs-mdx\",\n12:     \"check\": \"ultracite check\",\n13:     \"fix\": \"ultracite fix\",\n14:     \"prepare\": \"lefthook install\"\n15:   },\n16:   \"dependencies\": {\n17:     \"@tailwindcss/postcss\": \"^4.2.4\",\n18:     \"@vercel/analytics\": \"^2.0.1\",\n19:     \"@web-kits/audio\": \"^0.1.0\",\n20:     \"class-variance-authority\": \"^0.7.1\",\n21:     \"clsx\": \"^2.1.1\",\n22:     \"cmdk\": \"^1.1.1\",\n23:     \"dialkit\": \"^1.3.0\",\n24:     \"framer-motion\": \"^12.42.2\",\n25:     \"fumadocs-core\": \"^16.8.4\",\n26:     \"fumadocs-mdx\": \"^14.3.1\",\n27:     \"jiti\": \"^2.6.1\",\n28:     \"jotai\": \"^2.19.1\",\n29:     \"lru-cache\": \"^11.3.5\",\n30:     \"lucide-react\": \"1.11.0\",\n31:     \"motion\": \"^12.38.0\",\n32:     \"next\": \"16.2.4\",\n33:     \"next-themes\": \"0.4.6\",\n34:     \"postcss\": \"^8.5.10\",\n35:     \"radix-ui\": \"^1.4.3\",\n36:     \"react\": \"19.2.5\",\n37:     \"react-dom\": \"19.2.5\",\n38:     \"react-hotkeys-hook\": \"^5.2.4\",\n39:     \"react-icons\": \"^5.7.0\",\n40:     \"react-use-measure\": \"^2.1.7\",\n41:     \"rehype-pretty-code\": \"^0.14.3\",\n42:     \"shiki\": \"^4.0.2\",\n43:     \"sonner\": \"^2.0.7\",\n44:     \"tailwind-merge\": \"^3.5.0\",\n45:     \"ts-morph\": \"^26.0.0\",\n46:     \"vaul\": \"^1.1.2\",\n47:     \"web-haptics\": \"^0.0.6\",\n48:     \"zod\": \"^4.3.6\"\n49:   },\n50:   \"devDependencies\": {\n51:     \"@tailwindcss/postcss\": \"^4.2.4\",\n52:     \"@types/mdx\": \"^2.0.13\",\n53:     \"@types/node\": \"^25.6.0\",\n54:     \"@types/react\": \"19.2.14\",\n55:     \"@types/react-dom\": \"19.2.3\",\n56:     \"lefthook\": \"^2.1.6\",\n57:     \"oxfmt\": \"^0.46.0\",\n58:     \"oxlint\": \"^1.61.0\",\n59:     \"shadcn\": \"4.5.0\",\n60:     \"tailwindcss\": \"^4.2.4\",\n61:     \"tw-animate-css\": \"^1.4.0\",\n62:     \"typescript\": \"^6.0.3\",\n63:     \"ultracite\": \"7.6.1\"\n64:   }\n65: }\n\n(End of file - total 65 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"name\": \"prsui\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"pnpm registry:build && next build\",\n    \"start\": \"next start\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"registry:build\": \"shadcn build registry.json --output ./public/r\",\n    \"postinstall\": \"fumadocs-mdx\",\n    \"check\": \"ultracite check\",\n    \"fix\": \"ultracite fix\",\n    \"prepare\": \"lefthook install\"\n  },\n  \"dependencies\": {\n    \"@tailwindcss/postcss\": \"^4.2.4\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"@web-kits/audio\": \"^0.1.0\",\n    \"class-variance-authority\": \"^0.7.1\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/package.json",
+                "text": "{\n  \"name\": \"prsui\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"pnpm registry:build && next build\",\n    \"start\": \"next start\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"registry:build\": \"shadcn build registry.json --output ./public/r\",\n    \"postinstall\": \"fumadocs-mdx\",\n    \"check\": \"ultracite check\",\n    \"fix\": \"ultracite fix\",\n    \"prepare\": \"lefthook install\"\n  },\n  \"dependencies\": {\n    \"@tailwindcss/postcss\": \"^4.2.4\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"@web-kits/audio\": \"^0.1.0\",\n    \"class-variance-authority\": \"^0.7.1\",\n    \"clsx\": \"^2.1.1\",\n    \"cmdk\": \"^1.1.1\",\n    \"dialkit\": \"^1.3.0\",\n    \"framer-motion\": \"^12.42.2\",\n    \"fumadocs-core\": \"^16.8.4\",\n    \"fumadocs-mdx\": \"^14.3.1\",\n    \"jiti\": \"^2.6.1\",\n    \"jotai\": \"^2.19.1\",\n    \"lru-cache\": \"^11.3.5\",\n    \"lucide-react\": \"1.11.0\",\n    \"motion\": \"^12.38.0\",\n    \"next\": \"16.2.4\",\n    \"next-themes\": \"0.4.6\",\n    \"postcss\": \"^8.5.10\",\n    \"radix-ui\": \"^1.4.3\",\n    \"react\": \"19.2.5\",\n    \"react-dom\": \"19.2.5\",\n    \"react-hotkeys-hook\": \"^5.2.4\",\n    \"react-icons\": \"^5.7.0\",\n    \"react-use-measure\": \"^2.1.7\",\n    \"rehype-pretty-code\": \"^0.14.3\",\n    \"shiki\": \"^4.0.2\",\n    \"sonner\": \"^2.0.7\",\n    \"tailwind-merge\": \"^3.5.0\",\n    \"ts-morph\": \"^26.0.0\",\n    \"vaul\": \"^1.1.2\",\n    \"web-haptics\": \"^0.0.6\",\n    \"zod\": \"^4.3.6\"\n  },\n  \"devDependencies\": {\n    \"@tailwindcss/postcss\": \"^4.2.4\",\n    \"@types/mdx\": \"^2.0.13\",\n    \"@types/node\": \"^25.6.0\",\n    \"@types/react\": \"19.2.14\",\n    \"@types/react-dom\": \"19.2.3\",\n    \"lefthook\": \"^2.1.6\",\n    \"oxfmt\": \"^0.46.0\",\n    \"oxlint\": \"^1.61.0\",\n    \"shadcn\": \"4.5.0\",\n    \"tailwindcss\": \"^4.2.4\",\n    \"tw-animate-css\": \"^1.4.0\",\n    \"typescript\": \"^6.0.3\",\n    \"ultracite\": \"7.6.1\"\n  }\n}",
+                "lineStart": 1,
+                "lineEnd": 65,
+                "totalLines": 65,
+                "truncated": false
+              }
+            },
+            "title": "package.json",
+            "time": {
+              "start": 1784797001790,
+              "end": 1784797001797
+            }
+          },
+          "id": "prt_f8e30f7ca001EVeh9Epx7l5RSs",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_f5ab029e60b64bdaa8c176d5",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/animated-icons/component.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/animated-icons/component.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import type { Variants } from \"motion/react\";\n4: import { motion, useAnimation } from \"motion/react\";\n5: import type { HTMLAttributes } from \"react\";\n6: import { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n7: \n8: import { cn } from \"@/lib/utils\";\n9: \n10: export interface ComponentIconHandle {\n11:   startAnimation: () => void;\n12:   stopAnimation: () => void;\n13: }\n14: \n15: interface ComponentIconProps extends HTMLAttributes<HTMLDivElement> {\n16:   size?: number;\n17: }\n18: \n19: const makePathVariants = (x: number, y: number): Variants => ({\n20:   animate: {\n21:     transition: { duration: 0.8, ease: \"easeInOut\", times: [0, 0.4, 0.6, 1] },\n22:     translateX: [0, x, x, 0],\n23:     translateY: [0, y, y, 0],\n24:   },\n25:   normal: { translateX: 0, translateY: 0 },\n26: });\n27: \n28: const TOP_VARIANTS = makePathVariants(6.6, 6.6);\n29: const RIGHT_VARIANTS = makePathVariants(-6.6, 6.6);\n30: const BOTTOM_VARIANTS = makePathVariants(-6.6, -6.6);\n31: const LEFT_VARIANTS = makePathVariants(6.6, -6.6);\n32: \n33: const ComponentIcon = forwardRef<ComponentIconHandle, ComponentIconProps>(\n34:   ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {\n35:     const controls = useAnimation();\n36:     const isControlledRef = useRef(false);\n37: \n38:     useImperativeHandle(ref, () => {\n39:       isControlledRef.current = true;\n40: \n41:       return {\n42:         startAnimation: () => controls.start(\"animate\"),\n43:         stopAnimation: () => controls.start(\"normal\"),\n44:       };\n45:     });\n46: \n47:     const handleMouseEnter = useCallback(\n48:       (e: React.MouseEvent<HTMLDivElement>) => {\n49:         if (isControlledRef.current) {\n50:           onMouseEnter?.(e);\n51:         } else {\n52:           controls.start(\"animate\");\n53:         }\n54:       },\n55:       [controls, onMouseEnter]\n56:     );\n57: \n58:     const handleMouseLeave = useCallback(\n59:       (e: React.MouseEvent<HTMLDivElement>) => {\n60:         if (isControlledRef.current) {\n61:           onMouseLeave?.(e);\n62:         } else {\n63:           controls.start(\"normal\");\n64:         }\n65:       },\n66:       [controls, onMouseLeave]\n67:     );\n68: \n69:     return (\n70:       <div\n71:         className={cn(className)}\n72:         onMouseEnter={handleMouseEnter}\n73:         onMouseLeave={handleMouseLeave}\n74:         {...props}\n75:       >\n76:         <svg\n77:           fill=\"none\"\n78:           height={size}\n79:           stroke=\"currentColor\"\n80:           strokeLinecap=\"round\"\n81:           strokeLinejoin=\"round\"\n82:           strokeWidth=\"2\"\n83:           viewBox=\"0 0 24 24\"\n84:           width={size}\n85:           xmlns=\"http://www.w3.org/2000/svg\"\n86:         >\n87:           <motion.path\n88:             animate={controls}\n89:             d=\"M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z\"\n90:             initial=\"normal\"\n91:             variants={TOP_VARIANTS}\n92:           />\n93:           <motion.path\n94:             animate={controls}\n95:             d=\"M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z\"\n96:             initial=\"normal\"\n97:             variants={RIGHT_VARIANTS}\n98:           />\n99:           <motion.path\n100:             animate={controls}\n101:             d=\"M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z\"\n102:             initial=\"normal\"\n103:             variants={BOTTOM_VARIANTS}\n104:           />\n105:           <motion.path\n106:             animate={controls}\n107:             d=\"M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z\"\n108:             initial=\"normal\"\n109:             variants={LEFT_VARIANTS}\n110:           />\n111:         </svg>\n112:       </div>\n113:     );\n114:   }\n115: );\n116: \n117: ComponentIcon.displayName = \"ComponentIcon\";\n118: \n119: export { ComponentIcon };\n\n(End of file - total 119 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface ComponentIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface ComponentIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst makePathVariants = (x: number, y: number): Variants => ({\n  animate: {",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/animated-icons/component.tsx",
+                "text": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface ComponentIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface ComponentIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst makePathVariants = (x: number, y: number): Variants => ({\n  animate: {\n    transition: { duration: 0.8, ease: \"easeInOut\", times: [0, 0.4, 0.6, 1] },\n    translateX: [0, x, x, 0],\n    translateY: [0, y, y, 0],\n  },\n  normal: { translateX: 0, translateY: 0 },\n});\n\nconst TOP_VARIANTS = makePathVariants(6.6, 6.6);\nconst RIGHT_VARIANTS = makePathVariants(-6.6, 6.6);\nconst BOTTOM_VARIANTS = makePathVariants(-6.6, -6.6);\nconst LEFT_VARIANTS = makePathVariants(6.6, -6.6);\n\nconst ComponentIcon = forwardRef<ComponentIconHandle, ComponentIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: () => controls.start(\"animate\"),\n        stopAnimation: () => controls.start(\"normal\"),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseEnter?.(e);\n        } else {\n          controls.start(\"animate\");\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseLeave?.(e);\n        } else {\n          controls.start(\"normal\");\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          fill=\"none\"\n          height={size}\n          stroke=\"currentColor\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          strokeWidth=\"2\"\n          viewBox=\"0 0 24 24\"\n          width={size}\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <motion.path\n            animate={controls}\n            d=\"M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z\"\n            initial=\"normal\"\n            variants={TOP_VARIANTS}\n          />\n          <motion.path\n            animate={controls}\n            d=\"M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z\"\n            initial=\"normal\"\n            variants={RIGHT_VARIANTS}\n          />\n          <motion.path\n            animate={controls}\n            d=\"M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z\"\n            initial=\"normal\"\n            variants={BOTTOM_VARIANTS}\n          />\n          <motion.path\n            animate={controls}\n            d=\"M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z\"\n            initial=\"normal\"\n            variants={LEFT_VARIANTS}\n          />\n        </svg>\n      </div>\n    );\n  }\n);\n\nComponentIcon.displayName = \"ComponentIcon\";\n\nexport { ComponentIcon };",
+                "lineStart": 1,
+                "lineEnd": 119,
+                "totalLines": 119,
+                "truncated": false
+              }
+            },
+            "title": "components/animated-icons/component.tsx",
+            "time": {
+              "start": 1784797002237,
+              "end": 1784797002247
+            }
+          },
+          "id": "prt_f8e30f882001b5WJTu69lYh5mp",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_65632d6e157d412eaa30a567",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import type { Variants } from \"motion/react\";\n4: import { motion, useAnimation } from \"motion/react\";\n5: import { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n6: \n7: import { cn } from \"@/lib/utils\";\n8: \n9: export interface ArrowRightIconHandle {\n10:   startAnimation: () => void;\n11:   stopAnimation: () => void;\n12: }\n13: \n14: interface ArrowRightIconProps extends React.HTMLAttributes<HTMLDivElement> {\n15:   size?: number;\n16: }\n17: \n18: const shaftVariants: Variants = {\n19:   animate: {\n20:     d: [\"M5 12h14\", \"M5 12h9\", \"M5 12h14\"],\n21:     transition: { duration: 0.36 },\n22:   },\n23:   normal: { d: \"M5 12h14\" },\n24: };\n25: \n26: const headVariants: Variants = {\n27:   animate: {\n28:     d: \"m12 5 7 7-7 7\",\n29:     transition: { duration: 0.36 },\n30:     translateX: [0, -3, 0],\n31:   },\n32:   normal: { d: \"m12 5 7 7-7 7\", translateX: 0 },\n33: };\n34: \n35: export const ArrowRightIcon = forwardRef<\n36:   ArrowRightIconHandle,\n37:   ArrowRightIconProps\n38: >(({ className, onMouseEnter, onMouseLeave, size = 18, ...props }, ref) => {\n39:   const controls = useAnimation();\n40:   const controlledRef = useRef(false);\n41: \n42:   useImperativeHandle(ref, () => {\n43:     controlledRef.current = true;\n44:     return {\n45:       startAnimation: () => controls.start(\"animate\"),\n46:       stopAnimation: () => controls.start(\"normal\"),\n47:     };\n48:   });\n49: \n50:   const handleMouseEnter = useCallback(\n51:     (event: React.MouseEvent<HTMLDivElement>) => {\n52:       if (controlledRef.current) {\n53:         onMouseEnter?.(event);\n54:         return;\n55:       }\n56: \n57:       void controls.start(\"animate\");\n58:     },\n59:     [controls, onMouseEnter]\n60:   );\n61: \n62:   const handleMouseLeave = useCallback(\n63:     (event: React.MouseEvent<HTMLDivElement>) => {\n64:       if (controlledRef.current) {\n65:         onMouseLeave?.(event);\n66:         return;\n67:       }\n68: \n69:       void controls.start(\"normal\");\n70:     },\n71:     [controls, onMouseLeave]\n72:   );\n73: \n74:   return (\n75:     <div\n76:       className={cn(className)}\n77:       onMouseEnter={handleMouseEnter}\n78:       onMouseLeave={handleMouseLeave}\n79:       {...props}\n80:     >\n81:       <svg\n82:         fill=\"none\"\n83:         height={size}\n84:         stroke=\"currentColor\"\n85:         strokeLinecap=\"round\"\n86:         strokeLinejoin=\"round\"\n87:         strokeWidth=\"2\"\n88:         viewBox=\"0 0 24 24\"\n89:         width={size}\n90:       >\n91:         <motion.path animate={controls} d=\"M5 12h14\" variants={shaftVariants} />\n92:         <motion.path\n93:           animate={controls}\n94:           d=\"m12 5 7 7-7 7\"\n95:           variants={headVariants}\n96:         />\n97:       </svg>\n98:     </div>\n99:   );\n100: });\n101: \n102: ArrowRightIcon.displayName = \"ArrowRightIcon\";\n\n(End of file - total 102 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface ArrowRightIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface ArrowRightIconProps extends React.HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst shaftVariants: Variants = {\n  animate: {\n    d: [\"M5 12h14\", \"M5 12h9\", \"M5 12h14\"],",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx",
+                "text": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface ArrowRightIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface ArrowRightIconProps extends React.HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst shaftVariants: Variants = {\n  animate: {\n    d: [\"M5 12h14\", \"M5 12h9\", \"M5 12h14\"],\n    transition: { duration: 0.36 },\n  },\n  normal: { d: \"M5 12h14\" },\n};\n\nconst headVariants: Variants = {\n  animate: {\n    d: \"m12 5 7 7-7 7\",\n    transition: { duration: 0.36 },\n    translateX: [0, -3, 0],\n  },\n  normal: { d: \"m12 5 7 7-7 7\", translateX: 0 },\n};\n\nexport const ArrowRightIcon = forwardRef<\n  ArrowRightIconHandle,\n  ArrowRightIconProps\n>(({ className, onMouseEnter, onMouseLeave, size = 18, ...props }, ref) => {\n  const controls = useAnimation();\n  const controlledRef = useRef(false);\n\n  useImperativeHandle(ref, () => {\n    controlledRef.current = true;\n    return {\n      startAnimation: () => controls.start(\"animate\"),\n      stopAnimation: () => controls.start(\"normal\"),\n    };\n  });\n\n  const handleMouseEnter = useCallback(\n    (event: React.MouseEvent<HTMLDivElement>) => {\n      if (controlledRef.current) {\n        onMouseEnter?.(event);\n        return;\n      }\n\n      void controls.start(\"animate\");\n    },\n    [controls, onMouseEnter]\n  );\n\n  const handleMouseLeave = useCallback(\n    (event: React.MouseEvent<HTMLDivElement>) => {\n      if (controlledRef.current) {\n        onMouseLeave?.(event);\n        return;\n      }\n\n      void controls.start(\"normal\");\n    },\n    [controls, onMouseLeave]\n  );\n\n  return (\n    <div\n      className={cn(className)}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      {...props}\n    >\n      <svg\n        fill=\"none\"\n        height={size}\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"2\"\n        viewBox=\"0 0 24 24\"\n        width={size}\n      >\n        <motion.path animate={controls} d=\"M5 12h14\" variants={shaftVariants} />\n        <motion.path\n          animate={controls}\n          d=\"m12 5 7 7-7 7\"\n          variants={headVariants}\n        />\n      </svg>\n    </div>\n  );\n});\n\nArrowRightIcon.displayName = \"ArrowRightIcon\";",
+                "lineStart": 1,
+                "lineEnd": 102,
+                "totalLines": 102,
+                "truncated": false
+              }
+            },
+            "title": "components/animated-icons/arrow-right.tsx",
+            "time": {
+              "start": 1784797002503,
+              "end": 1784797002523
+            }
+          },
+          "id": "prt_f8e30fa14001PlX0sthbsZTsEH",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_e2e1537344a74870b8d82805",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/copy-button.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/copy-button.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { CheckIcon, CopyIcon } from \"lucide-react\";\n4: import type { HTMLMotionProps, Variants } from \"motion/react\";\n5: import { AnimatePresence, motion } from \"motion/react\";\n6: import { useCallback } from \"react\";\n7: \n8: import { Button } from \"@/components/ui/button\";\n9: import {\n10:   Tooltip,\n11:   TooltipContent,\n12:   TooltipTrigger,\n13: } from \"@/components/ui/tooltip\";\n14: import { useCopyToClipboard } from \"@/hooks/use-copy-to-clipboard\";\n15: import type { Event } from \"@/lib/events\";\n16: import { trackEvent } from \"@/lib/events\";\n17: import { cn } from \"@/lib/utils\";\n18: \n19: export const motionIconVariants: Variants = {\n20:   animate: { filter: \"blur(0px)\", opacity: 1, scale: 1 },\n21:   exit: { opacity: 0, scale: 0.8 },\n22:   initial: { filter: \"blur(2px)\", opacity: 0, scale: 0.8 },\n23: };\n24: \n25: export const motionIconProps: HTMLMotionProps<\"span\"> = {\n26:   animate: \"animate\",\n27:   exit: \"exit\",\n28:   initial: \"initial\",\n29:   transition: { duration: 0.15, ease: \"easeOut\" },\n30:   variants: motionIconVariants,\n31: };\n32: \n33: export interface CopyButtonProps extends Omit<\n34:   React.ComponentProps<typeof Button>,\n35:   \"value\"\n36: > {\n37:   value: string | (() => Promise<string> | string);\n38:   src?: string;\n39:   event?: Event[\"name\"];\n40:   showTooltip?: boolean;\n41: }\n42: \n43: export const CopyButton = ({\n44:   value,\n45:   className,\n46:   variant = \"ghost\",\n47:   event,\n48:   children,\n49:   showTooltip = true,\n50:   ...props\n51: }: CopyButtonProps) => {\n52:   const getValue = useCallback(() => {\n53:     if (typeof value === \"function\") {\n54:       return value();\n55:     }\n56: \n57:     return value;\n58:   }, [value]);\n59: \n60:   const { copyToClipboard, isCopied } = useCopyToClipboard({\n61:     timeout: 1000,\n62:   });\n63: \n64:   const handleCopy = useCallback(async () => {\n65:     const text = await getValue();\n66:     const hasCopied = await copyToClipboard(text);\n67: \n68:     if (hasCopied && event) {\n69:       trackEvent({\n70:         name: event,\n71:         properties: {\n72:           code: text,\n73:         },\n74:       });\n75:     }\n76:   }, [copyToClipboard, event, getValue]);\n77: \n78:   const copyButton = (\n79:     <Button\n80:       data-slot=\"copy-button\"\n81:       size={children ? \"sm\" : \"icon\"}\n82:       variant={variant}\n83:       className={cn(\n84:         children\n85:           ? \"\"\n86:           : \"bg-code absolute top-3 right-2 z-10 size-7 hover:opacity-100 focus-visible:opacity-100\",\n87:         className\n88:       )}\n89:       sound=\"copy\"\n90:       onClick={handleCopy}\n91:       {...props}\n92:     >\n93:       <span className=\"sr-only\">Copy</span>\n94:       <AnimatePresence mode=\"popLayout\" initial={false}>\n95:         {isCopied ? (\n96:           <motion.span key=\"done\" {...motionIconProps}>\n97:             <CheckIcon strokeWidth={3} />\n98:           </motion.span>\n99:         ) : (\n100:           <motion.span key=\"idle\" {...motionIconProps}>\n101:             <CopyIcon />\n102:           </motion.span>\n103:         )}\n104:       </AnimatePresence>\n105:       {children}\n106:     </Button>\n107:   );\n108: \n109:   if (!showTooltip) {\n110:     return copyButton;\n111:   }\n112: \n113:   return (\n114:     <Tooltip>\n115:       <TooltipTrigger asChild>{copyButton}</TooltipTrigger>\n116:       <TooltipContent>\n117:         {isCopied ? \"Copied\" : \"Copy to Clipboard\"}\n118:       </TooltipContent>\n119:     </Tooltip>\n120:   );\n121: };\n\n(End of file - total 121 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\nimport type { HTMLMotionProps, Variants } from \"motion/react\";\nimport { AnimatePresence, motion } from \"motion/react\";\nimport { useCallback } from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { useCopyToClipboard } from \"@/hooks/use-copy-to-clipboard\";\nimport type { Event } from \"@/lib/events\";\nimport { trackEvent } from \"@/lib/events\";\nimport { cn } from \"@/lib/utils\";\n\nexport const motionIconVariants: Variants = {\n  animate: { filter: \"blur(0px)\", opacity: 1, scale: 1 },",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/copy-button.tsx",
+                "text": "\"use client\";\n\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\nimport type { HTMLMotionProps, Variants } from \"motion/react\";\nimport { AnimatePresence, motion } from \"motion/react\";\nimport { useCallback } from \"react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { useCopyToClipboard } from \"@/hooks/use-copy-to-clipboard\";\nimport type { Event } from \"@/lib/events\";\nimport { trackEvent } from \"@/lib/events\";\nimport { cn } from \"@/lib/utils\";\n\nexport const motionIconVariants: Variants = {\n  animate: { filter: \"blur(0px)\", opacity: 1, scale: 1 },\n  exit: { opacity: 0, scale: 0.8 },\n  initial: { filter: \"blur(2px)\", opacity: 0, scale: 0.8 },\n};\n\nexport const motionIconProps: HTMLMotionProps<\"span\"> = {\n  animate: \"animate\",\n  exit: \"exit\",\n  initial: \"initial\",\n  transition: { duration: 0.15, ease: \"easeOut\" },\n  variants: motionIconVariants,\n};\n\nexport interface CopyButtonProps extends Omit<\n  React.ComponentProps<typeof Button>,\n  \"value\"\n> {\n  value: string | (() => Promise<string> | string);\n  src?: string;\n  event?: Event[\"name\"];\n  showTooltip?: boolean;\n}\n\nexport const CopyButton = ({\n  value,\n  className,\n  variant = \"ghost\",\n  event,\n  children,\n  showTooltip = true,\n  ...props\n}: CopyButtonProps) => {\n  const getValue = useCallback(() => {\n    if (typeof value === \"function\") {\n      return value();\n    }\n\n    return value;\n  }, [value]);\n\n  const { copyToClipboard, isCopied } = useCopyToClipboard({\n    timeout: 1000,\n  });\n\n  const handleCopy = useCallback(async () => {\n    const text = await getValue();\n    const hasCopied = await copyToClipboard(text);\n\n    if (hasCopied && event) {\n      trackEvent({\n        name: event,\n        properties: {\n          code: text,\n        },\n      });\n    }\n  }, [copyToClipboard, event, getValue]);\n\n  const copyButton = (\n    <Button\n      data-slot=\"copy-button\"\n      size={children ? \"sm\" : \"icon\"}\n      variant={variant}\n      className={cn(\n        children\n          ? \"\"\n          : \"bg-code absolute top-3 right-2 z-10 size-7 hover:opacity-100 focus-visible:opacity-100\",\n        className\n      )}\n      sound=\"copy\"\n      onClick={handleCopy}\n      {...props}\n    >\n      <span className=\"sr-only\">Copy</span>\n      <AnimatePresence mode=\"popLayout\" initial={false}>\n        {isCopied ? (\n          <motion.span key=\"done\" {...motionIconProps}>\n            <CheckIcon strokeWidth={3} />\n          </motion.span>\n        ) : (\n          <motion.span key=\"idle\" {...motionIconProps}>\n            <CopyIcon />\n          </motion.span>\n        )}\n      </AnimatePresence>\n      {children}\n    </Button>\n  );\n\n  if (!showTooltip) {\n    return copyButton;\n  }\n\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>{copyButton}</TooltipTrigger>\n      <TooltipContent>\n        {isCopied ? \"Copied\" : \"Copy to Clipboard\"}\n      </TooltipContent>\n    </Tooltip>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 121,
+                "totalLines": 121,
+                "truncated": false
+              }
+            },
+            "title": "components/copy-button.tsx",
+            "time": {
+              "start": 1784797002797,
+              "end": 1784797002815
+            }
+          },
+          "id": "prt_f8e30fb3a001gOkr4VjctjzPUN",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_0f2359e8e69a4374920ec221",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { motion, useAnimation } from \"motion/react\";\n4: import type { HTMLAttributes } from \"react\";\n5: import { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n6: \n7: import { cn } from \"@/lib/utils\";\n8: \n9: export interface HeartHandshakeIconHandle {\n10:   startAnimation: () => void;\n11:   stopAnimation: () => void;\n12: }\n13: \n14: interface HeartHandshakeIconProps extends HTMLAttributes<HTMLDivElement> {\n15:   size?: number;\n16: }\n17: \n18: const HeartHandshakeIcon = forwardRef<\n19:   HeartHandshakeIconHandle,\n20:   HeartHandshakeIconProps\n21: >(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n22:   const controls = useAnimation();\n23:   const isControlledRef = useRef(false);\n24: \n25:   useImperativeHandle(ref, () => {\n26:     isControlledRef.current = true;\n27:     return {\n28:       startAnimation: () => controls.start(\"animate\"),\n29:       stopAnimation: () => controls.start(\"normal\"),\n30:     };\n31:   });\n32: \n33:   const handleMouseEnter = useCallback(\n34:     (e: React.MouseEvent<HTMLDivElement>) => {\n35:       if (isControlledRef.current) {\n36:         onMouseEnter?.(e);\n37:       } else {\n38:         controls.start(\"animate\");\n39:       }\n40:     },\n41:     [controls, onMouseEnter]\n42:   );\n43: \n44:   const handleMouseLeave = useCallback(\n45:     (e: React.MouseEvent<HTMLDivElement>) => {\n46:       if (isControlledRef.current) {\n47:         onMouseLeave?.(e);\n48:       } else {\n49:         controls.start(\"normal\");\n50:       }\n51:     },\n52:     [controls, onMouseLeave]\n53:   );\n54: \n55:   return (\n56:     <div\n57:       className={cn(className)}\n58:       onMouseEnter={handleMouseEnter}\n59:       onMouseLeave={handleMouseLeave}\n60:       {...props}\n61:     >\n62:       <motion.svg\n63:         animate={controls}\n64:         fill=\"none\"\n65:         height={size}\n66:         initial=\"normal\"\n67:         stroke=\"currentColor\"\n68:         strokeLinecap=\"round\"\n69:         strokeLinejoin=\"round\"\n70:         strokeWidth=\"2\"\n71:         style={{ originX: \"50%\", originY: \"50%\" }}\n72:         variants={{\n73:           animate: {\n74:             rotate: [0, 0, 0, -7, 7, -3, 0],\n75:             scale: [1, 0.9, 1, 1, 1, 1, 1],\n76:             transition: {\n77:               duration: 0.7,\n78: \n79:               ease: \"easeInOut\",\n80:               times: [0, 0.15, 0.3, 0.4, 0.55, 0.75, 1],\n81:             },\n82:           },\n83:           normal: { rotate: 0, scale: 1 },\n84:         }}\n85:         viewBox=\"0 0 24 24\"\n86:         width={size}\n87:         xmlns=\"http://www.w3.org/2000/svg\"\n88:       >\n89:         <path d=\"M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762\" />\n90:       </motion.svg>\n91:     </div>\n92:   );\n93: });\n94: \n95: HeartHandshakeIcon.displayName = \"HeartHandshakeIcon\";\n96: \n97: export { HeartHandshakeIcon };\n\n(End of file - total 97 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface HeartHandshakeIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface HeartHandshakeIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst HeartHandshakeIcon = forwardRef<\n  HeartHandshakeIconHandle,\n  HeartHandshakeIconProps",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx",
+                "text": "\"use client\";\n\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface HeartHandshakeIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface HeartHandshakeIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst HeartHandshakeIcon = forwardRef<\n  HeartHandshakeIconHandle,\n  HeartHandshakeIconProps\n>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n  const controls = useAnimation();\n  const isControlledRef = useRef(false);\n\n  useImperativeHandle(ref, () => {\n    isControlledRef.current = true;\n    return {\n      startAnimation: () => controls.start(\"animate\"),\n      stopAnimation: () => controls.start(\"normal\"),\n    };\n  });\n\n  const handleMouseEnter = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (isControlledRef.current) {\n        onMouseEnter?.(e);\n      } else {\n        controls.start(\"animate\");\n      }\n    },\n    [controls, onMouseEnter]\n  );\n\n  const handleMouseLeave = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (isControlledRef.current) {\n        onMouseLeave?.(e);\n      } else {\n        controls.start(\"normal\");\n      }\n    },\n    [controls, onMouseLeave]\n  );\n\n  return (\n    <div\n      className={cn(className)}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      {...props}\n    >\n      <motion.svg\n        animate={controls}\n        fill=\"none\"\n        height={size}\n        initial=\"normal\"\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"2\"\n        style={{ originX: \"50%\", originY: \"50%\" }}\n        variants={{\n          animate: {\n            rotate: [0, 0, 0, -7, 7, -3, 0],\n            scale: [1, 0.9, 1, 1, 1, 1, 1],\n            transition: {\n              duration: 0.7,\n\n              ease: \"easeInOut\",\n              times: [0, 0.15, 0.3, 0.4, 0.55, 0.75, 1],\n            },\n          },\n          normal: { rotate: 0, scale: 1 },\n        }}\n        viewBox=\"0 0 24 24\"\n        width={size}\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <path d=\"M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762\" />\n      </motion.svg>\n    </div>\n  );\n});\n\nHeartHandshakeIcon.displayName = \"HeartHandshakeIcon\";\n\nexport { HeartHandshakeIcon };",
+                "lineStart": 1,
+                "lineEnd": 97,
+                "totalLines": 97,
+                "truncated": false
+              }
+            },
+            "title": "components/animated-icons/heart-handshake.tsx",
+            "time": {
+              "start": 1784797003081,
+              "end": 1784797003093
+            }
+          },
+          "id": "prt_f8e30fc6a001qmpxHPRz3oSw0S",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_ebf35018377a4387951c4151",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/ui/text-flip.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/ui/text-flip.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import type { Transition, Variants } from \"motion/react\";\n4: import { AnimatePresence, motion } from \"motion/react\";\n5: import { Children, useEffect, useState } from \"react\";\n6: \n7: import { cn } from \"@/lib/utils\";\n8: \n9: const defaultVariants: Variants = {\n10:   animate: { opacity: 1, y: 0 },\n11:   exit: { opacity: 0, y: 8 },\n12:   initial: { opacity: 0, y: -8 },\n13: };\n14: \n15: type MotionElement = typeof motion.p | typeof motion.span | typeof motion.code;\n16: \n17: export interface TextFlipProps {\n18:   as?: MotionElement;\n19:   className?: string;\n20:   children: React.ReactNode[];\n21:   interval?: number;\n22:   transition?: Transition;\n23:   variants?: Variants;\n24:   onIndexChange?: (index: number) => void;\n25: }\n26: \n27: export const TextFlip = ({\n28:   as: Component = motion.p,\n29:   className,\n30:   children,\n31:   interval = 2,\n32:   transition = { duration: 0.3 },\n33:   variants = defaultVariants,\n34:   onIndexChange,\n35: }: TextFlipProps) => {\n36:   const [currentIndex, setCurrentIndex] = useState(0);\n37: \n38:   const items = Children.toArray(children);\n39: \n40:   useEffect(() => {\n41:     const timer = setInterval(() => {\n42:       setCurrentIndex((prev) => {\n43:         const next = (prev + 1) % items.length;\n44:         onIndexChange?.(next);\n45:         return next;\n46:       });\n47:     }, interval * 1000);\n48: \n49:     return () => clearInterval(timer);\n50:   }, [items.length, interval, onIndexChange]);\n51: \n52:   return (\n53:     <AnimatePresence mode=\"wait\" initial={false}>\n54:       <Component\n55:         key={currentIndex}\n56:         className={cn(\"inline-block\", className)}\n57:         initial=\"initial\"\n58:         animate=\"animate\"\n59:         exit=\"exit\"\n60:         transition={transition}\n61:         variants={variants}\n62:       >\n63:         {items[currentIndex]}\n64:       </Component>\n65:     </AnimatePresence>\n66:   );\n67: };\n\n(End of file - total 67 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport type { Transition, Variants } from \"motion/react\";\nimport { AnimatePresence, motion } from \"motion/react\";\nimport { Children, useEffect, useState } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst defaultVariants: Variants = {\n  animate: { opacity: 1, y: 0 },\n  exit: { opacity: 0, y: 8 },\n  initial: { opacity: 0, y: -8 },\n};\n\ntype MotionElement = typeof motion.p | typeof motion.span | typeof motion.code;\n\nexport interface TextFlipProps {\n  as?: MotionElement;\n  className?: string;\n  children: React.ReactNode[];",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/ui/text-flip.tsx",
+                "text": "\"use client\";\n\nimport type { Transition, Variants } from \"motion/react\";\nimport { AnimatePresence, motion } from \"motion/react\";\nimport { Children, useEffect, useState } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst defaultVariants: Variants = {\n  animate: { opacity: 1, y: 0 },\n  exit: { opacity: 0, y: 8 },\n  initial: { opacity: 0, y: -8 },\n};\n\ntype MotionElement = typeof motion.p | typeof motion.span | typeof motion.code;\n\nexport interface TextFlipProps {\n  as?: MotionElement;\n  className?: string;\n  children: React.ReactNode[];\n  interval?: number;\n  transition?: Transition;\n  variants?: Variants;\n  onIndexChange?: (index: number) => void;\n}\n\nexport const TextFlip = ({\n  as: Component = motion.p,\n  className,\n  children,\n  interval = 2,\n  transition = { duration: 0.3 },\n  variants = defaultVariants,\n  onIndexChange,\n}: TextFlipProps) => {\n  const [currentIndex, setCurrentIndex] = useState(0);\n\n  const items = Children.toArray(children);\n\n  useEffect(() => {\n    const timer = setInterval(() => {\n      setCurrentIndex((prev) => {\n        const next = (prev + 1) % items.length;\n        onIndexChange?.(next);\n        return next;\n      });\n    }, interval * 1000);\n\n    return () => clearInterval(timer);\n  }, [items.length, interval, onIndexChange]);\n\n  return (\n    <AnimatePresence mode=\"wait\" initial={false}>\n      <Component\n        key={currentIndex}\n        className={cn(\"inline-block\", className)}\n        initial=\"initial\"\n        animate=\"animate\"\n        exit=\"exit\"\n        transition={transition}\n        variants={variants}\n      >\n        {items[currentIndex]}\n      </Component>\n    </AnimatePresence>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 67,
+                "totalLines": 67,
+                "truncated": false
+              }
+            },
+            "title": "components/ui/text-flip.tsx",
+            "time": {
+              "start": 1784797003367,
+              "end": 1784797003374
+            }
+          },
+          "id": "prt_f8e30fd8c001f5TeNLDB6r1yJ0",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_4e10f39938fb4a4eb805e77a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/lib/ease.ts"
+            },
+            "output": "<path>/home/himmel/personal/prsui/lib/ease.ts</path>\n<type>file</type>\n<content>\n1: // Shared motion tokens. Easing curves mirror the CSS custom properties in\n2: // globals.css; springs are the canonical physics used across components.\n3: // Strong custom variants — defaults like `ease-in`/`ease-out` feel weak.\n4: \n5: export const EASE_OUT = [0.16, 1, 0.3, 1] as const;\n6: export const EASE_IN_OUT = [0.77, 0, 0.175, 1] as const;\n7: export const EASE_DRAWER = [0.32, 0.72, 0, 1] as const;\n8: \n9: /** CSS string form of EASE_OUT for inline style transitions. */\n10: export const EASE_OUT_CSS = \"cubic-bezier(0.16, 1, 0.3, 1)\";\n11: \n12: /** Press feedback on buttons and other tappable surfaces. */\n13: export const SPRING_PRESS = {\n14:   damping: 30,\n15:   mass: 0.6,\n16:   stiffness: 500,\n17:   type: \"spring\",\n18: } as const;\n19: \n20: /** Content swaps — label/icon slots trading places inside a control. */\n21: export const SPRING_SWAP = {\n22:   damping: 30,\n23:   mass: 0.55,\n24:   stiffness: 460,\n25:   type: \"spring\",\n26: } as const;\n27: \n28: /** Overlay panel entrances — modals and sheets summoned by pointer. */\n29: export const SPRING_PANEL = {\n30:   damping: 40,\n31:   mass: 0.5,\n32:   stiffness: 420,\n33:   type: \"spring\",\n34: } as const;\n35: \n36: /** Shared-layout glides — pills, indicators and panels morphing between positions. */\n37: export const SPRING_LAYOUT = {\n38:   damping: 32,\n39:   mass: 0.6,\n40:   stiffness: 360,\n41:   type: \"spring\",\n42: } as const;\n43: \n44: /** Cursor-follow physics for decorative mouse tracking (magnetic, tilt, dock). */\n45: export const SPRING_MOUSE = {\n46:   damping: 15,\n47:   mass: 0.3,\n48:   stiffness: 200,\n49: } as const;\n\n(End of file - total 49 lines)\n</content>",
+            "metadata": {
+              "preview": "// Shared motion tokens. Easing curves mirror the CSS custom properties in\n// globals.css; springs are the canonical physics used across components.\n// Strong custom variants — defaults like `ease-in`/`ease-out` feel weak.\n\nexport const EASE_OUT = [0.16, 1, 0.3, 1] as const;\nexport const EASE_IN_OUT = [0.77, 0, 0.175, 1] as const;\nexport const EASE_DRAWER = [0.32, 0.72, 0, 1] as const;\n\n/** CSS string form of EASE_OUT for inline style transitions. */\nexport const EASE_OUT_CSS = \"cubic-bezier(0.16, 1, 0.3, 1)\";\n\n/** Press feedback on buttons and other tappable surfaces. */\nexport const SPRING_PRESS = {\n  damping: 30,\n  mass: 0.6,\n  stiffness: 500,\n  type: \"spring\",\n} as const;\n\n/** Content swaps — label/icon slots trading places inside a control. */",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/lib/ease.ts",
+                "text": "// Shared motion tokens. Easing curves mirror the CSS custom properties in\n// globals.css; springs are the canonical physics used across components.\n// Strong custom variants — defaults like `ease-in`/`ease-out` feel weak.\n\nexport const EASE_OUT = [0.16, 1, 0.3, 1] as const;\nexport const EASE_IN_OUT = [0.77, 0, 0.175, 1] as const;\nexport const EASE_DRAWER = [0.32, 0.72, 0, 1] as const;\n\n/** CSS string form of EASE_OUT for inline style transitions. */\nexport const EASE_OUT_CSS = \"cubic-bezier(0.16, 1, 0.3, 1)\";\n\n/** Press feedback on buttons and other tappable surfaces. */\nexport const SPRING_PRESS = {\n  damping: 30,\n  mass: 0.6,\n  stiffness: 500,\n  type: \"spring\",\n} as const;\n\n/** Content swaps — label/icon slots trading places inside a control. */\nexport const SPRING_SWAP = {\n  damping: 30,\n  mass: 0.55,\n  stiffness: 460,\n  type: \"spring\",\n} as const;\n\n/** Overlay panel entrances — modals and sheets summoned by pointer. */\nexport const SPRING_PANEL = {\n  damping: 40,\n  mass: 0.5,\n  stiffness: 420,\n  type: \"spring\",\n} as const;\n\n/** Shared-layout glides — pills, indicators and panels morphing between positions. */\nexport const SPRING_LAYOUT = {\n  damping: 32,\n  mass: 0.6,\n  stiffness: 360,\n  type: \"spring\",\n} as const;\n\n/** Cursor-follow physics for decorative mouse tracking (magnetic, tilt, dock). */\nexport const SPRING_MOUSE = {\n  damping: 15,\n  mass: 0.3,\n  stiffness: 200,\n} as const;",
+                "lineStart": 1,
+                "lineEnd": 49,
+                "totalLines": 49,
+                "truncated": false
+              }
+            },
+            "title": "lib/ease.ts",
+            "time": {
+              "start": 1784797003692,
+              "end": 1784797003698
+            }
+          },
+          "id": "prt_f8e30feba001qGFlWOOBocxUJj",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 7405,
+            "input": 3292,
+            "output": 245,
+            "reasoning": 28,
+            "cache": {
+              "write": 0,
+              "read": 3840
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8e3100000012CjMfmT5muiDYI",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e30ec2a001uJjvS17IvahjL8"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8e30d68a001oIFtSvPp2FUc3x",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 15165,
+          "input": 7809,
+          "output": 220,
+          "reasoning": 32,
+          "cache": {
+            "write": 0,
+            "read": 7104
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784797003819,
+          "completed": 1784797008738
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8e31002b001eqGkUcztlIuD7a",
+        "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb"
+      },
+      "parts": [
+        {
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-start",
+          "id": "prt_f8e310957001UqgzQv1ev03WpY",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me also check the animated-icons directory and the split-action/smooth-input files that use framer-motion, and also look for any button components with animation.",
+          "time": {
+            "start": 1784797006170,
+            "end": 1784797006665
+          },
+          "id": "prt_f8e31095a001BojHRtRp2kxCL2",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_9aa9247c78d4488fa7e5c98f",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/animated-icons"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/animated-icons</path>\n<type>directory</type>\n<entries>\narrow-left.tsx\narrow-right.tsx\ncomponent.tsx\nheart-handshake.tsx\nshare.tsx\nvibrate.tsx\nvolume-2.tsx\n\n(7 entries)\n</entries>",
+            "metadata": {
+              "preview": "arrow-left.tsx\narrow-right.tsx\ncomponent.tsx\nheart-handshake.tsx\nshare.tsx\nvibrate.tsx\nvolume-2.tsx",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "directory",
+                "path": "/home/himmel/personal/prsui/components/animated-icons",
+                "entries": [
+                  "arrow-left.tsx",
+                  "arrow-right.tsx",
+                  "component.tsx",
+                  "heart-handshake.tsx",
+                  "share.tsx",
+                  "vibrate.tsx",
+                  "volume-2.tsx"
+                ],
+                "offset": 1,
+                "totalEntries": 7,
+                "truncated": false
+              }
+            },
+            "title": "components/animated-icons",
+            "time": {
+              "start": 1784797006870,
+              "end": 1784797006889
+            }
+          },
+          "id": "prt_f8e310b4b001U3JFUsDRZpqH7C",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_fe5805a4f2024646ab34ac1b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/split-action.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/split-action.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { AnimatePresence, motion } from \"framer-motion\";\n4: import { Plus } from \"lucide-react\";\n5: import type { LucideIcon } from \"lucide-react\";\n6: import { useLayoutEffect, useRef, useState } from \"react\";\n7: \n8: import { cn } from \"@/lib/utils\";\n9: \n10: interface Action {\n11:   icon: LucideIcon;\n12:   label: string;\n13: }\n14: \n15: interface SplitActionsProps {\n16:   actions: Action[];\n17:   triggerIcon?: LucideIcon;\n18:   onActionClick?: (action: Action, index: number) => void;\n19: }\n20: \n21: const SplitActions = ({\n22:   actions,\n23:   triggerIcon: TriggerIcon = Plus,\n24:   onActionClick,\n25: }: SplitActionsProps) => {\n26:   const [isOpen, setIsOpen] = useState(false);\n27: \n28:   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);\n29:   const [positions, setPositions] = useState<number[]>([]);\n30: \n31:   useLayoutEffect(() => {\n32:     if (!isOpen) {\n33:       return;\n34:     }\n35: \n36:     const GAP = 8;\n37: \n38:     const calculatePositions = () => {\n39:       const widths = buttonRefs.current.map(\n40:         (button) => button?.offsetWidth ?? 0\n41:       );\n42: \n43:       const totalWidth =\n44:         widths.reduce((sum, width) => sum + width, 0) +\n45:         GAP * (widths.length - 1);\n46: \n47:       let cursor = -totalWidth / 2;\n48: \n49:       const newPositions = widths.map((width) => {\n50:         const center = cursor + width / 2;\n51:         cursor += width + GAP;\n52:         return center;\n53:       });\n54: \n55:       setPositions(newPositions);\n56:     };\n57: \n58:     requestAnimationFrame(calculatePositions);\n59: \n60:     window.addEventListener(\"resize\", calculatePositions);\n61: \n62:     return () => {\n63:       window.removeEventListener(\"resize\", calculatePositions);\n64:     };\n65:   }, [actions, isOpen]);\n66: \n67:   return (\n68:     <div className=\"flex items-center justify-center py-8\">\n69:       <div className=\"relative flex min-h-14 min-w-14 items-center justify-center\">\n70:         <AnimatePresence mode=\"wait\">\n71:           {!isOpen && (\n72:             <motion.button\n73:               key=\"trigger\"\n74:               whileTap={{ scale: 1.15 }}\n75:               initial={{\n76:                 filter: \"blur(8px)\",\n77:                 opacity: 0,\n78:                 scale: 0.5,\n79:               }}\n80:               animate={{\n81:                 filter: \"blur(0px)\",\n82:                 opacity: 1,\n83:                 scale: 1,\n84:               }}\n85:               exit={{\n86:                 filter: \"blur(8px)\",\n87:                 opacity: 0,\n88:                 scale: 0.5,\n89:               }}\n90:               transition={{\n91:                 damping: 24,\n92:                 stiffness: 220,\n93:                 type: \"spring\",\n94:               }}\n95:               className=\"rounded-full bg-black p-2 text-white dark:bg-white dark:text-black\"\n96:               onClick={() => setIsOpen(true)}\n97:             >\n98:               <TriggerIcon className=\"size-8 stroke-3\" />\n99:             </motion.button>\n100:           )}\n101:         </AnimatePresence>\n102: \n103:         <AnimatePresence>\n104:           {isOpen &&\n105:             actions.map((action, index) => (\n106:               <motion.button\n107:                 key={action.label}\n108:                 ref={(el) => {\n109:                   buttonRefs.current[index] = el;\n110:                 }}\n111:                 initial={{\n112:                   filter: \"blur(8px)\",\n113:                   opacity: 0,\n114:                   scale: 0,\n115:                   x: 0,\n116:                 }}\n117:                 animate={{\n118:                   filter: \"blur(0px)\",\n119:                   opacity: 1,\n120:                   scale: 1,\n121:                   x: positions[index] ?? 0,\n122:                 }}\n123:                 exit={{\n124:                   filter: \"blur(8px)\",\n125:                   opacity: 0,\n126:                   scale: 0.5,\n127:                   x: 0,\n128:                 }}\n129:                 transition={{\n130:                   damping: 24,\n131:                   stiffness: 220,\n132:                   type: \"spring\",\n133:                 }}\n134:                 className={cn(\n135:                   \"absolute flex items-center gap-2 rounded-full bg-zinc-100 px-4 py-2 text-zinc-900\",\n136:                   (positions[index] ?? 0) < 0 ? \"origin-right\" : \"origin-left\"\n137:                 )}\n138:                 onClick={(e) => {\n139:                   e.stopPropagation();\n140:                   setIsOpen(false);\n141:                   onActionClick?.(action, index);\n142:                 }}\n143:               >\n144:                 <action.icon className=\"size-4 stroke-2\" />\n145:                 <span className=\"text-lg font-medium\">{action.label}</span>\n146:               </motion.button>\n147:             ))}\n148:         </AnimatePresence>\n149:       </div>\n150:     </div>\n151:   );\n152: };\n153: \n154: export { SplitActions };\n\n(End of file - total 154 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { AnimatePresence, motion } from \"framer-motion\";\nimport { Plus } from \"lucide-react\";\nimport type { LucideIcon } from \"lucide-react\";\nimport { useLayoutEffect, useRef, useState } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface Action {\n  icon: LucideIcon;\n  label: string;\n}\n\ninterface SplitActionsProps {\n  actions: Action[];\n  triggerIcon?: LucideIcon;\n  onActionClick?: (action: Action, index: number) => void;\n}\n",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/split-action.tsx",
+                "text": "\"use client\";\n\nimport { AnimatePresence, motion } from \"framer-motion\";\nimport { Plus } from \"lucide-react\";\nimport type { LucideIcon } from \"lucide-react\";\nimport { useLayoutEffect, useRef, useState } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface Action {\n  icon: LucideIcon;\n  label: string;\n}\n\ninterface SplitActionsProps {\n  actions: Action[];\n  triggerIcon?: LucideIcon;\n  onActionClick?: (action: Action, index: number) => void;\n}\n\nconst SplitActions = ({\n  actions,\n  triggerIcon: TriggerIcon = Plus,\n  onActionClick,\n}: SplitActionsProps) => {\n  const [isOpen, setIsOpen] = useState(false);\n\n  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);\n  const [positions, setPositions] = useState<number[]>([]);\n\n  useLayoutEffect(() => {\n    if (!isOpen) {\n      return;\n    }\n\n    const GAP = 8;\n\n    const calculatePositions = () => {\n      const widths = buttonRefs.current.map(\n        (button) => button?.offsetWidth ?? 0\n      );\n\n      const totalWidth =\n        widths.reduce((sum, width) => sum + width, 0) +\n        GAP * (widths.length - 1);\n\n      let cursor = -totalWidth / 2;\n\n      const newPositions = widths.map((width) => {\n        const center = cursor + width / 2;\n        cursor += width + GAP;\n        return center;\n      });\n\n      setPositions(newPositions);\n    };\n\n    requestAnimationFrame(calculatePositions);\n\n    window.addEventListener(\"resize\", calculatePositions);\n\n    return () => {\n      window.removeEventListener(\"resize\", calculatePositions);\n    };\n  }, [actions, isOpen]);\n\n  return (\n    <div className=\"flex items-center justify-center py-8\">\n      <div className=\"relative flex min-h-14 min-w-14 items-center justify-center\">\n        <AnimatePresence mode=\"wait\">\n          {!isOpen && (\n            <motion.button\n              key=\"trigger\"\n              whileTap={{ scale: 1.15 }}\n              initial={{\n                filter: \"blur(8px)\",\n                opacity: 0,\n                scale: 0.5,\n              }}\n              animate={{\n                filter: \"blur(0px)\",\n                opacity: 1,\n                scale: 1,\n              }}\n              exit={{\n                filter: \"blur(8px)\",\n                opacity: 0,\n                scale: 0.5,\n              }}\n              transition={{\n                damping: 24,\n                stiffness: 220,\n                type: \"spring\",\n              }}\n              className=\"rounded-full bg-black p-2 text-white dark:bg-white dark:text-black\"\n              onClick={() => setIsOpen(true)}\n            >\n              <TriggerIcon className=\"size-8 stroke-3\" />\n            </motion.button>\n          )}\n        </AnimatePresence>\n\n        <AnimatePresence>\n          {isOpen &&\n            actions.map((action, index) => (\n              <motion.button\n                key={action.label}\n                ref={(el) => {\n                  buttonRefs.current[index] = el;\n                }}\n                initial={{\n                  filter: \"blur(8px)\",\n                  opacity: 0,\n                  scale: 0,\n                  x: 0,\n                }}\n                animate={{\n                  filter: \"blur(0px)\",\n                  opacity: 1,\n                  scale: 1,\n                  x: positions[index] ?? 0,\n                }}\n                exit={{\n                  filter: \"blur(8px)\",\n                  opacity: 0,\n                  scale: 0.5,\n                  x: 0,\n                }}\n                transition={{\n                  damping: 24,\n                  stiffness: 220,\n                  type: \"spring\",\n                }}\n                className={cn(\n                  \"absolute flex items-center gap-2 rounded-full bg-zinc-100 px-4 py-2 text-zinc-900\",\n                  (positions[index] ?? 0) < 0 ? \"origin-right\" : \"origin-left\"\n                )}\n                onClick={(e) => {\n                  e.stopPropagation();\n                  setIsOpen(false);\n                  onActionClick?.(action, index);\n                }}\n              >\n                <action.icon className=\"size-4 stroke-2\" />\n                <span className=\"text-lg font-medium\">{action.label}</span>\n              </motion.button>\n            ))}\n        </AnimatePresence>\n      </div>\n    </div>\n  );\n};\n\nexport { SplitActions };",
+                "lineStart": 1,
+                "lineEnd": 154,
+                "totalLines": 154,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/split-action.tsx",
+            "time": {
+              "start": 1784797007198,
+              "end": 1784797007212
+            }
+          },
+          "id": "prt_f8e310c44001neyKgR3jo09REw",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_41b2f550ae0f49868fdb6bdb",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx",
+              "limit": 50
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import {\n4:   motion,\n5:   useMotionValue,\n6:   useReducedMotion,\n7:   useSpring,\n8: } from \"framer-motion\";\n9: import React, { useEffect, useRef, useState } from \"react\";\n10: import type { ComponentPropsWithoutRef } from \"react\";\n11: \n12: import { cn } from \"@/lib/utils\";\n13: \n14: type InputFieldProps = ComponentPropsWithoutRef<\"input\"> & {\n15:   wrapperClassName?: string;\n16: };\n17: \n18: type SmoothInputType = \"text\" | \"password\";\n19: \n20: type SmoothInputProps = Omit<InputFieldProps, \"type\"> & {\n21:   type?: SmoothInputType;\n22: };\n23: \n24: const PASSWORD_CHAR = /firefox|fxios/i.test(navigator.userAgent)\n25:   ? \"\\u25CF\"\n26:   : \"\\u2022\";\n27: \n28: const scrollCaretIntoView = (\n29:   target: HTMLInputElement,\n30:   absoluteWidth: number\n31: ) => {\n32:   const styles = window.getComputedStyle(target);\n33:   const paddingLeft = Number.parseFloat(styles.paddingLeft) || 0;\n34:   const paddingRight = Number.parseFloat(styles.paddingRight) || 0;\n35:   const maxScroll = Math.max(0, target.scrollWidth - target.clientWidth);\n36:   const visibleRight = target.scrollLeft + target.clientWidth - paddingRight;\n37:   const visibleLeft = target.scrollLeft + paddingLeft;\n38: \n39:   if (absoluteWidth > visibleRight) {\n40:     target.scrollLeft = Math.min(\n41:       absoluteWidth - target.clientWidth + paddingRight,\n42:       maxScroll\n43:     );\n44:     return;\n45:   }\n46: \n47:   if (absoluteWidth < visibleLeft) {\n48:     target.scrollLeft = Math.max(0, absoluteWidth - paddingLeft);\n49:   }\n50: };\n\n(Showing lines 1-50 of 280. Use offset=51 to continue.)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport {\n  motion,\n  useMotionValue,\n  useReducedMotion,\n  useSpring,\n} from \"framer-motion\";\nimport React, { useEffect, useRef, useState } from \"react\";\nimport type { ComponentPropsWithoutRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype InputFieldProps = ComponentPropsWithoutRef<\"input\"> & {\n  wrapperClassName?: string;\n};\n\ntype SmoothInputType = \"text\" | \"password\";\n\ntype SmoothInputProps = Omit<InputFieldProps, \"type\"> & {",
+              "truncated": true,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx",
+                "text": "\"use client\";\n\nimport {\n  motion,\n  useMotionValue,\n  useReducedMotion,\n  useSpring,\n} from \"framer-motion\";\nimport React, { useEffect, useRef, useState } from \"react\";\nimport type { ComponentPropsWithoutRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype InputFieldProps = ComponentPropsWithoutRef<\"input\"> & {\n  wrapperClassName?: string;\n};\n\ntype SmoothInputType = \"text\" | \"password\";\n\ntype SmoothInputProps = Omit<InputFieldProps, \"type\"> & {\n  type?: SmoothInputType;\n};\n\nconst PASSWORD_CHAR = /firefox|fxios/i.test(navigator.userAgent)\n  ? \"\\u25CF\"\n  : \"\\u2022\";\n\nconst scrollCaretIntoView = (\n  target: HTMLInputElement,\n  absoluteWidth: number\n) => {\n  const styles = window.getComputedStyle(target);\n  const paddingLeft = Number.parseFloat(styles.paddingLeft) || 0;\n  const paddingRight = Number.parseFloat(styles.paddingRight) || 0;\n  const maxScroll = Math.max(0, target.scrollWidth - target.clientWidth);\n  const visibleRight = target.scrollLeft + target.clientWidth - paddingRight;\n  const visibleLeft = target.scrollLeft + paddingLeft;\n\n  if (absoluteWidth > visibleRight) {\n    target.scrollLeft = Math.min(\n      absoluteWidth - target.clientWidth + paddingRight,\n      maxScroll\n    );\n    return;\n  }\n\n  if (absoluteWidth < visibleLeft) {\n    target.scrollLeft = Math.max(0, absoluteWidth - paddingLeft);\n  }\n};",
+                "lineStart": 1,
+                "lineEnd": 50,
+                "totalLines": 280,
+                "truncated": true
+              }
+            },
+            "title": "registry/new-york/smooth-input.tsx",
+            "time": {
+              "start": 1784797007614,
+              "end": 1784797007633
+            }
+          },
+          "id": "prt_f8e310da1001id942CcV3Cx6Lk",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_932508f213e74503baf83993",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import type { Variants } from \"motion/react\";\n4: import { motion, useAnimation } from \"motion/react\";\n5: import type { HTMLAttributes } from \"react\";\n6: import { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n7: \n8: import { cn } from \"@/lib/utils\";\n9: \n10: export interface Volume2IconHandle {\n11:   startAnimation: () => void;\n12:   stopAnimation: () => void;\n13: }\n14: \n15: interface Volume2IconProps extends HTMLAttributes<HTMLDivElement> {\n16:   size?: number;\n17: }\n18: \n19: const makeWaveVariants = (delay: number): Variants => ({\n20:   animate: {\n21:     opacity: 0,\n22:     scale: 0,\n23:     transition: {\n24:       opacity: {\n25:         delay,\n26:         duration: 0.2,\n27:         ease: \"easeInOut\",\n28:         repeat: 1,\n29:         repeatDelay: 0.2,\n30:         repeatType: \"reverse\",\n31:       },\n32:       scale: {\n33:         delay,\n34:         duration: 0.2,\n35:         ease: \"easeInOut\",\n36:         repeat: 1,\n37:         repeatDelay: 0.2,\n38:         repeatType: \"reverse\",\n39:       },\n40:     },\n41:   },\n42:   normal: { opacity: 1, scale: 1 },\n43: });\n44: \n45: const INNER_WAVE_VARIANTS = makeWaveVariants(0);\n46: const OUTER_WAVE_VARIANTS = makeWaveVariants(0.2);\n47: \n48: const Volume2Icon = forwardRef<Volume2IconHandle, Volume2IconProps>(\n49:   ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {\n50:     const controls = useAnimation();\n51:     const isControlledRef = useRef(false);\n52: \n53:     useImperativeHandle(ref, () => {\n54:       isControlledRef.current = true;\n55: \n56:       return {\n57:         startAnimation: () => controls.start(\"animate\"),\n58:         stopAnimation: () => controls.start(\"normal\"),\n59:       };\n60:     });\n61: \n62:     const handleMouseEnter = useCallback(\n63:       (e: React.MouseEvent<HTMLDivElement>) => {\n64:         if (isControlledRef.current) {\n65:           onMouseEnter?.(e);\n66:         } else {\n67:           controls.start(\"animate\");\n68:         }\n69:       },\n70:       [controls, onMouseEnter]\n71:     );\n72: \n73:     const handleMouseLeave = useCallback(\n74:       (e: React.MouseEvent<HTMLDivElement>) => {\n75:         if (isControlledRef.current) {\n76:           onMouseLeave?.(e);\n77:         } else {\n78:           controls.start(\"normal\");\n79:         }\n80:       },\n81:       [controls, onMouseLeave]\n82:     );\n83: \n84:     return (\n85:       <div\n86:         className={cn(className)}\n87:         onMouseEnter={handleMouseEnter}\n88:         onMouseLeave={handleMouseLeave}\n89:         {...props}\n90:       >\n91:         <svg\n92:           fill=\"none\"\n93:           height={size}\n94:           stroke=\"currentColor\"\n95:           strokeLinecap=\"round\"\n96:           strokeLinejoin=\"round\"\n97:           strokeWidth=\"2\"\n98:           viewBox=\"0 0 24 24\"\n99:           width={size}\n100:           xmlns=\"http://www.w3.org/2000/svg\"\n101:         >\n102:           <motion.path\n103:             animate={controls}\n104:             d=\"M16 9a5 5 0 0 1 0 6\"\n105:             initial=\"normal\"\n106:             variants={INNER_WAVE_VARIANTS}\n107:           />\n108:           <motion.path\n109:             animate={controls}\n110:             d=\"M19.364 18.364a9 9 0 0 0 0-12.728\"\n111:             initial=\"normal\"\n112:             variants={OUTER_WAVE_VARIANTS}\n113:           />\n114:           <path d=\"M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z\" />\n115:         </svg>\n116:       </div>\n117:     );\n118:   }\n119: );\n120: \n121: Volume2Icon.displayName = \"Volume2Icon\";\n122: \n123: export { Volume2Icon };\n\n(End of file - total 123 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface Volume2IconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface Volume2IconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst makeWaveVariants = (delay: number): Variants => ({\n  animate: {",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx",
+                "text": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface Volume2IconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface Volume2IconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst makeWaveVariants = (delay: number): Variants => ({\n  animate: {\n    opacity: 0,\n    scale: 0,\n    transition: {\n      opacity: {\n        delay,\n        duration: 0.2,\n        ease: \"easeInOut\",\n        repeat: 1,\n        repeatDelay: 0.2,\n        repeatType: \"reverse\",\n      },\n      scale: {\n        delay,\n        duration: 0.2,\n        ease: \"easeInOut\",\n        repeat: 1,\n        repeatDelay: 0.2,\n        repeatType: \"reverse\",\n      },\n    },\n  },\n  normal: { opacity: 1, scale: 1 },\n});\n\nconst INNER_WAVE_VARIANTS = makeWaveVariants(0);\nconst OUTER_WAVE_VARIANTS = makeWaveVariants(0.2);\n\nconst Volume2Icon = forwardRef<Volume2IconHandle, Volume2IconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: () => controls.start(\"animate\"),\n        stopAnimation: () => controls.start(\"normal\"),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseEnter?.(e);\n        } else {\n          controls.start(\"animate\");\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseLeave?.(e);\n        } else {\n          controls.start(\"normal\");\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          fill=\"none\"\n          height={size}\n          stroke=\"currentColor\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          strokeWidth=\"2\"\n          viewBox=\"0 0 24 24\"\n          width={size}\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <motion.path\n            animate={controls}\n            d=\"M16 9a5 5 0 0 1 0 6\"\n            initial=\"normal\"\n            variants={INNER_WAVE_VARIANTS}\n          />\n          <motion.path\n            animate={controls}\n            d=\"M19.364 18.364a9 9 0 0 0 0-12.728\"\n            initial=\"normal\"\n            variants={OUTER_WAVE_VARIANTS}\n          />\n          <path d=\"M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z\" />\n        </svg>\n      </div>\n    );\n  }\n);\n\nVolume2Icon.displayName = \"Volume2Icon\";\n\nexport { Volume2Icon };",
+                "lineStart": 1,
+                "lineEnd": 123,
+                "totalLines": 123,
+                "truncated": false
+              }
+            },
+            "title": "components/animated-icons/volume-2.tsx",
+            "time": {
+              "start": 1784797007918,
+              "end": 1784797007925
+            }
+          },
+          "id": "prt_f8e310f3d001Hh76hweTOhhunF",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_45b05710f18f4f1b849358fb",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/animated-icons/share.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/animated-icons/share.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import type { Variants } from \"motion/react\";\n4: import { motion, useAnimation } from \"motion/react\";\n5: import { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n6: \n7: import { cn } from \"@/lib/utils\";\n8: \n9: export interface ShareIconHandle {\n10:   startAnimation: () => void;\n11:   stopAnimation: () => void;\n12: }\n13: \n14: interface ShareIconProps extends React.HTMLAttributes<HTMLDivElement> {\n15:   size?: number;\n16: }\n17: \n18: const arrowVariants: Variants = {\n19:   animate: {\n20:     transition: {\n21:       damping: 10,\n22:       mass: 1,\n23:       stiffness: 220,\n24:       type: \"spring\",\n25:     },\n26:     y: -2,\n27:   },\n28:   normal: { y: 0 },\n29: };\n30: \n31: export const ShareIcon = forwardRef<ShareIconHandle, ShareIconProps>(\n32:   ({ className, onMouseEnter, onMouseLeave, size = 20, ...props }, ref) => {\n33:     const controls = useAnimation();\n34:     const controlledRef = useRef(false);\n35: \n36:     useImperativeHandle(ref, () => {\n37:       controlledRef.current = true;\n38:       return {\n39:         startAnimation: () => controls.start(\"animate\"),\n40:         stopAnimation: () => controls.start(\"normal\"),\n41:       };\n42:     });\n43: \n44:     const handleMouseEnter = useCallback(\n45:       (event: React.MouseEvent<HTMLDivElement>) => {\n46:         if (controlledRef.current) {\n47:           onMouseEnter?.(event);\n48:           return;\n49:         }\n50: \n51:         void controls.start(\"animate\");\n52:       },\n53:       [controls, onMouseEnter]\n54:     );\n55: \n56:     const handleMouseLeave = useCallback(\n57:       (event: React.MouseEvent<HTMLDivElement>) => {\n58:         if (controlledRef.current) {\n59:           onMouseLeave?.(event);\n60:           return;\n61:         }\n62: \n63:         void controls.start(\"normal\");\n64:       },\n65:       [controls, onMouseLeave]\n66:     );\n67: \n68:     return (\n69:       <div\n70:         className={cn(className)}\n71:         onMouseEnter={handleMouseEnter}\n72:         onMouseLeave={handleMouseLeave}\n73:         {...props}\n74:       >\n75:         <svg\n76:           className=\"overflow-visible\"\n77:           fill=\"none\"\n78:           height={size}\n79:           stroke=\"currentColor\"\n80:           strokeLinecap=\"round\"\n81:           strokeLinejoin=\"round\"\n82:           strokeWidth=\"2\"\n83:           viewBox=\"0 0 24 24\"\n84:           width={size}\n85:         >\n86:           <motion.g animate={controls} variants={arrowVariants}>\n87:             <path d=\"M12 2v13\" />\n88:             <path d=\"m16 6-4-4-4 4\" />\n89:           </motion.g>\n90:           <path d=\"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8\" />\n91:         </svg>\n92:       </div>\n93:     );\n94:   }\n95: );\n96: \n97: ShareIcon.displayName = \"ShareIcon\";\n\n(End of file - total 97 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface ShareIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface ShareIconProps extends React.HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst arrowVariants: Variants = {\n  animate: {\n    transition: {",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/animated-icons/share.tsx",
+                "text": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface ShareIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface ShareIconProps extends React.HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst arrowVariants: Variants = {\n  animate: {\n    transition: {\n      damping: 10,\n      mass: 1,\n      stiffness: 220,\n      type: \"spring\",\n    },\n    y: -2,\n  },\n  normal: { y: 0 },\n};\n\nexport const ShareIcon = forwardRef<ShareIconHandle, ShareIconProps>(\n  ({ className, onMouseEnter, onMouseLeave, size = 20, ...props }, ref) => {\n    const controls = useAnimation();\n    const controlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      controlledRef.current = true;\n      return {\n        startAnimation: () => controls.start(\"animate\"),\n        stopAnimation: () => controls.start(\"normal\"),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (event: React.MouseEvent<HTMLDivElement>) => {\n        if (controlledRef.current) {\n          onMouseEnter?.(event);\n          return;\n        }\n\n        void controls.start(\"animate\");\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (event: React.MouseEvent<HTMLDivElement>) => {\n        if (controlledRef.current) {\n          onMouseLeave?.(event);\n          return;\n        }\n\n        void controls.start(\"normal\");\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          className=\"overflow-visible\"\n          fill=\"none\"\n          height={size}\n          stroke=\"currentColor\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          strokeWidth=\"2\"\n          viewBox=\"0 0 24 24\"\n          width={size}\n        >\n          <motion.g animate={controls} variants={arrowVariants}>\n            <path d=\"M12 2v13\" />\n            <path d=\"m16 6-4-4-4 4\" />\n          </motion.g>\n          <path d=\"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8\" />\n        </svg>\n      </div>\n    );\n  }\n);\n\nShareIcon.displayName = \"ShareIcon\";",
+                "lineStart": 1,
+                "lineEnd": 97,
+                "totalLines": 97,
+                "truncated": false
+              }
+            },
+            "title": "components/animated-icons/share.tsx",
+            "time": {
+              "start": 1784797008232,
+              "end": 1784797008249
+            }
+          },
+          "id": "prt_f8e31107800167BALRt6ScWN1c",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_7faab9719c14451eacede6c4",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { motion, AnimatePresence } from \"motion/react\";\n4: import { useState } from \"react\";\n5: import type { FC } from \"react\";\n6: import { IoCheckmarkCircle } from \"react-icons/io5\";\n7: \n8: export interface InlineCopyToastProps {\n9:   code: string;\n10:   copyDuration?: number;\n11: }\n12: \n13: export const InlineToast: FC<InlineCopyToastProps> = ({\n14:   code,\n15:   copyDuration = 2000,\n16: }) => {\n17:   const [copied, setCopied] = useState<boolean>(false);\n18: \n19:   const handleCopy = async (): Promise<void> => {\n20:     await navigator.clipboard.writeText(code);\n21:     setCopied(true);\n22: \n23:     setTimeout(() => {\n24:       setCopied(false);\n25:     }, copyDuration);\n26:   };\n27: \n28:   return (\n29:     <motion.div\n30:       layout=\"position\"\n31:       transition={{ damping: 24, stiffness: 260, type: \"spring\" }}\n32:       className=\"relative flex h-16 min-w-[320px] items-center justify-center overflow-hidden rounded-full border border-zinc-200 bg-zinc-100 pl-7 pr-2 shadow-sm dark:border-zinc-700 dark:bg-zinc-900\"\n33:     >\n34:       <AnimatePresence>\n35:         {copied && (\n36:           <motion.div\n37:             initial={{ x: \"-100%\" }}\n38:             animate={{ x: \"0%\" }}\n39:             transition={{\n40:               duration: copyDuration / 1000,\n41:               ease: \"linear\",\n42:             }}\n43:             className=\"absolute inset-0 bg-zinc-200 dark:bg-zinc-800\"\n44:           />\n45:         )}\n46:       </AnimatePresence>\n47: \n48:       <div className=\"z-10 flex w-full items-center justify-between gap-7\">\n49:         <AnimatePresence mode=\"popLayout\">\n50:           {copied ? (\n51:             <motion.div\n52:               key=\"copied\"\n53:               initial={{ filter: \"blur(4px)\", opacity: 0, scale: 1.1 }}\n54:               animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n55:               exit={{ filter: \"blur(4px)\", opacity: 0, scale: 1.1 }}\n56:               transition={{\n57:                 bounce: 0,\n58:                 duration: 0.4,\n59:                 type: \"spring\",\n60:               }}\n61:               className=\"flex w-full items-center justify-center gap-2 text-black dark:text-white\"\n62:             >\n63:               <IoCheckmarkCircle size={28} />\n64:               <span className=\"text-lg font-bold\">Code Copied!</span>\n65:             </motion.div>\n66:           ) : (\n67:             <motion.div\n68:               key=\"copy\"\n69:               initial={{ filter: \"blur(4px)\", opacity: 0, scale: 0.95 }}\n70:               animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n71:               exit={{ filter: \"blur(4px)\", opacity: 0, scale: 0.95 }}\n72:               transition={{\n73:                 bounce: 0,\n74:                 duration: 0.4,\n75:                 type: \"spring\",\n76:               }}\n77:               className=\"flex w-full items-center justify-between\"\n78:             >\n79:               <span className=\"text-xl font-bold tracking-wide text-zinc-500 dark:text-zinc-400\">\n80:                 {code}\n81:               </span>\n82: \n83:               <motion.button\n84:                 onClick={handleCopy}\n85:                 whileHover={{ scale: 1.04, y: -1 }}\n86:                 whileTap={{ scale: 0.96 }}\n87:                 transition={{\n88:                   damping: 18,\n89:                   stiffness: 350,\n90:                   type: \"spring\",\n91:                 }}\n92:                 className=\"relative cursor-pointer overflow-hidden rounded-full bg-white px-[26px] py-2.5 text-base font-semibold text-zinc-900 shadow-[0_6px_12px_rgba(0,0,0,0.08)] dark:bg-zinc-100 dark:text-zinc-900\"\n93:               >\n94:                 <motion.span\n95:                   initial={{ x: \"-120%\" }}\n96:                   whileHover={{ x: \"120%\" }}\n97:                   transition={{ duration: 0.6, ease: \"easeInOut\" }}\n98:                   className=\"pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent\"\n99:                 />\n100: \n101:                 <span className=\"relative z-10\">Copy</span>\n102:               </motion.button>\n103:             </motion.div>\n104:           )}\n105:         </AnimatePresence>\n106:       </div>\n107:     </motion.div>\n108:   );\n109: };\n\n(End of file - total 109 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { useState } from \"react\";\nimport type { FC } from \"react\";\nimport { IoCheckmarkCircle } from \"react-icons/io5\";\n\nexport interface InlineCopyToastProps {\n  code: string;\n  copyDuration?: number;\n}\n\nexport const InlineToast: FC<InlineCopyToastProps> = ({\n  code,\n  copyDuration = 2000,\n}) => {\n  const [copied, setCopied] = useState<boolean>(false);\n\n  const handleCopy = async (): Promise<void> => {\n    await navigator.clipboard.writeText(code);",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx",
+                "text": "\"use client\";\n\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { useState } from \"react\";\nimport type { FC } from \"react\";\nimport { IoCheckmarkCircle } from \"react-icons/io5\";\n\nexport interface InlineCopyToastProps {\n  code: string;\n  copyDuration?: number;\n}\n\nexport const InlineToast: FC<InlineCopyToastProps> = ({\n  code,\n  copyDuration = 2000,\n}) => {\n  const [copied, setCopied] = useState<boolean>(false);\n\n  const handleCopy = async (): Promise<void> => {\n    await navigator.clipboard.writeText(code);\n    setCopied(true);\n\n    setTimeout(() => {\n      setCopied(false);\n    }, copyDuration);\n  };\n\n  return (\n    <motion.div\n      layout=\"position\"\n      transition={{ damping: 24, stiffness: 260, type: \"spring\" }}\n      className=\"relative flex h-16 min-w-[320px] items-center justify-center overflow-hidden rounded-full border border-zinc-200 bg-zinc-100 pl-7 pr-2 shadow-sm dark:border-zinc-700 dark:bg-zinc-900\"\n    >\n      <AnimatePresence>\n        {copied && (\n          <motion.div\n            initial={{ x: \"-100%\" }}\n            animate={{ x: \"0%\" }}\n            transition={{\n              duration: copyDuration / 1000,\n              ease: \"linear\",\n            }}\n            className=\"absolute inset-0 bg-zinc-200 dark:bg-zinc-800\"\n          />\n        )}\n      </AnimatePresence>\n\n      <div className=\"z-10 flex w-full items-center justify-between gap-7\">\n        <AnimatePresence mode=\"popLayout\">\n          {copied ? (\n            <motion.div\n              key=\"copied\"\n              initial={{ filter: \"blur(4px)\", opacity: 0, scale: 1.1 }}\n              animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n              exit={{ filter: \"blur(4px)\", opacity: 0, scale: 1.1 }}\n              transition={{\n                bounce: 0,\n                duration: 0.4,\n                type: \"spring\",\n              }}\n              className=\"flex w-full items-center justify-center gap-2 text-black dark:text-white\"\n            >\n              <IoCheckmarkCircle size={28} />\n              <span className=\"text-lg font-bold\">Code Copied!</span>\n            </motion.div>\n          ) : (\n            <motion.div\n              key=\"copy\"\n              initial={{ filter: \"blur(4px)\", opacity: 0, scale: 0.95 }}\n              animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n              exit={{ filter: \"blur(4px)\", opacity: 0, scale: 0.95 }}\n              transition={{\n                bounce: 0,\n                duration: 0.4,\n                type: \"spring\",\n              }}\n              className=\"flex w-full items-center justify-between\"\n            >\n              <span className=\"text-xl font-bold tracking-wide text-zinc-500 dark:text-zinc-400\">\n                {code}\n              </span>\n\n              <motion.button\n                onClick={handleCopy}\n                whileHover={{ scale: 1.04, y: -1 }}\n                whileTap={{ scale: 0.96 }}\n                transition={{\n                  damping: 18,\n                  stiffness: 350,\n                  type: \"spring\",\n                }}\n                className=\"relative cursor-pointer overflow-hidden rounded-full bg-white px-[26px] py-2.5 text-base font-semibold text-zinc-900 shadow-[0_6px_12px_rgba(0,0,0,0.08)] dark:bg-zinc-100 dark:text-zinc-900\"\n              >\n                <motion.span\n                  initial={{ x: \"-120%\" }}\n                  whileHover={{ x: \"120%\" }}\n                  transition={{ duration: 0.6, ease: \"easeInOut\" }}\n                  className=\"pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent\"\n                />\n\n                <span className=\"relative z-10\">Copy</span>\n              </motion.button>\n            </motion.div>\n          )}\n        </AnimatePresence>\n      </div>\n    </motion.div>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 109,
+                "totalLines": 109,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/inline-toast.tsx",
+            "time": {
+              "start": 1784797008534,
+              "end": 1784797008540
+            }
+          },
+          "id": "prt_f8e31119c001DVM4RR1eyKUrnZ",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 15165,
+            "input": 7809,
+            "output": 220,
+            "reasoning": 32,
+            "cache": {
+              "write": 0,
+              "read": 7104
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8e311341001pDX39vxJGZTN1J",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e31002b001eqGkUcztlIuD7a"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8e30d68a001oIFtSvPp2FUc3x",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 21107,
+          "input": 6109,
+          "output": 130,
+          "reasoning": 20,
+          "cache": {
+            "write": 0,
+            "read": 14848
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784797008742,
+          "completed": 1784797013943
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8e311365001Vn4EgaHHlNret0",
+        "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb"
+      },
+      "parts": [
+        {
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-start",
+          "id": "prt_f8e312219001Cf9Bx7chaQPrVP",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e311365001Vn4EgaHHlNret0"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me also check the accordion and view-on-map for more patterns, and the vibrate icon.",
+          "time": {
+            "start": 1784797012507,
+            "end": 1784797012812
+          },
+          "id": "prt_f8e31221b001f6m2Yemj9233Sw",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e311365001Vn4EgaHHlNret0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_a7a4f7c91c2a4243a2c4c209",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import type { Variants } from \"motion/react\";\n4: import { motion, useAnimation } from \"motion/react\";\n5: import type { HTMLAttributes } from \"react\";\n6: import { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n7: \n8: import { cn } from \"@/lib/utils\";\n9: \n10: export interface VibrateIconHandle {\n11:   startAnimation: () => void;\n12:   stopAnimation: () => void;\n13: }\n14: \n15: interface VibrateIconProps extends HTMLAttributes<HTMLDivElement> {\n16:   size?: number;\n17: }\n18: \n19: const RECT_VARIANTS: Variants = {\n20:   animate: {\n21:     rotate: [0, -5, 5, -5, 5, 0],\n22:     transition: {\n23:       duration: 0.4,\n24:       times: [0, 0.2, 0.4, 0.6, 0.8, 1],\n25:     },\n26:   },\n27:   normal: {\n28:     rotate: 0,\n29:   },\n30: };\n31: \n32: const VibrateIcon = forwardRef<VibrateIconHandle, VibrateIconProps>(\n33:   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n34:     const controls = useAnimation();\n35:     const isControlledRef = useRef(false);\n36: \n37:     useImperativeHandle(ref, () => {\n38:       isControlledRef.current = true;\n39: \n40:       return {\n41:         startAnimation: () => controls.start(\"animate\"),\n42:         stopAnimation: () => controls.start(\"normal\"),\n43:       };\n44:     });\n45: \n46:     const handleMouseEnter = useCallback(\n47:       (e: React.MouseEvent<HTMLDivElement>) => {\n48:         if (isControlledRef.current) {\n49:           onMouseEnter?.(e);\n50:         } else {\n51:           controls.start(\"animate\");\n52:         }\n53:       },\n54:       [controls, onMouseEnter]\n55:     );\n56: \n57:     const handleMouseLeave = useCallback(\n58:       (e: React.MouseEvent<HTMLDivElement>) => {\n59:         if (isControlledRef.current) {\n60:           onMouseLeave?.(e);\n61:         } else {\n62:           controls.start(\"normal\");\n63:         }\n64:       },\n65:       [controls, onMouseLeave]\n66:     );\n67: \n68:     return (\n69:       <div\n70:         className={cn(className)}\n71:         onMouseEnter={handleMouseEnter}\n72:         onMouseLeave={handleMouseLeave}\n73:         {...props}\n74:       >\n75:         <svg\n76:           fill=\"none\"\n77:           height={size}\n78:           stroke=\"currentColor\"\n79:           strokeLinecap=\"round\"\n80:           strokeLinejoin=\"round\"\n81:           strokeWidth=\"2\"\n82:           viewBox=\"0 0 24 24\"\n83:           width={size}\n84:           xmlns=\"http://www.w3.org/2000/svg\"\n85:         >\n86:           <path d=\"m2 8 2 2-2 2 2 2-2 2\" />\n87:           <path d=\"m22 8-2 2 2 2-2 2 2 2\" />\n88:           <motion.rect\n89:             animate={controls}\n90:             height=\"14\"\n91:             rx=\"1\"\n92:             style={{ transformOrigin: \"center\" }}\n93:             variants={RECT_VARIANTS}\n94:             width=\"8\"\n95:             x=\"8\"\n96:             y=\"5\"\n97:           />\n98:         </svg>\n99:       </div>\n100:     );\n101:   }\n102: );\n103: \n104: VibrateIcon.displayName = \"VibrateIcon\";\n105: \n106: export { VibrateIcon };\n\n(End of file - total 106 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface VibrateIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface VibrateIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst RECT_VARIANTS: Variants = {\n  animate: {",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx",
+                "text": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface VibrateIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface VibrateIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst RECT_VARIANTS: Variants = {\n  animate: {\n    rotate: [0, -5, 5, -5, 5, 0],\n    transition: {\n      duration: 0.4,\n      times: [0, 0.2, 0.4, 0.6, 0.8, 1],\n    },\n  },\n  normal: {\n    rotate: 0,\n  },\n};\n\nconst VibrateIcon = forwardRef<VibrateIconHandle, VibrateIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: () => controls.start(\"animate\"),\n        stopAnimation: () => controls.start(\"normal\"),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseEnter?.(e);\n        } else {\n          controls.start(\"animate\");\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseLeave?.(e);\n        } else {\n          controls.start(\"normal\");\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          fill=\"none\"\n          height={size}\n          stroke=\"currentColor\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          strokeWidth=\"2\"\n          viewBox=\"0 0 24 24\"\n          width={size}\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path d=\"m2 8 2 2-2 2 2 2-2 2\" />\n          <path d=\"m22 8-2 2 2 2-2 2 2 2\" />\n          <motion.rect\n            animate={controls}\n            height=\"14\"\n            rx=\"1\"\n            style={{ transformOrigin: \"center\" }}\n            variants={RECT_VARIANTS}\n            width=\"8\"\n            x=\"8\"\n            y=\"5\"\n          />\n        </svg>\n      </div>\n    );\n  }\n);\n\nVibrateIcon.displayName = \"VibrateIcon\";\n\nexport { VibrateIcon };",
+                "lineStart": 1,
+                "lineEnd": 106,
+                "totalLines": 106,
+                "truncated": false
+              }
+            },
+            "title": "components/animated-icons/vibrate.tsx",
+            "time": {
+              "start": 1784797013063,
+              "end": 1784797013069
+            }
+          },
+          "id": "prt_f8e31234e001UDzPwqUq603p74",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e311365001Vn4EgaHHlNret0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_78f817cdf7124eb8a9f7ee01",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx</path>\n<type>file</type>\n<content>\n1: import { X, Loader2 } from \"lucide-react\";\n2: import { motion, AnimatePresence } from \"motion/react\";\n3: import React, { useState } from \"react\";\n4: import { FaMap } from \"react-icons/fa6\";\n5: \n6: interface ViewOnMapProps {\n7:   locationName?: string;\n8:   address?: string;\n9:   mapImageUrl?: string;\n10:   className?: string;\n11: }\n12: \n13: export const ViewOnMap: React.FC<ViewOnMapProps> = ({\n14:   address = \"Boston Public Garden\",\n15:   mapImageUrl = \"https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop\",\n16:   className = \"\",\n17: }) => {\n18:   const [isOpen, setIsOpen] = useState(false);\n19:   const [isMapLoaded, setIsMapLoaded] = useState(false);\n20:   const [isDark] = useState(false);\n21: \n22:   const toggleOpen = () => {\n23:     setIsOpen(!isOpen);\n24:     if (isOpen) {\n25:       setIsMapLoaded(false);\n26:     }\n27:   };\n28: \n29:   const springConfig = {\n30:     damping: 30,\n31:     mass: 0.8,\n32:     stiffness: 400,\n33:     type: \"spring\" as const,\n34:   };\n35: \n36:   const publicMapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;\n37: \n38:   return (\n39:     <div className={`transition-colors duration-500`}>\n40:       <div\n41:         className={`flex min-h-full w-full flex-col items-center justify-center bg-transparent px-4`}\n42:       >\n43:         <div\n44:           className={`relative flex w-full items-center justify-center ${className}`}\n45:         >\n46:           <AnimatePresence mode=\"popLayout\">\n47:             {isOpen ? (\n48:               /* --- EXPANDED MAP --- */\n49:               <motion.div\n50:                 key=\"map\"\n51:                 layoutId=\"map-container\"\n52:                 className=\"relative aspect-square w-[calc(100vw-64px)] overflow-hidden bg-zinc-200 shadow-lg transition-colors duration-300 sm:w-[380px] dark:bg-zinc-900\"\n53:                 style={{ borderRadius: 32 }}\n54:                 transition={springConfig}\n55:               >\n56:                 <motion.div\n57:                   initial={{ opacity: 0 }}\n58:                   animate={{ opacity: 1 }}\n59:                   transition={{ delay: 0.15 }}\n60:                   className=\"absolute inset-0 h-full w-full brightness-[1.02] contrast-[1.05] grayscale-[0.9] saturate-[0.8] sepia-[0.1]\"\n61:                 >\n62:                   <iframe\n63:                     title=\"Google Map\"\n64:                     width=\"100%\"\n65:                     height=\"100%\"\n66:                     style={{\n67:                       border: 0,\n68:                       filter: isDark\n69:                         ? \"invert(90%) hue-rotate(180deg)\"\n70:                         : \"invert(15%) hue-rotate(180deg)\",\n71:                     }}\n72:                     src={publicMapUrl}\n73:                     allowFullScreen\n74:                     onLoad={() => setIsMapLoaded(true)}\n75:                     className={`transition-opacity duration-700 ${isMapLoaded ? \"opacity-100\" : \"opacity-0\"}`}\n76:                   />\n77:                 </motion.div>\n78: \n79:                 {!isMapLoaded && (\n80:                   <div className=\"absolute inset-0 flex items-center justify-center bg-zinc-100 transition-colors dark:bg-zinc-800\">\n81:                     <Loader2 className=\"h-8 w-8 animate-spin text-gray-400\" />\n82:                   </div>\n83:                 )}\n84: \n85:                 {/* CLOSE BUTTON  */}\n86:                 <motion.button\n87:                   initial={{ opacity: 0, scale: 0.5 }}\n88:                   animate={{ opacity: 1, scale: 1 }}\n89:                   onClick={toggleOpen}\n90:                   className=\"absolute top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-500 shadow-lg transition-all hover:bg-zinc-50 active:scale-90 sm:top-6 sm:right-6 sm:h-11 sm:w-11 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700\"\n91:                 >\n92:                   <X className=\"h-5 w-5 sm:h-6 sm:w-6\" strokeWidth={3} />\n93:                 </motion.button>\n94:               </motion.div>\n95:             ) : (\n96:               /* --- PILL BUTTON --- */\n97:               <motion.div\n98:                 key=\"button\"\n99:                 layoutId=\"map-container\"\n100:                 onClick={toggleOpen}\n101:                 className=\"group relative flex cursor-pointer items-center justify-center overflow-hidden bg-zinc-200 shadow-sm transition-colors duration-300 dark:bg-zinc-800\"\n102:                 style={{ borderRadius: 26, height: 52, width: 180 }}\n103:                 initial={{ opacity: 0, scale: 0.9 }}\n104:                 animate={{ opacity: 1, scale: 1 }}\n105:                 exit={{ opacity: 0, scale: 0.95 }}\n106:                 transition={springConfig}\n107:                 whileHover={{ scale: 1.02 }}\n108:                 whileTap={{ scale: 0.98 }}\n109:               >\n110:                 <motion.div\n111:                   layoutId=\"map-bg\"\n112:                   className=\"absolute inset-0 opacity-20 brightness-110 grayscale transition-opacity dark:opacity-10 dark:brightness-50\"\n113:                   style={{\n114:                     backgroundImage: `url(${mapImageUrl})`,\n115:                     backgroundPosition: \"center\",\n116:                     backgroundSize: \"cover\",\n117:                   }}\n118:                 />\n119: \n120:                 <motion.div className=\"relative z-10 flex items-center space-x-3 px-4 py-4\">\n121:                   <FaMap className=\"h-5 w-5 text-zinc-500 transition-colors dark:text-white/60\" />\n122:                   <span className=\"text-[18px] font-semibold tracking-tight text-zinc-800 transition-colors dark:text-white\">\n123:                     View on Map\n124:                   </span>\n125:                 </motion.div>\n126:               </motion.div>\n127:             )}\n128:           </AnimatePresence>\n129:         </div>\n130:       </div>\n131:     </div>\n132:   );\n133: };\n\n(End of file - total 133 lines)\n</content>",
+            "metadata": {
+              "preview": "import { X, Loader2 } from \"lucide-react\";\nimport { motion, AnimatePresence } from \"motion/react\";\nimport React, { useState } from \"react\";\nimport { FaMap } from \"react-icons/fa6\";\n\ninterface ViewOnMapProps {\n  locationName?: string;\n  address?: string;\n  mapImageUrl?: string;\n  className?: string;\n}\n\nexport const ViewOnMap: React.FC<ViewOnMapProps> = ({\n  address = \"Boston Public Garden\",\n  mapImageUrl = \"https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop\",\n  className = \"\",\n}) => {\n  const [isOpen, setIsOpen] = useState(false);\n  const [isMapLoaded, setIsMapLoaded] = useState(false);\n  const [isDark] = useState(false);",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx",
+                "text": "import { X, Loader2 } from \"lucide-react\";\nimport { motion, AnimatePresence } from \"motion/react\";\nimport React, { useState } from \"react\";\nimport { FaMap } from \"react-icons/fa6\";\n\ninterface ViewOnMapProps {\n  locationName?: string;\n  address?: string;\n  mapImageUrl?: string;\n  className?: string;\n}\n\nexport const ViewOnMap: React.FC<ViewOnMapProps> = ({\n  address = \"Boston Public Garden\",\n  mapImageUrl = \"https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop\",\n  className = \"\",\n}) => {\n  const [isOpen, setIsOpen] = useState(false);\n  const [isMapLoaded, setIsMapLoaded] = useState(false);\n  const [isDark] = useState(false);\n\n  const toggleOpen = () => {\n    setIsOpen(!isOpen);\n    if (isOpen) {\n      setIsMapLoaded(false);\n    }\n  };\n\n  const springConfig = {\n    damping: 30,\n    mass: 0.8,\n    stiffness: 400,\n    type: \"spring\" as const,\n  };\n\n  const publicMapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;\n\n  return (\n    <div className={`transition-colors duration-500`}>\n      <div\n        className={`flex min-h-full w-full flex-col items-center justify-center bg-transparent px-4`}\n      >\n        <div\n          className={`relative flex w-full items-center justify-center ${className}`}\n        >\n          <AnimatePresence mode=\"popLayout\">\n            {isOpen ? (\n              /* --- EXPANDED MAP --- */\n              <motion.div\n                key=\"map\"\n                layoutId=\"map-container\"\n                className=\"relative aspect-square w-[calc(100vw-64px)] overflow-hidden bg-zinc-200 shadow-lg transition-colors duration-300 sm:w-[380px] dark:bg-zinc-900\"\n                style={{ borderRadius: 32 }}\n                transition={springConfig}\n              >\n                <motion.div\n                  initial={{ opacity: 0 }}\n                  animate={{ opacity: 1 }}\n                  transition={{ delay: 0.15 }}\n                  className=\"absolute inset-0 h-full w-full brightness-[1.02] contrast-[1.05] grayscale-[0.9] saturate-[0.8] sepia-[0.1]\"\n                >\n                  <iframe\n                    title=\"Google Map\"\n                    width=\"100%\"\n                    height=\"100%\"\n                    style={{\n                      border: 0,\n                      filter: isDark\n                        ? \"invert(90%) hue-rotate(180deg)\"\n                        : \"invert(15%) hue-rotate(180deg)\",\n                    }}\n                    src={publicMapUrl}\n                    allowFullScreen\n                    onLoad={() => setIsMapLoaded(true)}\n                    className={`transition-opacity duration-700 ${isMapLoaded ? \"opacity-100\" : \"opacity-0\"}`}\n                  />\n                </motion.div>\n\n                {!isMapLoaded && (\n                  <div className=\"absolute inset-0 flex items-center justify-center bg-zinc-100 transition-colors dark:bg-zinc-800\">\n                    <Loader2 className=\"h-8 w-8 animate-spin text-gray-400\" />\n                  </div>\n                )}\n\n                {/* CLOSE BUTTON  */}\n                <motion.button\n                  initial={{ opacity: 0, scale: 0.5 }}\n                  animate={{ opacity: 1, scale: 1 }}\n                  onClick={toggleOpen}\n                  className=\"absolute top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-500 shadow-lg transition-all hover:bg-zinc-50 active:scale-90 sm:top-6 sm:right-6 sm:h-11 sm:w-11 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700\"\n                >\n                  <X className=\"h-5 w-5 sm:h-6 sm:w-6\" strokeWidth={3} />\n                </motion.button>\n              </motion.div>\n            ) : (\n              /* --- PILL BUTTON --- */\n              <motion.div\n                key=\"button\"\n                layoutId=\"map-container\"\n                onClick={toggleOpen}\n                className=\"group relative flex cursor-pointer items-center justify-center overflow-hidden bg-zinc-200 shadow-sm transition-colors duration-300 dark:bg-zinc-800\"\n                style={{ borderRadius: 26, height: 52, width: 180 }}\n                initial={{ opacity: 0, scale: 0.9 }}\n                animate={{ opacity: 1, scale: 1 }}\n                exit={{ opacity: 0, scale: 0.95 }}\n                transition={springConfig}\n                whileHover={{ scale: 1.02 }}\n                whileTap={{ scale: 0.98 }}\n              >\n                <motion.div\n                  layoutId=\"map-bg\"\n                  className=\"absolute inset-0 opacity-20 brightness-110 grayscale transition-opacity dark:opacity-10 dark:brightness-50\"\n                  style={{\n                    backgroundImage: `url(${mapImageUrl})`,\n                    backgroundPosition: \"center\",\n                    backgroundSize: \"cover\",\n                  }}\n                />\n\n                <motion.div className=\"relative z-10 flex items-center space-x-3 px-4 py-4\">\n                  <FaMap className=\"h-5 w-5 text-zinc-500 transition-colors dark:text-white/60\" />\n                  <span className=\"text-[18px] font-semibold tracking-tight text-zinc-800 transition-colors dark:text-white\">\n                    View on Map\n                  </span>\n                </motion.div>\n              </motion.div>\n            )}\n          </AnimatePresence>\n        </div>\n      </div>\n    </div>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 133,
+                "totalLines": 133,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/view-on-map.tsx",
+            "time": {
+              "start": 1784797013327,
+              "end": 1784797013346
+            }
+          },
+          "id": "prt_f8e312465001nD9EUKZwDNpLxE",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e311365001Vn4EgaHHlNret0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_af984ea0f9b14891ad2262aa",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/accordion.tsx",
+              "offset": 190,
+              "limit": 100
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/accordion.tsx</path>\n<type>file</type>\n<content>\n190: \n191:     return () => {\n192:       observer.disconnect();\n193:     };\n194:   }, []);\n195: \n196:   return (\n197:     <motion.div\n198:       layout=\"position\"\n199:       initial={false}\n200:       style={{ marginTop: separatedFromPrevious ? 12 : 0 }}\n201:       transition={reduce ? { duration: 0 } : ROW_TRANSITION}\n202:     >\n203:       <motion.div\n204:         data-state={open ? \"open\" : \"closed\"}\n205:         initial={false}\n206:         animate={getAnimateStyle(startsGroup, endsGroup)}\n207:         transition={reduce ? { duration: 0 } : ROW_TRANSITION}\n208:         className={cn(\n209:           \"overflow-hidden bg-card text-card-foreground\",\n210:           item.disabled && \"opacity-50\",\n211:           classNames?.item\n212:         )}\n213:       >\n214:         <button\n215:           id={triggerId}\n216:           type=\"button\"\n217:           disabled={item.disabled}\n218:           aria-expanded={open}\n219:           aria-controls={contentId}\n220:           onClick={onToggle}\n221:           className={cn(\n222:             \"flex min-h-[54px] w-full items-center gap-4 px-5 text-left outline-none transition-colors\",\n223:             \"focus-visible:bg-muted/25\",\n224:             \"disabled:pointer-events-none\",\n225:             classNames?.trigger\n226:           )}\n227:         >\n228:           <TriggerIcon icon={item.icon} className={classNames?.icon} />\n229:           <span\n230:             className={cn(\n231:               \"min-w-0 flex-1 truncate text-[15px] font-medium text-foreground\",\n232:               classNames?.title\n233:             )}\n234:           >\n235:             {item.title}\n236:           </span>\n237:           <motion.span\n238:             aria-hidden\n239:             animate={{ rotate: open ? 180 : 0 }}\n240:             transition={reduce ? { duration: 0 } : CHEVRON_TRANSITION}\n241:             className={cn(\n242:               \"grid h-6 w-6 shrink-0 place-items-center text-muted-foreground\",\n243:               classNames?.chevron\n244:             )}\n245:           >\n246:             <ChevronDown className=\"h-4 w-4\" />\n247:           </motion.span>\n248:         </button>\n249: \n250:         <motion.div\n251:           layout=\"size\"\n252:           id={contentId}\n253:           role=\"region\"\n254:           aria-labelledby={triggerId}\n255:           aria-hidden={!open}\n256:           initial={false}\n257:           style={{ height: open && item.description ? contentHeight : 0 }}\n258:           transition={getTransition(reduce, open)}\n259:           className={cn(\"overflow-hidden\", classNames?.content)}\n260:         >\n261:           <motion.div\n262:             ref={contentRef}\n263:             animate={{\n264:               opacity: open ? 1 : 0,\n265:             }}\n266:             transition={reduce ? { duration: 0 } : DESCRIPTION_TRANSITION}\n267:             className=\"px-5 pb-5\"\n268:           >\n269:             <div\n270:               className={cn(\n271:                 \"text-[15px] leading-6 text-muted-foreground\",\n272:                 classNames?.description\n273:               )}\n274:             >\n275:               {item.description}\n276:             </div>\n277:           </motion.div>\n278:         </motion.div>\n279:       </motion.div>\n280:     </motion.div>\n281:   );\n282: };\n283: \n284: export const Accordion = function Accordion({\n285:   items,\n286:   value,\n287:   defaultValue = null,\n288:   onValueChange,\n289:   collapsible = true,\n\n(Showing lines 190-289 of 346. Use offset=290 to continue.)\n</content>",
+            "metadata": {
+              "preview": "\n    return () => {\n      observer.disconnect();\n    };\n  }, []);\n\n  return (\n    <motion.div\n      layout=\"position\"\n      initial={false}\n      style={{ marginTop: separatedFromPrevious ? 12 : 0 }}\n      transition={reduce ? { duration: 0 } : ROW_TRANSITION}\n    >\n      <motion.div\n        data-state={open ? \"open\" : \"closed\"}\n        initial={false}\n        animate={getAnimateStyle(startsGroup, endsGroup)}\n        transition={reduce ? { duration: 0 } : ROW_TRANSITION}\n        className={cn(\n          \"overflow-hidden bg-card text-card-foreground\",",
+              "truncated": true,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/accordion.tsx",
+                "text": "\n    return () => {\n      observer.disconnect();\n    };\n  }, []);\n\n  return (\n    <motion.div\n      layout=\"position\"\n      initial={false}\n      style={{ marginTop: separatedFromPrevious ? 12 : 0 }}\n      transition={reduce ? { duration: 0 } : ROW_TRANSITION}\n    >\n      <motion.div\n        data-state={open ? \"open\" : \"closed\"}\n        initial={false}\n        animate={getAnimateStyle(startsGroup, endsGroup)}\n        transition={reduce ? { duration: 0 } : ROW_TRANSITION}\n        className={cn(\n          \"overflow-hidden bg-card text-card-foreground\",\n          item.disabled && \"opacity-50\",\n          classNames?.item\n        )}\n      >\n        <button\n          id={triggerId}\n          type=\"button\"\n          disabled={item.disabled}\n          aria-expanded={open}\n          aria-controls={contentId}\n          onClick={onToggle}\n          className={cn(\n            \"flex min-h-[54px] w-full items-center gap-4 px-5 text-left outline-none transition-colors\",\n            \"focus-visible:bg-muted/25\",\n            \"disabled:pointer-events-none\",\n            classNames?.trigger\n          )}\n        >\n          <TriggerIcon icon={item.icon} className={classNames?.icon} />\n          <span\n            className={cn(\n              \"min-w-0 flex-1 truncate text-[15px] font-medium text-foreground\",\n              classNames?.title\n            )}\n          >\n            {item.title}\n          </span>\n          <motion.span\n            aria-hidden\n            animate={{ rotate: open ? 180 : 0 }}\n            transition={reduce ? { duration: 0 } : CHEVRON_TRANSITION}\n            className={cn(\n              \"grid h-6 w-6 shrink-0 place-items-center text-muted-foreground\",\n              classNames?.chevron\n            )}\n          >\n            <ChevronDown className=\"h-4 w-4\" />\n          </motion.span>\n        </button>\n\n        <motion.div\n          layout=\"size\"\n          id={contentId}\n          role=\"region\"\n          aria-labelledby={triggerId}\n          aria-hidden={!open}\n          initial={false}\n          style={{ height: open && item.description ? contentHeight : 0 }}\n          transition={getTransition(reduce, open)}\n          className={cn(\"overflow-hidden\", classNames?.content)}\n        >\n          <motion.div\n            ref={contentRef}\n            animate={{\n              opacity: open ? 1 : 0,\n            }}\n            transition={reduce ? { duration: 0 } : DESCRIPTION_TRANSITION}\n            className=\"px-5 pb-5\"\n          >\n            <div\n              className={cn(\n                \"text-[15px] leading-6 text-muted-foreground\",\n                classNames?.description\n              )}\n            >\n              {item.description}\n            </div>\n          </motion.div>\n        </motion.div>\n      </motion.div>\n    </motion.div>\n  );\n};\n\nexport const Accordion = function Accordion({\n  items,\n  value,\n  defaultValue = null,\n  onValueChange,\n  collapsible = true,",
+                "lineStart": 190,
+                "lineEnd": 289,
+                "totalLines": 346,
+                "truncated": true
+              }
+            },
+            "title": "registry/new-york/accordion.tsx",
+            "time": {
+              "start": 1784797013824,
+              "end": 1784797013844
+            }
+          },
+          "id": "prt_f8e31256b001XK8l73QhM0sF5c",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e311365001Vn4EgaHHlNret0"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21107,
+            "input": 6109,
+            "output": 130,
+            "reasoning": 20,
+            "cache": {
+              "write": 0,
+              "read": 14848
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8e312793001jBz0OmSB7SjjM9",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e311365001Vn4EgaHHlNret0"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8e30d68a001oIFtSvPp2FUc3x",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 25215,
+          "input": 4155,
+          "output": 116,
+          "reasoning": 16,
+          "cache": {
+            "write": 0,
+            "read": 20928
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784797013949,
+          "completed": 1784797017759
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8e3127bc001ezfAWU1ozHicQU",
+        "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb"
+      },
+      "parts": [
+        {
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-start",
+          "id": "prt_f8e3130c00019uwZ2EYbbD5J3b",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3127bc001ezfAWU1ozHicQU"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me read the top of the accordion file to see the transition definitions.",
+          "time": {
+            "start": 1784797016257,
+            "end": 1784797016490
+          },
+          "id": "prt_f8e3130c1001fGBiYzA5Jcyu6h",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3127bc001ezfAWU1ozHicQU"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_bc9c882545e943c291c33770",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/accordion.tsx",
+              "limit": 50
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/accordion.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { ChevronDown } from \"lucide-react\";\n4: import { motion, useReducedMotion } from \"motion/react\";\n5: import type { Transition } from \"motion/react\";\n6: import { useCallback, useId, useLayoutEffect, useRef, useState } from \"react\";\n7: import type { ReactNode } from \"react\";\n8: \n9: import { EASE_OUT } from \"@/lib/ease\";\n10: import { cn } from \"@/lib/utils\";\n11: \n12: export interface AccordionItem {\n13:   id: string;\n14:   title: ReactNode;\n15:   description?: ReactNode;\n16:   icon?: ReactNode;\n17:   disabled?: boolean;\n18: }\n19: \n20: export interface AccordionClassNames {\n21:   root?: string;\n22:   item?: string;\n23:   trigger?: string;\n24:   icon?: string;\n25:   title?: string;\n26:   chevron?: string;\n27:   content?: string;\n28:   description?: string;\n29: }\n30: \n31: export interface AccordionProps {\n32:   items: AccordionItem[];\n33:   value?: string | null;\n34:   defaultValue?: string | null;\n35:   onValueChange?: (value: string | null) => void;\n36:   collapsible?: boolean;\n37:   className?: string;\n38:   classNames?: AccordionClassNames;\n39: }\n40: \n41: // Local springs keep the accordion's connected groups moving together while\n42: // avoiding scale projection on text-heavy row contents.\n43: // Gap spring: must not overshoot y — positive y overshoot drifts items below\n44: // their mt-3 resting point and briefly overlaps the next item.\n45: const ROW_TRANSITION: Transition = {\n46:   bounce: 0.18,\n47:   duration: 0.45,\n48:   type: \"spring\",\n49: };\n50: \n\n(Showing lines 1-50 of 346. Use offset=51 to continue.)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { ChevronDown } from \"lucide-react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport type { Transition } from \"motion/react\";\nimport { useCallback, useId, useLayoutEffect, useRef, useState } from \"react\";\nimport type { ReactNode } from \"react\";\n\nimport { EASE_OUT } from \"@/lib/ease\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface AccordionItem {\n  id: string;\n  title: ReactNode;\n  description?: ReactNode;\n  icon?: ReactNode;\n  disabled?: boolean;\n}\n\nexport interface AccordionClassNames {",
+              "truncated": true,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/accordion.tsx",
+                "text": "\"use client\";\n\nimport { ChevronDown } from \"lucide-react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport type { Transition } from \"motion/react\";\nimport { useCallback, useId, useLayoutEffect, useRef, useState } from \"react\";\nimport type { ReactNode } from \"react\";\n\nimport { EASE_OUT } from \"@/lib/ease\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface AccordionItem {\n  id: string;\n  title: ReactNode;\n  description?: ReactNode;\n  icon?: ReactNode;\n  disabled?: boolean;\n}\n\nexport interface AccordionClassNames {\n  root?: string;\n  item?: string;\n  trigger?: string;\n  icon?: string;\n  title?: string;\n  chevron?: string;\n  content?: string;\n  description?: string;\n}\n\nexport interface AccordionProps {\n  items: AccordionItem[];\n  value?: string | null;\n  defaultValue?: string | null;\n  onValueChange?: (value: string | null) => void;\n  collapsible?: boolean;\n  className?: string;\n  classNames?: AccordionClassNames;\n}\n\n// Local springs keep the accordion's connected groups moving together while\n// avoiding scale projection on text-heavy row contents.\n// Gap spring: must not overshoot y — positive y overshoot drifts items below\n// their mt-3 resting point and briefly overlaps the next item.\nconst ROW_TRANSITION: Transition = {\n  bounce: 0.18,\n  duration: 0.45,\n  type: \"spring\",\n};\n",
+                "lineStart": 1,
+                "lineEnd": 50,
+                "totalLines": 346,
+                "truncated": true
+              }
+            },
+            "title": "registry/new-york/accordion.tsx",
+            "time": {
+              "start": 1784797016779,
+              "end": 1784797016796
+            }
+          },
+          "id": "prt_f8e3131ae001aWrEUuqpqSBO0H",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3127bc001ezfAWU1ozHicQU"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_1c03e005255e408ba6ba06a1",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/components/ui/toggle.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/components/ui/toggle.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { cva } from \"class-variance-authority\";\n4: import type { VariantProps } from \"class-variance-authority\";\n5: import { Toggle as TogglePrimitive } from \"radix-ui\";\n6: import * as React from \"react\";\n7: \n8: import { useFeedback } from \"@/hooks/use-feedback\";\n9: import { cn } from \"@/lib/utils\";\n10: \n11: const toggleVariants = cva(\n12:   \"inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-[color,box-shadow] outline-none hover:bg-muted hover:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n13:   {\n14:     defaultVariants: {\n15:       size: \"default\",\n16:       variant: \"default\",\n17:     },\n18:     variants: {\n19:       size: {\n20:         default: \"h-9 min-w-9 px-2\",\n21:         icon: \"size-9\",\n22:         \"icon-sm\": \"size-8\",\n23:         lg: \"h-10 min-w-10 px-2.5\",\n24:         sm: \"h-8 min-w-8 px-1.5\",\n25:       },\n26:       variant: {\n27:         default: \"bg-transparent\",\n28:         ghost:\n29:           \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 data-[state=on]:bg-accent/80 data-[state=on]:text-accent-foreground\",\n30:         outline:\n31:           \"border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground\",\n32:         secondary:\n33:           \"bg-secondary text-secondary-foreground hover:bg-secondary/80 data-[state=on]:bg-secondary/60\",\n34:       },\n35:     },\n36:   }\n37: );\n38: \n39: const Toggle = ({\n40:   className,\n41:   variant,\n42:   size,\n43:   onPressedChange,\n44:   ...props\n45: }: React.ComponentProps<typeof TogglePrimitive.Root> &\n46:   VariantProps<typeof toggleVariants>) => {\n47:   const playOn = useFeedback({ sound: \"toggleOn\" });\n48:   const playOff = useFeedback({ sound: \"toggleOff\" });\n49: \n50:   const handlePressedChange = (pressed: boolean) => {\n51:     if (pressed) {\n52:       playOn();\n53:     } else {\n54:       playOff();\n55:     }\n56:     onPressedChange?.(pressed);\n57:   };\n58: \n59:   return (\n60:     <TogglePrimitive.Root\n61:       data-slot=\"toggle\"\n62:       className={cn(toggleVariants({ className, size, variant }))}\n63:       onPressedChange={handlePressedChange}\n64:       {...props}\n65:     />\n66:   );\n67: };\n68: \n69: export { Toggle, toggleVariants };\n\n(End of file - total 69 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { Toggle as TogglePrimitive } from \"radix-ui\";\nimport * as React from \"react\";\n\nimport { useFeedback } from \"@/hooks/use-feedback\";\nimport { cn } from \"@/lib/utils\";\n\nconst toggleVariants = cva(\n  \"inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-[color,box-shadow] outline-none hover:bg-muted hover:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 min-w-9 px-2\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/components/ui/toggle.tsx",
+                "text": "\"use client\";\n\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { Toggle as TogglePrimitive } from \"radix-ui\";\nimport * as React from \"react\";\n\nimport { useFeedback } from \"@/hooks/use-feedback\";\nimport { cn } from \"@/lib/utils\";\n\nconst toggleVariants = cva(\n  \"inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-[color,box-shadow] outline-none hover:bg-muted hover:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 min-w-9 px-2\",\n        icon: \"size-9\",\n        \"icon-sm\": \"size-8\",\n        lg: \"h-10 min-w-10 px-2.5\",\n        sm: \"h-8 min-w-8 px-1.5\",\n      },\n      variant: {\n        default: \"bg-transparent\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 data-[state=on]:bg-accent/80 data-[state=on]:text-accent-foreground\",\n        outline:\n          \"border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80 data-[state=on]:bg-secondary/60\",\n      },\n    },\n  }\n);\n\nconst Toggle = ({\n  className,\n  variant,\n  size,\n  onPressedChange,\n  ...props\n}: React.ComponentProps<typeof TogglePrimitive.Root> &\n  VariantProps<typeof toggleVariants>) => {\n  const playOn = useFeedback({ sound: \"toggleOn\" });\n  const playOff = useFeedback({ sound: \"toggleOff\" });\n\n  const handlePressedChange = (pressed: boolean) => {\n    if (pressed) {\n      playOn();\n    } else {\n      playOff();\n    }\n    onPressedChange?.(pressed);\n  };\n\n  return (\n    <TogglePrimitive.Root\n      data-slot=\"toggle\"\n      className={cn(toggleVariants({ className, size, variant }))}\n      onPressedChange={handlePressedChange}\n      {...props}\n    />\n  );\n};\n\nexport { Toggle, toggleVariants };",
+                "lineStart": 1,
+                "lineEnd": 69,
+                "totalLines": 69,
+                "truncated": false
+              }
+            },
+            "title": "components/ui/toggle.tsx",
+            "time": {
+              "start": 1784797017240,
+              "end": 1784797017258
+            }
+          },
+          "id": "prt_f8e313325001QkvjYi7ls572uJ",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3127bc001ezfAWU1ozHicQU"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_a6c6981843204e05a1713aea",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { useMotionValue, animate, motion } from \"motion/react\";\n4: import React, { memo, useState, useEffect } from \"react\";\n5: import useMeasure from \"react-use-measure\";\n6: \n7: import { cn } from \"@/lib/utils\";\n8: \n9: export interface Logo {\n10:   src: string;\n11:   alt: string;\n12:   width?: number;\n13:   height?: number;\n14: }\n15: \n16: interface InfiniteSliderProps {\n17:   children: React.ReactNode;\n18:   gap?: number;\n19:   duration?: number;\n20:   durationOnHover?: number;\n21:   direction?: \"horizontal\" | \"vertical\";\n22:   reverse?: boolean;\n23:   className?: string;\n24: }\n25: \n26: const InfiniteSlider = memo(function InfiniteSlider({\n27:   children,\n28:   gap = 16,\n29:   duration = 25,\n30:   durationOnHover,\n31:   direction = \"horizontal\",\n32:   reverse = false,\n33:   className,\n34: }: InfiniteSliderProps) {\n35:   const [currentDuration, setCurrentDuration] = useState(duration);\n36:   const [ref, { width, height }] = useMeasure();\n37:   const translation = useMotionValue(0);\n38:   const [isTransitioning, setIsTransitioning] = useState(false);\n39:   const [key, setKey] = useState(0);\n40: \n41:   useEffect(() => {\n42:     const size = direction === \"horizontal\" ? width : height;\n43:     const contentSize = size + gap;\n44:     const from = reverse ? -contentSize / 2 : 0;\n45:     const to = reverse ? 0 : -contentSize / 2;\n46: \n47:     const controls = isTransitioning\n48:       ? animate(translation, [translation.get(), to], {\n49:           duration:\n50:             currentDuration * Math.abs((translation.get() - to) / contentSize),\n51:           ease: \"linear\",\n52:           onComplete: () => {\n53:             setIsTransitioning(false);\n54:             setKey((prev) => prev + 1);\n55:           },\n56:         })\n57:       : animate(translation, [from, to], {\n58:           duration: currentDuration,\n59:           ease: \"linear\",\n60:           onRepeat: () => translation.set(from),\n61:           repeat: Infinity,\n62:           repeatDelay: 0,\n63:           repeatType: \"loop\",\n64:         });\n65: \n66:     return controls?.stop;\n67:   }, [\n68:     key,\n69:     translation,\n70:     currentDuration,\n71:     width,\n72:     height,\n73:     gap,\n74:     isTransitioning,\n75:     direction,\n76:     reverse,\n77:   ]);\n78: \n79:   const hoverProps = durationOnHover\n80:     ? {\n81:         onHoverEnd: () => {\n82:           setIsTransitioning(true);\n83:           setCurrentDuration(duration);\n84:         },\n85:         onHoverStart: () => {\n86:           setIsTransitioning(true);\n87:           setCurrentDuration(durationOnHover);\n88:         },\n89:       }\n90:     : {};\n91: \n92:   return (\n93:     <div className={cn(\"overflow-hidden\", className)}>\n94:       <motion.div\n95:         ref={ref}\n96:         className=\"flex w-max\"\n97:         style={{\n98:           ...(direction === \"horizontal\"\n99:             ? { x: translation }\n100:             : { y: translation }),\n101:           flexDirection: direction === \"horizontal\" ? \"row\" : \"column\",\n102:           gap: `${gap}px`,\n103:         }}\n104:         {...hoverProps}\n105:       >\n106:         {children}\n107:         {children}\n108:       </motion.div>\n109:     </div>\n110:   );\n111: });\n112: \n113: const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n114:   return (\n115:     // eslint-disable-next-line @next/next/no-img-element -- User explicitly chose <img> over next/image\n116:     <img\n117:       alt={logo.alt}\n118:       src={logo.src}\n119:       width={logo.width ?? \"auto\"}\n120:       height={logo.height ?? \"auto\"}\n121:       loading=\"lazy\"\n122:       className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n123:     />\n124:   );\n125: });\n126: \n127: export const LogoMarquee = memo(function LogoMarquee({\n128:   logos,\n129:   className,\n130: }: {\n131:   logos: Logo[];\n132:   className?: string;\n133: }) {\n134:   return (\n135:     <div\n136:       className={cn(\n137:         \"max-w-7xl mx-auto overflow-hidden py-4 mask-[linear-gradient(to_right,transparent,black_25%,black_75%,transparent)]\",\n138:         className\n139:       )}\n140:     >\n141:       <InfiniteSlider gap={42} reverse duration={80} durationOnHover={25}>\n142:         {[...logos, ...logos].map((logo, i) => (\n143:           <LogoImage key={`${logo.alt}-${i}`} logo={logo} />\n144:         ))}\n145:       </InfiniteSlider>\n146:     </div>\n147:   );\n148: });\n149: \n150: LogoMarquee.displayName = \"LogoMarquee\";\n\n(End of file - total 150 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { useMotionValue, animate, motion } from \"motion/react\";\nimport React, { memo, useState, useEffect } from \"react\";\nimport useMeasure from \"react-use-measure\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface Logo {\n  src: string;\n  alt: string;\n  width?: number;\n  height?: number;\n}\n\ninterface InfiniteSliderProps {\n  children: React.ReactNode;\n  gap?: number;\n  duration?: number;\n  durationOnHover?: number;",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx",
+                "text": "\"use client\";\n\nimport { useMotionValue, animate, motion } from \"motion/react\";\nimport React, { memo, useState, useEffect } from \"react\";\nimport useMeasure from \"react-use-measure\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface Logo {\n  src: string;\n  alt: string;\n  width?: number;\n  height?: number;\n}\n\ninterface InfiniteSliderProps {\n  children: React.ReactNode;\n  gap?: number;\n  duration?: number;\n  durationOnHover?: number;\n  direction?: \"horizontal\" | \"vertical\";\n  reverse?: boolean;\n  className?: string;\n}\n\nconst InfiniteSlider = memo(function InfiniteSlider({\n  children,\n  gap = 16,\n  duration = 25,\n  durationOnHover,\n  direction = \"horizontal\",\n  reverse = false,\n  className,\n}: InfiniteSliderProps) {\n  const [currentDuration, setCurrentDuration] = useState(duration);\n  const [ref, { width, height }] = useMeasure();\n  const translation = useMotionValue(0);\n  const [isTransitioning, setIsTransitioning] = useState(false);\n  const [key, setKey] = useState(0);\n\n  useEffect(() => {\n    const size = direction === \"horizontal\" ? width : height;\n    const contentSize = size + gap;\n    const from = reverse ? -contentSize / 2 : 0;\n    const to = reverse ? 0 : -contentSize / 2;\n\n    const controls = isTransitioning\n      ? animate(translation, [translation.get(), to], {\n          duration:\n            currentDuration * Math.abs((translation.get() - to) / contentSize),\n          ease: \"linear\",\n          onComplete: () => {\n            setIsTransitioning(false);\n            setKey((prev) => prev + 1);\n          },\n        })\n      : animate(translation, [from, to], {\n          duration: currentDuration,\n          ease: \"linear\",\n          onRepeat: () => translation.set(from),\n          repeat: Infinity,\n          repeatDelay: 0,\n          repeatType: \"loop\",\n        });\n\n    return controls?.stop;\n  }, [\n    key,\n    translation,\n    currentDuration,\n    width,\n    height,\n    gap,\n    isTransitioning,\n    direction,\n    reverse,\n  ]);\n\n  const hoverProps = durationOnHover\n    ? {\n        onHoverEnd: () => {\n          setIsTransitioning(true);\n          setCurrentDuration(duration);\n        },\n        onHoverStart: () => {\n          setIsTransitioning(true);\n          setCurrentDuration(durationOnHover);\n        },\n      }\n    : {};\n\n  return (\n    <div className={cn(\"overflow-hidden\", className)}>\n      <motion.div\n        ref={ref}\n        className=\"flex w-max\"\n        style={{\n          ...(direction === \"horizontal\"\n            ? { x: translation }\n            : { y: translation }),\n          flexDirection: direction === \"horizontal\" ? \"row\" : \"column\",\n          gap: `${gap}px`,\n        }}\n        {...hoverProps}\n      >\n        {children}\n        {children}\n      </motion.div>\n    </div>\n  );\n});\n\nconst LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n  return (\n    // eslint-disable-next-line @next/next/no-img-element -- User explicitly chose <img> over next/image\n    <img\n      alt={logo.alt}\n      src={logo.src}\n      width={logo.width ?? \"auto\"}\n      height={logo.height ?? \"auto\"}\n      loading=\"lazy\"\n      className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n    />\n  );\n});\n\nexport const LogoMarquee = memo(function LogoMarquee({\n  logos,\n  className,\n}: {\n  logos: Logo[];\n  className?: string;\n}) {\n  return (\n    <div\n      className={cn(\n        \"max-w-7xl mx-auto overflow-hidden py-4 mask-[linear-gradient(to_right,transparent,black_25%,black_75%,transparent)]\",\n        className\n      )}\n    >\n      <InfiniteSlider gap={42} reverse duration={80} durationOnHover={25}>\n        {[...logos, ...logos].map((logo, i) => (\n          <LogoImage key={`${logo.alt}-${i}`} logo={logo} />\n        ))}\n      </InfiniteSlider>\n    </div>\n  );\n});\n\nLogoMarquee.displayName = \"LogoMarquee\";",
+                "lineStart": 1,
+                "lineEnd": 150,
+                "totalLines": 150,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/logo-marquee.tsx",
+            "time": {
+              "start": 1784797017570,
+              "end": 1784797017587
+            }
+          },
+          "id": "prt_f8e313538001So7JTNEModocTY",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3127bc001ezfAWU1ozHicQU"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 25215,
+            "input": 4155,
+            "output": 116,
+            "reasoning": 16,
+            "cache": {
+              "write": 0,
+              "read": 20928
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8e31364d001ZVJKQt7QAYsnrt",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3127bc001ezfAWU1ozHicQU"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8e30d68a001oIFtSvPp2FUc3x",
+        "role": "assistant",
+        "mode": "explore",
+        "agent": "explore",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 31769,
+          "input": 3074,
+          "output": 3649,
+          "reasoning": 22,
+          "cache": {
+            "write": 0,
+            "read": 25024
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784797017764,
+          "completed": 1784797059285
+        },
+        "finish": "stop",
+        "id": "msg_f8e3136a4001expuejFZocOfnN",
+        "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb"
+      },
+      "parts": [
+        {
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-start",
+          "id": "prt_f8e314aec001hoO727KBIFwyAx",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3136a4001expuejFZocOfnN"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have a comprehensive picture of how motion is used in this codebase. Let me compile the findings.",
+          "time": {
+            "start": 1784797022958,
+            "end": 1784797023270
+          },
+          "id": "prt_f8e314aee001nqJ0EZG01cI3NT",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3136a4001expuejFZocOfnN"
+        },
+        {
+          "type": "text",
+          "text": "Here is a comprehensive report of motion/framer-motion usage in this codebase.\n\n---\n\n## 1. Package Dependencies\n\n**File:** `/home/himmel/personal/prsui/package.json`\n\nBoth packages are installed:\n```json\n\"framer-motion\": \"^12.42.2\",\n\"motion\": \"^12.38.0\",\n```\n\nThe `motion` package is the newer, slimmer successor to `framer-motion`. This codebase has **both** installed, but the vast majority of files use `\"motion/react\"`. Only 2 legacy files still import from `\"framer-motion\"`.\n\n---\n\n## 2. Import Patterns\n\n### Pattern A -- `motion/react` (dominant pattern, 17+ files)\n\n```ts\n// Value imports\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { useMotionValue, animate, motion } from \"motion/react\";\n\n// Type-only imports\nimport type { Variants } from \"motion/react\";\nimport type { Transition } from \"motion/react\";\nimport type { HTMLMotionProps, Variants } from \"motion/react\";\n```\n\nFiles using this pattern (all absolute paths):\n- `/home/himmel/personal/prsui/components/animated-icons/component.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/arrow-left.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/share.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx`\n- `/home/himmel/personal/prsui/components/copy-button.tsx`\n- `/home/himmel/personal/prsui/components/ui/text-flip.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/typewriter.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/tooltip.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/accordion.tsx`\n\n### Pattern B -- `framer-motion` (legacy, 2 files only)\n\n```ts\nimport { AnimatePresence, motion } from \"framer-motion\";\nimport { motion, useMotionValue, useReducedMotion, useSpring } from \"framer-motion\";\n```\n\nFiles:\n- `/home/himmel/personal/prsui/registry/new-york/split-action.tsx`\n- `/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx`\n\n---\n\n## 3. Animation Patterns Used\n\n### 3a. `useAnimation` + Variants (controlled, imperative animation)\n\nThis is the **dominant pattern for animated icons**. The icon exposes `startAnimation()`/`stopAnimation()` via `useImperativeHandle`, driven by mouse hover.\n\nCanonical example from `/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx`:\n\n```tsx\nconst shaftVariants: Variants = {\n  animate: {\n    d: [\"M5 12h14\", \"M5 12h9\", \"M5 12h14\"],\n    transition: { duration: 0.36 },\n  },\n  normal: { d: \"M5 12h14\" },\n};\n\n// Inside component:\nconst controls = useAnimation();\n\n// Exposed via ref:\nuseImperativeHandle(ref, () => ({\n  startAnimation: () => controls.start(\"animate\"),\n  stopAnimation: () => controls.start(\"normal\"),\n}));\n\n// Mouse handlers toggle between variant states:\ncontrols.start(\"animate\");  // on mouseenter\ncontrols.start(\"normal\");   // on mouseleave\n\n// Applied to SVG path:\n<motion.path animate={controls} d=\"M5 12h14\" variants={shaftVariants} />\n```\n\n### 3b. Inline `initial`/`animate`/`exit` with `AnimatePresence`\n\nUsed for enter/exit transitions. Example from `/home/himmel/personal/prsui/components/copy-button.tsx`:\n\n```tsx\nexport const motionIconVariants: Variants = {\n  animate: { filter: \"blur(0px)\", opacity: 1, scale: 1 },\n  exit:    { opacity: 0, scale: 0.8 },\n  initial: { filter: \"blur(2px)\", opacity: 0, scale: 0.8 },\n};\n\nexport const motionIconProps: HTMLMotionProps<\"span\"> = {\n  animate: \"animate\",\n  exit: \"exit\",\n  initial: \"initial\",\n  transition: { duration: 0.15, ease: \"easeOut\" },\n  variants: motionIconVariants,\n};\n\n// Usage:\n<AnimatePresence mode=\"popLayout\" initial={false}>\n  {isCopied ? (\n    <motion.span key=\"done\" {...motionIconProps}><CheckIcon /></motion.span>\n  ) : (\n    <motion.span key=\"idle\" {...motionIconProps}><CopyIcon /></motion.span>\n  )}\n</AnimatePresence>\n```\n\n### 3c. `whileHover` / `whileTap` gesture props\n\nExample from `/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx`:\n\n```tsx\n<motion.button\n  whileHover={{ scale: 1.04, y: -1 }}\n  whileTap={{ scale: 0.96 }}\n  transition={{ damping: 18, stiffness: 350, type: \"spring\" }}\n>\n```\n\nAnd from `/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx`:\n\n```tsx\n<motion.div\n  whileHover={{ scale: 1.02 }}\n  whileTap={{ scale: 0.98 }}\n>\n```\n\n### 3d. `layout` / `layoutId` animations (shared layout)\n\nUsed for morphing between states. Example from `/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx`:\n\n```tsx\n<AnimatePresence mode=\"popLayout\">\n  {isOpen ? (\n    <motion.div key=\"map\" layoutId=\"map-container\" transition={springConfig}>\n      ...\n    </motion.div>\n  ) : (\n    <motion.div key=\"button\" layoutId=\"map-container\" ... />\n  )}\n</AnimatePresence>\n```\n\nAnd from `/home/himmel/personal/prsui/registry/new-york/accordion.tsx`:\n\n```tsx\n<motion.div layout=\"position\" ...>\n  <motion.div layout=\"size\" ...>\n```\n\n### 3e. `useMotionValue` + `animate()` (programmatic animation)\n\nUsed for the infinite marquee. From `/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx`:\n\n```tsx\nconst translation = useMotionValue(0);\n\nconst controls = animate(translation, [from, to], {\n  duration: currentDuration,\n  ease: \"linear\",\n  onRepeat: () => translation.set(from),\n  repeat: Infinity,\n  repeatType: \"loop\",\n});\n\n// Applied via style:\n<motion.div style={{ x: translation }} />\n```\n\n### 3f. `layout=\"size\"` for accordion expand/collapse\n\nFrom `/home/himmel/personal/prsui/registry/new-york/accordion.tsx`:\n\n```tsx\n<motion.div\n  layout=\"size\"\n  initial={false}\n  style={{ height: open ? contentHeight : 0 }}\n  transition={getTransition(reduce, open)}\n>\n```\n\n### 3g. `useReducedMotion` for accessibility\n\nFrom `/home/himmel/personal/prsui/registry/new-york/accordion.tsx`:\n\n```tsx\nconst reduce = useReducedMotion();\ntransition={reduce ? { duration: 0 } : ROW_TRANSITION}\n```\n\n### 3h. Dynamic motion element type\n\nFrom `/home/himmel/personal/prsui/components/ui/text-flip.tsx`:\n\n```tsx\ntype MotionElement = typeof motion.p | typeof motion.span | typeof motion.code;\n\nconst TextFlip = ({\n  as: Component = motion.p,\n  ...\n}: {\n  as?: MotionElement;\n}) => {\n  <Component variants={variants} initial=\"initial\" animate=\"animate\" exit=\"exit\" />\n```\n\n---\n\n## 4. Shared Spring/Easing Tokens\n\n**File:** `/home/himmel/personal/prsui/lib/ease.ts`\n\n```ts\nexport const EASE_OUT = [0.16, 1, 0.3, 1] as const;\nexport const EASE_IN_OUT = [0.77, 0, 0.175, 1] as const;\nexport const EASE_DRAWER = [0.32, 0.72, 0, 1] as const;\n\nexport const SPRING_PRESS = { damping: 30, mass: 0.6, stiffness: 500, type: \"spring\" } as const;\nexport const SPRING_SWAP = { damping: 30, mass: 0.55, stiffness: 460, type: \"spring\" } as const;\nexport const SPRING_PANEL = { damping: 40, mass: 0.5, stiffness: 420, type: \"spring\" } as const;\nexport const SPRING_LAYOUT = { damping: 32, mass: 0.6, stiffness: 360, type: \"spring\" } as const;\nexport const SPRING_MOUSE = { damping: 15, mass: 0.3, stiffness: 200 } as const;\n```\n\nUsed in `/home/himmel/personal/prsui/registry/new-york/accordion.tsx`:\n```tsx\nimport { EASE_OUT } from \"@/lib/ease\";\n```\n\n---\n\n## 5. Animated Icon Component Reference\n\nAll 7 animated icons follow the same **identical** pattern. They live at:\n\n- `/home/himmel/personal/prsui/components/animated-icons/arrow-left.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/arrow-right.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/component.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/heart-handshake.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/share.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/vibrate.tsx`\n- `/home/himmel/personal/prsui/components/animated-icons/volume-2.tsx`\n\n**Canonical animated icon pattern** (from `arrow-right.tsx`):\n\n```tsx\n\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// 1. Handle interface (always startAnimation + stopAnimation)\nexport interface ArrowRightIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\n// 2. Props interface (HTMLAttributes<HTMLDivElement> + size)\ninterface ArrowRightIconProps extends React.HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\n// 3. Variants with \"animate\" and \"normal\" states\nconst shaftVariants: Variants = {\n  animate: { d: [\"M5 12h14\", \"M5 12h9\", \"M5 12h14\"], transition: { duration: 0.36 } },\n  normal:  { d: \"M5 12h14\" },\n};\n\n// 4. forwardRef component with imperative handle\nexport const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(\n  ({ className, onMouseEnter, onMouseLeave, size = 18, ...props }, ref) => {\n    const controls = useAnimation();\n    const controlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      controlledRef.current = true;\n      return {\n        startAnimation: () => controls.start(\"animate\"),\n        stopAnimation:  () => controls.start(\"normal\"),\n      };\n    });\n\n    // 5. Auto-play on hover, respect controlled ref\n    const handleMouseEnter = useCallback((event) => {\n      if (controlledRef.current) { onMouseEnter?.(event); return; }\n      void controls.start(\"animate\");\n    }, [controls, onMouseEnter]);\n\n    const handleMouseLeave = useCallback((event) => {\n      if (controlledRef.current) { onMouseLeave?.(event); return; }\n      void controls.start(\"normal\");\n    }, [controls, onMouseLeave]);\n\n    // 6. Wrapper div + SVG with motion.path\n    return (\n      <div className={cn(className)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} {...props}>\n        <svg fill=\"none\" height={size} stroke=\"currentColor\" strokeWidth=\"2\" viewBox=\"0 0 24 24\" width={size}>\n          <motion.path animate={controls} d=\"M5 12h14\" variants={shaftVariants} />\n          <motion.path animate={controls} d=\"m12 5 7 7-7 7\" variants={headVariants} />\n        </svg>\n      </div>\n    );\n  }\n);\n```\n\n---\n\n## 6. Animated Button References\n\n### `split-action.tsx` -- Animated button with AnimatePresence\n\n**File:** `/home/himmel/personal/prsui/registry/new-york/split-action.tsx`\n\n```tsx\n<motion.button\n  whileTap={{ scale: 1.15 }}\n  initial={{ filter: \"blur(8px)\", opacity: 0, scale: 0.5 }}\n  animate={{ filter: \"blur(0px)\", opacity: 1, scale: 1 }}\n  exit={{ filter: \"blur(8px)\", opacity: 0, scale: 0.5 }}\n  transition={{ damping: 24, stiffness: 220, type: \"spring\" }}\n>\n```\n\n### `inline-toast.tsx` -- Animated copy button with sweep effect\n\n**File:** `/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx`\n\n```tsx\n<motion.button\n  whileHover={{ scale: 1.04, y: -1 }}\n  whileTap={{ scale: 0.96 }}\n  transition={{ damping: 18, stiffness: 350, type: \"spring\" }}\n>\n  <motion.span\n    initial={{ x: \"-120%\" }}\n    whileHover={{ x: \"120%\" }}\n    transition={{ duration: 0.6, ease: \"easeInOut\" }}\n    className=\"pointer-events-none absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent\"\n  />\n  <span className=\"relative z-10\">Copy</span>\n</motion.button>\n```\n\n---\n\n## Summary\n\n| Aspect | Finding |\n|---|---|\n| **Primary import** | `\"motion/react\"` (27 import occurrences) |\n| **Legacy import** | `\"framer-motion\"` (2 files only) |\n| **Installed packages** | `motion@^12.38.0` + `framer-motion@^12.42.2` |\n| **Animation engine** | `useAnimation()` controller with named variant states (`\"animate\"` / `\"normal\"`) |\n| **Gesture props** | `whileHover`, `whileTap` for button feedback |\n| **Layout animation** | `layout=\"position\"`, `layout=\"size\"`, `layoutId` for shared-element transitions |\n| **Enter/exit** | `AnimatePresence` with `initial`/`animate`/`exit` variants |\n| **Programmatic** | `useMotionValue` + `animate()` for infinite marquees |\n| **Accessibility** | `useReducedMotion()` checked, falls back to `duration: 0` |\n| **Shared tokens** | `lib/ease.ts` exports `SPRING_PRESS`, `SPRING_SWAP`, `SPRING_PANEL`, `SPRING_LAYOUT`, `EASE_OUT`, etc. |\n| **Icon pattern** | `forwardRef` + `useImperativeHandle` + `useAnimation` + `<motion.path>` with Variants |",
+          "time": {
+            "start": 1784797023271,
+            "end": 1784797059236
+          },
+          "id": "prt_f8e314c27001ls67Lhsq368kY2",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3136a4001expuejFZocOfnN"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "cb3a6a314b51ef59a6beb861ec6eef61dfb0822a",
+          "type": "step-finish",
+          "tokens": {
+            "total": 31769,
+            "input": 3074,
+            "output": 3649,
+            "reasoning": 22,
+            "cache": {
+              "write": 0,
+              "read": 25024
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8e31d8b2001S5Aa67rx4P7G3S",
+          "sessionID": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+          "messageID": "msg_f8e3136a4001expuejFZocOfnN"
+        }
+      ]
+    }
+  ]
+}

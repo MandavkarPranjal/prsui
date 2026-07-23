@@ -1,0 +1,69 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "701c828fda13",
+  "session_id": "ses_071cf2988ffe6kUvRh4CRGzSJb",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-23T09:13:15.556004907Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "content/docs/components/meta.json",
+    "public/r/registry.json",
+    "registry.json"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "f94d4a18dff7",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 25212,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 74816,
+    "output_tokens": 4627,
+    "api_call_count": 6
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-23T09:13:15.539910626Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 36,
+    "human_modified": 4,
+    "human_removed": 0,
+    "total_committed": 36,
+    "total_lines_changed": 40,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 198,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "content/docs/components/github-stars.mdx": 51,
+        "content/docs/components/meta.json": 2,
+        "demo/github-stars-demo.tsx": 11,
+        "public/r/github-stars.json": 18,
+        "public/r/registry.json": 14,
+        "registry.json": 14,
+        "registry/new-york/github-stars.tsx": 88
+      },
+      "user_removed_per_file": {
+        "content/docs/components/meta.json": 1
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 198,
+      "agent_lines_removed": 1
+    }
+  ]
+}

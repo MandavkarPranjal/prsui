@@ -1,0 +1,7 @@
+Search the codebase at /home/himmel/personal/prsui for how motion/react or framer-motion is used in components. Find:
+1. Import patterns (motion/react vs framer-motion)
+2. How animations are applied (motion components, variants, etc.)
+3. Any existing animated button or icon components for reference
+4. Check what's in the `motion` and `framer-motion` packages in package.json
+
+Return file paths and relevant code snippets showing the animation patterns used.
