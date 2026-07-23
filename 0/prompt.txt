@@ -1,0 +1,1 @@
+added new component @registry/new-york/mouse-follow.tsx update docs and demo, then run pnpm fix
