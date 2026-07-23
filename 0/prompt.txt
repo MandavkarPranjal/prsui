@@ -1,0 +1,1 @@
+i've added description short in @constants/site.ts
