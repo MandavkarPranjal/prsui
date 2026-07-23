@@ -1,0 +1,94 @@
+run pnmm fix then fix @registry/new-york/github-stars.tsx 
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/github-stars.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/github-stars.tsx</path>
+<type>file</type>
+<content>
+1: import { cva } from 'class-variance-authority';
+2: import type { VariantProps } from 'class-variance-authority';
+3: 
+4: import { cn } from "@/lib/utils";
+5: 
+6: import { Tooltip } from "./tooltip";
+7: 
+8: const githubStarsVariants = cva("gap-1.5 pr-1.5 pl-2", {
+9:   defaultVariants: {
+10:     size: "default",
+11:   },
+12:   variants: {
+13:     size: {
+14:       default: "h-9 text-sm",
+15:       lg: "h-10 text-base pr-2 pl-2.5",
+16:       sm: "h-8 text-xs",
+17:     },
+18:   },
+19: });
+20: 
+21: interface GitHubStarsProps extends VariantProps<typeof githubStarsVariants> {
+22:   repo: string;
+23:   className?: string;
+24:   locales?: Intl.LocalesArgument;
+25: }
+26: 
+27: async function getStarsCount(repo: string): Promise<number> {
+28:   try {
+29:     const res = await fetch(`https://api.github.com/repos/${repo}`, {
+30:       next: { revalidate: 60 * 60 * 24 },
+31:     });
+32: 
+33:     if (!res.ok) {return 0;}
+34: 
+35:     const data = (await res.json()) as { stargazers_count: number };
+36:     return Number(data.stargazers_count);
+37:   } catch {
+38:     return 0;
+39:   }
+40: }
+41: 
+42: export async function GitHubStars({
+43:   repo,
+44:   locales = "en-US",
+45:   className,
+46:   size,
+47: }: GitHubStarsProps) {
+48:   const count = await getStarsCount(repo);
+49: 
+50:   const formatted = new Intl.NumberFormat(locales, {
+51:     compactDisplay: "short",
+52:     notation: "compact",
+53:   })
+54:     .format(count)
+55:     .toLowerCase();
+56: 
+57:   const full = new Intl.NumberFormat(locales).format(count);
+58: 
+59:   return (
+60:     <Tooltip content={`${full} stars`}>
+61:       <button className={cn(githubStarsVariants({ size }), className)}>
+62:         <a
+63:           href={`https://github.com/${repo}`}
+64:           target="_blank"
+65:           rel="noopener noreferrer"
+66:         >
+67:           <svg
+68:             className="-translate-y-px"
+69:             viewBox="0 0 24 24"
+70:             width="16"
+71:             height="16"
+72:             aria-hidden="true"
+73:           >
+74:             <path
+75:               d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+76:               fill="currentColor"
+77:             />
+78:           </svg>
+79:           <span className="text-[0.8125rem] text-muted-foreground tabular-nums">
+80:             {formatted}
+81:           </span>
+82:         </a>
+83:       </button>
+84:     </Tooltip>
+85:   );
+86: }
+
+(End of file - total 86 lines)
+</content>

@@ -3,11 +3,14 @@
   "checkpoint_id": "701c828fda13",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 2,
+  "checkpoints_count": 8,
   "files_touched": [
+    "content/docs/components/github-stars.mdx",
     "content/docs/components/meta.json",
+    "demo/github-stars-demo.tsx",
     "public/r/registry.json",
-    "registry.json"
+    "registry.json",
+    "registry/new-york/github-stars.tsx"
   ],
   "sessions": [
     {
@@ -23,13 +26,20 @@
       "compact_transcript": "/70/1c828fda13/1/transcript.jsonl",
       "content_hash": "/70/1c828fda13/1/content_hash.txt",
       "prompt": "/70/1c828fda13/1/prompt.txt"
+    },
+    {
+      "metadata": "/70/1c828fda13/2/metadata.json",
+      "transcript": "/70/1c828fda13/2/full.jsonl",
+      "compact_transcript": "/70/1c828fda13/2/transcript.jsonl",
+      "content_hash": "/70/1c828fda13/2/content_hash.txt",
+      "prompt": "/70/1c828fda13/2/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 37659,
+    "input_tokens": 150990,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 127808,
-    "output_tokens": 6352,
-    "api_call_count": 14
+    "cache_read_tokens": 1133280,
+    "output_tokens": 11870,
+    "api_call_count": 54
   }
 }
