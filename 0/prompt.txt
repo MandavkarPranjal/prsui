@@ -1,0 +1,1 @@
+demo is only showing springmousefollow, it should also show simple mouse follow
