@@ -1,0 +1,1 @@
+added new component @registry/new-york/editable-chip.tsx , update docs and demo for it and then run pnpm fix
