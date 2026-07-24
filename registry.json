@@ -211,6 +211,26 @@
         }
       ],
       "dependencies": ["motion", "rough-notation"]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:ui",
+      "title": "Theme Toggle",
+      "description": "Animated theme toggle with view transition",
+      "files": [
+        {
+          "path": "registry/new-york/theme-toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/theme-toggle.tsx"
+        }
+      ],
+      "dependencies": ["lucide-react"],
+      "css": {
+        "::view-transition-old(root), ::view-transition-new(root)": {
+          "animation": "none",
+          "mix-blend-mode": "normal"
+        }
+      }
     }
   ]
 }

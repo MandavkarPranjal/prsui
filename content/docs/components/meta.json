@@ -15,6 +15,7 @@
     "logo-grid",
     "github-stars",
     "text-highlight",
-    "text-annotation"
+    "text-annotation",
+    "theme-toggle"
   ]
 }

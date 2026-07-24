@@ -1,4 +1,5 @@
 import { SoundProvider } from "@web-kits/audio/react";
+import { DialRoot } from "dialkit";
 import type { Metadata } from "next";
 import Script from "next/script";
 
@@ -10,6 +11,7 @@ import { fontVariables } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { JsonLdScripts } from "@/seo/json-ld";
 
+import "dialkit/styles.css";
 import "@/styles/globals.css";
 import { baseMetadata } from "@/seo/metadata";
 
@@ -47,6 +49,7 @@ const RootLayout = ({
       <SoundProvider>
         <ThemeProvider>
           {children}
+          <DialRoot />
           <Toaster position="top-center" />
           <Analytics />
         </ThemeProvider>

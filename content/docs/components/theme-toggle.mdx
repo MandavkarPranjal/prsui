@@ -1,0 +1,64 @@
+---
+title: Theme Toggle
+description: Animated theme toggle with view transition effects and multiple shape variants.
+---
+
+import { ThemeToggleDemo } from "@/demo/theme-toggle-demo";
+
+<ComponentPreview name="theme-toggle">
+  <ThemeToggleDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/theme-toggle"
+  __npm__="npx shadcn@latest add @prsui/theme-toggle"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/theme-toggle"
+  __yarn__="yarn shadcn@latest add @prsui/theme-toggle"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/theme-toggle.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/theme-toggle.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/theme-toggle.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/theme-toggle.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+
+export function MyComponent() {
+  return <ThemeToggle />;
+}
+```
+
+## CSS
+
+Add the following to your global CSS to disable the default view transition animation for the theme toggle:
+
+```css
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+```
+
+## Props
+
+| Prop            | Type                                                                                    | Default    | Description                                                |
+| --------------- | --------------------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------- |
+| `duration`      | `number`                                                                                | `400`      | Transition duration in milliseconds                        |
+| `variant`       | `"circle" \| "square" \| "triangle" \| "diamond" \| "hexagon" \| "rectangle" \| "star"` | `"circle"` | Transition shape variant                                   |
+| `fromCenter`    | `boolean`                                                                               | `false`    | When true, the transition expands from the viewport center |
+| `theme`         | `"light" \| "dark"`                                                                     | -          | Controlled theme value (optional)                          |
+| `onThemeChange` | `(theme: "light" \| "dark") => void`                                                    | -          | Called on toggle when using controlled mode                |
