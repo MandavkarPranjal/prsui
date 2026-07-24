@@ -1,0 +1,1 @@
+Find files related to a demo/preview component with tabs "Demo" and "Code". Look for components that might contain a demo box and text/content area. Search for files containing "Demo", "Code" tabs, or component preview/display functionality. Check src/ directory and any component directories. Return the file paths and relevant code sections.
