@@ -1,0 +1,77 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYAEFRZ4FQ7AKKXQJGFVXH8E",
+  "session_id": "ses_06b544b97ffeSDkvT8OreFztLZ",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-24T16:14:14.997429026Z",
+  "branch": "main",
+  "checkpoints_count": 3,
+  "save_step_count": 3,
+  "files_touched": [
+    "content/docs/components/theme-toggle.mdx",
+    "demo/theme-toggle-demo.tsx",
+    "registry.json",
+    "registry/new-york/theme-toggle.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "63127ceb722c",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 51130,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2596160,
+    "output_tokens": 7485,
+    "api_call_count": 61
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-24T16:14:14.953816835Z",
+    "agent_lines": 85,
+    "agent_removed": 0,
+    "human_added": 9,
+    "human_modified": 46,
+    "human_removed": 0,
+    "total_committed": 135,
+    "total_lines_changed": 141,
+    "agent_percentage": 60.28368794326241,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 325,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "registry.json": 20,
+        "registry/new-york/theme-toggle.tsx": 305
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 11,
+      "user_lines_removed": 5,
+      "agent_lines_added": 465,
+      "agent_lines_removed": 3,
+      "user_added_per_file": {
+        "demo/theme-toggle-demo.tsx": 5,
+        "registry/new-york/theme-toggle.tsx": 6
+      },
+      "user_removed_per_file": {
+        "demo/theme-toggle-demo.tsx": 2,
+        "registry/new-york/theme-toggle.tsx": 3
+      }
+    }
+  ]
+}

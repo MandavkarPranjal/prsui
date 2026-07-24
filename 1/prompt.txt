@@ -1,0 +1,313 @@
+added new component @registry/new-york/theme-toggle.tsx update docs and demo, use dialkit for demo and then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/theme-toggle.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/theme-toggle.tsx</path>
+<type>file</type>
+<content>
+1: "use client"
+2: 
+3: import { useCallback, useEffect, useRef, useState } from "react"
+4: import { Moon, Sun } from "lucide-react"
+5: import { flushSync } from "react-dom"
+6: 
+7: import { cn } from "@/lib/utils"
+8: 
+9: export type TransitionVariant =
+10:   | "circle"
+11:   | "square"
+12:   | "triangle"
+13:   | "diamond"
+14:   | "hexagon"
+15:   | "rectangle"
+16:   | "star"
+17: 
+18: interface ThemeToggleProps extends React.ComponentPropsWithoutRef<"button"> {
+19:   duration?: number
+20:   variant?: TransitionVariant
+21:   /** When true, the transition expands from the viewport center instead of the button center. */
+22:   fromCenter?: boolean
+23:   /**
+24:    * Controlled theme value. When provided, the parent owns persistence
+25:    * (e.g. `next-themes`) and this component will not write to localStorage.
+26:    */
+27:   theme?: "light" | "dark"
+28:   /** Called on toggle. Pair with `theme` for controlled usage. */
+29:   onThemeChange?: (theme: "light" | "dark") => void
+30: }
+31: 
+32: function polygonCollapsed(point: string, vertexCount: number): string {
+33:   const pairs = Array.from({ length: vertexCount }, () => point).join(", ")
+34:   return `polygon(${pairs})`
+35: }
+36: 
+37: // All coordinates are percentages of the snapshot reference box: Chrome 150
+38: // renders absolute px clip-path coordinates on ::view-transition-new(root)
+39: // unscaled on fractional display scales (e.g. Windows 150%) for the first
+40: // transition after load, so px values land at the wrong position (#989).
+41: function getThemeTransitionClipPaths(
+42:   variant: TransitionVariant,
+43:   cx: number,
+44:   cy: number,
+45:   maxRadius: number,
+46:   viewportWidth: number,
+47:   viewportHeight: number
+48: ): [string, string] {
+49:   const toX = (x: number) => `${(x / viewportWidth) * 100}%`
+50:   const toY = (y: number) => `${(y / viewportHeight) * 100}%`
+51:   const point = (x: number, y: number) => `${toX(x)} ${toY(y)}`
+52:   // circle() percentage radii resolve against hypot(w, h) / sqrt(2) of the reference box.
+53:   const toRadius = (r: number) =>
+54:     `${(r / (Math.hypot(viewportWidth, viewportHeight) / Math.SQRT2)) * 100}%`
+55: 
+56:   switch (variant) {
+57:     case "circle":
+58:       return [
+59:         `circle(0% at ${point(cx, cy)})`,
+60:         `circle(${toRadius(maxRadius)} at ${point(cx, cy)})`,
+61:       ]
+62:     case "square": {
+63:       const halfW = Math.max(cx, viewportWidth - cx)
+64:       const halfH = Math.max(cy, viewportHeight - cy)
+65:       const halfSide = Math.max(halfW, halfH) * 1.05
+66:       const end = [
+67:         point(cx - halfSide, cy - halfSide),
+68:         point(cx + halfSide, cy - halfSide),
+69:         point(cx + halfSide, cy + halfSide),
+70:         point(cx - halfSide, cy + halfSide),
+71:       ].join(", ")
+72:       return [polygonCollapsed(point(cx, cy), 4), `polygon(${end})`]
+73:     }
+74:     case "triangle": {
+75:       const scale = maxRadius * 2.2
+76:       const dx = (Math.sqrt(3) / 2) * scale
+77:       const verts = [
+78:         point(cx, cy - scale),
+79:         point(cx + dx, cy + 0.5 * scale),
+80:         point(cx - dx, cy + 0.5 * scale),
+81:       ].join(", ")
+82:       return [polygonCollapsed(point(cx, cy), 3), `polygon(${verts})`]
+83:     }
+84:     case "diamond": {
+85:       // Slightly larger than the view-transition circle radius so axis-aligned coverage matches the circle reveal.
+86:       const R = maxRadius * Math.SQRT2
+87:       const end = [
+88:         point(cx, cy - R),
+89:         point(cx + R, cy),
+90:         point(cx, cy + R),
+91:         point(cx - R, cy),
+92:       ].join(", ")
+93:       return [polygonCollapsed(point(cx, cy), 4), `polygon(${end})`]
+94:     }
+95:     case "hexagon": {
+96:       const R = maxRadius * Math.SQRT2
+97:       const verts: string[] = []
+98:       for (let i = 0; i < 6; i++) {
+99:         const a = -Math.PI / 2 + (i * Math.PI) / 3
+100:         verts.push(point(cx + R * Math.cos(a), cy + R * Math.sin(a)))
+101:       }
+102:       return [
+103:         polygonCollapsed(point(cx, cy), 6),
+104:         `polygon(${verts.join(", ")})`,
+105:       ]
+106:     }
+107:     case "rectangle": {
+108:       const halfW = Math.max(cx, viewportWidth - cx)
+109:       const halfH = Math.max(cy, viewportHeight - cy)
+110:       const end = [
+111:         point(cx - halfW, cy - halfH),
+112:         point(cx + halfW, cy - halfH),
+113:         point(cx + halfW, cy + halfH),
+114:         point(cx - halfW, cy + halfH),
+115:       ].join(", ")
+116:       return [polygonCollapsed(point(cx, cy), 4), `polygon(${end})`]
+117:     }
+118:     case "star": {
+119:       // Small overscan so the last frames never leave a 1px seam before the transition group ends.
+120:       const R = maxRadius * Math.SQRT2 * 1.03
+121:       const innerRatio = 0.42
+122:       const starPolygon = (radius: number) => {
+123:         const verts: string[] = []
+124:         for (let i = 0; i < 5; i++) {
+125:           const outerA = -Math.PI / 2 + (i * 2 * Math.PI) / 5
+126:           verts.push(
+127:             point(
+128:               cx + radius * Math.cos(outerA),
+129:               cy + radius * Math.sin(outerA)
+130:             )
+131:           )
+132:           const innerA = outerA + Math.PI / 5
+133:           verts.push(
+134:             point(
+135:               cx + radius * innerRatio * Math.cos(innerA),
+136:               cy + radius * innerRatio * Math.sin(innerA)
+137:             )
+138:           )
+139:         }
+140:         return `polygon(${verts.join(", ")})`
+141:       }
+142:       const startR = Math.max(2, R * 0.025)
+143:       return [starPolygon(startR), starPolygon(R)]
+144:     }
+145:     default:
+146:       return [
+147:         `circle(0% at ${point(cx, cy)})`,
+148:         `circle(${toRadius(maxRadius)} at ${point(cx, cy)})`,
+149:       ]
+150:   }
+151: }
+152: 
+153: export const ThemeToggle = ({
+154:   className,
+155:   duration = 400,
+156:   variant,
+157:   fromCenter = false,
+158:   theme,
+159:   onThemeChange,
+160:   ...props
+161: }: ThemeToggleProps) => {
+162:   const shape = variant ?? "circle"
+163:   const isControlled = theme !== undefined
+164:   const [internalIsDark, setInternalIsDark] = useState(false)
+165:   const isDark = isControlled ? theme === "dark" : internalIsDark
+166:   const buttonRef = useRef<HTMLButtonElement>(null)
+167:   const isTransitioningRef = useRef(false)
+168: 
+169:   useEffect(() => {
+170:     if (isControlled) return
+171: 
+172:     const updateTheme = () => {
+173:       setInternalIsDark(document.documentElement.classList.contains("dark"))
+174:     }
+175: 
+176:     updateTheme()
+177: 
+178:     const observer = new MutationObserver(updateTheme)
+179:     observer.observe(document.documentElement, {
+180:       attributes: true,
+181:       attributeFilter: ["class"],
+182:     })
+183: 
+184:     return () => observer.disconnect()
+185:   }, [isControlled])
+186: 
+187:   const toggleTheme = useCallback(() => {
+188:     const button = buttonRef.current
+189:     if (
+190:       !button ||
+191:       isTransitioningRef.current ||
+192:       document.documentElement.dataset.prsuiThemeVt === "active"
+193:     )
+194:       return
+195: 
+196:     // innerWidth/innerHeight (not visualViewport): percentages must resolve
+197:     // against the snapshot reference box, which includes classic scrollbars.
+198:     const viewportWidth = window.innerWidth
+199:     const viewportHeight = window.innerHeight
+200: 
+201:     let x: number
+202:     let y: number
+203:     if (fromCenter) {
+204:       x = viewportWidth / 2
+205:       y = viewportHeight / 2
+206:     } else {
+207:       const { top, left, width, height } = button.getBoundingClientRect()
+208:       x = left + width / 2
+209:       y = top + height / 2
+210:     }
+211: 
+212:     const maxRadius = Math.hypot(
+213:       Math.max(x, viewportWidth - x),
+214:       Math.max(y, viewportHeight - y)
+215:     )
+216: 
+217:     const applyTheme = () => {
+218:       const newTheme = !isDark
+219:       // Always toggle the class synchronously so the View Transitions API
+220:       // snapshots the new theme inside the startViewTransition callback.
+221:       document.documentElement.classList.toggle("dark")
+222:       if (isControlled) {
+223:         onThemeChange?.(newTheme ? "dark" : "light")
+224:       } else {
+225:         setInternalIsDark(newTheme)
+226:         localStorage.setItem("theme", newTheme ? "dark" : "light")
+227:       }
+228:     }
+229: 
+230:     if (typeof document.startViewTransition !== "function") {
+231:       applyTheme()
+232:       return
+233:     }
+234: 
+235:     const clipPath = getThemeTransitionClipPaths(
+236:       shape,
+237:       x,
+238:       y,
+239:       maxRadius,
+240:       viewportWidth,
+241:       viewportHeight
+242:     )
+243: 
+244:     const root = document.documentElement
+245:     root.dataset.prsuiThemeVt = "active"
+246:     root.style.setProperty(
+247:       "--prsui-theme-toggle-vt-duration",
+248:       `${duration}ms`
+249:     )
+250:     // Pin the collapsed clip-path via CSS so Firefox does not paint the new
+251:     // theme unclipped between snapshot and the ready.then() JS animation.
+252:     root.style.setProperty("--prsui-theme-vt-clip-from", clipPath[0])
+253:     const cleanup = () => {
+254:       isTransitioningRef.current = false
+255:       delete root.dataset.prsuiThemeVt
+256:       root.style.removeProperty("--prsui-theme-toggle-vt-duration")
+257:       root.style.removeProperty("--prsui-theme-vt-clip-from")
+258:     }
+259: 
+260:     isTransitioningRef.current = true
+261:     const transition = document.startViewTransition(() => {
+262:       flushSync(applyTheme)
+263:     })
+264:     if (typeof transition?.finished?.finally === "function") {
+265:       transition.finished.finally(cleanup).catch(() => { })
+266:     } else {
+267:       cleanup()
+268:     }
+269: 
+270:     const ready = transition?.ready
+271:     if (ready && typeof ready.then === "function") {
+272:       ready
+273:         .then(() => {
+274:           document.documentElement.animate(
+275:             {
+276:               clipPath,
+277:             },
+278:             {
+279:               duration,
+280:               // Star: linear avoids easing overshoot that fights polygon interpolation at t→1; VT group duration is synced above.
+281:               easing: shape === "star" ? "linear" : "ease-in-out",
+282:               fill: "forwards",
+283:               pseudoElement: "::view-transition-new(root)",
+284:             }
+285:           )
+286:         })
+287:         .catch(() => { })
+288:     }
+289:   }, [shape, fromCenter, duration, isDark, isControlled, onThemeChange])
+290: 
+291:   return (
+292:     <button
+293:       type="button"
+294:       ref={buttonRef}
+295:       onClick={toggleTheme}
+296:       className={cn(className)}
+297:       {...props}
+298:     >
+299:       {isDark ? <Sun /> : <Moon />}
+300:       <span className="sr-only">Toggle theme</span>
+301:     </button>
+302:   )
+303: }
+304: 
+305: export default ThemeToggle;
+
+(End of file - total 305 lines)
+</content>
