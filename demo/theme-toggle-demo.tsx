@@ -20,7 +20,7 @@ const config = {
       "rectangle",
       "star",
     ],
-    type: "select",
+    type: "select" as const,
   },
 };
 
