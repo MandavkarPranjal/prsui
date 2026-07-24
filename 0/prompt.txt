@@ -1,0 +1,110 @@
+added new component @registry/new-york/text-highlight-annotation.tsx udpate docs and demo, then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/text-highlight-annotation.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/text-highlight-annotation.tsx</path>
+<type>file</type>
+<content>
+1: "use client"
+2: 
+3: import { useLayoutEffect, useRef } from "react"
+4: import type React from "react"
+5: import { useInView } from "motion/react"
+6: import { annotate } from "rough-notation"
+7: import { type RoughAnnotation } from "rough-notation/lib/model"
+8: 
+9: type AnnotationAction =
+10:   | "highlight"
+11:   | "underline"
+12:   | "box"
+13:   | "circle"
+14:   | "strike-through"
+15:   | "crossed-off"
+16:   | "bracket"
+17: 
+18: interface HighlighterProps {
+19:   children: React.ReactNode
+20:   action?: AnnotationAction
+21:   color?: string
+22:   strokeWidth?: number
+23:   animationDuration?: number
+24:   iterations?: number
+25:   padding?: number
+26:   multiline?: boolean
+27:   isView?: boolean
+28: }
+29: 
+30: export function TextHighlighterAnnotation({
+31:   children,
+32:   action = "highlight",
+33:   color = "#ffd1dc",
+34:   strokeWidth = 1.5,
+35:   animationDuration = 600,
+36:   iterations = 2,
+37:   padding = 2,
+38:   multiline = true,
+39:   isView = false,
+40: }: HighlighterProps) {
+41:   const elementRef = useRef<HTMLSpanElement>(null)
+42: 
+43:   const isInView = useInView(elementRef, {
+44:     once: true,
+45:     margin: "-10%",
+46:   })
+47: 
+48:   // If isView is false, always show. If isView is true, wait for inView
+49:   const shouldShow = !isView || isInView
+50: 
+51:   useLayoutEffect(() => {
+52:     const element = elementRef.current
+53:     let annotation: RoughAnnotation | null = null
+54:     let resizeObserver: ResizeObserver | null = null
+55: 
+56:     if (shouldShow && element) {
+57:       const annotationConfig = {
+58:         type: action,
+59:         color,
+60:         strokeWidth,
+61:         animationDuration,
+62:         iterations,
+63:         padding,
+64:         multiline,
+65:       }
+66: 
+67:       const currentAnnotation = annotate(element, annotationConfig)
+68:       annotation = currentAnnotation
+69:       currentAnnotation.show()
+70: 
+71:       resizeObserver = new ResizeObserver(() => {
+72:         currentAnnotation.hide()
+73:         currentAnnotation.show()
+74:       })
+75: 
+76:       resizeObserver.observe(element)
+77:       resizeObserver.observe(document.body)
+78:     }
+79: 
+80:     return () => {
+81:       annotation?.remove()
+82:       if (resizeObserver) {
+83:         resizeObserver.disconnect()
+84:       }
+85:     }
+86:   }, [
+87:     shouldShow,
+88:     action,
+89:     color,
+90:     strokeWidth,
+91:     animationDuration,
+92:     iterations,
+93:     padding,
+94:     multiline,
+95:   ])
+96: 
+97:   return (
+98:     <span ref={elementRef} className="relative inline-block bg-transparent">
+99:       {children}
+100:     </span>
+101:   )
+102: }
+
+(End of file - total 102 lines)
+</content>
