@@ -1,0 +1,127 @@
+position @components/open-in-v0.tsx in @components/component-preview-client.tsx correct
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/components/open-in-v0.tsx"}
+<path>/home/himmel/personal/prsui/components/open-in-v0.tsx</path>
+<type>file</type>
+<content>
+1: import { Button, ButtonProps } from "@/components/ui/button"
+2: import { motion } from "framer-motion"
+3: 
+4: export function OpenInV0Button({
+5:   url,
+6:   variant = "outline",
+7:   className = "h-8 gap-1 border px-3 text-xs"
+8: }: {
+9:   url: string
+10:   variant?: ButtonProps["variant"]
+11:   className?: string
+12: }) {
+13:   return (
+14:     <Button
+15:       aria-label="Open in v0"
+16:       variant={variant}
+17:       className={className}
+18:       asChild
+19:     >
+20:       <motion.a
+21:         href={`https://v0.dev/chat/api/open?url=${url}`}
+22:         target="_blank"
+23:         rel="noreferrer"
+24:         whileTap={{ scale: 0.95 }}
+25:       >
+26:         Open in{" "}
+27:         <svg
+28:           viewBox="0 0 40 20"
+29:           fill="none"
+30:           xmlns="http://www.w3.org/2000/svg"
+31:           className="h-5 w-5 text-current"
+32:         >
+33:           <path
+34:             d="M23.3919 0H32.9188C36.7819 0 39.9136 3.13165 39.9136 6.99475V16.0805H36.0006V6.99475C36.0006 6.90167 35.9969 6.80925 35.9898 6.71766L26.4628 16.079C26.4949 16.08 26.5272 16.0805 26.5595 16.0805H36.0006V19.7762H26.5595C22.6964 19.7762 19.4788 16.6139 19.4788 12.7508V3.68923H23.3919V12.7508C23.3919 12.9253 23.4054 13.0977 23.4316 13.2668L33.1682 3.6995C33.0861 3.6927 33.003 3.68923 32.9188 3.68923H23.3919V0Z"
+35:             fill="currentColor"
+36:           ></path>
+37:           <path
+38:             d="M13.7688 19.0956L0 3.68759H5.53933L13.6231 12.7337V3.68759H17.7535V17.5746C17.7535 19.6705 15.1654 20.6584 13.7688 19.0956Z"
+39:             fill="currentColor"
+40:           ></path>
+41:         </svg>
+42:       </motion.a>
+43:     </Button>
+44:   )
+45: }
+
+(End of file - total 45 lines)
+</content>
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/components/component-preview-client.tsx"}
+<path>/home/himmel/personal/prsui/components/component-preview-client.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import { RotateCw } from "lucide-react";
+4: import type { ReactNode } from "react";
+5: import { useCallback, useEffect, useState } from "react";
+6: 
+7: import { Button } from "@/components/ui/button";
+8: import { cn } from "@/lib/utils";
+9: import { OpenInV0Button } from "./open-in-v0";
+10: 
+11: export const ComponentPreviewClient = ({
+12:   name,
+13:   children,
+14:   className,
+15: }: {
+16:   name?: string;
+17:   children: ReactNode;
+18:   className?: string;
+19: }) => {
+20:   const [previewKey, setPreviewKey] = useState(0);
+21: 
+22:   const handleRestart = useCallback(() => {
+23:     setPreviewKey((prev) => prev + 1);
+24:   }, []);
+25: 
+26:   useEffect(() => {
+27:     const handleKeyDown = (event: KeyboardEvent) => {
+28:       if (event.key === "r" || event.key === "R") {
+29:         handleRestart();
+30:       }
+31:     };
+32: 
+33:     window.addEventListener("keydown", handleKeyDown);
+34:     return () => window.removeEventListener("keydown", handleKeyDown);
+35:   }, [handleRestart]);
+36: 
+37:   return (
+38:     <div
+39:       className={cn(
+40:         "group relative flex min-h-[350px] items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-muted/30 p-12 backdrop-blur-sm",
+41:         className
+42:       )}
+43:     >
+44:       <div className="pointer-events-none absolute inset-0 [background-image:radial-gradient(circle,currentColor_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.06]" />
+45:       <div className="absolute right-4 top-4 z-50">
+46:         <OpenInV0Button
+47:           url={`https://fancycomponents.dev/r/${name}.json`}
+48:         />
+49:         <Button
+50:           variant="outline"
+51:           size="icon"
+52:           onClick={handleRestart}
+53:           className="h-8 w-8 active:scale-95 duration-300 ease-out transition-[scale,background-color,opacity] group/restart-button"
+54:           aria-label="Restart demo"
+55:         >
+56:           <RotateCw className="h-4 w-4 group-hover/restart-button:rotate-45 duration-300 ease-out transition-transform" />
+57:         </Button>
+58:       </div>
+59:       <div
+60:         key={previewKey}
+61:         className="relative z-10 flex w-full items-center justify-center isolate"
+62:       >
+63:         {children}
+64:       </div>
+65:     </div>
+66:   );
+67: };
+
+(End of file - total 67 lines)
+</content>
