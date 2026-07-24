@@ -1,0 +1,83 @@
+change highlightcolor according to theme in @demo/text-highlight-demo.tsx 
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/demo/text-highlight-demo.tsx"}
+<path>/home/himmel/personal/prsui/demo/text-highlight-demo.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import type { Transition } from "motion";
+4: 
+5: import { TextHighlighter } from "@/registry/new-york/text-highlight";
+6: 
+7: export default function TextHighlighterDemo() {
+8:   const transition = { bounce: 0, delay: 0.4, duration: 1, type: "spring" };
+9:   const highlightClass = "rounded-[0.3em] px-px";
+10:   const highlightColor = "#f6339a";
+11:   const inViewOptions = { amount: 0.1, initial: true, once: true };
+12: 
+13:   return (
+14:     <div className="w-full h-full relative p-0">
+15:       <div className="h-[calc(100%-1rem)] w-[calc(100%-1rem)] m-2 z-10 overflow-scroll rounded-xl">
+16:         <div className="max-w-md mx-auto px-4 mt-16 pb-20 p-0">
+17:           <h1 className="text-4xl font-medium mb-10 font-calendas tracking-tight">
+18:             Typeface alphabets
+19:           </h1>
+20: 
+21:           <div className="text leading-normal space-y-4 font-overusedGrotesk ">
+22:             <p className="whitespace-break-spaces">
+23:               The present-day designer has a host of printing types at his
+24:               disposal.{" "}
+25:               <TextHighlighter
+26:                 className={highlightClass}
+27:                 transition={transition as Transition}
+28:                 highlightColor={highlightColor}
+29:                 useInViewOptions={inViewOptions}
+30:               >
+31:                 Since Gutenberg first invented movable type in 1436-55
+32:               </TextHighlighter>{" "}
+33:               hundreds of different types have been designed and cast in lead.{" "}
+34:               <TextHighlighter
+35:                 className={highlightClass}
+36:                 transition={transition as Transition}
+37:                 highlightColor={highlightColor}
+38:                 useInViewOptions={inViewOptions}
+39:                 direction="rtl"
+40:               >
+41:                 The most recent technical developments
+42:               </TextHighlighter>{" "}
+43:               with computer and photo-typesetting have once again brought new
+44:               faces on the market.{" "}
+45:             </p>
+46: 
+47:             <p className="whitespace-break-spaces">
+48:               <TextHighlighter
+49:                 className={highlightClass}
+50:                 transition={transition as Transition}
+51:                 highlightColor={highlightColor}
+52:                 useInViewOptions={inViewOptions}
+53:                 direction="btt"
+54:               >
+55:                 The choice is up to the designer
+56:               </TextHighlighter>{" "}
+57:               to use good or poor typefaces for his design work. Knowledge of
+58:               the quality of a typeface is of the greatest importance for the{" "}
+59:               <TextHighlighter
+60:                 className={highlightClass}
+61:                 transition={transition as Transition}
+62:                 highlightColor={highlightColor}
+63:                 useInViewOptions={inViewOptions}
+64:                 direction="ttb"
+65:               >
+66:                 functional, aesthetic and psychological effect
+67:               </TextHighlighter>{" "}
+68:               of printed matter.
+69:             </p>
+70:           </div>
+71:         </div>
+72:       </div>
+73:     </div>
+74:   );
+75: }
+
+(End of file - total 75 lines)
+</content>
