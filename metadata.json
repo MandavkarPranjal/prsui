@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYA04XZPDMSRCM1932KDXGXW",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "files_touched": [
+    "registry/new-york/accordion.tsx",
+    "registry/new-york/editable-chip.tsx",
+    "registry/new-york/github-stars.tsx",
+    "registry/new-york/inline-toast.tsx",
+    "registry/new-york/link.tsx",
+    "registry/new-york/logo-grid.tsx",
+    "registry/new-york/logo-marquee.tsx",
+    "registry/new-york/split-action.tsx",
+    "registry/new-york/text-annotation.tsx",
+    "registry/new-york/tooltip.tsx",
+    "registry/new-york/view-on-map.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 92107,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1079040,
+    "output_tokens": 10060,
+    "api_call_count": 45
+  }
+}

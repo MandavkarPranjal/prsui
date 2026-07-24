@@ -1,0 +1,1 @@
+all component in registry dir should have default export, so that they won't cause any problem in "open-in-v0"
