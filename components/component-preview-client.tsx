@@ -2,7 +2,7 @@
 
 import { RotateCw } from "lucide-react";
 import type { ReactNode } from "react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -23,17 +23,6 @@ export const ComponentPreviewClient = ({
   const handleRestart = useCallback(() => {
     setPreviewKey((prev) => prev + 1);
   }, []);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "r" || event.key === "R") {
-        handleRestart();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleRestart]);
 
   return (
     <div
