@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KY9RFR46X18KQKHFXB2DW2Z2",
+  "session_id": "ses_06fe2033cffed5KdlKNNs2PCrD",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-24T09:49:46.214685653Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "save_step_count": 1,
+  "files_touched": [
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "096a54b3ed73",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 28568,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 284288,
+    "output_tokens": 5286,
+    "api_call_count": 17
+  },
+  "session_metrics": {
+    "turn_count": 7
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-24T09:49:46.196444531Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 8963,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 8963,
+    "total_lines_changed": 8963,
+    "agent_percentage": 0,
+    "metric_version": 2
+  }
+}
