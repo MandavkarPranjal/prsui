@@ -277,4 +277,4 @@ const SmoothInput = ({
   );
 };
 
-export { SmoothInput };
+export default SmoothInput;
