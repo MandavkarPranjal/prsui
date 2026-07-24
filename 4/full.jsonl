@@ -1,0 +1,2544 @@
+{
+  "info": {
+    "id": "ses_075a94726ffeAgCThywrWl3VHb",
+    "slug": "brave-knight",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "New session - 2026-07-22T14:59:27.065Z",
+    "agent": "build",
+    "model": {
+      "id": "mimo-v2.5-free",
+      "providerID": "opencode"
+    },
+    "version": "1.18.4",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 14449,
+      "output": 3300,
+      "reasoning": 572,
+      "cache": {
+        "read": 374656,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1784732367065,
+      "updated": 1784732580716
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1784732367161
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "mimo-v2.5-free"
+        },
+        "summary": {
+          "diffs": [
+            {
+              "file": "content/docs/components/logo-marquee.mdx",
+              "patch": "Index: content/docs/components/logo-marquee.mdx\n===================================================================\n--- content/docs/components/logo-marquee.mdx\t\n+++ content/docs/components/logo-marquee.mdx\t\n@@ -0,0 +1,83 @@\n+---\n+title: Logo Marquee\n+description: An infinite scrolling logo marquee with smooth animation and hover pause.\n+---\n+\n+import { LogoMarqueePreview } from \"@/registry/new-york/logo-marquee-demo\";\n+\n+<ComponentPreview name=\"logo-marquee\">\n+  <LogoMarqueePreview />\n+</ComponentPreview>\n+\n+## Installation\n+\n+If you've already added the prsui registry, use the short command:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add @prsui/logo-marquee\"\n+  __npm__=\"npx shadcn@latest add @prsui/logo-marquee\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/logo-marquee\"\n+  __yarn__=\"yarn shadcn@latest add @prsui/logo-marquee\"\n+/>\n+\n+Otherwise, use the full registry URL:\n+\n+<CodeBlockCommand\n+  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n+  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n+  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n+  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n+/>\n+\n+## Usage\n+\n+After you add the component with the CLI, import it from your UI folder:\n+\n+```tsx\n+import { LogoMarquee, type Logo } from \"@/components/prsui/logo-marquee\";\n+\n+const logos: Logo[] = [\n+  {\n+    alt: \"Vercel\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n+  },\n+  {\n+    alt: \"Next.js\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n+  },\n+];\n+\n+export function MyComponent() {\n+  return <LogoMarquee logos={logos} />;\n+}\n+```\n+\n+## Props\n+\n+### Logo\n+\n+| Field    | Type     | Default  | Description            |\n+| -------- | -------- | -------- | ---------------------- |\n+| `src`    | `string` | -        | Image URL for the logo |\n+| `alt`    | `string` | -        | Alt text for the image |\n+| `width`  | `number` | `\"auto\"` | Optional width         |\n+| `height` | `number` | `\"auto\"` | Optional height        |\n+\n+### LogoMarquee\n+\n+| Prop        | Type     | Default | Description                    |\n+| ----------- | -------- | ------- | ------------------------------ |\n+| `logos`     | `Logo[]` | -       | Array of logo objects          |\n+| `className` | `string` | -       | Classes applied to the wrapper |\n+\n+### InfiniteSlider (internal)\n+\n+| Prop              | Type                         | Default        | Description                          |\n+| ----------------- | ---------------------------- | -------------- | ------------------------------------ |\n+| `children`        | `React.ReactNode`            | -              | Content to scroll                    |\n+| `gap`             | `number`                     | `16`           | Gap between items in px              |\n+| `duration`        | `number`                     | `25`           | Animation duration in seconds        |\n+| `durationOnHover` | `number`                     | -              | Duration when hovered (slows down)   |\n+| `direction`       | `\"horizontal\" \\| \"vertical\"` | `\"horizontal\"` | Scroll direction                     |\n+| `reverse`         | `boolean`                    | `false`        | Reverse scroll direction             |\n+| `className`       | `string`                     | -              | Classes applied to the outer wrapper |\n",
+              "additions": 83,
+              "deletions": 0,
+              "status": "added"
+            },
+            {
+              "file": "registry.json",
+              "patch": "Index: registry.json\n===================================================================\n--- registry.json\t\n+++ registry.json\t\n@@ -1,146 +1,160 @@\n {\n   \"name\": \"prsui\",\n   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n   \"items\": [\n     {\n       \"name\": \"smooth-input\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Smooth Input\",\n       \"description\": \"A smooth input component with a caret animation.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/smooth-input.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/smooth-input.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\"]\n     },\n     {\n       \"name\": \"split-action\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Split Action\",\n       \"description\": \"Interactive component for split actions.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/split-action.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/split-action.tsx\"\n         }\n       ],\n       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"tooltip\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Tooltip\",\n       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/tooltip.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/tooltip.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         },\n         {\n           \"path\": \"lib/hooks/use-hover-capable.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/hooks/use-hover-capable.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"accordion\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Accordion\",\n       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/accordion.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/accordion.tsx\"\n         },\n         {\n           \"path\": \"lib/ease.ts\",\n           \"type\": \"registry:lib\",\n           \"target\": \"lib/ease.ts\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"typewriter\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Typewriter\",\n       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/typewriter.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/typewriter.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\"]\n     },\n     {\n       \"name\": \"link\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Link\",\n       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/link.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/link.tsx\"\n         }\n       ]\n     },\n     {\n       \"name\": \"editable-chip\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Editable Chip\",\n       \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/editable-chip.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/editable-chip.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n     },\n     {\n       \"name\": \"inline-toast\",\n       \"type\": \"registry:ui\",\n       \"title\": \"Inline Toast\",\n       \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/inline-toast.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/inline-toast.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\"]\n     },\n     {\n       \"name\": \"view-on-map\",\n       \"type\": \"registry:ui\",\n       \"title\": \"View On Map\",\n       \"description\": \"An animated map preview component that expands from a pill button into an embedded Google Map view.\",\n       \"files\": [\n         {\n           \"path\": \"registry/new-york/view-on-map.tsx\",\n           \"type\": \"registry:ui\",\n           \"target\": \"components/prsui/view-on-map.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n+    },\n+    {\n+      \"name\": \"logo-marquee\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Logo Marquee\",\n+      \"description\": \"An infinite scrolling logo marquee with smooth animation and hover pause.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/logo-marquee.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/prsui/logo-marquee.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"motion\", \"react-use-measure\"]\n     }\n   ]\n }\n",
+              "additions": 14,
+              "deletions": 0,
+              "status": "modified"
+            },
+            {
+              "file": "registry/new-york/logo-marquee-demo.tsx",
+              "patch": "Index: registry/new-york/logo-marquee-demo.tsx\n===================================================================\n--- registry/new-york/logo-marquee-demo.tsx\t\n+++ registry/new-york/logo-marquee-demo.tsx\t\n@@ -0,0 +1,47 @@\n+\"use client\";\n+\n+import { LogoMarquee } from \"./logo-marquee\";\n+import type { Logo } from \"./logo-marquee\";\n+\n+const logos: Logo[] = [\n+  {\n+    alt: \"Vercel\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n+  },\n+  {\n+    alt: \"Next.js\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n+  },\n+  {\n+    alt: \"React\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg\",\n+  },\n+  {\n+    alt: \"TypeScript\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg\",\n+  },\n+  {\n+    alt: \"Tailwind CSS\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg\",\n+  },\n+  {\n+    alt: \"GitHub\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg\",\n+  },\n+  {\n+    alt: \"Figma\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg\",\n+  },\n+  {\n+    alt: \"GitLab\",\n+    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg\",\n+  },\n+];\n+\n+export const LogoMarqueePreview = function LogoMarqueePreview() {\n+  return (\n+    <div className=\"flex w-full items-center justify-center\">\n+      <LogoMarquee logos={logos} />\n+    </div>\n+  );\n+};\n",
+              "additions": 47,
+              "deletions": 0,
+              "status": "added"
+            },
+            {
+              "file": "registry/new-york/logo-marquee.tsx",
+              "patch": "Index: registry/new-york/logo-marquee.tsx\n===================================================================\n--- registry/new-york/logo-marquee.tsx\t\n+++ registry/new-york/logo-marquee.tsx\t\n@@ -1,153 +1,150 @@\n \"use client\";\n \n import { useMotionValue, animate, motion } from \"motion/react\";\n import React, { memo, useState, useEffect } from \"react\";\n import useMeasure from \"react-use-measure\";\n \n import { cn } from \"@/lib/utils\";\n \n export interface Logo {\n   src: string;\n   alt: string;\n   width?: number;\n   height?: number;\n }\n \n interface InfiniteSliderProps {\n   children: React.ReactNode;\n   gap?: number;\n   duration?: number;\n   durationOnHover?: number;\n   direction?: \"horizontal\" | \"vertical\";\n   reverse?: boolean;\n   className?: string;\n }\n \n const InfiniteSlider = memo(function InfiniteSlider({\n   children,\n   gap = 16,\n   duration = 25,\n   durationOnHover,\n   direction = \"horizontal\",\n   reverse = false,\n   className,\n }: InfiniteSliderProps) {\n   const [currentDuration, setCurrentDuration] = useState(duration);\n   const [ref, { width, height }] = useMeasure();\n   const translation = useMotionValue(0);\n   const [isTransitioning, setIsTransitioning] = useState(false);\n   const [key, setKey] = useState(0);\n \n   useEffect(() => {\n     const size = direction === \"horizontal\" ? width : height;\n     const contentSize = size + gap;\n     const from = reverse ? -contentSize / 2 : 0;\n     const to = reverse ? 0 : -contentSize / 2;\n \n-    let controls;\n+    const controls = isTransitioning\n+      ? animate(translation, [translation.get(), to], {\n+          duration:\n+            currentDuration * Math.abs((translation.get() - to) / contentSize),\n+          ease: \"linear\",\n+          onComplete: () => {\n+            setIsTransitioning(false);\n+            setKey((prev) => prev + 1);\n+          },\n+        })\n+      : animate(translation, [from, to], {\n+          duration: currentDuration,\n+          ease: \"linear\",\n+          onRepeat: () => translation.set(from),\n+          repeat: Infinity,\n+          repeatDelay: 0,\n+          repeatType: \"loop\",\n+        });\n \n-    if (isTransitioning) {\n-      controls = animate(translation, [translation.get(), to], {\n-        duration:\n-          currentDuration * Math.abs((translation.get() - to) / contentSize),\n-        ease: \"linear\",\n-        onComplete: () => {\n-          setIsTransitioning(false);\n-          setKey((prev) => prev + 1);\n-        },\n-      });\n-    } else {\n-      controls = animate(translation, [from, to], {\n-        duration: currentDuration,\n-        ease: \"linear\",\n-        onRepeat: () => translation.set(from),\n-        repeat: Infinity,\n-        repeatDelay: 0,\n-        repeatType: \"loop\",\n-      });\n-    }\n-\n     return controls?.stop;\n   }, [\n     key,\n     translation,\n     currentDuration,\n     width,\n     height,\n     gap,\n     isTransitioning,\n     direction,\n     reverse,\n   ]);\n \n   const hoverProps = durationOnHover\n     ? {\n         onHoverEnd: () => {\n           setIsTransitioning(true);\n           setCurrentDuration(duration);\n         },\n         onHoverStart: () => {\n           setIsTransitioning(true);\n           setCurrentDuration(durationOnHover);\n         },\n       }\n     : {};\n \n   return (\n     <div className={cn(\"overflow-hidden\", className)}>\n       <motion.div\n         ref={ref}\n         className=\"flex w-max\"\n         style={{\n           ...(direction === \"horizontal\"\n             ? { x: translation }\n             : { y: translation }),\n           flexDirection: direction === \"horizontal\" ? \"row\" : \"column\",\n           gap: `${gap}px`,\n         }}\n         {...hoverProps}\n       >\n         {children}\n         {children}\n       </motion.div>\n     </div>\n   );\n });\n \n const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n   return (\n+    // eslint-disable-next-line @next/next/no-img-element -- User explicitly chose <img> over next/image\n     <img\n       alt={logo.alt}\n       src={logo.src}\n       width={logo.width ?? \"auto\"}\n       height={logo.height ?? \"auto\"}\n       loading=\"lazy\"\n       className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n     />\n   );\n });\n \n export const LogoMarquee = memo(function LogoMarquee({\n   logos,\n   className,\n }: {\n   logos: Logo[];\n   className?: string;\n }) {\n   return (\n     <div\n       className={cn(\n         \"max-w-7xl mx-auto overflow-hidden py-4 mask-[linear-gradient(to_right,transparent,black_25%,black_75%,transparent)]\",\n         className\n       )}\n     >\n       <InfiniteSlider gap={42} reverse duration={80} durationOnHover={25}>\n         {[...logos, ...logos].map((logo, i) => (\n           <LogoImage key={`${logo.alt}-${i}`} logo={logo} />\n         ))}\n       </InfiniteSlider>\n     </div>\n   );\n });\n \n LogoMarquee.displayName = \"LogoMarquee\";\n",
+              "additions": 19,
+              "deletions": 22,
+              "status": "modified"
+            }
+          ]
+        },
+        "id": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "added new component @registry/new-york/logo-marquee.tsx update docs and demo, then pnpm fix and don't use <Image /> from \"next/image\"",
+          "id": "prt_f8a56b9ce0013rnsh1VGhfWGbh",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56b939001Ai9PXI2o3nO4A1"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "Called the Read tool with the following input: {\"filePath\":\"/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\"}",
+          "id": "prt_f8a56b9ce002wyk4N52cmVDy3L",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56b939001Ai9PXI2o3nO4A1"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "<path>/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { useMotionValue, animate, motion } from \"motion/react\";\n4: import React, { memo, useState, useEffect } from \"react\";\n5: import useMeasure from \"react-use-measure\";\n6: \n7: import { cn } from \"@/lib/utils\";\n8: \n9: export interface Logo {\n10:   src: string;\n11:   alt: string;\n12:   width?: number;\n13:   height?: number;\n14: }\n15: \n16: interface InfiniteSliderProps {\n17:   children: React.ReactNode;\n18:   gap?: number;\n19:   duration?: number;\n20:   durationOnHover?: number;\n21:   direction?: \"horizontal\" | \"vertical\";\n22:   reverse?: boolean;\n23:   className?: string;\n24: }\n25: \n26: const InfiniteSlider = memo(function InfiniteSlider({\n27:   children,\n28:   gap = 16,\n29:   duration = 25,\n30:   durationOnHover,\n31:   direction = \"horizontal\",\n32:   reverse = false,\n33:   className,\n34: }: InfiniteSliderProps) {\n35:   const [currentDuration, setCurrentDuration] = useState(duration);\n36:   const [ref, { width, height }] = useMeasure();\n37:   const translation = useMotionValue(0);\n38:   const [isTransitioning, setIsTransitioning] = useState(false);\n39:   const [key, setKey] = useState(0);\n40: \n41:   useEffect(() => {\n42:     const size = direction === \"horizontal\" ? width : height;\n43:     const contentSize = size + gap;\n44:     const from = reverse ? -contentSize / 2 : 0;\n45:     const to = reverse ? 0 : -contentSize / 2;\n46: \n47:     let controls;\n48: \n49:     if (isTransitioning) {\n50:       controls = animate(translation, [translation.get(), to], {\n51:         duration:\n52:           currentDuration * Math.abs((translation.get() - to) / contentSize),\n53:         ease: \"linear\",\n54:         onComplete: () => {\n55:           setIsTransitioning(false);\n56:           setKey((prev) => prev + 1);\n57:         },\n58:       });\n59:     } else {\n60:       controls = animate(translation, [from, to], {\n61:         duration: currentDuration,\n62:         ease: \"linear\",\n63:         onRepeat: () => translation.set(from),\n64:         repeat: Infinity,\n65:         repeatDelay: 0,\n66:         repeatType: \"loop\",\n67:       });\n68:     }\n69: \n70:     return controls?.stop;\n71:   }, [\n72:     key,\n73:     translation,\n74:     currentDuration,\n75:     width,\n76:     height,\n77:     gap,\n78:     isTransitioning,\n79:     direction,\n80:     reverse,\n81:   ]);\n82: \n83:   const hoverProps = durationOnHover\n84:     ? {\n85:         onHoverEnd: () => {\n86:           setIsTransitioning(true);\n87:           setCurrentDuration(duration);\n88:         },\n89:         onHoverStart: () => {\n90:           setIsTransitioning(true);\n91:           setCurrentDuration(durationOnHover);\n92:         },\n93:       }\n94:     : {};\n95: \n96:   return (\n97:     <div className={cn(\"overflow-hidden\", className)}>\n98:       <motion.div\n99:         ref={ref}\n100:         className=\"flex w-max\"\n101:         style={{\n102:           ...(direction === \"horizontal\"\n103:             ? { x: translation }\n104:             : { y: translation }),\n105:           flexDirection: direction === \"horizontal\" ? \"row\" : \"column\",\n106:           gap: `${gap}px`,\n107:         }}\n108:         {...hoverProps}\n109:       >\n110:         {children}\n111:         {children}\n112:       </motion.div>\n113:     </div>\n114:   );\n115: });\n116: \n117: const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n118:   return (\n119:     <img\n120:       alt={logo.alt}\n121:       src={logo.src}\n122:       width={logo.width ?? \"auto\"}\n123:       height={logo.height ?? \"auto\"}\n124:       loading=\"lazy\"\n125:       className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n126:     />\n127:   );\n128: });\n129: \n130: export const LogoMarquee = memo(function LogoMarquee({\n131:   logos,\n132:   className,\n133: }: {\n134:   logos: Logo[];\n135:   className?: string;\n136: }) {\n137:   return (\n138:     <div\n139:       className={cn(\n140:         \"max-w-7xl mx-auto overflow-hidden py-4 mask-[linear-gradient(to_right,transparent,black_25%,black_75%,transparent)]\",\n141:         className\n142:       )}\n143:     >\n144:       <InfiniteSlider gap={42} reverse duration={80} durationOnHover={25}>\n145:         {[...logos, ...logos].map((logo, i) => (\n146:           <LogoImage key={`${logo.alt}-${i}`} logo={logo} />\n147:         ))}\n148:       </InfiniteSlider>\n149:     </div>\n150:   );\n151: });\n152: \n153: LogoMarquee.displayName = \"LogoMarquee\";\n\n(End of file - total 153 lines)\n</content>",
+          "id": "prt_f8a56b9ce003SEUBYBvQm9oiOl",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56b939001Ai9PXI2o3nO4A1"
+        },
+        {
+          "type": "file",
+          "mime": "text/plain",
+          "filename": "registry/new-york/logo-marquee.tsx",
+          "url": "file:///home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx",
+          "source": {
+            "text": {
+              "value": "@registry/new-york/logo-marquee.tsx",
+              "start": 20,
+              "end": 55
+            },
+            "type": "file",
+            "path": "registry/new-york/logo-marquee.tsx"
+          },
+          "id": "prt_f8a56b9ce004QzQAvdLGgXKPKF",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56b939001Ai9PXI2o3nO4A1"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13035,
+          "input": 2586,
+          "output": 135,
+          "reasoning": 74,
+          "cache": {
+            "write": 0,
+            "read": 10240
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732367445,
+          "completed": 1784732384472
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a56ba55001ZIg9It6RoZQpgS",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-start",
+          "id": "prt_f8a56cf68001pCxxf6PNxlqmJn",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56ba55001ZIg9It6RoZQpgS"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to:\n1. Update docs and demo for the new component `@registry/new-york/logo-marquee.tsx`\n2. Run `pnpm fix`\n3. Don't use `<Image />` from \"next/image\"\n\nLet me first explore the codebase to understand the structure and see how other components have their docs and demos set up.",
+          "time": {
+            "start": 1784732372844,
+            "end": 1784732374248
+          },
+          "id": "prt_f8a56cf6c001i8H3c5ui61opsn",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56ba55001ZIg9It6RoZQpgS"
+        },
+        {
+          "type": "tool",
+          "tool": "task",
+          "callID": "call_df8524826c1743cda071d2be",
+          "state": {
+            "status": "completed",
+            "input": {
+              "subagent_type": "explore",
+              "description": "Explore codebase structure",
+              "prompt": "Explore the codebase at /home/himmel/personal/prsui to understand:\n1. How components are organized (look at registry/ directory structure)\n2. How docs are structured (look for docs/ or content/ directories)\n3. How demos are set up for existing components\n4. Find examples of existing component documentation and demo files to understand the pattern\n\nReturn the directory structure, key file paths, and patterns used for docs/demos."
+            },
+            "output": "<task id=\"ses_075a91ca4ffeMjbPv4ANXoixUf\" state=\"completed\">\n<task_result>\n\n</task_result>\n</task>",
+            "metadata": {
+              "parentSessionId": "ses_075a94726ffeAgCThywrWl3VHb",
+              "sessionId": "ses_075a91ca4ffeMjbPv4ANXoixUf",
+              "model": {
+                "modelID": "mimo-v2.5-free",
+                "providerID": "opencode"
+              },
+              "truncated": false
+            },
+            "title": "Explore codebase structure",
+            "time": {
+              "start": 1784732377959,
+              "end": 1784732383464
+            }
+          },
+          "id": "prt_f8a56d4ec001gUEV1MV8USKYpA",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56ba55001ZIg9It6RoZQpgS"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13035,
+            "input": 2586,
+            "output": 135,
+            "reasoning": 74,
+            "cache": {
+              "write": 0,
+              "read": 10240
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a56f934001ouszwC8UElRIL6",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56ba55001ZIg9It6RoZQpgS"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13192,
+          "input": 303,
+          "output": 75,
+          "reasoning": 14,
+          "cache": {
+            "write": 0,
+            "read": 12800
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732384483,
+          "completed": 1784732389598
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a56fce20012L5je0xEh1w1iF",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-start",
+          "id": "prt_f8a570aea001wquUN2VfYff0e7",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56fce20012L5je0xEh1w1iF"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me search more specifically for the patterns used in this codebase.",
+          "time": {
+            "start": 1784732388079,
+            "end": 1784732388351
+          },
+          "id": "prt_f8a570aef00172wuPv6BOFZUkM",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56fce20012L5je0xEh1w1iF"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_0a52b9f6c4584dc48729a91d",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "registry/new-york/*.tsx"
+            },
+            "output": "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n/home/himmel/personal/prsui/registry/new-york/view-on-map-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/view-on-map.tsx\n/home/himmel/personal/prsui/registry/new-york/inline-toast-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/inline-toast.tsx\n/home/himmel/personal/prsui/registry/new-york/editable-chip.tsx\n/home/himmel/personal/prsui/registry/new-york/editable-chip-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/typewriter.tsx\n/home/himmel/personal/prsui/registry/new-york/typewriter-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/tooltip.tsx\n/home/himmel/personal/prsui/registry/new-york/tooltip-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/split-action.tsx\n/home/himmel/personal/prsui/registry/new-york/split-action-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/smooth-input.tsx\n/home/himmel/personal/prsui/registry/new-york/link.tsx\n/home/himmel/personal/prsui/registry/new-york/link-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/accordion.tsx\n/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx",
+            "metadata": {
+              "count": 18,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784732388533,
+              "end": 1784732388576
+            }
+          },
+          "id": "prt_f8a570c02001fdlVK6dG6MTRx0",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56fce20012L5je0xEh1w1iF"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_3b9a95e9bbae44b69761d4f0",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "content/**/*.mdx"
+            },
+            "output": "/home/himmel/personal/prsui/content/docs/components/view-on-map.mdx\n/home/himmel/personal/prsui/content/docs/components/inline-toast.mdx\n/home/himmel/personal/prsui/content/docs/components/editable-chip.mdx\n/home/himmel/personal/prsui/content/docs/components/typewriter.mdx\n/home/himmel/personal/prsui/content/docs/components/tooltip.mdx\n/home/himmel/personal/prsui/content/docs/components/split-action.mdx\n/home/himmel/personal/prsui/content/docs/components/smooth-input.mdx\n/home/himmel/personal/prsui/content/docs/components/link.mdx\n/home/himmel/personal/prsui/content/docs/components/index.mdx\n/home/himmel/personal/prsui/content/docs/components/accordion.mdx\n/home/himmel/personal/prsui/content/docs/(root)/index.mdx",
+            "metadata": {
+              "count": 11,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784732389183,
+              "end": 1784732389291
+            }
+          },
+          "id": "prt_f8a570cfa001YJPP9EfYgC7Dup",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56fce20012L5je0xEh1w1iF"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_2e699ed2dbd249aa9eed2bf0",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/demos/**"
+            },
+            "output": "No files found",
+            "metadata": {
+              "count": 0,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784732389215,
+              "end": 1784732389279
+            }
+          },
+          "id": "prt_f8a570f43001eNvOrnfJ9X6daC",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56fce20012L5je0xEh1w1iF"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13192,
+            "input": 303,
+            "output": 75,
+            "reasoning": 14,
+            "cache": {
+              "write": 0,
+              "read": 12800
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a571092001FuVSHXQ53indYB",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a56fce20012L5je0xEh1w1iF"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13906,
+          "input": 730,
+          "output": 104,
+          "reasoning": 16,
+          "cache": {
+            "write": 0,
+            "read": 13056
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732389605,
+          "completed": 1784732395955
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a5710e4001ckJRSfcJ8dmMlW",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-start",
+          "id": "prt_f8a57241b001RJI4Or9VHv53xW",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5710e4001ckJRSfcJ8dmMlW"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me look at an existing component's docs and demo to understand the pattern.",
+          "time": {
+            "start": 1784732394526,
+            "end": 1784732394716
+          },
+          "id": "prt_f8a57241e001LuucZPjRuO3x5S",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5710e4001ckJRSfcJ8dmMlW"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_47aed01005144bff83cc02ac",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/accordion.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/accordion.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Accordion\n3: description: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n4: ---\n5: \n6: import { BouncyAccordionPreview } from \"@/registry/new-york/accordion-demo\";\n7: \n8: <ComponentPreview name=\"accordion\">\n9:   <BouncyAccordionPreview />\n10: </ComponentPreview>\n11: \n12: ## Installation\n13: \n14: If you've already added the prsui registry, use the short command:\n15: \n16: <CodeBlockCommand\n17:   __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n18:   __npm__=\"npx shadcn@latest add @prsui/accordion\"\n19:   __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n20:   __yarn__=\"yarn shadcn@latest add @prsui/accordion\"\n21: />\n22: \n23: Otherwise, use the full registry URL:\n24: \n25: <CodeBlockCommand\n26:   __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n27:   __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n28:   __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n29:   __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n30: />\n31: \n32: ## Usage\n33: \n34: After you add the component with the CLI, import it from your UI folder:\n35: \n36: ```tsx\n37: import { Accordion, type AccordionItem } from \"@/components/ui/accordion\";\n38: \n39: const items: AccordionItem[] = [\n40:   {\n41:     id: \"item-1\",\n42:     title: \"First question\",\n43:     description: \"Answer to the first question.\",\n44:   },\n45:   {\n46:     id: \"item-2\",\n47:     title: \"Second question\",\n48:     description: \"Answer to the second question.\",\n49:   },\n50: ];\n51: \n52: export function MyComponent() {\n53:   return <Accordion items={items} defaultValue=\"item-1\" />;\n54: }\n55: ```\n56: \n57: ## Props\n58: \n59: | Prop            | Type                              | Default | Description                                           |\n60: | --------------- | --------------------------------- | ------- | ----------------------------------------------------- |\n61: | `items`         | `AccordionItem[]`                 | -       | Array of accordion items                              |\n62: | `value`         | `string \\| null`                  | -       | Controlled currently open item id                     |\n63: | `defaultValue`  | `string \\| null`                  | `null`  | Initially open item id                                |\n64: | `onValueChange` | `(value: string \\| null) => void` | -       | Callback fired when the open item changes             |\n65: | `collapsible`   | `boolean`                         | `true`  | When false, an open item cannot be closed by clicking |\n66: | `className`     | `string`                          | -       | Classes applied to the root wrapper                   |\n67: | `classNames`    | `AccordionClassNames`             | -       | Override classes for individual sub-elements          |\n68: \n69: ### AccordionItem\n70: \n71: | Field         | Type        | Description                              |\n72: | ------------- | ----------- | ---------------------------------------- |\n73: | `id`          | `string`    | Unique identifier for the item           |\n74: | `title`       | `ReactNode` | Content shown in the trigger row         |\n75: | `description` | `ReactNode` | Content revealed when the item is open   |\n76: | `icon`        | `ReactNode` | Optional icon displayed before the title |\n77: | `disabled`    | `boolean`   | Disables the item                        |\n78: \n79: ### AccordionClassNames\n80: \n81: | Key           | Description                  |\n82: | ------------- | ---------------------------- |\n83: | `root`        | Wrapper around all items     |\n84: | `item`        | Each accordion row container |\n85: | `trigger`     | The clickable button row     |\n86: | `icon`        | The icon wrapper span        |\n87: | `title`       | The title text span          |\n88: | `chevron`     | The chevron rotation wrapper |\n89: | `content`     | The animated content wrapper |\n90: | `description` | The description text div     |\n\n(End of file - total 90 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Accordion\ndescription: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n---\n\nimport { BouncyAccordionPreview } from \"@/registry/new-york/accordion-demo\";\n\n<ComponentPreview name=\"accordion\">\n  <BouncyAccordionPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n  __npm__=\"npx shadcn@latest add @prsui/accordion\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n  __yarn__=\"yarn shadcn@latest add @prsui/accordion\"",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/accordion.mdx",
+                "text": "---\ntitle: Accordion\ndescription: Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\n---\n\nimport { BouncyAccordionPreview } from \"@/registry/new-york/accordion-demo\";\n\n<ComponentPreview name=\"accordion\">\n  <BouncyAccordionPreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/accordion\"\n  __npm__=\"npx shadcn@latest add @prsui/accordion\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/accordion\"\n  __yarn__=\"yarn shadcn@latest add @prsui/accordion\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/accordion.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\nimport { Accordion, type AccordionItem } from \"@/components/ui/accordion\";\n\nconst items: AccordionItem[] = [\n  {\n    id: \"item-1\",\n    title: \"First question\",\n    description: \"Answer to the first question.\",\n  },\n  {\n    id: \"item-2\",\n    title: \"Second question\",\n    description: \"Answer to the second question.\",\n  },\n];\n\nexport function MyComponent() {\n  return <Accordion items={items} defaultValue=\"item-1\" />;\n}\n```\n\n## Props\n\n| Prop            | Type                              | Default | Description                                           |\n| --------------- | --------------------------------- | ------- | ----------------------------------------------------- |\n| `items`         | `AccordionItem[]`                 | -       | Array of accordion items                              |\n| `value`         | `string \\| null`                  | -       | Controlled currently open item id                     |\n| `defaultValue`  | `string \\| null`                  | `null`  | Initially open item id                                |\n| `onValueChange` | `(value: string \\| null) => void` | -       | Callback fired when the open item changes             |\n| `collapsible`   | `boolean`                         | `true`  | When false, an open item cannot be closed by clicking |\n| `className`     | `string`                          | -       | Classes applied to the root wrapper                   |\n| `classNames`    | `AccordionClassNames`             | -       | Override classes for individual sub-elements          |\n\n### AccordionItem\n\n| Field         | Type        | Description                              |\n| ------------- | ----------- | ---------------------------------------- |\n| `id`          | `string`    | Unique identifier for the item           |\n| `title`       | `ReactNode` | Content shown in the trigger row         |\n| `description` | `ReactNode` | Content revealed when the item is open   |\n| `icon`        | `ReactNode` | Optional icon displayed before the title |\n| `disabled`    | `boolean`   | Disables the item                        |\n\n### AccordionClassNames\n\n| Key           | Description                  |\n| ------------- | ---------------------------- |\n| `root`        | Wrapper around all items     |\n| `item`        | Each accordion row container |\n| `trigger`     | The clickable button row     |\n| `icon`        | The icon wrapper span        |\n| `title`       | The title text span          |\n| `chevron`     | The chevron rotation wrapper |\n| `content`     | The animated content wrapper |\n| `description` | The description text div     |",
+                "lineStart": 1,
+                "lineEnd": 90,
+                "totalLines": 90,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/accordion.mdx",
+            "time": {
+              "start": 1784732395025,
+              "end": 1784732395036
+            }
+          },
+          "id": "prt_f8a5724e00014JsMQpRumsWmAp",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5710e4001ckJRSfcJ8dmMlW"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_ba8f22c6914040f2844e6dbd",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n4: \n5: import { Accordion } from \"./accordion\";\n6: \n7: const items = [\n8:   {\n9:     description:\n10:       \"This is a demo platform used to showcase features and test UI components during development.\",\n11:     icon: <LayoutGrid className=\"h-4 w-4\" />,\n12:     id: \"platform\",\n13:     title: \"What is this platform?\",\n14:   },\n15:   {\n16:     description:\n17:       \"Yes. You can switch between light and dark themes from the settings menu.\",\n18:     icon: <SunMoon className=\"h-4 w-4\" />,\n19:     id: \"mode\",\n20:     title: \"Is there a dark mode?\",\n21:   },\n22:   {\n23:     description:\n24:       \"The latest versions of Chrome, Firefox, Safari, and Edge are officially supported.\",\n25:     icon: <Info className=\"h-4 w-4\" />,\n26:     id: \"support\",\n27:     title: \"What browsers are supported?\",\n28:   },\n29:   {\n30:     description:\n31:       \"This is a demo environment, so some sections intentionally use sample text and mock data.\",\n32:     icon: <Space className=\"h-4 w-4\" />,\n33:     id: \"placeholder\",\n34:     title: \"Why am I seeing placeholder content?\",\n35:   },\n36:   {\n37:     description:\n38:       \"Check the documentation or contact the project maintainers for additional information.\",\n39:     icon: <BookOpen className=\"h-4 w-4\" />,\n40:     id: \"learn\",\n41:     title: \"Where can I learn more?\",\n42:   },\n43:   {\n44:     description:\n45:       \"Use the feedback form or contact the development team with steps to reproduce the issue.\",\n46:     icon: <Bug className=\"h-4 w-4\" />,\n47:     id: \"bug\",\n48:     title: \"How do I report a bug?\",\n49:   },\n50: ];\n51: \n52: export const BouncyAccordionPreview = function BouncyAccordionPreview() {\n53:   return (\n54:     <div className=\"flex min-h-96 w-full items-center justify-center\">\n55:       <div className=\"w-full max-w-sm\">\n56:         <Accordion items={items} defaultValue=\"platform\" />\n57:       </div>\n58:     </div>\n59:   );\n60: };\n\n(End of file - total 60 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n\nimport { Accordion } from \"./accordion\";\n\nconst items = [\n  {\n    description:\n      \"This is a demo platform used to showcase features and test UI components during development.\",\n    icon: <LayoutGrid className=\"h-4 w-4\" />,\n    id: \"platform\",\n    title: \"What is this platform?\",\n  },\n  {\n    description:\n      \"Yes. You can switch between light and dark themes from the settings menu.\",\n    icon: <SunMoon className=\"h-4 w-4\" />,\n    id: \"mode\",\n    title: \"Is there a dark mode?\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/accordion-demo.tsx",
+                "text": "\"use client\";\n\nimport { BookOpen, Bug, Info, LayoutGrid, Space, SunMoon } from \"lucide-react\";\n\nimport { Accordion } from \"./accordion\";\n\nconst items = [\n  {\n    description:\n      \"This is a demo platform used to showcase features and test UI components during development.\",\n    icon: <LayoutGrid className=\"h-4 w-4\" />,\n    id: \"platform\",\n    title: \"What is this platform?\",\n  },\n  {\n    description:\n      \"Yes. You can switch between light and dark themes from the settings menu.\",\n    icon: <SunMoon className=\"h-4 w-4\" />,\n    id: \"mode\",\n    title: \"Is there a dark mode?\",\n  },\n  {\n    description:\n      \"The latest versions of Chrome, Firefox, Safari, and Edge are officially supported.\",\n    icon: <Info className=\"h-4 w-4\" />,\n    id: \"support\",\n    title: \"What browsers are supported?\",\n  },\n  {\n    description:\n      \"This is a demo environment, so some sections intentionally use sample text and mock data.\",\n    icon: <Space className=\"h-4 w-4\" />,\n    id: \"placeholder\",\n    title: \"Why am I seeing placeholder content?\",\n  },\n  {\n    description:\n      \"Check the documentation or contact the project maintainers for additional information.\",\n    icon: <BookOpen className=\"h-4 w-4\" />,\n    id: \"learn\",\n    title: \"Where can I learn more?\",\n  },\n  {\n    description:\n      \"Use the feedback form or contact the development team with steps to reproduce the issue.\",\n    icon: <Bug className=\"h-4 w-4\" />,\n    id: \"bug\",\n    title: \"How do I report a bug?\",\n  },\n];\n\nexport const BouncyAccordionPreview = function BouncyAccordionPreview() {\n  return (\n    <div className=\"flex min-h-96 w-full items-center justify-center\">\n      <div className=\"w-full max-w-sm\">\n        <Accordion items={items} defaultValue=\"platform\" />\n      </div>\n    </div>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 60,
+                "totalLines": 60,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/accordion-demo.tsx",
+            "time": {
+              "start": 1784732395387,
+              "end": 1784732395405
+            }
+          },
+          "id": "prt_f8a572660001EzoS6fB0ni4qPe",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5710e4001ckJRSfcJ8dmMlW"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_1accdd9a9dc74aca8423b365",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/index.mdx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/content/docs/components/index.mdx</path>\n<type>file</type>\n<content>\n1: ---\n2: title: Components\n3: description: Browse the components available in this registry.\n4: ---\n5: \n6: <ComponentsList />\n\n(End of file - total 6 lines)\n</content>",
+            "metadata": {
+              "preview": "---\ntitle: Components\ndescription: Browse the components available in this registry.\n---\n\n<ComponentsList />",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/content/docs/components/index.mdx",
+                "text": "---\ntitle: Components\ndescription: Browse the components available in this registry.\n---\n\n<ComponentsList />",
+                "lineStart": 1,
+                "lineEnd": 6,
+                "totalLines": 6,
+                "truncated": false
+              }
+            },
+            "title": "content/docs/components/index.mdx",
+            "time": {
+              "start": 1784732395803,
+              "end": 1784732395840
+            }
+          },
+          "id": "prt_f8a572807001N4XLCP8xnl45k4",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5710e4001ckJRSfcJ8dmMlW"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13906,
+            "input": 730,
+            "output": 104,
+            "reasoning": 16,
+            "cache": {
+              "write": 0,
+              "read": 13056
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a572978001Dq0xHvNvus8RR0",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5710e4001ckJRSfcJ8dmMlW"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 16030,
+          "input": 2128,
+          "output": 85,
+          "reasoning": 57,
+          "cache": {
+            "write": 0,
+            "read": 13760
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732395959,
+          "completed": 1784732401978
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a5729b70017AvFUJprz4tJGE",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-start",
+          "id": "prt_f8a573790001o4eRTruh49S0dD",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5729b70017AvFUJprz4tJGE"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me look at a few more things:\n1. How the registry is configured (to understand how to add the new component)\n2. Look at another component's demo that might use images to see the pattern\n3. Check if there's a registry.json or similar config file",
+          "time": {
+            "start": 1784732399507,
+            "end": 1784732401580
+          },
+          "id": "prt_f8a573793001o5J6rtNh5zcitq",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5729b70017AvFUJprz4tJGE"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_39d76af3823f4343b53a050b",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "registry.json"
+            },
+            "output": "/home/himmel/personal/prsui/registry.json\n/home/himmel/personal/prsui/public/r/registry.json",
+            "metadata": {
+              "count": 2,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784732401623,
+              "end": 1784732401641
+            }
+          },
+          "id": "prt_f8a573fae001Ij1I7fv2yHzrHB",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5729b70017AvFUJprz4tJGE"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_687f78a25a0d47eabf206027",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/registry*.json"
+            },
+            "output": "/home/himmel/personal/prsui/registry.json\n/home/himmel/personal/prsui/public/r/registry.json",
+            "metadata": {
+              "count": 2,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1784732401675,
+              "end": 1784732401705
+            }
+          },
+          "id": "prt_f8a573fe40013h0bHVmynXta4W",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5729b70017AvFUJprz4tJGE"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_99bf11e9f5844cca930459da",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/view-on-map-demo.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/view-on-map-demo.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { ViewOnMap } from \"./view-on-map\";\n4: \n5: export const ViewOnMapPreview = () => (\n6:   <div className=\"flex min-h-96 w-full items-center justify-center\">\n7:     <ViewOnMap\n8:       address=\"Marine Lines\"\n9:       mapImageUrl=\"https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop\"\n10:     />\n11:   </div>\n12: );\n\n(End of file - total 12 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { ViewOnMap } from \"./view-on-map\";\n\nexport const ViewOnMapPreview = () => (\n  <div className=\"flex min-h-96 w-full items-center justify-center\">\n    <ViewOnMap\n      address=\"Marine Lines\"\n      mapImageUrl=\"https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop\"\n    />\n  </div>\n);",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/view-on-map-demo.tsx",
+                "text": "\"use client\";\n\nimport { ViewOnMap } from \"./view-on-map\";\n\nexport const ViewOnMapPreview = () => (\n  <div className=\"flex min-h-96 w-full items-center justify-center\">\n    <ViewOnMap\n      address=\"Marine Lines\"\n      mapImageUrl=\"https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2000&auto=format&fit=crop\"\n    />\n  </div>\n);",
+                "lineStart": 1,
+                "lineEnd": 12,
+                "totalLines": 12,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/view-on-map-demo.tsx",
+            "time": {
+              "start": 1784732401812,
+              "end": 1784732401822
+            }
+          },
+          "id": "prt_f8a5740200012I9G9gZKqzPz2C",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5729b70017AvFUJprz4tJGE"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16030,
+            "input": 2128,
+            "output": 85,
+            "reasoning": 57,
+            "cache": {
+              "write": 0,
+              "read": 13760
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a574117001CKSX01Xwd4wYGm",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5729b70017AvFUJprz4tJGE"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 16385,
+          "input": 467,
+          "output": 32,
+          "reasoning": 14,
+          "cache": {
+            "write": 0,
+            "read": 15872
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732401982,
+          "completed": 1784732405757
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a57413e001zf9IY87ErR88S0",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-start",
+          "id": "prt_f8a574d8a001pn14kFWXzFROUj",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57413e001zf9IY87ErR88S0"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me look at the registry.json to understand how components are registered.",
+          "time": {
+            "start": 1784732405132,
+            "end": 1784732405389
+          },
+          "id": "prt_f8a574d8c001chrSQ6RZQUZ5OR",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57413e001zf9IY87ErR88S0"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_4fb3dc03590c4b9196ee28e7",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"name\": \"prsui\",\n3:   \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n4:   \"items\": [\n5:     {\n6:       \"name\": \"smooth-input\",\n7:       \"type\": \"registry:ui\",\n8:       \"title\": \"Smooth Input\",\n9:       \"description\": \"A smooth input component with a caret animation.\",\n10:       \"files\": [\n11:         {\n12:           \"path\": \"registry/new-york/smooth-input.tsx\",\n13:           \"type\": \"registry:ui\",\n14:           \"target\": \"components/prsui/smooth-input.tsx\"\n15:         }\n16:       ],\n17:       \"dependencies\": [\"framer-motion\"]\n18:     },\n19:     {\n20:       \"name\": \"split-action\",\n21:       \"type\": \"registry:ui\",\n22:       \"title\": \"Split Action\",\n23:       \"description\": \"Interactive component for split actions.\",\n24:       \"files\": [\n25:         {\n26:           \"path\": \"registry/new-york/split-action.tsx\",\n27:           \"type\": \"registry:ui\",\n28:           \"target\": \"components/prsui/split-action.tsx\"\n29:         }\n30:       ],\n31:       \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n32:     },\n33:     {\n34:       \"name\": \"tooltip\",\n35:       \"type\": \"registry:ui\",\n36:       \"title\": \"Tooltip\",\n37:       \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n38:       \"files\": [\n39:         {\n40:           \"path\": \"registry/new-york/tooltip.tsx\",\n41:           \"type\": \"registry:ui\",\n42:           \"target\": \"components/prsui/tooltip.tsx\"\n43:         },\n44:         {\n45:           \"path\": \"lib/ease.ts\",\n46:           \"type\": \"registry:lib\",\n47:           \"target\": \"lib/ease.ts\"\n48:         },\n49:         {\n50:           \"path\": \"lib/hooks/use-hover-capable.ts\",\n51:           \"type\": \"registry:lib\",\n52:           \"target\": \"lib/hooks/use-hover-capable.ts\"\n53:         }\n54:       ],\n55:       \"dependencies\": [\"motion\"]\n56:     },\n57:     {\n58:       \"name\": \"accordion\",\n59:       \"type\": \"registry:ui\",\n60:       \"title\": \"Accordion\",\n61:       \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n62:       \"files\": [\n63:         {\n64:           \"path\": \"registry/new-york/accordion.tsx\",\n65:           \"type\": \"registry:ui\",\n66:           \"target\": \"components/prsui/accordion.tsx\"\n67:         },\n68:         {\n69:           \"path\": \"lib/ease.ts\",\n70:           \"type\": \"registry:lib\",\n71:           \"target\": \"lib/ease.ts\"\n72:         }\n73:       ],\n74:       \"dependencies\": [\"motion\", \"lucide-react\"]\n75:     },\n76:     {\n77:       \"name\": \"typewriter\",\n78:       \"type\": \"registry:ui\",\n79:       \"title\": \"Typewriter\",\n80:       \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n81:       \"files\": [\n82:         {\n83:           \"path\": \"registry/new-york/typewriter.tsx\",\n84:           \"type\": \"registry:ui\",\n85:           \"target\": \"components/prsui/typewriter.tsx\"\n86:         }\n87:       ],\n88:       \"dependencies\": [\"motion\"]\n89:     },\n90:     {\n91:       \"name\": \"link\",\n92:       \"type\": \"registry:ui\",\n93:       \"title\": \"Link\",\n94:       \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n95:       \"files\": [\n96:         {\n97:           \"path\": \"registry/new-york/link.tsx\",\n98:           \"type\": \"registry:ui\",\n99:           \"target\": \"components/prsui/link.tsx\"\n100:         }\n101:       ]\n102:     },\n103:     {\n104:       \"name\": \"editable-chip\",\n105:       \"type\": \"registry:ui\",\n106:       \"title\": \"Editable Chip\",\n107:       \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n108:       \"files\": [\n109:         {\n110:           \"path\": \"registry/new-york/editable-chip.tsx\",\n111:           \"type\": \"registry:ui\",\n112:           \"target\": \"components/prsui/editable-chip.tsx\"\n113:         }\n114:       ],\n115:       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n116:     },\n117:     {\n118:       \"name\": \"inline-toast\",\n119:       \"type\": \"registry:ui\",\n120:       \"title\": \"Inline Toast\",\n121:       \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n122:       \"files\": [\n123:         {\n124:           \"path\": \"registry/new-york/inline-toast.tsx\",\n125:           \"type\": \"registry:ui\",\n126:           \"target\": \"components/prsui/inline-toast.tsx\"\n127:         }\n128:       ],\n129:       \"dependencies\": [\"motion\", \"react-icons\"]\n130:     },\n131:     {\n132:       \"name\": \"view-on-map\",\n133:       \"type\": \"registry:ui\",\n134:       \"title\": \"View On Map\",\n135:       \"description\": \"An animated map preview component that expands from a pill button into an embedded Google Map view.\",\n136:       \"files\": [\n137:         {\n138:           \"path\": \"registry/new-york/view-on-map.tsx\",\n139:           \"type\": \"registry:ui\",\n140:           \"target\": \"components/prsui/view-on-map.tsx\"\n141:         }\n142:       ],\n143:       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n144:     }\n145:   ]\n146: }\n\n(End of file - total 146 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry.json",
+                "text": "{\n  \"name\": \"prsui\",\n  \"homepage\": \"https://github.com/MandavkarPranjal/prsui\",\n  \"items\": [\n    {\n      \"name\": \"smooth-input\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Smooth Input\",\n      \"description\": \"A smooth input component with a caret animation.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/smooth-input.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/smooth-input.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\"]\n    },\n    {\n      \"name\": \"split-action\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Split Action\",\n      \"description\": \"Interactive component for split actions.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/split-action.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/split-action.tsx\"\n        }\n      ],\n      \"dependencies\": [\"framer-motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"tooltip\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Tooltip\",\n      \"description\": \"Accessible animated tooltip with spring physics and portal rendering.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/tooltip.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/tooltip.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        },\n        {\n          \"path\": \"lib/hooks/use-hover-capable.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/hooks/use-hover-capable.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"accordion\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Accordion\",\n      \"description\": \"Animated accordion with spring physics, group morphing, and accessible ARIA attributes.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/accordion.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/accordion.tsx\"\n        },\n        {\n          \"path\": \"lib/ease.ts\",\n          \"type\": \"registry:lib\",\n          \"target\": \"lib/ease.ts\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"typewriter\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Typewriter\",\n      \"description\": \"Animated typewriter effect with support for multiple phrases, looping, and a customizable cursor.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/typewriter.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/typewriter.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\"]\n    },\n    {\n      \"name\": \"link\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Link\",\n      \"description\": \"Animated link components with underline hover effects and customizable icons.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/link.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/link.tsx\"\n        }\n      ]\n    },\n    {\n      \"name\": \"editable-chip\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Editable Chip\",\n      \"description\": \"An inline-editable chip component with animated transitions between display and edit modes.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/editable-chip.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/editable-chip.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"inline-toast\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Inline Toast\",\n      \"description\": \"An inline copy toast component with animated feedback when copying code to clipboard.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/inline-toast.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/inline-toast.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-icons\"]\n    },\n    {\n      \"name\": \"view-on-map\",\n      \"type\": \"registry:ui\",\n      \"title\": \"View On Map\",\n      \"description\": \"An animated map preview component that expands from a pill button into an embedded Google Map view.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/view-on-map.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/view-on-map.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n    }\n  ]\n}",
+                "lineStart": 1,
+                "lineEnd": 146,
+                "totalLines": 146,
+                "truncated": false
+              }
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784732405624,
+              "end": 1784732405644
+            }
+          },
+          "id": "prt_f8a574e93001fZxaVFNdcnqE0V",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57413e001zf9IY87ErR88S0"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 16385,
+            "input": 467,
+            "output": 32,
+            "reasoning": 14,
+            "cache": {
+              "write": 0,
+              "read": 15872
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a574fde0012sfk6uxiXenaX0",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57413e001zf9IY87ErR88S0"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 18242,
+          "input": 1709,
+          "output": 115,
+          "reasoning": 98,
+          "cache": {
+            "write": 0,
+            "read": 16320
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732405761,
+          "completed": 1784732416177
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a5750000016iW3hIG9Vm0D05",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-start",
+          "id": "prt_f8a5769a300198clK8GCLalxl2",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5750000016iW3hIG9Vm0D05"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now I have a clear picture. I need to:\n\n1. Create a demo file `registry/new-york/logo-marquee-demo.tsx`\n2. Create a docs file `content/docs/components/logo-marquee.mdx`\n3. Add the component to `registry.json`\n4. Run `pnpm fix`\n\nLet me also check what dependencies the logo-marquee component uses - it uses `motion/react` and `react-use-measure`.\n\nLet me create the demo and docs files.",
+          "time": {
+            "start": 1784732412325,
+            "end": 1784732414603
+          },
+          "id": "prt_f8a5769a5001q56Sznmqfo3159",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5750000016iW3hIG9Vm0D05"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_31768068ae0a4c89a1ae597e",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "medium"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-marquee-demo.tsx\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-marquee.mdx docs\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add to registry.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "medium"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "4 todos",
+            "time": {
+              "start": 1784732416050,
+              "end": 1784732416053
+            }
+          },
+          "id": "prt_f8a57728e001uo38a8xYHoe77E",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5750000016iW3hIG9Vm0D05"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-finish",
+          "tokens": {
+            "total": 18242,
+            "input": 1709,
+            "output": 115,
+            "reasoning": 98,
+            "cache": {
+              "write": 0,
+              "read": 16320
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a57788c001tGG5R4htt5yk4I",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5750000016iW3hIG9Vm0D05"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 18794,
+          "input": 405,
+          "output": 375,
+          "reasoning": 30,
+          "cache": {
+            "write": 0,
+            "read": 17984
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732416181,
+          "completed": 1784732443187
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a5778b500131Hc55I2d4CcGG",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f087633b04032ea5c6198677cca853bba968312c",
+          "type": "step-start",
+          "id": "prt_f8a57cb92001xJKfBX2IuaRK1A",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5778b500131Hc55I2d4CcGG"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me create the demo file. I need to use `<img>` tags instead of `<Image />` from next/image as the user specified.",
+          "time": {
+            "start": 1784732437401,
+            "end": 1784732438569
+          },
+          "id": "prt_f8a57cb99001KvQgaTHcjZQX07",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5778b500131Hc55I2d4CcGG"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_0768708a6a224e728c3ea6f7",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx",
+              "content": "\"use client\";\n\nimport { LogoMarquee, type Logo } from \"./logo-marquee\";\n\nconst logos: Logo[] = [\n  {\n    alt: \"Vercel\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n  },\n  {\n    alt: \"Next.js\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n  },\n  {\n    alt: \"React\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/react.svg\",\n  },\n  {\n    alt: \"TypeScript\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/typescript.svg\",\n  },\n  {\n    alt: \"Tailwind CSS\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/tailwindcss.svg\",\n  },\n  {\n    alt: \"GitHub\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg\",\n  },\n  {\n    alt: \"Figma\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/figma.svg\",\n  },\n  {\n    alt: \"GitLab\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gitlab.svg\",\n  },\n];\n\nexport const LogoMarqueePreview = function LogoMarqueePreview() {\n  return (\n    <div className=\"flex w-full items-center justify-center\">\n      <LogoMarquee logos={logos} />\n    </div>\n  );\n};\n"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "registry/new-york/logo-marquee-demo.tsx",
+            "time": {
+              "start": 1784732442995,
+              "end": 1784732443009
+            }
+          },
+          "id": "prt_f8a57d02c0017K523HkTX4EXf2",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5778b500131Hc55I2d4CcGG"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "1c6e043cc4313094f2c89c7edfe446c398ea5256",
+          "type": "step-finish",
+          "tokens": {
+            "total": 18794,
+            "input": 405,
+            "output": 375,
+            "reasoning": 30,
+            "cache": {
+              "write": 0,
+              "read": 17984
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a57e1f3001DWlIKU5wyq19pq",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5778b500131Hc55I2d4CcGG"
+        },
+        {
+          "type": "patch",
+          "hash": "f087633b04032ea5c6198677cca853bba968312c",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx"
+          ],
+          "id": "prt_f8a57e22400152hdD7Lm7u1suF",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5778b500131Hc55I2d4CcGG"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 18948,
+          "input": 457,
+          "output": 115,
+          "reasoning": 8,
+          "cache": {
+            "write": 0,
+            "read": 18368
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732443197,
+          "completed": 1784732451142
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a57e23d001n2IDxFUV53k9Rb",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "1c6e043cc4313094f2c89c7edfe446c398ea5256",
+          "type": "step-start",
+          "id": "prt_f8a57f998001HNdFx3NGi8w5LN",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57e23d001n2IDxFUV53k9Rb"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me create the docs file.",
+          "time": {
+            "start": 1784732449182,
+            "end": 1784732449409
+          },
+          "id": "prt_f8a57f99e001W7DOpq8BN3bxdp",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57e23d001n2IDxFUV53k9Rb"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_5d5b264d18884e148a2b693f",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "priority": "high",
+                  "status": "pending"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "medium",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-marquee-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-marquee.mdx docs\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add to registry.json\",\n    \"status\": \"pending\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "status": "pending",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "medium"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "3 todos",
+            "time": {
+              "start": 1784732451010,
+              "end": 1784732451014
+            }
+          },
+          "id": "prt_f8a57fa830019dO36QdxWG1PI5",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57e23d001n2IDxFUV53k9Rb"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "1c6e043cc4313094f2c89c7edfe446c398ea5256",
+          "type": "step-finish",
+          "tokens": {
+            "total": 18948,
+            "input": 457,
+            "output": 115,
+            "reasoning": 8,
+            "cache": {
+              "write": 0,
+              "read": 18368
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a5801250018D0uqEiGd9j3IZ",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a57e23d001n2IDxFUV53k9Rb"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 19956,
+          "input": 279,
+          "output": 846,
+          "reasoning": 15,
+          "cache": {
+            "write": 0,
+            "read": 18816
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732451147,
+          "completed": 1784732472089
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a58014b001q5PkftLa3gMORO",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "1c6e043cc4313094f2c89c7edfe446c398ea5256",
+          "type": "step-start",
+          "id": "prt_f8a58256b0017RRbJQa914GDPz",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58014b001q5PkftLa3gMORO"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me create the docs file following the pattern from accordion.mdx.",
+          "time": {
+            "start": 1784732460397,
+            "end": 1784732460666
+          },
+          "id": "prt_f8a58256d001yj0gNEaqQHnTxj",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58014b001q5PkftLa3gMORO"
+        },
+        {
+          "type": "tool",
+          "tool": "write",
+          "callID": "call_32bb2e6e14e74e09b34c3005",
+          "state": {
+            "status": "completed",
+            "input": {
+              "content": "---\ntitle: Logo Marquee\ndescription: An infinite scrolling logo marquee with smooth animation and hover pause.\n---\n\nimport { LogoMarqueePreview } from \"@/registry/new-york/logo-marquee-demo\";\n\n<ComponentPreview name=\"logo-marquee\">\n  <LogoMarqueePreview />\n</ComponentPreview>\n\n## Installation\n\nIf you've already added the prsui registry, use the short command:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add @prsui/logo-marquee\"\n  __npm__=\"npx shadcn@latest add @prsui/logo-marquee\"\n  __pnpm__=\"pnpm dlx shadcn@latest add @prsui/logo-marquee\"\n  __yarn__=\"yarn shadcn@latest add @prsui/logo-marquee\"\n/>\n\nOtherwise, use the full registry URL:\n\n<CodeBlockCommand\n  __bun__=\"bunx --bun shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n  __npm__=\"npx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n  __pnpm__=\"pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n  __yarn__=\"yarn shadcn@latest add https://prsui.pr5.dev/r/logo-marquee.json\"\n/>\n\n## Usage\n\nAfter you add the component with the CLI, import it from your UI folder:\n\n```tsx\nimport { LogoMarquee, type Logo } from \"@/components/prsui/logo-marquee\";\n\nconst logos: Logo[] = [\n  {\n    alt: \"Vercel\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vercel.svg\",\n  },\n  {\n    alt: \"Next.js\",\n    src: \"https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nextdotjs.svg\",\n  },\n];\n\nexport function MyComponent() {\n  return <LogoMarquee logos={logos} />;\n}\n```\n\n## Props\n\n### Logo\n\n| Field    | Type     | Default  | Description              |\n| -------- | -------- | -------- | ------------------------ |\n| `src`    | `string` | -        | Image URL for the logo   |\n| `alt`    | `string` | -        | Alt text for the image   |\n| `width`  | `number` | `\"auto\"` | Optional width           |\n| `height` | `number` | `\"auto\"` | Optional height          |\n\n### LogoMarquee\n\n| Prop        | Type       | Default | Description                     |\n| ----------- | ---------- | ------- | ------------------------------- |\n| `logos`     | `Logo[]`   | -       | Array of logo objects           |\n| `className` | `string`   | -       | Classes applied to the wrapper  |\n\n### InfiniteSlider (internal)\n\n| Prop                | Type                              | Default    | Description                                |\n| ------------------- | --------------------------------- | ---------- | ------------------------------------------ |\n| `children`          | `React.ReactNode`                 | -          | Content to scroll                          |\n| `gap`               | `number`                          | `16`       | Gap between items in px                    |\n| `duration`          | `number`                          | `25`       | Animation duration in seconds              |\n| `durationOnHover`   | `number`                          | -          | Duration when hovered (slows down)         |\n| `direction`         | `\"horizontal\" \\| \"vertical\"`      | `\"horizontal\"` | Scroll direction                      |\n| `reverse`           | `boolean`                         | `false`    | Reverse scroll direction                   |\n| `className`         | `string`                          | -          | Classes applied to the outer wrapper       |\n",
+              "filePath": "/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx"
+            },
+            "output": "Wrote file successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "filepath": "/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx",
+              "exists": false,
+              "truncated": false
+            },
+            "title": "content/docs/components/logo-marquee.mdx",
+            "time": {
+              "start": 1784732471902,
+              "end": 1784732471921
+            }
+          },
+          "id": "prt_f8a58267b001IlXLiiHFPh2ye4",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58014b001q5PkftLa3gMORO"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-finish",
+          "tokens": {
+            "total": 19956,
+            "input": 279,
+            "output": 846,
+            "reasoning": 15,
+            "cache": {
+              "write": 0,
+              "read": 18816
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a5852f30016O2dSyjyzcPF8g",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58014b001q5PkftLa3gMORO"
+        },
+        {
+          "type": "patch",
+          "hash": "1c6e043cc4313094f2c89c7edfe446c398ea5256",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx"
+          ],
+          "id": "prt_f8a585316001LPRbWvFjjUoVxJ",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58014b001q5PkftLa3gMORO"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 20112,
+          "input": 915,
+          "output": 115,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 19072
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732472093,
+          "completed": 1784732477723
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a58531d00151A1cjzpoMBLBf",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-start",
+          "id": "prt_f8a58624200103sOroVWDMgprL",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58531d00151A1cjzpoMBLBf"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me add the component to registry.json.",
+          "time": {
+            "start": 1784732475972,
+            "end": 1784732476216
+          },
+          "id": "prt_f8a586244001rhnlg732gOQquW",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58531d00151A1cjzpoMBLBf"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_afdfd9bdd1ec4f078cbcb735",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "priority": "high",
+                  "status": "in_progress"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "medium",
+                  "status": "pending"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-marquee-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-marquee.mdx docs\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add to registry.json\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "status": "in_progress",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "pending",
+                  "priority": "medium"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "2 todos",
+            "time": {
+              "start": 1784732477507,
+              "end": 1784732477510
+            }
+          },
+          "id": "prt_f8a58633a001Rw8amPlN42KTSv",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58531d00151A1cjzpoMBLBf"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-finish",
+          "tokens": {
+            "total": 20112,
+            "input": 915,
+            "output": 115,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 19072
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a5868e8001sveK0oOwziVssB",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58531d00151A1cjzpoMBLBf"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 20312,
+          "input": 291,
+          "output": 36,
+          "reasoning": 17,
+          "cache": {
+            "write": 0,
+            "read": 19968
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732477727,
+          "completed": 1784732480524
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a58691f001r8Oel44wmnkX2n",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-start",
+          "id": "prt_f8a5870fe0017gXeiOmCAcX0ug",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58691f001r8Oel44wmnkX2n"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me check the package.json for the dependencies used by the logo-marquee component.",
+          "time": {
+            "start": 1784732479744,
+            "end": 1784732480121
+          },
+          "id": "prt_f8a587100001OEpKdQPzOjpxB4",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58691f001r8Oel44wmnkX2n"
+        },
+        {
+          "type": "tool",
+          "tool": "grep",
+          "callID": "call_d7ea5e75ac1b44fd9bd34177",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "react-use-measure",
+              "include": "package.json"
+            },
+            "output": "No files found",
+            "metadata": {
+              "matches": 0,
+              "truncated": false
+            },
+            "title": "react-use-measure",
+            "time": {
+              "start": 1784732480375,
+              "end": 1784732480405
+            }
+          },
+          "id": "prt_f8a58727c001vDRAiJgQPRdzLg",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58691f001r8Oel44wmnkX2n"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-finish",
+          "tokens": {
+            "total": 20312,
+            "input": 291,
+            "output": 36,
+            "reasoning": 17,
+            "cache": {
+              "write": 0,
+              "read": 19968
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a5873e9001FepVfc0eKZBhtl",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58691f001r8Oel44wmnkX2n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 20387,
+          "input": 118,
+          "output": 31,
+          "reasoning": 14,
+          "cache": {
+            "write": 0,
+            "read": 20224
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732480528,
+          "completed": 1784732500663
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a587410001XxJu0awBg1plEF",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-start",
+          "id": "prt_f8a58c083001E3nQK6nCUpN9tg",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a587410001XxJu0awBg1plEF"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me check the package.json to see what dependencies are already available.",
+          "time": {
+            "start": 1784732500101,
+            "end": 1784732500366
+          },
+          "id": "prt_f8a58c085001Y52k8XUzbu6hsX",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a587410001XxJu0awBg1plEF"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_7009c03ed2f943e892600d96",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/package.json"
+            },
+            "output": "<path>/home/himmel/personal/prsui/package.json</path>\n<type>file</type>\n<content>\n1: {\n2:   \"name\": \"prsui\",\n3:   \"version\": \"0.1.0\",\n4:   \"private\": true,\n5:   \"scripts\": {\n6:     \"dev\": \"next dev\",\n7:     \"build\": \"pnpm registry:build && next build\",\n8:     \"start\": \"next start\",\n9:     \"typecheck\": \"tsc --noEmit\",\n10:     \"registry:build\": \"shadcn build registry.json --output ./public/r\",\n11:     \"postinstall\": \"fumadocs-mdx\",\n12:     \"check\": \"ultracite check\",\n13:     \"fix\": \"ultracite fix\",\n14:     \"prepare\": \"lefthook install\"\n15:   },\n16:   \"dependencies\": {\n17:     \"@tailwindcss/postcss\": \"^4.2.4\",\n18:     \"@vercel/analytics\": \"^2.0.1\",\n19:     \"@web-kits/audio\": \"^0.1.0\",\n20:     \"class-variance-authority\": \"^0.7.1\",\n21:     \"clsx\": \"^2.1.1\",\n22:     \"cmdk\": \"^1.1.1\",\n23:     \"dialkit\": \"^1.3.0\",\n24:     \"framer-motion\": \"^12.42.2\",\n25:     \"fumadocs-core\": \"^16.8.4\",\n26:     \"fumadocs-mdx\": \"^14.3.1\",\n27:     \"jiti\": \"^2.6.1\",\n28:     \"jotai\": \"^2.19.1\",\n29:     \"lru-cache\": \"^11.3.5\",\n30:     \"lucide-react\": \"1.11.0\",\n31:     \"motion\": \"^12.38.0\",\n32:     \"next\": \"16.2.4\",\n33:     \"next-themes\": \"0.4.6\",\n34:     \"postcss\": \"^8.5.10\",\n35:     \"radix-ui\": \"^1.4.3\",\n36:     \"react\": \"19.2.5\",\n37:     \"react-dom\": \"19.2.5\",\n38:     \"react-hotkeys-hook\": \"^5.2.4\",\n39:     \"react-icons\": \"^5.7.0\",\n40:     \"rehype-pretty-code\": \"^0.14.3\",\n41:     \"shiki\": \"^4.0.2\",\n42:     \"sonner\": \"^2.0.7\",\n43:     \"tailwind-merge\": \"^3.5.0\",\n44:     \"ts-morph\": \"^26.0.0\",\n45:     \"vaul\": \"^1.1.2\",\n46:     \"web-haptics\": \"^0.0.6\",\n47:     \"zod\": \"^4.3.6\"\n48:   },\n49:   \"devDependencies\": {\n50:     \"@tailwindcss/postcss\": \"^4.2.4\",\n51:     \"@types/mdx\": \"^2.0.13\",\n52:     \"@types/node\": \"^25.6.0\",\n53:     \"@types/react\": \"19.2.14\",\n54:     \"@types/react-dom\": \"19.2.3\",\n55:     \"lefthook\": \"^2.1.6\",\n56:     \"oxfmt\": \"^0.46.0\",\n57:     \"oxlint\": \"^1.61.0\",\n58:     \"shadcn\": \"4.5.0\",\n59:     \"tailwindcss\": \"^4.2.4\",\n60:     \"tw-animate-css\": \"^1.4.0\",\n61:     \"typescript\": \"^6.0.3\",\n62:     \"ultracite\": \"7.6.1\"\n63:   }\n64: }\n\n(End of file - total 64 lines)\n</content>",
+            "metadata": {
+              "preview": "{\n  \"name\": \"prsui\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"pnpm registry:build && next build\",\n    \"start\": \"next start\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"registry:build\": \"shadcn build registry.json --output ./public/r\",\n    \"postinstall\": \"fumadocs-mdx\",\n    \"check\": \"ultracite check\",\n    \"fix\": \"ultracite fix\",\n    \"prepare\": \"lefthook install\"\n  },\n  \"dependencies\": {\n    \"@tailwindcss/postcss\": \"^4.2.4\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"@web-kits/audio\": \"^0.1.0\",\n    \"class-variance-authority\": \"^0.7.1\",",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/package.json",
+                "text": "{\n  \"name\": \"prsui\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"pnpm registry:build && next build\",\n    \"start\": \"next start\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"registry:build\": \"shadcn build registry.json --output ./public/r\",\n    \"postinstall\": \"fumadocs-mdx\",\n    \"check\": \"ultracite check\",\n    \"fix\": \"ultracite fix\",\n    \"prepare\": \"lefthook install\"\n  },\n  \"dependencies\": {\n    \"@tailwindcss/postcss\": \"^4.2.4\",\n    \"@vercel/analytics\": \"^2.0.1\",\n    \"@web-kits/audio\": \"^0.1.0\",\n    \"class-variance-authority\": \"^0.7.1\",\n    \"clsx\": \"^2.1.1\",\n    \"cmdk\": \"^1.1.1\",\n    \"dialkit\": \"^1.3.0\",\n    \"framer-motion\": \"^12.42.2\",\n    \"fumadocs-core\": \"^16.8.4\",\n    \"fumadocs-mdx\": \"^14.3.1\",\n    \"jiti\": \"^2.6.1\",\n    \"jotai\": \"^2.19.1\",\n    \"lru-cache\": \"^11.3.5\",\n    \"lucide-react\": \"1.11.0\",\n    \"motion\": \"^12.38.0\",\n    \"next\": \"16.2.4\",\n    \"next-themes\": \"0.4.6\",\n    \"postcss\": \"^8.5.10\",\n    \"radix-ui\": \"^1.4.3\",\n    \"react\": \"19.2.5\",\n    \"react-dom\": \"19.2.5\",\n    \"react-hotkeys-hook\": \"^5.2.4\",\n    \"react-icons\": \"^5.7.0\",\n    \"rehype-pretty-code\": \"^0.14.3\",\n    \"shiki\": \"^4.0.2\",\n    \"sonner\": \"^2.0.7\",\n    \"tailwind-merge\": \"^3.5.0\",\n    \"ts-morph\": \"^26.0.0\",\n    \"vaul\": \"^1.1.2\",\n    \"web-haptics\": \"^0.0.6\",\n    \"zod\": \"^4.3.6\"\n  },\n  \"devDependencies\": {\n    \"@tailwindcss/postcss\": \"^4.2.4\",\n    \"@types/mdx\": \"^2.0.13\",\n    \"@types/node\": \"^25.6.0\",\n    \"@types/react\": \"19.2.14\",\n    \"@types/react-dom\": \"19.2.3\",\n    \"lefthook\": \"^2.1.6\",\n    \"oxfmt\": \"^0.46.0\",\n    \"oxlint\": \"^1.61.0\",\n    \"shadcn\": \"4.5.0\",\n    \"tailwindcss\": \"^4.2.4\",\n    \"tw-animate-css\": \"^1.4.0\",\n    \"typescript\": \"^6.0.3\",\n    \"ultracite\": \"7.6.1\"\n  }\n}",
+                "lineStart": 1,
+                "lineEnd": 64,
+                "totalLines": 64,
+                "truncated": false
+              }
+            },
+            "title": "package.json",
+            "time": {
+              "start": 1784732500595,
+              "end": 1784732500602
+            }
+          },
+          "id": "prt_f8a58c18f001TkE0MNIls7uWjs",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a587410001XxJu0awBg1plEF"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-finish",
+          "tokens": {
+            "total": 20387,
+            "input": 118,
+            "output": 31,
+            "reasoning": 14,
+            "cache": {
+              "write": 0,
+              "read": 20224
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a58c294001gFNm8Sf5JFnL9t",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a587410001XxJu0awBg1plEF"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 21633,
+          "input": 1095,
+          "output": 204,
+          "reasoning": 46,
+          "cache": {
+            "write": 0,
+            "read": 20288
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732500667,
+          "completed": 1784732514128
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a58c2bb001VVbwpl1BKTICDV",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "type": "step-start",
+          "id": "prt_f8a58ec00001265lRX8O67SDrv",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58c2bb001VVbwpl1BKTICDV"
+        },
+        {
+          "type": "reasoning",
+          "text": "I see that `react-use-measure` is not in the dependencies. The logo-marquee component uses it. I need to add it to the dependencies in the registry.json entry. Let me add the component to registry.json.",
+          "time": {
+            "start": 1784732511235,
+            "end": 1784732511811
+          },
+          "id": "prt_f8a58ec03001bojT6PJjR3bgrD",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58c2bb001VVbwpl1BKTICDV"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_d20ca89d2bc64dd6ab2b5f2a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry.json",
+              "oldString": "      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n    }\n  ]\n}",
+              "newString": "      \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n    },\n    {\n      \"name\": \"logo-marquee\",\n      \"type\": \"registry:ui\",\n      \"title\": \"Logo Marquee\",\n      \"description\": \"An infinite scrolling logo marquee with smooth animation and hover pause.\",\n      \"files\": [\n        {\n          \"path\": \"registry/new-york/logo-marquee.tsx\",\n          \"type\": \"registry:ui\",\n          \"target\": \"components/prsui/logo-marquee.tsx\"\n        }\n      ],\n      \"dependencies\": [\"motion\", \"react-use-measure\"]\n    }\n  ]\n}"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -140,7 +140,21 @@\n           \"target\": \"components/prsui/view-on-map.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n+    },\n+    {\n+      \"name\": \"logo-marquee\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Logo Marquee\",\n+      \"description\": \"An infinite scrolling logo marquee with smooth animation and hover pause.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/logo-marquee.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/prsui/logo-marquee.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"motion\", \"react-use-measure\"]\n     }\n   ]\n }\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry.json",
+                "patch": "Index: /home/himmel/personal/prsui/registry.json\n===================================================================\n--- /home/himmel/personal/prsui/registry.json\n+++ /home/himmel/personal/prsui/registry.json\n@@ -140,7 +140,21 @@\n           \"target\": \"components/prsui/view-on-map.tsx\"\n         }\n       ],\n       \"dependencies\": [\"motion\", \"react-icons\", \"lucide-react\"]\n+    },\n+    {\n+      \"name\": \"logo-marquee\",\n+      \"type\": \"registry:ui\",\n+      \"title\": \"Logo Marquee\",\n+      \"description\": \"An infinite scrolling logo marquee with smooth animation and hover pause.\",\n+      \"files\": [\n+        {\n+          \"path\": \"registry/new-york/logo-marquee.tsx\",\n+          \"type\": \"registry:ui\",\n+          \"target\": \"components/prsui/logo-marquee.tsx\"\n+        }\n+      ],\n+      \"dependencies\": [\"motion\", \"react-use-measure\"]\n     }\n   ]\n }\n",
+                "additions": 14,
+                "deletions": 0
+              },
+              "truncated": false
+            },
+            "title": "registry.json",
+            "time": {
+              "start": 1784732513946,
+              "end": 1784732513951
+            }
+          },
+          "id": "prt_f8a58ee48001X3707XMpycLWJR",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58c2bb001VVbwpl1BKTICDV"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d7f7c7224381c17ef50c885c5bf4fc3c27a1e225",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21633,
+            "input": 1095,
+            "output": 204,
+            "reasoning": 46,
+            "cache": {
+              "write": 0,
+              "read": 20288
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a58f728001gYyrD5pAmZNRk5",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58c2bb001VVbwpl1BKTICDV"
+        },
+        {
+          "type": "patch",
+          "hash": "d0cd967e563db50790ea69edcf5853485d1c99ed",
+          "files": [
+            "/home/himmel/personal/prsui/registry.json"
+          ],
+          "id": "prt_f8a58f74b001R7k365tZScK4fy",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58c2bb001VVbwpl1BKTICDV"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 21787,
+          "input": 287,
+          "output": 115,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 21376
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732514134,
+          "completed": 1784732519465
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a58f756001yNVd2R6ewFObXE",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "d7f7c7224381c17ef50c885c5bf4fc3c27a1e225",
+          "type": "step-start",
+          "id": "prt_f8a59072d001CH0uZyjLS3AnDE",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58f756001yNVd2R6ewFObXE"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me run `pnpm fix`.",
+          "time": {
+            "start": 1784732518191,
+            "end": 1784732518381
+          },
+          "id": "prt_f8a59072f001tHc96Uw07z5B4N",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58f756001yNVd2R6ewFObXE"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_3c0178e82fc94c8d93a4b71f",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "medium",
+                  "status": "in_progress"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-marquee-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-marquee.mdx docs\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add to registry.json\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"in_progress\",\n    \"priority\": \"medium\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "in_progress",
+                  "priority": "medium"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "1 todos",
+            "time": {
+              "start": 1784732519335,
+              "end": 1784732519338
+            }
+          },
+          "id": "prt_f8a5907f0001Ynes6WFrCJIctq",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58f756001yNVd2R6ewFObXE"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "d7f7c7224381c17ef50c885c5bf4fc3c27a1e225",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21787,
+            "input": 287,
+            "output": 115,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 21376
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a590c080015R3lFdJvpK10Dp",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a58f756001yNVd2R6ewFObXE"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 21981,
+          "input": 302,
+          "output": 39,
+          "reasoning": 8,
+          "cache": {
+            "write": 0,
+            "read": 21632
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732519470,
+          "completed": 1784732534442
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a590c2e001UIfiL24men8CtS",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "d7f7c7224381c17ef50c885c5bf4fc3c27a1e225",
+          "type": "step-start",
+          "id": "prt_f8a593783001vWTaTubsBprxT6",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a590c2e001UIfiL24men8CtS"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me run pnpm fix now.",
+          "time": {
+            "start": 1784732530567,
+            "end": 1784732530668
+          },
+          "id": "prt_f8a593787001HZGQ3a1dop9dGS",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a590c2e001UIfiL24men8CtS"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_0ceb4c4ea6a24467bbe4c2cc",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "pnpm fix",
+              "timeout": 120000
+            },
+            "output": "$ ultracite fix\n(node:115820) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784732532408 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1387ms on 192 files using 8 threads.\n(node:115924) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784732533938 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n  x eslint-plugin-unicorn(prefer-ternary): Prefer ternary expressions over simple `if-else` statements.\n    ,-[registry/new-york/logo-marquee.tsx:49:5]\n 48 |     \n 49 | ,->     if (isTransitioning) {\n 50 | |         controls = animate(translation, [translation.get(), to], {\n 51 | |           duration:\n 52 | |             currentDuration * Math.abs((translation.get() - to) / contentSize),\n 53 | |           ease: \"linear\",\n 54 | |           onComplete: () => {\n 55 | |             setIsTransitioning(false);\n 56 | |             setKey((prev) => prev + 1);\n 57 | |           },\n 58 | |         });\n 59 | |       } else {\n 60 | |         controls = animate(translation, [from, to], {\n 61 | |           duration: currentDuration,\n 62 | |           ease: \"linear\",\n 63 | |           onRepeat: () => translation.set(from),\n 64 | |           repeat: Infinity,\n 65 | |           repeatDelay: 0,\n 66 | |           repeatType: \"loop\",\n 67 | |         });\n 68 | `->     }\n 69 |     \n    `----\n  help: Rewrite this `if`/`else` as a ternary expression.\n\n  ! eslint-plugin-next(no-img-element): Using `<img>` could result in slower LCP and higher bandwidth.\n     ,-[registry/new-york/logo-marquee.tsx:119:6]\n 118 |   return (\n 119 |     <img\n     :      ^|^\n     :       `-- Use `<Image />` from `next/image` instead.\n 120 |       alt={logo.alt}\n     `----\n  help: Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images.\n  note: See https://nextjs.org/docs/messages/no-img-element\n\nFound 1 warning and 1 error.\nFinished in 308ms on 162 files with 453 rules using 8 threads.\n[ELIFECYCLE] Command failed with exit code 1.\n",
+            "metadata": {
+              "output": "$ ultracite fix\n(node:115820) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784732532408 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1387ms on 192 files using 8 threads.\n(node:115924) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784732533938 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n  x eslint-plugin-unicorn(prefer-ternary): Prefer ternary expressions over simple `if-else` statements.\n    ,-[registry/new-york/logo-marquee.tsx:49:5]\n 48 |     \n 49 | ,->     if (isTransitioning) {\n 50 | |         controls = animate(translation, [translation.get(), to], {\n 51 | |           duration:\n 52 | |             currentDuration * Math.abs((translation.get() - to) / contentSize),\n 53 | |           ease: \"linear\",\n 54 | |           onComplete: () => {\n 55 | |             setIsTransitioning(false);\n 56 | |             setKey((prev) => prev + 1);\n 57 | |           },\n 58 | |         });\n 59 | |       } else {\n 60 | |         controls = animate(translation, [from, to], {\n 61 | |           duration: currentDuration,\n 62 | |           ease: \"linear\",\n 63 | |           onRepeat: () => translation.set(from),\n 64 | |           repeat: Infinity,\n 65 | |           repeatDelay: 0,\n 66 | |           repeatType: \"loop\",\n 67 | |         });\n 68 | `->     }\n 69 |     \n    `----\n  help: Rewrite this `if`/`else` as a ternary expression.\n\n  ! eslint-plugin-next(no-img-element): Using `<img>` could result in slower LCP and higher bandwidth.\n     ,-[registry/new-york/logo-marquee.tsx:119:6]\n 118 |   return (\n 119 |     <img\n     :      ^|^\n     :       `-- Use `<Image />` from `next/image` instead.\n 120 |       alt={logo.alt}\n     `----\n  help: Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images.\n  note: See https://nextjs.org/docs/messages/no-img-element\n\nFound 1 warning and 1 error.\nFinished in 308ms on 162 files with 453 rules using 8 threads.\n[ELIFECYCLE] Command failed with exit code 1.\n",
+              "exit": 1,
+              "truncated": false
+            },
+            "title": "pnpm fix",
+            "time": {
+              "start": 1784732534289,
+              "end": 1784732534339
+            }
+          },
+          "id": "prt_f8a5937ef001mJLB0pDslazSAa",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a590c2e001UIfiL24men8CtS"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "595abe1f774eca7dd2dc9247d1f84091131b2644",
+          "type": "step-finish",
+          "tokens": {
+            "total": 21981,
+            "input": 302,
+            "output": 39,
+            "reasoning": 8,
+            "cache": {
+              "write": 0,
+              "read": 21632
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a594679001NMXLHtRxhty5v9",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a590c2e001UIfiL24men8CtS"
+        },
+        {
+          "type": "patch",
+          "hash": "d7f7c7224381c17ef50c885c5bf4fc3c27a1e225",
+          "files": [
+            "/home/himmel/personal/prsui/content/docs/components/logo-marquee.mdx",
+            "/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx"
+          ],
+          "id": "prt_f8a5946a1001suVLe4jmo4pXv2",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a590c2e001UIfiL24men8CtS"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 23192,
+          "input": 891,
+          "output": 328,
+          "reasoning": 85,
+          "cache": {
+            "write": 0,
+            "read": 21888
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732534447,
+          "completed": 1784732546498
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a5946af001HBVnR0F9kKScTj",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "595abe1f774eca7dd2dc9247d1f84091131b2644",
+          "type": "step-start",
+          "id": "prt_f8a596350001djUZSzdhNGZbs8",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5946af001HBVnR0F9kKScTj"
+        },
+        {
+          "type": "reasoning",
+          "text": "There are two issues:\n1. The `if/else` should be a ternary expression\n2. The `<img>` element warning - but the user specifically said NOT to use `<Image />` from next/image\n\nLet me fix the ternary issue first, and for the img warning, since the user explicitly said not to use next/image, I'll need to add an eslint disable comment for that specific line.",
+          "time": {
+            "start": 1784732541778,
+            "end": 1784732543147
+          },
+          "id": "prt_f8a596352001ZTAfYReElqkWfx",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5946af001HBVnR0F9kKScTj"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_d6cab4a9050849df8ef084c9",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx",
+              "oldString": "    let controls;\n\n    if (isTransitioning) {\n      controls = animate(translation, [translation.get(), to], {\n        duration:\n          currentDuration * Math.abs((translation.get() - to) / contentSize),\n        ease: \"linear\",\n        onComplete: () => {\n          setIsTransitioning(false);\n          setKey((prev) => prev + 1);\n        },\n      });\n    } else {\n      controls = animate(translation, [from, to], {\n        duration: currentDuration,\n        ease: \"linear\",\n        onRepeat: () => translation.set(from),\n        repeat: Infinity,\n        repeatDelay: 0,\n        repeatType: \"loop\",\n      });\n    }",
+              "newString": "    const controls = isTransitioning\n      ? animate(translation, [translation.get(), to], {\n          duration:\n            currentDuration * Math.abs((translation.get() - to) / contentSize),\n          ease: \"linear\",\n          onComplete: () => {\n            setIsTransitioning(false);\n            setKey((prev) => prev + 1);\n          },\n        })\n      : animate(translation, [from, to], {\n          duration: currentDuration,\n          ease: \"linear\",\n          onRepeat: () => translation.set(from),\n          repeat: Infinity,\n          repeatDelay: 0,\n          repeatType: \"loop\",\n        });"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n===================================================================\n--- /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n+++ /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n@@ -43,31 +43,27 @@\n   const contentSize = size + gap;\n   const from = reverse ? -contentSize / 2 : 0;\n   const to = reverse ? 0 : -contentSize / 2;\n \n-  let controls;\n+  const controls = isTransitioning\n+    ? animate(translation, [translation.get(), to], {\n+        duration:\n+          currentDuration * Math.abs((translation.get() - to) / contentSize),\n+        ease: \"linear\",\n+        onComplete: () => {\n+          setIsTransitioning(false);\n+          setKey((prev) => prev + 1);\n+        },\n+      })\n+    : animate(translation, [from, to], {\n+        duration: currentDuration,\n+        ease: \"linear\",\n+        onRepeat: () => translation.set(from),\n+        repeat: Infinity,\n+        repeatDelay: 0,\n+        repeatType: \"loop\",\n+      });\n \n-  if (isTransitioning) {\n-    controls = animate(translation, [translation.get(), to], {\n-      duration:\n-        currentDuration * Math.abs((translation.get() - to) / contentSize),\n-      ease: \"linear\",\n-      onComplete: () => {\n-        setIsTransitioning(false);\n-        setKey((prev) => prev + 1);\n-      },\n-    });\n-  } else {\n-    controls = animate(translation, [from, to], {\n-      duration: currentDuration,\n-      ease: \"linear\",\n-      onRepeat: () => translation.set(from),\n-      repeat: Infinity,\n-      repeatDelay: 0,\n-      repeatType: \"loop\",\n-    });\n-  }\n-\n   return controls?.stop;\n }, [\n   key,\n   translation,\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx",
+                "patch": "Index: /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n===================================================================\n--- /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n+++ /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n@@ -43,31 +43,27 @@\n   const contentSize = size + gap;\n   const from = reverse ? -contentSize / 2 : 0;\n   const to = reverse ? 0 : -contentSize / 2;\n \n-  let controls;\n+  const controls = isTransitioning\n+    ? animate(translation, [translation.get(), to], {\n+        duration:\n+          currentDuration * Math.abs((translation.get() - to) / contentSize),\n+        ease: \"linear\",\n+        onComplete: () => {\n+          setIsTransitioning(false);\n+          setKey((prev) => prev + 1);\n+        },\n+      })\n+    : animate(translation, [from, to], {\n+        duration: currentDuration,\n+        ease: \"linear\",\n+        onRepeat: () => translation.set(from),\n+        repeat: Infinity,\n+        repeatDelay: 0,\n+        repeatType: \"loop\",\n+      });\n \n-  if (isTransitioning) {\n-    controls = animate(translation, [translation.get(), to], {\n-      duration:\n-        currentDuration * Math.abs((translation.get() - to) / contentSize),\n-      ease: \"linear\",\n-      onComplete: () => {\n-        setIsTransitioning(false);\n-        setKey((prev) => prev + 1);\n-      },\n-    });\n-  } else {\n-    controls = animate(translation, [from, to], {\n-      duration: currentDuration,\n-      ease: \"linear\",\n-      onRepeat: () => translation.set(from),\n-      repeat: Infinity,\n-      repeatDelay: 0,\n-      repeatType: \"loop\",\n-    });\n-  }\n-\n   return controls?.stop;\n }, [\n   key,\n   translation,\n",
+                "additions": 18,
+                "deletions": 22
+              },
+              "truncated": false
+            },
+            "title": "registry/new-york/logo-marquee.tsx",
+            "time": {
+              "start": 1784732546334,
+              "end": 1784732546339
+            }
+          },
+          "id": "prt_f8a5968b300177ZJPET0AVmYie",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5946af001HBVnR0F9kKScTj"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "980baf482cb45bae512aa92972fb7000972ad60b",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23192,
+            "input": 891,
+            "output": 328,
+            "reasoning": 85,
+            "cache": {
+              "write": 0,
+              "read": 21888
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a59758d001T36oOuQIdE5qkn",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5946af001HBVnR0F9kKScTj"
+        },
+        {
+          "type": "patch",
+          "hash": "595abe1f774eca7dd2dc9247d1f84091131b2644",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx"
+          ],
+          "id": "prt_f8a5975bf001pg5GK00ZIt7pdD",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5946af001HBVnR0F9kKScTj"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 23377,
+          "input": 502,
+          "output": 127,
+          "reasoning": 28,
+          "cache": {
+            "write": 0,
+            "read": 22720
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732546503,
+          "completed": 1784732553738
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a5975c7001Q8RQtcZhS7ks38",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "980baf482cb45bae512aa92972fb7000972ad60b",
+          "type": "step-start",
+          "id": "prt_f8a5987f1001wrR8WiSGTmQ4gS",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5975c7001Q8RQtcZhS7ks38"
+        },
+        {
+          "type": "reasoning",
+          "text": "Now let me fix the img element warning. Since the user explicitly said not to use next/image, I'll add an eslint-disable comment.",
+          "time": {
+            "start": 1784732551155,
+            "end": 1784732552085
+          },
+          "id": "prt_f8a5987f3001rrAwDv0eJGvnYi",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5975c7001Q8RQtcZhS7ks38"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_30ca3aec543541f6a268950c",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx",
+              "oldString": "const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n  return (\n    <img",
+              "newString": "const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n  return (\n    // eslint-disable-next-line @next/next/no-img-element -- User explicitly chose <img> over next/image\n    <img"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n===================================================================\n--- /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n+++ /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n@@ -111,8 +111,9 @@\n });\n \n const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n   return (\n+    // eslint-disable-next-line @next/next/no-img-element -- User explicitly chose <img> over next/image\n     <img\n       alt={logo.alt}\n       src={logo.src}\n       width={logo.width ?? \"auto\"}\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx",
+                "patch": "Index: /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n===================================================================\n--- /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n+++ /home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx\n@@ -111,8 +111,9 @@\n });\n \n const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {\n   return (\n+    // eslint-disable-next-line @next/next/no-img-element -- User explicitly chose <img> over next/image\n     <img\n       alt={logo.alt}\n       src={logo.src}\n       width={logo.width ?? \"auto\"}\n",
+                "additions": 1,
+                "deletions": 0
+              },
+              "truncated": false
+            },
+            "title": "registry/new-york/logo-marquee.tsx",
+            "time": {
+              "start": 1784732552951,
+              "end": 1784732552956
+            }
+          },
+          "id": "prt_f8a598b97001mOy0LzZq4FzbUo",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5975c7001Q8RQtcZhS7ks38"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "70d3c56d357aa2bf5a5dbf89641fa2a4f0823e92",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23377,
+            "input": 502,
+            "output": 127,
+            "reasoning": 28,
+            "cache": {
+              "write": 0,
+              "read": 22720
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a5991e3001t2vUMMocsLrVwF",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5975c7001Q8RQtcZhS7ks38"
+        },
+        {
+          "type": "patch",
+          "hash": "980baf482cb45bae512aa92972fb7000972ad60b",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/logo-marquee.tsx"
+          ],
+          "id": "prt_f8a599208001xdK42ExhKk3nc5",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a5975c7001Q8RQtcZhS7ks38"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 23456,
+          "input": 239,
+          "output": 39,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 23168
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732553747,
+          "completed": 1784732568538
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a599213001E9Z2ZPN6jUoF4Z",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "70d3c56d357aa2bf5a5dbf89641fa2a4f0823e92",
+          "type": "step-start",
+          "id": "prt_f8a59bf3a0015tM66WaCBpHln3",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a599213001E9Z2ZPN6jUoF4Z"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me run pnpm fix again to verify.",
+          "time": {
+            "start": 1784732565309,
+            "end": 1784732565532
+          },
+          "id": "prt_f8a59bf3d001WLGHXF5uhiKCjJ",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a599213001E9Z2ZPN6jUoF4Z"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "call_698288b314e94f008944fa7f",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "pnpm fix",
+              "timeout": 120000
+            },
+            "output": "$ ultracite fix\n(node:116090) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784732566844 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1183ms on 192 files using 8 threads.\n(node:116185) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784732568180 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFound 0 warnings and 0 errors.\nFinished in 229ms on 162 files with 453 rules using 8 threads.\n",
+            "metadata": {
+              "output": "$ ultracite fix\n(node:116090) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxfmt.config.ts?cache=1784732566844 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFinished in 1183ms on 192 files using 8 threads.\n(node:116185) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/himmel/personal/prsui/oxlint.config.ts?cache=1784732568180 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to /home/himmel/personal/prsui/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\nFound 0 warnings and 0 errors.\nFinished in 229ms on 162 files with 453 rules using 8 threads.\n",
+              "exit": 0,
+              "truncated": false
+            },
+            "title": "pnpm fix",
+            "time": {
+              "start": 1784732568405,
+              "end": 1784732568455
+            }
+          },
+          "id": "prt_f8a59c020001W7796Ok3lJ3zcL",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a599213001E9Z2ZPN6jUoF4Z"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f0a3b87de90b7ca6c665fd04fac73d4a419d64a0",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23456,
+            "input": 239,
+            "output": 39,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 23168
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a59cbaf001X4WaHvKuW9ejwA",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a599213001E9Z2ZPN6jUoF4Z"
+        },
+        {
+          "type": "patch",
+          "hash": "70d3c56d357aa2bf5a5dbf89641fa2a4f0823e92",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/logo-marquee-demo.tsx"
+          ],
+          "id": "prt_f8a59cbd5001MStu1Lgpl6h3Gi",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a599213001E9Z2ZPN6jUoF4Z"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 23913,
+          "input": 430,
+          "output": 114,
+          "reasoning": 9,
+          "cache": {
+            "write": 0,
+            "read": 23360
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732568550,
+          "completed": 1784732580710
+        },
+        "finish": "tool-calls",
+        "id": "msg_f8a59cbe6001r3yX1VmX9dwrHI",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f0a3b87de90b7ca6c665fd04fac73d4a419d64a0",
+          "type": "step-start",
+          "id": "prt_f8a59f56f0011mULk7LVOIIrRQ",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59cbe6001r3yX1VmX9dwrHI"
+        },
+        {
+          "type": "reasoning",
+          "text": "All fixed. Let me update the todos.",
+          "time": {
+            "start": 1784732579188,
+            "end": 1784732579544
+          },
+          "id": "prt_f8a59f574001NVWlZB9Nynu3Dd",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59cbe6001r3yX1VmX9dwrHI"
+        },
+        {
+          "type": "tool",
+          "tool": "todowrite",
+          "callID": "call_7358f6e35df745198bc57934",
+          "state": {
+            "status": "completed",
+            "input": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "priority": "high",
+                  "status": "completed"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "priority": "medium",
+                  "status": "completed"
+                }
+              ]
+            },
+            "output": "[\n  {\n    \"content\": \"Create logo-marquee-demo.tsx\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Create logo-marquee.mdx docs\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Add to registry.json\",\n    \"status\": \"completed\",\n    \"priority\": \"high\"\n  },\n  {\n    \"content\": \"Run pnpm fix\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\"\n  }\n]",
+            "metadata": {
+              "todos": [
+                {
+                  "content": "Create logo-marquee-demo.tsx",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Create logo-marquee.mdx docs",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Add to registry.json",
+                  "status": "completed",
+                  "priority": "high"
+                },
+                {
+                  "content": "Run pnpm fix",
+                  "status": "completed",
+                  "priority": "medium"
+                }
+              ],
+              "truncated": false
+            },
+            "title": "0 todos",
+            "time": {
+              "start": 1784732580464,
+              "end": 1784732580467
+            }
+          },
+          "id": "prt_f8a59f6dc001kmrJop8pe2g7hx",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59cbe6001r3yX1VmX9dwrHI"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "f0a3b87de90b7ca6c665fd04fac73d4a419d64a0",
+          "type": "step-finish",
+          "tokens": {
+            "total": 23913,
+            "input": 430,
+            "output": 114,
+            "reasoning": 9,
+            "cache": {
+              "write": 0,
+              "read": 23360
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a59fb46001DmtqSYHswsxh4U",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59cbe6001r3yX1VmX9dwrHI"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f8a56b939001Ai9PXI2o3nO4A1",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 24339,
+          "input": 315,
+          "output": 270,
+          "reasoning": 10,
+          "cache": {
+            "write": 0,
+            "read": 23744
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1784732580714,
+          "completed": 1784732594479
+        },
+        "finish": "stop",
+        "id": "msg_f8a59fb6a001ng67rbSZipShwI",
+        "sessionID": "ses_075a94726ffeAgCThywrWl3VHb"
+      },
+      "parts": [
+        {
+          "snapshot": "f0a3b87de90b7ca6c665fd04fac73d4a419d64a0",
+          "type": "step-start",
+          "id": "prt_f8a5a21ea0019KS5OF6ooi84Q3",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59fb6a001ng67rbSZipShwI"
+        },
+        {
+          "type": "reasoning",
+          "text": "All done. Let me summarize what was done.",
+          "time": {
+            "start": 1784732590579,
+            "end": 1784732590794
+          },
+          "id": "prt_f8a5a21f300196b8IrPcPpDppd",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59fb6a001ng67rbSZipShwI"
+        },
+        {
+          "type": "text",
+          "text": "Done. Created:\n\n- `registry/new-york/logo-marquee-demo.tsx` - Demo with sample logos\n- `content/docs/components/logo-marquee.mdx` - Documentation\n- Added `logo-marquee` entry to `registry.json` with `motion` and `react-use-measure` dependencies\n\nFixed lint issues in `logo-marquee.tsx`:\n- Converted `if/else` to ternary expression\n- Added eslint-disable comment for `<img>` element (as requested, no `next/image`)\n\n`pnpm fix` passes with 0 errors.\n\n\n",
+          "time": {
+            "start": 1784732590801,
+            "end": 1784732594417
+          },
+          "id": "prt_f8a5a22d1001PFj1EYfm4Omds0",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59fb6a001ng67rbSZipShwI"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "f0a3b87de90b7ca6c665fd04fac73d4a419d64a0",
+          "type": "step-finish",
+          "tokens": {
+            "total": 24339,
+            "input": 315,
+            "output": 270,
+            "reasoning": 10,
+            "cache": {
+              "write": 0,
+              "read": 23744
+            }
+          },
+          "cost": 0,
+          "id": "prt_f8a5a30ff001WGRlJjq5Ntojeq",
+          "sessionID": "ses_075a94726ffeAgCThywrWl3VHb",
+          "messageID": "msg_f8a59fb6a001ng67rbSZipShwI"
+        }
+      ]
+    }
+  ]
+}
