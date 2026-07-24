@@ -1,0 +1,29 @@
+Type error: Argument of type '{ duration: [number, number, number]; fromCenter: boolean; variant: { default: string; options: string[]; type: string; }; }' is not assignable to parameter of type 'DialConfig'.
+  Property 'variant' is incompatible with index signature.
+    Type '{ default: string; options: string[]; type: string; }' is not assignable to type 'DialConfig | DialValue | [number, number, number, (number | undefined)?]'.
+      Type '{ default: string; options: string[]; type: string; }' is not assignable to type 'DialConfig | [number, number, number, (number | undefined)?]'.
+        Type '{ default: string; options: string[]; type: string; }' is not assignable to type 'DialConfig'.
+          Property 'options' is incompatible with index signature.
+            Type 'string[]' is not assignable to type 'DialConfig | DialValue | [number, number, number, (number | undefined)?]'.
+              Type 'string[]' is not assignable to type 'DialConfig | SpringConfig | EasingConfig | ActionConfig | SelectConfig | ColorConfig | TextConfig'.
+                Type 'string[]' is not assignable to type 'DialConfig'.
+                  Index signature for type 'string' is missing in type 'string[]'.
+  26 |
+  27 | export const ThemeToggleDemo = () => {
+> 28 |   const values = useDialKit("theme-toggle", config);
+     |                                             ^
+  29 |   const { resolvedTheme, setTheme } = useTheme();
+  30 |
+  31 |   return (
+Next.js build worker exited with code: 1 and signal: null
+ ELIFECYCLE  Command failed with exit code 1.
+Error: Command "pnpm run build" exited with 1
+
+---
+
+▣ DCP | -2.4K removed, +1.1K summary
+
+│⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿█████████│
+▣ Compression #1 -2.4K removed, +1.1K summary
+→ Topic: TypeScript config fix
+→ Items: 5 messages and 4 tools compressed
