@@ -197,6 +197,20 @@
         }
       ],
       "dependencies": ["motion"]
+    },
+    {
+      "name": "text-annotation",
+      "type": "registry:ui",
+      "title": "Text Annotation",
+      "description": "Animated text annotation with highlight, underline, box, circle, strike-through, crossed-off, and bracket actions using rough notation.",
+      "files": [
+        {
+          "path": "registry/new-york/text-annotation.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/text-annotation.tsx"
+        }
+      ],
+      "dependencies": ["motion", "rough-notation"]
     }
   ]
 }

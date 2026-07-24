@@ -1,0 +1,84 @@
+---
+title: Text Annotation
+description: Animated text annotation with highlight, underline, box, circle, strike-through, crossed-off, and bracket actions using rough notation.
+---
+
+import { HighlighterDemo } from "@/demo/text-annotation-demo";
+
+<ComponentPreview name="text-annotation">
+  <HighlighterDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/text-annotation"
+  __npm__="npx shadcn@latest add @prsui/text-annotation"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/text-annotation"
+  __yarn__="yarn shadcn@latest add @prsui/text-annotation"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/text-annotation.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/text-annotation.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/text-annotation.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/text-annotation.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import { TextAnnotation } from "@/components/prsui/text-annotation";
+
+export function MyComponent() {
+  return (
+    <TextAnnotation
+      action="highlight"
+      color="#ffd1dc"
+      strokeWidth={1.5}
+      animationDuration={600}
+      iterations={2}
+      padding={2}
+      multiline={true}
+    >
+      Highlighted text
+    </TextAnnotation>
+  );
+}
+```
+
+## Props
+
+| Prop                | Type               | Default       | Description                                                   |
+| ------------------- | ------------------ | ------------- | ------------------------------------------------------------- |
+| `children`          | `React.ReactNode`  | -             | The text content to annotate.                                 |
+| `action`            | `AnnotationAction` | `"highlight"` | The annotation action type.                                   |
+| `color`             | `string`           | `"#ffd1dc"`   | The annotation color (CSS color string).                      |
+| `strokeWidth`       | `number`           | `1.5`         | The stroke width of the annotation.                           |
+| `animationDuration` | `number`           | `600`         | The duration of the animation in milliseconds.                |
+| `iterations`        | `number`           | `2`           | The number of animation iterations.                           |
+| `padding`           | `number`           | `2`           | The padding around the annotation.                            |
+| `multiline`         | `boolean`          | `true`        | Whether the annotation supports multiline text.               |
+| `isView`            | `boolean`          | `false`       | Whether to wait for the element to be in view before showing. |
+
+## Annotation Actions
+
+The `action` prop supports the following values:
+
+| Action           | Description                        |
+| ---------------- | ---------------------------------- |
+| `highlight`      | A background highlight annotation. |
+| `underline`      | An underline annotation.           |
+| `box`            | A box outline annotation.          |
+| `circle`         | A circle outline annotation.       |
+| `strike-through` | A strikethrough annotation.        |
+| `crossed-off`    | A crossed-off annotation.          |
+| `bracket`        | A bracket annotation.              |
