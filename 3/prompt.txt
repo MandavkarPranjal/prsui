@@ -1,0 +1,115 @@
+the @registry/new-york/logo-grid.tsx doesn't dynamic change according to the number of logos, it should change dynamically
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/logo-grid.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/logo-grid.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import { PlusIcon } from "lucide-react";
+4: import React, { memo, useMemo } from "react";
+5: 
+6: import { cn } from "@/lib/utils";
+7: 
+8: export interface Logo {
+9:   src: string;
+10:   alt: string;
+11:   width?: number;
+12:   height?: number;
+13: }
+14: 
+15: const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {
+16:   return (
+17:     // eslint-disable-next-line @next/next/no-img-element
+18:     <img
+19:       alt={logo.alt}
+20:       src={logo.src}
+21:       width={logo.width}
+22:       height={logo.height}
+23:       loading="lazy"
+24:       className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
+25:     />
+26:   );
+27: });
+28: 
+29: type LogoCardProps = React.ComponentProps<"div"> & { logo: Logo };
+30: 
+31: const LogoCard = memo(function LogoCard({
+32:   logo,
+33:   className,
+34:   children,
+35:   ...props
+36: }: LogoCardProps) {
+37:   return (
+38:     <div
+39:       className={cn(
+40:         "relative flex items-center justify-center bg-background px-4 py-8 md:p-8",
+41:         className
+42:       )}
+43:       {...props}
+44:     >
+45:       <LogoImage logo={logo} />
+46:       {children}
+47:     </div>
+48:   );
+49: });
+50: 
+51: export const LogoGrid = memo(function LogoGrid({
+52:   logos,
+53:   className,
+54: }: {
+55:   logos: Logo[];
+56:   className?: string;
+57: }) {
+58:   const gridLogos = useMemo(() => logos.slice(0, 8), [logos]);
+59: 
+60:   return (
+61:     <div
+62:       className={cn(
+63:         "relative grid grid-cols-2 border-x md:grid-cols-4",
+64:         className
+65:       )}
+66:     >
+67:       <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
+68: 
+69:       {gridLogos.map((logo, i) => {
+70:         const isHighlighted = i === 0 || i === 2 || i === 5 || i === 7;
+71: 
+72:         return (
+73:           <LogoCard
+74:             key={logo.alt}
+75:             logo={logo}
+76:             className={cn(
+77:               i < 4 && "border-b",
+78:               (i === 4 || i === 5) && "border-b md:border-b-0",
+79:               (i === 0 || i === 2 || i === 4 || i === 6) && "border-r",
+80:               (i === 1 || i === 5) && "md:border-r",
+81:               isHighlighted
+82:                 ? "bg-secondary dark:bg-secondary/30"
+83:                 : "bg-background"
+84:             )}
+85:           >
+86:             {(i === 0 || i === 1 || i === 2) && (
+87:               <PlusIcon
+88:                 className="-right-[12.5px] -bottom-[12.5px] absolute z-10 hidden size-6 md:block text-slate-800 dark:text-slate-300"
+89:                 strokeWidth={1}
+90:               />
+91:             )}
+92:             {(i === 0 || i === 2 || i === 4) && (
+93:               <PlusIcon
+94:                 className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 md:hidden text-slate-800 dark:text-slate-300"
+95:                 strokeWidth={1}
+96:               />
+97:             )}
+98:           </LogoCard>
+99:         );
+100:       })}
+101: 
+102:       <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
+103:     </div>
+104:   );
+105: });
+106: 
+107: LogoGrid.displayName = "LogoGrid";
+
+(End of file - total 107 lines)
+</content>

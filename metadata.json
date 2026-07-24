@@ -3,7 +3,7 @@
   "checkpoint_id": "01KYA04XZPDMSRCM1932KDXGXW",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 7,
+  "checkpoints_count": 18,
   "files_touched": [
     "registry/new-york/accordion.tsx",
     "registry/new-york/editable-chip.tsx",
@@ -38,6 +38,13 @@
       "compact_transcript": "/2/transcript.jsonl",
       "content_hash": "/2/content_hash.txt",
       "prompt": "/2/prompt.txt"
+    },
+    {
+      "metadata": "/3/metadata.json",
+      "transcript": "/3/full.jsonl",
+      "compact_transcript": "/3/transcript.jsonl",
+      "content_hash": "/3/content_hash.txt",
+      "prompt": "/3/prompt.txt"
     }
   ],
   "token_usage": {
@@ -45,6 +52,6 @@
     "cache_creation_tokens": 0,
     "cache_read_tokens": 1079040,
     "output_tokens": 10060,
-    "api_call_count": 45
+    "api_call_count": 46
   }
 }
