@@ -123,3 +123,5 @@ const Link05 = ({ children, className, icon, ...props }: LinkProps) => (
 
 export { Link01, Link02, Link03, Link04, Link05 };
 export type { LinkProps };
+
+export default Link01;

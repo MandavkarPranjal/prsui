@@ -120,3 +120,5 @@ export const GitHubStars = ({
     </Tooltip>
   );
 };
+
+export default GitHubStars;

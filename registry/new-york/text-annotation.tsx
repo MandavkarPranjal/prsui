@@ -100,3 +100,5 @@ export const TextAnnotation = function TextAnnotation({
     </span>
   );
 };
+
+export default TextAnnotation;

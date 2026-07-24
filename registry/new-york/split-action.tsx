@@ -152,3 +152,5 @@ const SplitActions = ({
 };
 
 export { SplitActions };
+
+export default SplitActions;

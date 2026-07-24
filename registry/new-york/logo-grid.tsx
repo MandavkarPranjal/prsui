@@ -105,3 +105,5 @@ export const LogoGrid = memo(function LogoGrid({
 });
 
 LogoGrid.displayName = "LogoGrid";
+
+export default LogoGrid;

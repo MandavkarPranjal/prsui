@@ -148,3 +148,5 @@ export const LogoMarquee = memo(function LogoMarquee({
 });
 
 LogoMarquee.displayName = "LogoMarquee";
+
+export default LogoMarquee;

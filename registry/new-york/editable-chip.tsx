@@ -110,3 +110,5 @@ export const EditableChip: FC<EditableChipProps> = ({
     </motion.div>
   );
 };
+
+export default EditableChip;

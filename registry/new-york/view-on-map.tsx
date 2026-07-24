@@ -131,3 +131,5 @@ export const ViewOnMap: React.FC<ViewOnMapProps> = ({
     </div>
   );
 };
+
+export default ViewOnMap;

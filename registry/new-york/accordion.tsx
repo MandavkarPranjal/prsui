@@ -344,3 +344,5 @@ export const Accordion = function Accordion({
     </div>
   );
 };
+
+export default Accordion;

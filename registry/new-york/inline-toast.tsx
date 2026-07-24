@@ -107,3 +107,5 @@ export const InlineToast: FC<InlineCopyToastProps> = ({
     </motion.div>
   );
 };
+
+export default InlineToast;
