@@ -1,0 +1,12 @@
+Explore the codebase at /home/himmel/personal/prsui to understand:
+1. How existing components have their docs and demos structured (look at config/registry.json, content/docs/components/, app/demo/, etc.)
+2. What "dialkit" refers to in this project
+3. Find an example of another component's documentation and demo setup so I can replicate the pattern
+
+Return:
+- The directory structure for docs, demos, and config
+- An example of a component's documentation file content
+- An example of a component's demo file content
+- What "dialkit" is and how it's used in demos
+- The registry.json structure
+- Any relevant config files that list components
