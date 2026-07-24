@@ -7,13 +7,13 @@ import { TextHighlighter } from "@/registry/new-york/text-highlight";
 export default function TextHighlighterDemo() {
   const transition = { bounce: 0, delay: 0.4, duration: 1, type: "spring" };
   const highlightClass = "rounded-[0.3em] px-px";
-  const highlightColor = "#f8c4c4";
+  const highlightColor = "#f6339a";
   const inViewOptions = { amount: 0.1, initial: true, once: true };
 
   return (
-    <div className="w-full h-full bg-background relative p-0">
-      <div className="h-[calc(100%-1rem)] w-[calc(100%-1rem)] m-2 z-10 bg-white overflow-scroll rounded-xl">
-        <div className="max-w-md mx-auto px-4 mt-16 pb-20 p-0 text-black">
+    <div className="w-full h-full relative p-0">
+      <div className="h-[calc(100%-1rem)] w-[calc(100%-1rem)] m-2 z-10 overflow-scroll rounded-xl">
+        <div className="max-w-md mx-auto px-4 mt-16 pb-20 p-0">
           <h1 className="text-4xl font-medium mb-10 font-calendas tracking-tight">
             Typeface alphabets
           </h1>
