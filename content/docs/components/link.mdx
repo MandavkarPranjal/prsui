@@ -34,7 +34,7 @@ Otherwise, use the full registry URL:
 After you add the component with the CLI, import it from your UI folder:
 
 ```tsx
-import { Link01, Link02, Link03, Link04, Link05 } from "@/components/ui/link";
+import { Link01, Link02, Link03, Link04, Link05 } from "@/components/prsui/link";
 
 export function MyComponent() {
   return <Link01 href="https://example.com">Visit example</Link01>;
@@ -64,7 +64,7 @@ All variants extend the native `<a>` attributes via the shared `LinkProps` type,
 | `target`    | `string`    | `_blank` (Link01) | All other native `<a>` props (`target`, `rel`, `onClick`, …) are forwarded |
 
 ```tsx
-import type { LinkProps } from "@/components/ui/link";
+import type { LinkProps } from "@/components/prsui/link";
 
 // Bring your own target / rel / onClick, etc.
 <Link02

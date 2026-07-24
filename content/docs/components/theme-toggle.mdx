@@ -34,10 +34,35 @@ Otherwise, use the full registry URL:
 After you add the component with the CLI, import it from your UI folder:
 
 ```tsx
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { ThemeToggle } from "@/components/prsui/theme-toggle";
 
 export function MyComponent() {
   return <ThemeToggle />;
+}
+```
+
+## Next.js (next-themes)
+
+Pass theme and onThemeChange to keep useTheme() subscribers in sync on toggle. When controlled, the component skips localStorage and lets the parent own persistence.
+
+```tsx
+"use client"
+
+import { useTheme } from "next-themes"
+
+import { ThemeToggle } from "@/components/prsui/theme-toggle"
+
+export function ThemeToggleNextThemesDemo() {
+  const { resolvedTheme, setTheme } = useTheme()
+
+  return (
+    <div className="flex justify-center p-6">
+      <ThemeToggle
+        theme={resolvedTheme === "dark" ? "dark" : "light"}
+        onThemeChange={setTheme}
+      />
+    </div>
+  )
 }
 ```
 
