@@ -7,10 +7,14 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import { OpenInV0Button } from "./open-in-v0";
+
 export const ComponentPreviewClient = ({
+  name,
   children,
   className,
 }: {
+  name?: string;
   children: ReactNode;
   className?: string;
 }) => {
@@ -39,7 +43,8 @@ export const ComponentPreviewClient = ({
       )}
     >
       <div className="pointer-events-none absolute inset-0 [background-image:radial-gradient(circle,currentColor_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.06]" />
-      <div className="absolute right-4 top-4 z-50">
+      <div className="absolute right-4 top-4 z-50 flex gap-2">
+        <OpenInV0Button url={`https://prsui.pr5.dev/r/${name}.json`} />
         <Button
           variant="outline"
           size="icon"

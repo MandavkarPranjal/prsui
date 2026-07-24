@@ -19,7 +19,7 @@ export const ComponentPreview = ({
   className?: string;
 }) => {
   const demo = (
-    <ComponentPreviewClient className={className}>
+    <ComponentPreviewClient name={name} className={className}>
       {children}
     </ComponentPreviewClient>
   );
