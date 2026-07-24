@@ -1,0 +1,8 @@
+Research the color system in this project. I need to find a suitable "highlight" color (a light pastel/muted color that works as a background highlight behind text) for each brand theme.
+
+1. Read `styles/themes.css` to see all brand theme CSS variables
+2. Read `styles/globals.css` to understand the base color tokens
+3. Look for any existing "muted", "accent", "secondary", or light/pastel color tokens that could work as highlight backgrounds
+4. Also check if `oklch` is used for colors and understand the color format
+
+Return the full content of themes.css and the relevant color variable sections from globals.css.
