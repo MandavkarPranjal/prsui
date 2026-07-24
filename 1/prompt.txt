@@ -1,0 +1,285 @@
+make @demo/text-highlight-demo.tsx simpler
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/demo/text-highlight-demo.tsx"}
+<path>/home/himmel/personal/prsui/demo/text-highlight-demo.tsx</path>
+<type>file</type>
+<content>
+1: "use client"
+2: 
+3: import { useEffect, useRef } from "react"
+4: import Lenis from "lenis"
+5: 
+6: import { TextHighlighter } from "@/registry/new-york/text-highlight"
+7: import { Transition } from "motion"
+8: 
+9: export default function TextHighlighterDemo() {
+10:   const containerRef = useRef<HTMLDivElement | null>(null)
+11: 
+12:   const transition = { type: "spring", duration: 1, delay: 0.4, bounce: 0 }
+13:   const highlightClass = "rounded-[0.3em] px-px"
+14:   const highlightColor = "#f8c4c4"
+15:   const inViewOptions = { once: true, initial: true, amount: 0.1 }
+16: 
+17:   useEffect(() => {
+18:     if (!containerRef.current) return
+19: 
+20:     const lenis = new Lenis({
+21:       autoRaf: true,
+22:       wrapper: containerRef.current,
+23:       duration: 1.2,
+24:       orientation: "vertical",
+25:       gestureOrientation: "vertical",
+26:       smoothWheel: true,
+27:       touchMultiplier: 2,
+28:     })
+29: 
+30:     return () => {
+31:       lenis.destroy()
+32:     }
+33:   }, [])
+34: 
+35:   return (
+36:     <div className="w-full h-full bg-background relative p-0">
+37:       <div className="absolute bottom-0 w-full left-0 h-32 bg-gradient-to-t from-background from-10% via-50% via-background/50 to-transparent pointer-events-none isolate" />
+38: 
+39:       <div
+40:         className="h-[calc(100%-1rem)] w-[calc(100%-1rem)] m-2 z-10 bg-white overflow-scroll rounded-xl"
+41:         ref={containerRef}
+42:       >
+43:         <div className="max-w-md mx-auto px-4 mt-40 pb-64 p-0 text-black">
+44:           <h1 className="text-4xl font-medium mb-20 font-calendas tracking-tight">
+45:             Typeface alphabets
+46:           </h1>
+47: 
+48:           <div className="text leading-normal space-y-4 font-overusedGrotesk ">
+49:             <p className="whitespace-break-spaces">
+50:               The present-day designer has a host of printing types at his
+51:               disposal.{" "}
+52:               <TextHighlighter
+53:                 className={highlightClass}
+54:                 transition={transition as Transition}
+55:                 highlightColor={highlightColor}
+56:                 useInViewOptions={inViewOptions}
+57:               >
+58:                 Since Gutenberg first invented movable type in 1436-55
+59:               </TextHighlighter>{" "}
+60:               hundreds of different types have been designed and cast in lead.{" "}
+61:               <TextHighlighter
+62:                 className={highlightClass}
+63:                 transition={transition as Transition}
+64:                 highlightColor={highlightColor}
+65:                 useInViewOptions={inViewOptions}
+66:               >
+67:                 The most recent technical developments
+68:               </TextHighlighter>{" "}
+69:               with computer and photo-typesetting have once again brought new
+70:               faces or variations of old ones on the market.
+71:             </p>
+72: 
+73:             <p>
+74:               <TextHighlighter
+75:                 className={highlightClass}
+76:                 transition={transition as Transition}
+77:                 highlightColor={highlightColor}
+78:                 useInViewOptions={inViewOptions}
+79:               >
+80:                 The choice is up to the designer
+81:               </TextHighlighter>{" "}
+82:               It is left to his feeling for form to use{" "}
+83:               <TextHighlighter
+84:                 className={highlightClass}
+85:                 transition={transition as Transition}
+86:                 highlightColor={highlightColor}
+87:                 useInViewOptions={inViewOptions}
+88:               >
+89:                 good or poor typefaces
+90:               </TextHighlighter>{" "}
+91:               for his design work. In view of the limited space available, we
+92:               shall refer here to only a few of the outstanding designs of the
+93:               past and the 20th century which have appeared most frequently in
+94:               publications.
+95:             </p>
+96: 
+97:             <p>
+98:               Knowledge of the quality of a typeface is of the greatest
+99:               importance for the{" "}
+100:               <TextHighlighter
+101:                 className={highlightClass}
+102:                 transition={transition as Transition}
+103:                 highlightColor={highlightColor}
+104:                 useInViewOptions={inViewOptions}
+105:               >
+106:                 functional, aesthetic and psychological effect
+107:               </TextHighlighter>{" "}
+108:               of printed matter. Again, the typographic design, i. e. the
+109:               correct spaces between letters and words and the length and
+110:               spacing of lines conducive to easy reading, does much to enhance
+111:               the impression created.{" "}
+112:               <TextHighlighter
+113:                 className={highlightClass}
+114:                 transition={transition as Transition}
+115:                 highlightColor={highlightColor}
+116:                 useInViewOptions={inViewOptions}
+117:               >
+118:                 Today the field is dominated mainly by computer and
+119:                 photo-typesetting
+120:               </TextHighlighter>{" "}
+121:               A typical characteristic of these forms of composition is the too
+122:               narrow setting of the letters which makes reading difficult. The
+123:               designer will be well advised to demand the normal spacing between
+124:               letters when ordering photo-typesetting.
+125:             </p>
+126: 
+127:             <p>
+128:               <TextHighlighter
+129:                 className={highlightClass}
+130:                 transition={transition as Transition}
+131:                 highlightColor={highlightColor}
+132:                 useInViewOptions={inViewOptions}
+133:               >
+134:                 By studying the classic designs
+135:               </TextHighlighter>{" "}
+136:               of{" "}
+137:               <TextHighlighter
+138:                 className={highlightClass}
+139:                 transition={transition as Transition}
+140:                 highlightColor={highlightColor}
+141:                 useInViewOptions={inViewOptions}
+142:               >
+143:                 Garamond, Casion, Bodoni, Walbaum
+144:               </TextHighlighter>{" "}
+145:               and others, the designer can learn what the timeless criteria are
+146:               which produce a refined and artistic typeface that makes for ease
+147:               of reading.
+148:             </p>
+149: 
+150:             <p>
+151:               The lead type designs of{" "}
+152:               <TextHighlighter
+153:                 className={highlightClass}
+154:                 transition={transition as Transition}
+155:                 highlightColor={highlightColor}
+156:                 useInViewOptions={inViewOptions}
+157:               >
+158:                 Berthold, Helvetica, Folio, Univers
+159:               </TextHighlighter>{" "}
+160:               etc. produce pleasant and easily legible type areas. The
+161:               typographic rules that apply to the roman typefaces are also valid
+162:               for the sans serifs.
+163:             </p>
+164: 
+165:             <p>
+166:               <TextHighlighter
+167:                 className={highlightClass}
+168:                 transition={transition as Transition}
+169:                 highlightColor={highlightColor}
+170:                 useInViewOptions={inViewOptions}
+171:               >
+172:                 The creators of these type designs
+173:               </TextHighlighter>{" "}
+174:               were extremely intelligent artists with high creative powers. This
+175:               is shown by the fact that for more than four centuries innumerable
+176:               type designers have sought to create new type alphabets but very
+177:               few of these have gained acceptance.{" "}
+178:               <TextHighlighter
+179:                 className={highlightClass}
+180:                 transition={transition as Transition}
+181:                 highlightColor={highlightColor}
+182:                 useInViewOptions={inViewOptions}
+183:               >
+184:                 An alphabet of Garamond
+185:               </TextHighlighter>{" "}
+186:               for example, is an artistic achievement of the first order. Each
+187:               letter has its own unmistakable face, whether lower or upper case,
+188:               and displays the highest quality of form and originality. Each
+189:               letter has its own personality and makes a marked impact.
+190:             </p>
+191: 
+192:             <p>
+193:               Every designer who is concerned with typography should take the
+194:               trouble when creating graphic designs to{" "}
+195:               <TextHighlighter
+196:                 className={highlightClass}
+197:                 transition={transition as Transition}
+198:                 highlightColor={highlightColor}
+199:                 useInViewOptions={inViewOptions}
+200:               >
+201:                 sketch words and sentences by hand
+202:               </TextHighlighter>{" "}
+203:               Many designers take advantage of the Letraset process, which can
+204:               undoubtedly produce a clean draft design that is almost ready for
+205:               press. But a feeling for good letter forms and an attractive
+206:               typeface can be acquired only by constant and careful practice in
+207:               sketching letters.
+208:             </p>
+209: 
+210:             <p>
+211:               <TextHighlighter
+212:                 className={highlightClass}
+213:                 transition={transition as Transition}
+214:                 highlightColor={highlightColor}
+215:                 useInViewOptions={inViewOptions}
+216:               >
+217:                 How the forms of letters can create simultaneously both tension
+218:                 and nobility
+219:               </TextHighlighter>{" "}
+220:               and how pleasantly legible lines of type can appear to the eye of
+221:               the reader may be seen from the examples on the following pages.
+222:             </p>
+223: 
+224:             <p>
+225:               <TextHighlighter
+226:                 className={highlightClass}
+227:                 transition={transition as Transition}
+228:                 highlightColor={highlightColor}
+229:                 useInViewOptions={inViewOptions}
+230:               >
+231:                 The Renaissance created midline typography
+232:               </TextHighlighter>{" "}
+233:               which held its position until the 20th century.
+234:             </p>
+235: 
+236:             <p>
+237:               The new typography differs from the old in that it is the first to
+238:               try to{" "}
+239:               <TextHighlighter
+240:                 className={highlightClass}
+241:                 transition={transition as Transition}
+242:                 highlightColor={highlightColor}
+243:                 useInViewOptions={inViewOptions}
+244:               >
+245:                 develop the outward appearance from the function of the text
+246:               </TextHighlighter>
+247:             </p>
+248: 
+249:             <p>
+250:               <TextHighlighter
+251:                 className={highlightClass}
+252:                 transition={transition as Transition}
+253:                 highlightColor={highlightColor}
+254:                 useInViewOptions={inViewOptions}
+255:               >
+256:                 The new typography uses the background
+257:               </TextHighlighter>{" "}
+258:               as an element of design which is on a par with the other elements.
+259:             </p>
+260: 
+261:             <p>
+262:               Earlier typography (midline typography){" "}
+263:               <TextHighlighter
+264:                 className={highlightClass}
+265:                 transition={transition as Transition}
+266:                 highlightColor={highlightColor}
+267:                 useInViewOptions={inViewOptions}
+268:               >
+269:                 played an active role against a dead, passive background.
+270:               </TextHighlighter>
+271:             </p>
+272:           </div>
+273:         </div>
+274:       </div>
+275:     </div>
+276:   )
+277: }
+
+(End of file - total 277 lines)
+</content>
