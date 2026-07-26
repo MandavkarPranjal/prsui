@@ -1,0 +1,57 @@
+---
+title: Line Shadow Text
+description: A text component with a line shadow effect.
+---
+
+import { LineShadowTextDemo } from "@/demo/line-shadow-text-demo";
+
+<ComponentPreview name="line-shadow-text">
+  <LineShadowTextDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/line-shadow-text"
+  __npm__="npx shadcn@latest add @prsui/line-shadow-text"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/line-shadow-text"
+  __yarn__="yarn shadcn@latest add @prsui/line-shadow-text"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/line-shadow-text.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/line-shadow-text.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/line-shadow-text.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/line-shadow-text.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import { LineShadowText } from "./line-shadow-text";
+
+export const LineShadowTextPreview = () => (
+  <div className="flex items-center justify-center">
+    <p className="text-6xl font-bold">
+      <LineShadowText shadowColor="currentColor">shadow</LineShadowText>
+    </p>
+  </div>
+);
+```
+
+## Props
+
+| Prop          | Type                | Default   | Description                        |
+| ------------- | ------------------- | --------- | ---------------------------------- |
+| `children`    | `string`            | -         | The text content to display.       |
+| `shadowColor` | `string`            | `"black"` | Color of the line shadow.          |
+| `as`          | `MotionElementType` | `"span"`  | Element or component to render as. |
+| `className`   | `string`            | -         | Additional CSS classes.            |

@@ -16,6 +16,7 @@
     "github-stars",
     "text-highlight",
     "text-annotation",
-    "theme-toggle"
+    "theme-toggle",
+    "line-shadow-text"
   ]
 }

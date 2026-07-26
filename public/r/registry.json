@@ -231,6 +231,35 @@
           "mix-blend-mode": "normal"
         }
       }
+    },
+    {
+      "name": "line-shadow-text",
+      "type": "registry:ui",
+      "title": "Line Shadow Text",
+      "description": "A text component with a line shadow effect.",
+      "files": [
+        {
+          "path": "registry/new-york/line-shadow-text.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/line-shadow-text.tsx"
+        }
+      ],
+      "dependencies": ["motion"],
+      "cssVars": {
+        "theme": {
+          "animate-line-shadow": "line-shadow 15s linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes line-shadow": {
+          "0%": {
+            "background-position": "0 0"
+          },
+          "100%": {
+            "background-position": "100% -100%"
+          }
+        }
+      }
     }
   ]
 }
