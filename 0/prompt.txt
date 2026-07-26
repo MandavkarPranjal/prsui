@@ -1,0 +1,13 @@
+Explore this codebase to understand:
+1. How documentation is structured (look for docs/, content/, or similar directories)
+2. How demos are organized for components
+3. Find existing examples of how other components have their docs and demos set up
+4. Look for any registry configuration files that list components
+5. Check the project root for package.json, opencode.json, or similar config files
+
+Return:
+- The directory structure for docs
+- The directory structure for demos/examples
+- An example of a similar component's doc file and demo file (full paths and content patterns)
+- Any registry config file paths
+- The content of package.json (scripts section especially)
