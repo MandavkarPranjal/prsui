@@ -1,0 +1,91 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYFB60MNXVTKY8XWV4A6N6QV",
+  "session_id": "ses_061687128ffe7zTl5E7TNSDudB",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-26T13:52:41.611343025Z",
+  "branch": "main",
+  "checkpoints_count": 3,
+  "save_step_count": 3,
+  "files_touched": [
+    "registry/new-york/line-shadow-text.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "969b2fe09c51",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 31015,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 545152,
+    "output_tokens": 2766,
+    "api_call_count": 23
+  },
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-26T13:52:41.596581873Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 5,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 5,
+    "total_lines_changed": 5,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 101,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "content/docs/components/link.mdx": 7,
+        "registry.json": 29,
+        "registry/new-york/line-shadow-text.tsx": 65
+      },
+      "user_removed_per_file": {
+        "content/docs/components/link.mdx": 1
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 82,
+      "user_lines_removed": 11,
+      "agent_lines_added": 161,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "content/docs/components/line-shadow-text.mdx": 2,
+        "demo/line-shadow-text-demo.tsx": 16,
+        "public/r/line-shadow-text.json": 33,
+        "public/r/registry.json": 29,
+        "registry/new-york/line-shadow-text.tsx": 2
+      },
+      "user_removed_per_file": {
+        "content/docs/components/line-shadow-text.mdx": 2,
+        "demo/line-shadow-text-demo.tsx": 9
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 51,
+      "user_lines_removed": 9,
+      "agent_lines_added": 203,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "content/docs/components/line-shadow-text.mdx": 2,
+        "demo/line-shadow-text-demo.tsx": 14,
+        "public/r/line-shadow-text.json": 33,
+        "registry/new-york/line-shadow-text.tsx": 2
+      },
+      "user_removed_per_file": {
+        "content/docs/components/line-shadow-text.mdx": 2,
+        "demo/line-shadow-text-demo.tsx": 7
+      }
+    }
+  ]
+}

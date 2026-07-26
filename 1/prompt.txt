@@ -1,0 +1,73 @@
+added new component @registry/new-york/line-shadow-text.tsx update docs and demo, then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx</path>
+<type>file</type>
+<content>
+1: "use client"
+2: 
+3: import { type CSSProperties, type HTMLAttributes } from "react"
+4: import {
+5:   motion,
+6:   type DOMMotionComponents,
+7:   type MotionProps,
+8: } from "motion/react"
+9: 
+10: import { cn } from "@/lib/utils"
+11: 
+12: const motionElements = {
+13:   article: motion.article,
+14:   div: motion.div,
+15:   h1: motion.h1,
+16:   h2: motion.h2,
+17:   h3: motion.h3,
+18:   h4: motion.h4,
+19:   h5: motion.h5,
+20:   h6: motion.h6,
+21:   li: motion.li,
+22:   p: motion.p,
+23:   section: motion.section,
+24:   span: motion.span,
+25: } as const
+26: 
+27: type MotionElementType = Extract<
+28:   keyof DOMMotionComponents,
+29:   keyof typeof motionElements
+30: >
+31: 
+32: interface LineShadowTextProps
+33:   extends Omit<HTMLAttributes<HTMLElement>, keyof MotionProps>, MotionProps {
+34:   children: string
+35:   shadowColor?: string
+36:   as?: MotionElementType
+37: }
+38: 
+39: export function LineShadowText({
+40:   children,
+41:   shadowColor = "black",
+42:   className,
+43:   as: Component = "span",
+44:   ...props
+45: }: LineShadowTextProps) {
+46:   const MotionComponent = motionElements[Component]
+47: 
+48:   return (
+49:     <MotionComponent
+50:       style={{ "--shadow-color": shadowColor } as CSSProperties}
+51:       className={cn(
+52:         "relative z-0 inline-flex",
+53:         "after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]",
+54:         "after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]",
+55:         "after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent",
+56:         "after:animate-line-shadow",
+57:         className
+58:       )}
+59:       data-text={children}
+60:       {...props}
+61:     >
+62:       {children}
+63:     </MotionComponent>
+64:   )
+65: }
+
+(End of file - total 65 lines)
+</content>
