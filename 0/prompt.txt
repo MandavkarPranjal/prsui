@@ -1,0 +1,67 @@
+## Error Type
+Console Error
+
+## Error Message
+A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div data-slot="docs" className="flex items...">
+      <div className="flex min-w...">
+        <div>
+        <div className="mx-auto fl...">
+          <div>
+          <div className="w-full fle...">
+            <ComponentPreview>
+              <PreviewToggle demo={<ComponentPreviewClient>} code={{...}}>
+                <div className="my-8">
+                  <div>
+                  <ComponentPreviewClient name="line-shado...">
+                    <div className="group rela...">
+                      <div>
+                      <div>
+                      <div className="relative z...">
+                        <LineShadowTextDemo>
+                          <h1 className="text-5xl l...">
+                            <LineShadowText className="italic" shadowColor="white">
+                              <motion.span style={{...}} className="relative z..." data-text="Fast">
+                                <span
+                                  className="relative z-0 inline-flex after:absolute after:top-[0.04em] after:left-[0...."
+                                  data-text="Fast"
++                                 style={{--shadow-color:"white"}}
+-                                 style={{--shadow-color:"black"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 Fast
+            ...
+        ...
+      ...
+
+
+
+    at span (unknown:0:0)
+    at LineShadowText (registry/new-york/line-shadow-text.tsx:46:5)
+    at LineShadowTextDemo (demo/line-shadow-text-demo.tsx:13:7)
+    at _createMdxContent (content/docs/components/line-shadow-text.mdx.js?collection=docs:130:21)
+    at MDXContent (content/docs/components/line-shadow-text.mdx.js?collection=docs:543:8)
+    at Page (app/(app)/docs/[[...slug]]/page.tsx:191:17)
+
+## Code Frame
+  44 |
+  45 |   return (
+> 46 |     <MotionComponent
+     |     ^
+  47 |       style={{ "--shadow-color": shadowColor } as CSSProperties}
+  48 |       className={cn(
+  49 |         "relative z-0 inline-flex",
+
+Next.js version: 16.2.4 (Turbopack)

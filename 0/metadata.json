@@ -1,0 +1,48 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYFB60MNXVTKY8XWV4A6N6QV",
+  "session_id": "ses_0614ed154ffehkK3v9t1RqpUjb",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-26T13:52:39.86391965Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "registry/new-york/line-shadow-text.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "mimo-v2.5-free",
+  "turn_id": "b76d5bef6af3",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 4040,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 61120,
+    "output_tokens": 437,
+    "api_call_count": 5
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-26T13:52:39.858781132Z",
+    "agent_lines": 1,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 1,
+    "total_lines_changed": 1,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    }
+  ]
+}

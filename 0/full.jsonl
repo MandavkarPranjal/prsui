@@ -1,0 +1,620 @@
+{
+  "info": {
+    "id": "ses_0614ed154ffehkK3v9t1RqpUjb",
+    "slug": "calm-tiger",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "New session - 2026-07-26T13:50:39.787Z",
+    "agent": "build",
+    "model": {
+      "id": "mimo-v2.5-free",
+      "providerID": "opencode"
+    },
+    "version": "1.18.5",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 4040,
+      "output": 437,
+      "reasoning": 707,
+      "cache": {
+        "read": 61120,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1785073839787,
+      "updated": 1785073877132
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1785073839826
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "mimo-v2.5-free"
+        },
+        "summary": {
+          "diffs": [
+            {
+              "file": "registry/new-york/line-shadow-text.tsx",
+              "patch": "Index: registry/new-york/line-shadow-text.tsx\n===================================================================\n--- registry/new-york/line-shadow-text.tsx\t\n+++ registry/new-york/line-shadow-text.tsx\t\n@@ -1,64 +1,65 @@\n \"use client\";\n \n import { motion } from \"motion/react\";\n import type { DOMMotionComponents, MotionProps } from \"motion/react\";\n import type { CSSProperties, HTMLAttributes } from \"react\";\n \n import { cn } from \"@/lib/utils\";\n \n const motionElements = {\n   article: motion.article,\n   div: motion.div,\n   h1: motion.h1,\n   h2: motion.h2,\n   h3: motion.h3,\n   h4: motion.h4,\n   h5: motion.h5,\n   h6: motion.h6,\n   li: motion.li,\n   p: motion.p,\n   section: motion.section,\n   span: motion.span,\n } as const;\n \n type MotionElementType = Extract<\n   keyof DOMMotionComponents,\n   keyof typeof motionElements\n >;\n \n interface LineShadowTextProps\n   extends Omit<HTMLAttributes<HTMLElement>, keyof MotionProps>, MotionProps {\n   children: string;\n   shadowColor?: string;\n   as?: MotionElementType;\n }\n \n export const LineShadowText = ({\n   children,\n   shadowColor = \"black\",\n   className,\n   as: Component = \"span\",\n   ...props\n }: LineShadowTextProps) => {\n   const MotionComponent = motionElements[Component];\n \n   return (\n     <MotionComponent\n+      suppressHydrationWarning\n       style={{ \"--shadow-color\": shadowColor } as CSSProperties}\n       className={cn(\n         \"relative z-0 inline-flex\",\n         \"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n         \"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n         \"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\n         \"after:animate-line-shadow\",\n         className\n       )}\n       data-text={children}\n       {...props}\n     >\n       {children}\n     </MotionComponent>\n   );\n };\n \n export default LineShadowText;\n",
+              "additions": 1,
+              "deletions": 0,
+              "status": "modified"
+            }
+          ]
+        },
+        "id": "msg_f9eb12ed20012AKOtQu9je9nzz",
+        "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "## Error Type\nConsole Error\n\n## Error Message\nA tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <div data-slot=\"docs\" className=\"flex items...\">\n      <div className=\"flex min-w...\">\n        <div>\n        <div className=\"mx-auto fl...\">\n          <div>\n          <div className=\"w-full fle...\">\n            <ComponentPreview>\n              <PreviewToggle demo={<ComponentPreviewClient>} code={{...}}>\n                <div className=\"my-8\">\n                  <div>\n                  <ComponentPreviewClient name=\"line-shado...\">\n                    <div className=\"group rela...\">\n                      <div>\n                      <div>\n                      <div className=\"relative z...\">\n                        <LineShadowTextDemo>\n                          <h1 className=\"text-5xl l...\">\n                            <LineShadowText className=\"italic\" shadowColor=\"white\">\n                              <motion.span style={{...}} className=\"relative z...\" data-text=\"Fast\">\n                                <span\n                                  className=\"relative z-0 inline-flex after:absolute after:top-[0.04em] after:left-[0....\"\n                                  data-text=\"Fast\"\n+                                 style={{--shadow-color:\"white\"}}\n-                                 style={{--shadow-color:\"black\"}}\n                                  ref={function useMotionRef.useCallback}\n                                >\n+                                 Fast\n            ...\n        ...\n      ...\n\n\n\n    at span (unknown:0:0)\n    at LineShadowText (registry/new-york/line-shadow-text.tsx:46:5)\n    at LineShadowTextDemo (demo/line-shadow-text-demo.tsx:13:7)\n    at _createMdxContent (content/docs/components/line-shadow-text.mdx.js?collection=docs:130:21)\n    at MDXContent (content/docs/components/line-shadow-text.mdx.js?collection=docs:543:8)\n    at Page (app/(app)/docs/[[...slug]]/page.tsx:191:17)\n\n## Code Frame\n  44 |\n  45 |   return (\n> 46 |     <MotionComponent\n     |     ^\n  47 |       style={{ \"--shadow-color\": shadowColor } as CSSProperties}\n  48 |       className={cn(\n  49 |         \"relative z-0 inline-flex\",\n\nNext.js version: 16.2.4 (Turbopack) ",
+          "id": "prt_f9eb12ed5001Q90KHdiD4FC44h",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb12ed20012AKOtQu9je9nzz"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f9eb12ed20012AKOtQu9je9nzz",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12042,
+          "input": 1643,
+          "output": 27,
+          "reasoning": 132,
+          "cache": {
+            "write": 0,
+            "read": 10240
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1785073839953,
+          "completed": 1785073851698
+        },
+        "finish": "tool-calls",
+        "id": "msg_f9eb12f51001Tmr3oBvEF8f55L",
+        "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb"
+      },
+      "parts": [
+        {
+          "snapshot": "c2a594b2d6cee169b88ea7146d6e8f635861c2ea",
+          "type": "step-start",
+          "id": "prt_f9eb15509001Vjaj9qAKrHp1h3",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb12f51001Tmr3oBvEF8f55L"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user is reporting a hydration mismatch error in a React/Next.js application. The error shows that the `--shadow-color` CSS variable is being set to \"white\" on the client but \"black\" on the server.\n\nLet me look at the relevant files to understand the issue:\n1. `registry/new-york/line-shadow-text.tsx` - the component\n2. `demo/line-shadow-text-demo.tsx` - the demo usage\n\nThe issue is likely that the component uses `Math.random()`, `Date.now()`, or some other dynamic value that differs between server and client rendering.\n\nLet me search for these files first.",
+          "time": {
+            "start": 1785073849612,
+            "end": 1785073851526
+          },
+          "id": "prt_f9eb1550c001AYFbG4a7FpTcS4",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb12f51001Tmr3oBvEF8f55L"
+        },
+        {
+          "type": "tool",
+          "tool": "glob",
+          "callID": "call_ec370bfd3d9f4429bac4ae89",
+          "state": {
+            "status": "completed",
+            "input": {
+              "pattern": "**/*line-shadow-text*"
+            },
+            "output": "/home/himmel/personal/prsui/demo/line-shadow-text-demo.tsx\n/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx\n/home/himmel/personal/prsui/public/r/line-shadow-text.json\n/home/himmel/personal/prsui/content/docs/components/line-shadow-text.mdx",
+            "metadata": {
+              "count": 4,
+              "truncated": false
+            },
+            "title": "",
+            "time": {
+              "start": 1785073851578,
+              "end": 1785073851621
+            }
+          },
+          "id": "prt_f9eb15c89001bijx3VG5jnonMM",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb12f51001Tmr3oBvEF8f55L"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "c2a594b2d6cee169b88ea7146d6e8f635861c2ea",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12042,
+            "input": 1643,
+            "output": 27,
+            "reasoning": 132,
+            "cache": {
+              "write": 0,
+              "read": 10240
+            }
+          },
+          "cost": 0,
+          "id": "prt_f9eb15d1c001Lc2W4FDv7Cmxbh",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb12f51001Tmr3oBvEF8f55L"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f9eb12ed20012AKOtQu9je9nzz",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 12226,
+          "input": 299,
+          "output": 74,
+          "reasoning": 13,
+          "cache": {
+            "write": 0,
+            "read": 11840
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1785073851704,
+          "completed": 1785073858651
+        },
+        "finish": "tool-calls",
+        "id": "msg_f9eb15d38001qklKGiSKLOSYi9",
+        "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb"
+      },
+      "parts": [
+        {
+          "snapshot": "c2a594b2d6cee169b88ea7146d6e8f635861c2ea",
+          "type": "step-start",
+          "id": "prt_f9eb1716d001DSdjk1VJ6rwFAK",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb15d38001qklKGiSKLOSYi9"
+        },
+        {
+          "type": "reasoning",
+          "text": "Let me read the relevant files to understand the hydration mismatch issue.",
+          "time": {
+            "start": 1785073856882,
+            "end": 1785073857054
+          },
+          "id": "prt_f9eb17172001lKxvMQkh3YeOYJ",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb15d38001qklKGiSKLOSYi9"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_3cf6fd5a47704b5e9a1b6efa",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { motion } from \"motion/react\";\n4: import type { DOMMotionComponents, MotionProps } from \"motion/react\";\n5: import type { CSSProperties, HTMLAttributes } from \"react\";\n6: \n7: import { cn } from \"@/lib/utils\";\n8: \n9: const motionElements = {\n10:   article: motion.article,\n11:   div: motion.div,\n12:   h1: motion.h1,\n13:   h2: motion.h2,\n14:   h3: motion.h3,\n15:   h4: motion.h4,\n16:   h5: motion.h5,\n17:   h6: motion.h6,\n18:   li: motion.li,\n19:   p: motion.p,\n20:   section: motion.section,\n21:   span: motion.span,\n22: } as const;\n23: \n24: type MotionElementType = Extract<\n25:   keyof DOMMotionComponents,\n26:   keyof typeof motionElements\n27: >;\n28: \n29: interface LineShadowTextProps\n30:   extends Omit<HTMLAttributes<HTMLElement>, keyof MotionProps>, MotionProps {\n31:   children: string;\n32:   shadowColor?: string;\n33:   as?: MotionElementType;\n34: }\n35: \n36: export const LineShadowText = ({\n37:   children,\n38:   shadowColor = \"black\",\n39:   className,\n40:   as: Component = \"span\",\n41:   ...props\n42: }: LineShadowTextProps) => {\n43:   const MotionComponent = motionElements[Component];\n44: \n45:   return (\n46:     <MotionComponent\n47:       style={{ \"--shadow-color\": shadowColor } as CSSProperties}\n48:       className={cn(\n49:         \"relative z-0 inline-flex\",\n50:         \"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n51:         \"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n52:         \"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\n53:         \"after:animate-line-shadow\",\n54:         className\n55:       )}\n56:       data-text={children}\n57:       {...props}\n58:     >\n59:       {children}\n60:     </MotionComponent>\n61:   );\n62: };\n63: \n64: export default LineShadowText;\n\n(End of file - total 64 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { motion } from \"motion/react\";\nimport type { DOMMotionComponents, MotionProps } from \"motion/react\";\nimport type { CSSProperties, HTMLAttributes } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst motionElements = {\n  article: motion.article,\n  div: motion.div,\n  h1: motion.h1,\n  h2: motion.h2,\n  h3: motion.h3,\n  h4: motion.h4,\n  h5: motion.h5,\n  h6: motion.h6,\n  li: motion.li,\n  p: motion.p,\n  section: motion.section,",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx",
+                "text": "\"use client\";\n\nimport { motion } from \"motion/react\";\nimport type { DOMMotionComponents, MotionProps } from \"motion/react\";\nimport type { CSSProperties, HTMLAttributes } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst motionElements = {\n  article: motion.article,\n  div: motion.div,\n  h1: motion.h1,\n  h2: motion.h2,\n  h3: motion.h3,\n  h4: motion.h4,\n  h5: motion.h5,\n  h6: motion.h6,\n  li: motion.li,\n  p: motion.p,\n  section: motion.section,\n  span: motion.span,\n} as const;\n\ntype MotionElementType = Extract<\n  keyof DOMMotionComponents,\n  keyof typeof motionElements\n>;\n\ninterface LineShadowTextProps\n  extends Omit<HTMLAttributes<HTMLElement>, keyof MotionProps>, MotionProps {\n  children: string;\n  shadowColor?: string;\n  as?: MotionElementType;\n}\n\nexport const LineShadowText = ({\n  children,\n  shadowColor = \"black\",\n  className,\n  as: Component = \"span\",\n  ...props\n}: LineShadowTextProps) => {\n  const MotionComponent = motionElements[Component];\n\n  return (\n    <MotionComponent\n      style={{ \"--shadow-color\": shadowColor } as CSSProperties}\n      className={cn(\n        \"relative z-0 inline-flex\",\n        \"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n        \"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n        \"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\n        \"after:animate-line-shadow\",\n        className\n      )}\n      data-text={children}\n      {...props}\n    >\n      {children}\n    </MotionComponent>\n  );\n};\n\nexport default LineShadowText;",
+                "lineStart": 1,
+                "lineEnd": 64,
+                "totalLines": 64,
+                "truncated": false
+              }
+            },
+            "title": "registry/new-york/line-shadow-text.tsx",
+            "time": {
+              "start": 1785073857370,
+              "end": 1785073857407
+            }
+          },
+          "id": "prt_f9eb17221001XOu2fRhZZTEIbc",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb15d38001qklKGiSKLOSYi9"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_7c85d15c0f924fe4b16bc64a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/demo/line-shadow-text-demo.tsx"
+            },
+            "output": "<path>/home/himmel/personal/prsui/demo/line-shadow-text-demo.tsx</path>\n<type>file</type>\n<content>\n1: \"use client\";\n2: \n3: import { useTheme } from \"next-themes\";\n4: \n5: import { LineShadowText } from \"@/registry/new-york/line-shadow-text\";\n6: \n7: export const LineShadowTextDemo = () => {\n8:   const theme = useTheme();\n9:   const shadowColor = theme.resolvedTheme === \"dark\" ? \"white\" : \"black\";\n10:   return (\n11:     <h1 className=\"text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl\">\n12:       Think\n13:       <LineShadowText className=\"italic\" shadowColor={shadowColor}>\n14:         Fast\n15:       </LineShadowText>\n16:     </h1>\n17:   );\n18: };\n\n(End of file - total 18 lines)\n</content>",
+            "metadata": {
+              "preview": "\"use client\";\n\nimport { useTheme } from \"next-themes\";\n\nimport { LineShadowText } from \"@/registry/new-york/line-shadow-text\";\n\nexport const LineShadowTextDemo = () => {\n  const theme = useTheme();\n  const shadowColor = theme.resolvedTheme === \"dark\" ? \"white\" : \"black\";\n  return (\n    <h1 className=\"text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl\">\n      Think\n      <LineShadowText className=\"italic\" shadowColor={shadowColor}>\n        Fast\n      </LineShadowText>\n    </h1>\n  );\n};",
+              "truncated": false,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/demo/line-shadow-text-demo.tsx",
+                "text": "\"use client\";\n\nimport { useTheme } from \"next-themes\";\n\nimport { LineShadowText } from \"@/registry/new-york/line-shadow-text\";\n\nexport const LineShadowTextDemo = () => {\n  const theme = useTheme();\n  const shadowColor = theme.resolvedTheme === \"dark\" ? \"white\" : \"black\";\n  return (\n    <h1 className=\"text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl\">\n      Think\n      <LineShadowText className=\"italic\" shadowColor={shadowColor}>\n        Fast\n      </LineShadowText>\n    </h1>\n  );\n};",
+                "lineStart": 1,
+                "lineEnd": 18,
+                "totalLines": 18,
+                "truncated": false
+              }
+            },
+            "title": "demo/line-shadow-text-demo.tsx",
+            "time": {
+              "start": 1785073858039,
+              "end": 1785073858066
+            }
+          },
+          "id": "prt_f9eb173af001BR8EqoiItA9dPm",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb15d38001qklKGiSKLOSYi9"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "c2a594b2d6cee169b88ea7146d6e8f635861c2ea",
+          "type": "step-finish",
+          "tokens": {
+            "total": 12226,
+            "input": 299,
+            "output": 74,
+            "reasoning": 13,
+            "cache": {
+              "write": 0,
+              "read": 11840
+            }
+          },
+          "cost": 0,
+          "id": "prt_f9eb1781f001feZ63Nj7OeEPcH",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb15d38001qklKGiSKLOSYi9"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f9eb12ed20012AKOtQu9je9nzz",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13848,
+          "input": 1086,
+          "output": 175,
+          "reasoning": 491,
+          "cache": {
+            "write": 0,
+            "read": 12096
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1785073858659,
+          "completed": 1785073870949
+        },
+        "finish": "tool-calls",
+        "id": "msg_f9eb178630012vOtG52SlbIoOw",
+        "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb"
+      },
+      "parts": [
+        {
+          "snapshot": "c2a594b2d6cee169b88ea7146d6e8f635861c2ea",
+          "type": "step-start",
+          "id": "prt_f9eb183860010DSJAJhb4PC6vh",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb178630012vOtG52SlbIoOw"
+        },
+        {
+          "type": "reasoning",
+          "text": "The issue is clear: `LineShadowTextDemo` uses `useTheme()` which returns different values on server vs client. On the server, `theme.resolvedTheme` is likely undefined or defaults to \"dark\" → \"black\", but on client it resolves to \"dark\" → \"white\".\n\nThe fix is to suppress hydration mismatch on the element or use `suppressHydrationWarning`. But actually, the standard pattern for this is to use `suppressHydrationWarning` on the element that differs, or to avoid rendering the dynamic value on the server.\n\nA common Next.js pattern is to use `useEffect` to set the theme after mount, or use `suppressHydrationWarning`. Let me check the error trace more carefully.\n\nThe mismatch is:\n- Server: `style={{--shadow-color:\"black\"}}`- Client: `style={{--shadow-color:\"white\"}}`\n\nThis is because `useTheme()` on the server doesn't have the resolved theme yet.\n\nThe simplest fix: add `suppressHydrationWarning` to the `LineShadowText` component or wrap the demo in a client-only pattern.\n\nActually, the cleanest fix for `LineShadowText` is to not directly affect the server/client mismatch. The issue is in the demo. Let me think about the best approach.\n\nOptions:\n1. Add `suppressHydrationWarning` to the `MotionComponent` in `LineShadowText` - this would fix it generically but hides real mismatches\n2. Fix the demo to use a mounted state pattern\n\nActually, the most appropriate fix is to make the demo not render the dynamic color on the server. The standard pattern is:\n\n```tsx\nconst [mounted, setMounted] = useState(false);\nuseEffect(() => setMounted(true), []);\nconst shadowColor = mounted && theme.resolvedTheme === \"dark\" ? \"white\" : \"black\";\n```\n\nBut wait, this still causes a mismatch because server renders \"black\" and client initially renders \"black\" then switches to \"white\" - no mismatch but there's a flash.\n\nActually the simplest and most standard fix for this specific case in Next.js is `suppressHydrationWarning`. Since this is a CSS custom property that legitimately differs between server and client based on theme, `suppressHydrationWarning` is the correct approach.\n\nLet me add `suppressHydrationWarning` to the `MotionComponent` in `LineShadowText`.",
+          "time": {
+            "start": 1785073861512,
+            "end": 1785073868946
+          },
+          "id": "prt_f9eb18388001A2uysCmBlz0q74",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb178630012vOtG52SlbIoOw"
+        },
+        {
+          "type": "text",
+          "text": "The issue is that `useTheme()` returns different values on server vs client, causing `--shadow-color` to be `\"black\"` on server and `\"white\"` on client.\n\nThe cleanest fix is to add `suppressHydrationWarning` to the `MotionComponent` in `LineShadowText`, since the CSS variable legitimately differs between server and client based on theme:",
+          "time": {
+            "start": 1785073868953,
+            "end": 1785073870840
+          },
+          "id": "prt_f9eb1a099001qaEDVRAHc2WqSz",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb178630012vOtG52SlbIoOw"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "call_fc61e053781e4b03a52bd375",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx",
+              "oldString": "    <MotionComponent\n      style={{ \"--shadow-color\": shadowColor } as CSSProperties}",
+              "newString": "    <MotionComponent\n      suppressHydrationWarning\n      style={{ \"--shadow-color\": shadowColor } as CSSProperties}"
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx\n===================================================================\n--- /home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx\n+++ /home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx\n@@ -43,8 +43,9 @@\n const MotionComponent = motionElements[Component];\n \n return (\n   <MotionComponent\n+    suppressHydrationWarning\n     style={{ \"--shadow-color\": shadowColor } as CSSProperties}\n     className={cn(\n       \"relative z-0 inline-flex\",\n       \"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n",
+              "filediff": {
+                "file": "/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx",
+                "patch": "Index: /home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx\n===================================================================\n--- /home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx\n+++ /home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx\n@@ -43,8 +43,9 @@\n const MotionComponent = motionElements[Component];\n \n return (\n   <MotionComponent\n+    suppressHydrationWarning\n     style={{ \"--shadow-color\": shadowColor } as CSSProperties}\n     className={cn(\n       \"relative z-0 inline-flex\",\n       \"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n",
+                "additions": 1,
+                "deletions": 0
+              },
+              "truncated": false
+            },
+            "title": "registry/new-york/line-shadow-text.tsx",
+            "time": {
+              "start": 1785073870788,
+              "end": 1785073870795
+            }
+          },
+          "id": "prt_f9eb1a420001FtwCfpDQht7mJ1",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb178630012vOtG52SlbIoOw"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e6c5d0cb8f26dc1e671a37d2afe03ba722d49eb7",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13848,
+            "input": 1086,
+            "output": 175,
+            "reasoning": 491,
+            "cache": {
+              "write": 0,
+              "read": 12096
+            }
+          },
+          "cost": 0,
+          "id": "prt_f9eb1a835001QTXEi0MaCGfgaS",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb178630012vOtG52SlbIoOw"
+        },
+        {
+          "type": "patch",
+          "hash": "c2a594b2d6cee169b88ea7146d6e8f635861c2ea",
+          "files": [
+            "/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx"
+          ],
+          "id": "prt_f9eb1a861001qmtQoWD6VMqD9q",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb178630012vOtG52SlbIoOw"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f9eb12ed20012AKOtQu9je9nzz",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 13950,
+          "input": 757,
+          "output": 59,
+          "reasoning": 14,
+          "cache": {
+            "write": 0,
+            "read": 13120
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1785073870953,
+          "completed": 1785073877118
+        },
+        "finish": "tool-calls",
+        "id": "msg_f9eb1a869001OG1qgEW6WbVVud",
+        "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb"
+      },
+      "parts": [
+        {
+          "snapshot": "e6c5d0cb8f26dc1e671a37d2afe03ba722d49eb7",
+          "type": "step-start",
+          "id": "prt_f9eb1b7c2001LSYg9p5SoLLacg",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1a869001OG1qgEW6WbVVud"
+        },
+        {
+          "type": "reasoning",
+          "text": "The fix is applied. Let me verify the file looks correct now.",
+          "time": {
+            "start": 1785073874888,
+            "end": 1785073874933
+          },
+          "id": "prt_f9eb1b7c8001kGddmP3dnDq1fd",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1a869001OG1qgEW6WbVVud"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "call_8dc166cb813549bf8690c7a6",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx",
+              "offset": 44,
+              "limit": 5
+            },
+            "output": "<path>/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx</path>\n<type>file</type>\n<content>\n44: \n45:   return (\n46:     <MotionComponent\n47:       suppressHydrationWarning\n48:       style={{ \"--shadow-color\": shadowColor } as CSSProperties}\n\n(Showing lines 44-48 of 65. Use offset=49 to continue.)\n</content>",
+            "metadata": {
+              "preview": "\n  return (\n    <MotionComponent\n      suppressHydrationWarning\n      style={{ \"--shadow-color\": shadowColor } as CSSProperties}",
+              "truncated": true,
+              "loaded": [],
+              "display": {
+                "type": "file",
+                "path": "/home/himmel/personal/prsui/registry/new-york/line-shadow-text.tsx",
+                "text": "\n  return (\n    <MotionComponent\n      suppressHydrationWarning\n      style={{ \"--shadow-color\": shadowColor } as CSSProperties}",
+                "lineStart": 44,
+                "lineEnd": 48,
+                "totalLines": 65,
+                "truncated": true
+              }
+            },
+            "title": "registry/new-york/line-shadow-text.tsx",
+            "time": {
+              "start": 1785073876961,
+              "end": 1785073876971
+            }
+          },
+          "id": "prt_f9eb1b7fc001l2aw596w7DguKq",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1a869001OG1qgEW6WbVVud"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "e6c5d0cb8f26dc1e671a37d2afe03ba722d49eb7",
+          "type": "step-finish",
+          "tokens": {
+            "total": 13950,
+            "input": 757,
+            "output": 59,
+            "reasoning": 14,
+            "cache": {
+              "write": 0,
+              "read": 13120
+            }
+          },
+          "cost": 0,
+          "id": "prt_f9eb1c063001UbiSfr0hV3KKkf",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1a869001OG1qgEW6WbVVud"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_f9eb12ed20012AKOtQu9je9nzz",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 14238,
+          "input": 255,
+          "output": 102,
+          "reasoning": 57,
+          "cache": {
+            "write": 0,
+            "read": 13824
+          }
+        },
+        "modelID": "mimo-v2.5-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1785073877125,
+          "completed": 1785073882805
+        },
+        "finish": "stop",
+        "id": "msg_f9eb1c085001MQfFedJZQrUaJ6",
+        "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb"
+      },
+      "parts": [
+        {
+          "snapshot": "e6c5d0cb8f26dc1e671a37d2afe03ba722d49eb7",
+          "type": "step-start",
+          "id": "prt_f9eb1c922001UjD0r1PQUVpfUX",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1c085001MQfFedJZQrUaJ6"
+        },
+        {
+          "type": "reasoning",
+          "text": "The fix is applied. The `suppressHydrationWarning` prop tells React to allow this specific element's server-rendered HTML attributes to differ from client-side values without triggering the hydration mismatch error. This is the correct approach for theme-dependent CSS variables that legitimately differ between server and client.",
+          "time": {
+            "start": 1785073879336,
+            "end": 1785073881125
+          },
+          "id": "prt_f9eb1c928001m9EeVsfmuUY6HK",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1c085001MQfFedJZQrUaJ6"
+        },
+        {
+          "type": "text",
+          "text": "Added `suppressHydrationWarning` to the `MotionComponent` in `registry/new-york/line-shadow-text.tsx:47`. \n\nThis is the correct fix because the `--shadow-color` CSS variable legitimately differs between server (defaults to `\"black\"`) and client (resolves to `\"white\"` via `useTheme()`). `suppressHydrationWarning` tells React to tolerate this specific attribute difference without throwing the hydration error, while still allowing it to catch actual bugs.",
+          "time": {
+            "start": 1785073881132,
+            "end": 1785073882740
+          },
+          "id": "prt_f9eb1d02c001CoKLA1hFsPYJUa",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1c085001MQfFedJZQrUaJ6"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "e6c5d0cb8f26dc1e671a37d2afe03ba722d49eb7",
+          "type": "step-finish",
+          "tokens": {
+            "total": 14238,
+            "input": 255,
+            "output": 102,
+            "reasoning": 57,
+            "cache": {
+              "write": 0,
+              "read": 13824
+            }
+          },
+          "cost": 0,
+          "id": "prt_f9eb1d688001747803AWhhbfWv",
+          "sessionID": "ses_0614ed154ffehkK3v9t1RqpUjb",
+          "messageID": "msg_f9eb1c085001MQfFedJZQrUaJ6"
+        }
+      ]
+    }
+  ]
+}
