@@ -44,6 +44,7 @@ export const LineShadowText = ({
 
   return (
     <MotionComponent
+      suppressHydrationWarning
       style={{ "--shadow-color": shadowColor } as CSSProperties}
       className={cn(
         "relative z-0 inline-flex",
