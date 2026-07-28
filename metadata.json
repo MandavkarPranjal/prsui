@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYN1ZEJJ201GTX8B5EWMPAHF",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 4,
+  "files_touched": [
+    "content/docs/components/meta.json",
+    "content/docs/components/scramble-hover.mdx",
+    "demo/scramble-hover-demo.tsx",
+    "demo/scramble-in-demo.tsx",
+    "public/r/registry.json",
+    "public/r/scramble-hover.json",
+    "registry.json",
+    "registry/new-york/scramble-hover.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 18099,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 567040,
+    "output_tokens": 2305,
+    "api_call_count": 22
+  }
+}

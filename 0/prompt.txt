@@ -1,0 +1,63 @@
+when I press restart button on preview @components/component-preview-client.tsx user dialkit config is reset, it don't want it happen, is it possible?
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/components/component-preview-client.tsx"}
+<path>/home/himmel/personal/prsui/components/component-preview-client.tsx</path>
+<type>file</type>
+<content>
+1: "use client";
+2: 
+3: import { RotateCw } from "lucide-react";
+4: import type { ReactNode } from "react";
+5: import { useCallback, useState } from "react";
+6: 
+7: import { Button } from "@/components/ui/button";
+8: import { cn } from "@/lib/utils";
+9: 
+10: import { OpenInV0Button } from "./open-in-v0";
+11: 
+12: export const ComponentPreviewClient = ({
+13:   name,
+14:   children,
+15:   className,
+16: }: {
+17:   name?: string;
+18:   children: ReactNode;
+19:   className?: string;
+20: }) => {
+21:   const [previewKey, setPreviewKey] = useState(0);
+22: 
+23:   const handleRestart = useCallback(() => {
+24:     setPreviewKey((prev) => prev + 1);
+25:   }, []);
+26: 
+27:   return (
+28:     <div
+29:       className={cn(
+30:         "group relative flex min-h-[350px] items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-muted/30 p-12 backdrop-blur-sm",
+31:         className
+32:       )}
+33:     >
+34:       <div className="pointer-events-none absolute inset-0 [background-image:radial-gradient(circle,currentColor_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.06]" />
+35:       <div className="absolute right-4 top-4 z-50 flex gap-2">
+36:         <OpenInV0Button url={`https://prsui.pr5.dev/r/${name}.json`} />
+37:         <Button
+38:           variant="outline"
+39:           size="icon"
+40:           onClick={handleRestart}
+41:           className="h-8 w-8 active:scale-95 duration-300 ease-out transition-[scale,background-color,opacity] group/restart-button"
+42:           aria-label="Restart demo"
+43:         >
+44:           <RotateCw className="h-4 w-4 group-hover/restart-button:rotate-45 duration-300 ease-out transition-transform" />
+45:         </Button>
+46:       </div>
+47:       <div
+48:         key={previewKey}
+49:         className="relative z-10 flex w-full items-center justify-center isolate"
+50:       >
+51:         {children}
+52:       </div>
+53:     </div>
+54:   );
+55: };
+
+(End of file - total 55 lines)
+</content>
