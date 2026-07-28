@@ -1,0 +1,158 @@
+add new component @registry/new-york/scramble-in.tsx update docs and demo then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/scramble-in.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/scramble-in.tsx</path>
+<type>file</type>
+<content>
+1: "use client"
+2: 
+3: import {
+4:   forwardRef,
+5:   useCallback,
+6:   useEffect,
+7:   useImperativeHandle,
+8:   useState,
+9: } from "react"
+10: 
+11: interface ScrambleInProps {
+12:   text: string
+13:   scrambleSpeed?: number
+14:   scrambledLetterCount?: number
+15:   characters?: string
+16:   className?: string
+17:   scrambledClassName?: string
+18:   autoStart?: boolean
+19:   onStart?: () => void
+20:   onComplete?: () => void
+21: }
+22: 
+23: export interface ScrambleInHandle {
+24:   start: () => void
+25:   reset: () => void
+26: }
+27: 
+28: const ScrambleIn = forwardRef<ScrambleInHandle, ScrambleInProps>(
+29:   (
+30:     {
+31:       text,
+32:       scrambleSpeed = 50,
+33:       scrambledLetterCount = 2,
+34:       characters = "REDACTED!@#$%^&*()_+",
+35:       className = "",
+36:       scrambledClassName = "",
+37:       autoStart = true,
+38:       onStart,
+39:       onComplete,
+40:     },
+41:     ref
+42:   ) => {
+43:     const [displayText, setDisplayText] = useState("")
+44:     const [isAnimating, setIsAnimating] = useState(false)
+45:     const [visibleLetterCount, setVisibleLetterCount] = useState(0)
+46:     const [scrambleOffset, setScrambleOffset] = useState(0)
+47: 
+48:     const startAnimation = useCallback(() => {
+49:       setIsAnimating(true)
+50:       setVisibleLetterCount(0)
+51:       setScrambleOffset(0)
+52:       onStart?.()
+53:     }, [onStart])
+54: 
+55:     const reset = useCallback(() => {
+56:       setIsAnimating(false)
+57:       setVisibleLetterCount(0)
+58:       setScrambleOffset(0)
+59:       setDisplayText("")
+60:     }, [])
+61: 
+62:     useImperativeHandle(ref, () => ({
+63:       start: startAnimation,
+64:       reset,
+65:     }))
+66: 
+67:     useEffect(() => {
+68:       if (autoStart) {
+69:         startAnimation()
+70:       }
+71:     }, [autoStart, startAnimation])
+72: 
+73:     useEffect(() => {
+74:       let interval: NodeJS.Timeout
+75: 
+76:       if (isAnimating) {
+77:         interval = setInterval(() => {
+78:           // Increase visible text length
+79:           if (visibleLetterCount < text.length) {
+80:             setVisibleLetterCount((prev) => prev + 1)
+81:           }
+82:           // Start sliding scrambled text out
+83:           else if (scrambleOffset < scrambledLetterCount) {
+84:             setScrambleOffset((prev) => prev + 1)
+85:           }
+86:           // Complete animation
+87:           else {
+88:             clearInterval(interval)
+89:             setIsAnimating(false)
+90:             onComplete?.()
+91:           }
+92: 
+93:           // Calculate how many scrambled letters we can show
+94:           const remainingSpace = Math.max(0, text.length - visibleLetterCount)
+95:           const currentScrambleCount = Math.min(
+96:             remainingSpace,
+97:             scrambledLetterCount
+98:           )
+99: 
+100:           // Generate scrambled text
+101:           const scrambledPart = Array(currentScrambleCount)
+102:             .fill(0)
+103:             .map(
+104:               () => characters[Math.floor(Math.random() * characters.length)]
+105:             )
+106:             .join("")
+107: 
+108:           setDisplayText(text.slice(0, visibleLetterCount) + scrambledPart)
+109:         }, scrambleSpeed)
+110:       }
+111: 
+112:       return () => {
+113:         if (interval) clearInterval(interval)
+114:       }
+115:     }, [
+116:       isAnimating,
+117:       text,
+118:       visibleLetterCount,
+119:       scrambleOffset,
+120:       scrambledLetterCount,
+121:       characters,
+122:       scrambleSpeed,
+123:       onComplete,
+124:     ])
+125: 
+126:     const renderText = () => {
+127:       const revealed = displayText.slice(0, visibleLetterCount)
+128:       const scrambled = displayText.slice(visibleLetterCount)
+129: 
+130:       return (
+131:         <>
+132:           <span className={className}>{revealed}</span>
+133:           <span className={scrambledClassName}>{scrambled}</span>
+134:         </>
+135:       )
+136:     }
+137: 
+138:     return (
+139:       <>
+140:         <span className="sr-only">{text}</span>
+141:         <span className="inline-block whitespace-pre-wrap" aria-hidden="true">
+142:           {renderText()}
+143:         </span>
+144:       </>
+145:     )
+146:   }
+147: )
+148: 
+149: ScrambleIn.displayName = "ScrambleIn"
+150: export default ScrambleIn
+
+(End of file - total 150 lines)
+</content>

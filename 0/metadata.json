@@ -1,0 +1,102 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYMW2ZNQEJK9XNZGCEG4651S",
+  "session_id": "ses_056774f64ffefAaxN2T4lhVBv8",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-28T17:32:07.811472318Z",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "save_step_count": 5,
+  "files_touched": [
+    "content/docs/components/meta.json",
+    "content/docs/components/scramble-in.mdx",
+    "demo/scramble-in-demo.tsx",
+    "public/r/registry.json",
+    "public/r/scramble-in.json",
+    "registry.json",
+    "registry/new-york/scramble-in.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "ling-3.0-flash-free",
+  "turn_id": "288b1e5e42c0",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 101383,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 775360,
+    "output_tokens": 5697,
+    "api_call_count": 33
+  },
+  "session_metrics": {
+    "turn_count": 5
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-28T17:32:07.793641565Z",
+    "agent_lines": 25,
+    "agent_removed": 0,
+    "human_added": 91,
+    "human_modified": 20,
+    "human_removed": 0,
+    "total_committed": 135,
+    "total_lines_changed": 137,
+    "agent_percentage": 18.248175182481752,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 150,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "registry/new-york/scramble-in.tsx": 150
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 81,
+      "user_lines_removed": 13,
+      "agent_lines_added": 254,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "content/docs/components/meta.json": 2,
+        "demo/scramble-in-demo.tsx": 51,
+        "public/r/registry.json": 13,
+        "public/r/scramble-in.json": 15
+      },
+      "user_removed_per_file": {
+        "content/docs/components/meta.json": 1,
+        "demo/scramble-in-demo.tsx": 12
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 16,
+      "user_lines_removed": 1,
+      "agent_lines_added": 328,
+      "agent_lines_removed": 10,
+      "user_added_per_file": {
+        "demo/scramble-in-demo.tsx": 1,
+        "public/r/scramble-in.json": 15
+      },
+      "user_removed_per_file": {
+        "demo/scramble-in-demo.tsx": 1
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 343,
+      "agent_lines_removed": 10
+    }
+  ]
+}
