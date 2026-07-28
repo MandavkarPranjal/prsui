@@ -1,0 +1,67 @@
+---
+title: Scramble Hover
+description: Interactive text scramble effect triggered on hover with sequential and directional reveal options.
+---
+
+import { ScrambleHoverPreview } from "@/demo/scramble-hover-demo";
+
+<ComponentPreview name="scramble-hover">
+  <ScrambleHoverPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/scramble-hover"
+  __npm__="npx shadcn@latest add @prsui/scramble-hover"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/scramble-hover"
+  __yarn__="yarn shadcn@latest add @prsui/scramble-hover"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/scramble-hover.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/scramble-hover.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/scramble-hover.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/scramble-hover.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import ScrambleHover from "@/components/prsui/scramble-hover";
+
+export function MyComponent() {
+  return (
+    <h1 className="text-4xl font-medium">
+      <ScrambleHover
+        text="Hover over this text"
+        scrambleSpeed={50}
+        maxIterations={10}
+        revealDirection="start"
+      />
+    </h1>
+  );
+}
+```
+
+## Props
+
+| Prop                   | Type                           | Default                                                              | Description                                                          |
+| ---------------------- | ------------------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `text`                 | `string`                       | -                                                                    | The text to display.                                                 |
+| `scrambleSpeed`        | `number`                       | `50`                                                                 | Speed of the animation in ms per step.                               |
+| `maxIterations`        | `number`                       | `10`                                                                 | Max scramble iterations before resolving (non-sequential).           |
+| `sequential`           | `boolean`                      | `false`                                                              | Reveal characters one at a time instead of all at once.              |
+| `revealDirection`      | `"start" \| "end" \| "center"` | `"start"`                                                            | Direction for sequential character reveal.                           |
+| `useOriginalCharsOnly` | `boolean`                      | `false`                                                              | Only shuffle characters from the original text.                      |
+| `characters`           | `string`                       | `"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+"` | Characters used for scrambling when `useOriginalCharsOnly` is false. |
+| `className`            | `string`                       | -                                                                    | Classes applied to the revealed text.                                |
+| `scrambledClassName`   | `string`                       | -                                                                    | Classes applied to the scrambled text.                               |

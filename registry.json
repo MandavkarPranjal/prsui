@@ -273,6 +273,20 @@
           "target": "components/prsui/scramble-in.tsx"
         }
       ]
+    },
+    {
+      "name": "scramble-hover",
+      "type": "registry:ui",
+      "title": "Scramble Hover",
+      "description": "Interactive text scramble effect triggered on hover with sequential and directional reveal options.",
+      "files": [
+        {
+          "path": "registry/new-york/scramble-hover.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/scramble-hover.tsx"
+        }
+      ],
+      "dependencies": ["motion"]
     }
   ]
 }
