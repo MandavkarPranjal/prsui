@@ -260,6 +260,19 @@
           }
         }
       }
+    },
+    {
+      "name": "scramble-in",
+      "type": "registry:ui",
+      "title": "Scramble In",
+      "description": "Animated text reveal with randomized scrambled characters that resolve into the final text.",
+      "files": [
+        {
+          "path": "registry/new-york/scramble-in.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/scramble-in.tsx"
+        }
+      ]
     }
   ]
 }

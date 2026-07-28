@@ -17,6 +17,7 @@
     "text-highlight",
     "text-annotation",
     "theme-toggle",
-    "line-shadow-text"
+    "line-shadow-text",
+    "scramble-in"
   ]
 }

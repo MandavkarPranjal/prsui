@@ -1,0 +1,82 @@
+---
+title: Scramble In
+description: Animated text reveal with randomized scrambled characters that resolve into the final text.
+---
+
+import { ScrambleInPreview } from "@/demo/scramble-in-demo";
+
+<ComponentPreview name="scramble-in">
+  <ScrambleInPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/scramble-in"
+  __npm__="npx shadcn@latest add @prsui/scramble-in"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/scramble-in"
+  __yarn__="yarn shadcn@latest add @prsui/scramble-in"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/scramble-in.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/scramble-in.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/scramble-in.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/scramble-in.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import ScrambleIn from "@/components/prsui/scramble-in";
+
+export const ScrambleInPreview = () => (
+  <div className="flex min-h-72 flex-col items-center justify-center gap-8 px-6 py-12">
+    <h1 className="text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl">
+      <ScrambleIn
+        text="Built for developers"
+        scrambleSpeed={40}
+        scrambledLetterCount={3}
+      />
+    </h1>
+    <p className="max-w-md text-center text-lg text-muted-foreground leading-relaxed">
+      <ScrambleIn
+        text="Every animation resolves into clarity."
+        scrambleSpeed={25}
+        scrambledLetterCount={2}
+      />
+    </p>
+  </div>
+);
+```
+
+## Props
+
+| Prop                   | Type         | Default                                    | Description                                     |
+| ---------------------- | ------------ | ------------------------------------------ | ----------------------------------------------- |
+| `text`                 | `string`     | -                                          | The text to display.                            |
+| `scrambleSpeed`        | `number`     | `50`                                       | Speed of the animation in ms per step.          |
+| `scrambledLetterCount` | `number`     | `2`                                        | Number of scrambled characters shown at a time. |
+| `characters`           | `string`     | `"abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+"` | Characters used for scrambling.                 |
+| `className`            | `string`     | `""`                                       | Classes applied to the revealed text.           |
+| `scrambledClassName`   | `string`     | `""`                                       | Classes applied to the scrambled text.          |
+| `autoStart`            | `boolean`    | `true`                                     | Whether to start the animation on mount.        |
+| `onStart`              | `() => void` | -                                          | Callback fired when the animation starts.       |
+| `onComplete`           | `() => void` | -                                          | Callback fired when the animation completes.    |
+
+## Handle
+
+The component exposes a ref handle via `useImperativeHandle`:
+
+| Method  | Description                 |
+| ------- | --------------------------- |
+| `start` | Starts the animation.       |
+| `reset` | Resets the animation state. |
