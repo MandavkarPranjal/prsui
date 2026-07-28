@@ -1,0 +1,196 @@
+new component @registry/new-york/scramble-hover.tsx update docs and demo, then run pnpm fix
+Called the Read tool with the following input: {"filePath":"/home/himmel/personal/prsui/registry/new-york/scramble-hover.tsx"}
+<path>/home/himmel/personal/prsui/registry/new-york/scramble-hover.tsx</path>
+<type>file</type>
+<content>
+1: "use client"
+2: 
+3: import { useEffect, useState } from "react"
+4: import { motion } from "motion/react"
+5: 
+6: import { cn } from "@/lib/utils"
+7: 
+8: interface ScrambleHoverProps {
+9:   text: string
+10:   scrambleSpeed?: number
+11:   maxIterations?: number
+12:   sequential?: boolean
+13:   revealDirection?: "start" | "end" | "center"
+14:   useOriginalCharsOnly?: boolean
+15:   characters?: string
+16:   className?: string
+17:   scrambledClassName?: string
+18: }
+19: 
+20: const ScrambleHover: React.FC<ScrambleHoverProps> = ({
+21:   text,
+22:   scrambleSpeed = 50,
+23:   maxIterations = 10,
+24:   useOriginalCharsOnly = false,
+25:   characters = "REDACTED!@#$%^&*()_+",
+26:   className,
+27:   scrambledClassName,
+28:   sequential = false,
+29:   revealDirection = "start",
+30:   ...props
+31: }) => {
+32:   const [displayText, setDisplayText] = useState(text)
+33:   const [isHovering, setIsHovering] = useState(false)
+34:   const [isScrambling, setIsScrambling] = useState(false)
+35:   const [revealedIndices, setRevealedIndices] = useState(new Set<number>())
+36: 
+37:   useEffect(() => {
+38:     let interval: NodeJS.Timeout
+39:     let currentIteration = 0
+40: 
+41:     const getNextIndex = () => {
+42:       const textLength = text.length
+43:       switch (revealDirection) {
+44:         case "start":
+45:           return revealedIndices.size
+46:         case "end":
+47:           return textLength - 1 - revealedIndices.size
+48:         case "center":
+49:           const middle = Math.floor(textLength / 2)
+50:           const offset = Math.floor(revealedIndices.size / 2)
+51:           const nextIndex =
+52:             revealedIndices.size % 2 === 0
+53:               ? middle + offset
+54:               : middle - offset - 1
+55: 
+56:           if (
+57:             nextIndex >= 0 &&
+58:             nextIndex < textLength &&
+59:             !revealedIndices.has(nextIndex)
+60:           ) {
+61:             return nextIndex
+62:           }
+63: 
+64:           for (let i = 0; i < textLength; i++) {
+65:             if (!revealedIndices.has(i)) return i
+66:           }
+67:           return 0
+68:         default:
+69:           return revealedIndices.size
+70:       }
+71:     }
+72: 
+73:     const shuffleText = (text: string) => {
+74:       if (useOriginalCharsOnly) {
+75:         const positions = text.split("").map((char, i) => ({
+76:           char,
+77:           isSpace: char === " ",
+78:           index: i,
+79:           isRevealed: revealedIndices.has(i),
+80:         }))
+81: 
+82:         const nonSpaceChars = positions
+83:           .filter((p) => !p.isSpace && !p.isRevealed)
+84:           .map((p) => p.char)
+85: 
+86:         // Shuffle remaining non-revealed, non-space characters
+87:         for (let i = nonSpaceChars.length - 1; i > 0; i--) {
+88:           const j = Math.floor(Math.random() * (i + 1))
+89:             ;[nonSpaceChars[i], nonSpaceChars[j]] = [
+90:               nonSpaceChars[j],
+91:               nonSpaceChars[i],
+92:             ]
+93:         }
+94: 
+95:         let charIndex = 0
+96:         return positions
+97:           .map((p) => {
+98:             if (p.isSpace) return " "
+99:             if (p.isRevealed) return text[p.index]
+100:             return nonSpaceChars[charIndex++]
+101:           })
+102:           .join("")
+103:       } else {
+104:         return text
+105:           .split("")
+106:           .map((char, i) => {
+107:             if (char === " ") return " "
+108:             if (revealedIndices.has(i)) return text[i]
+109:             return availableChars[
+110:               Math.floor(Math.random() * availableChars.length)
+111:             ]
+112:           })
+113:           .join("")
+114:       }
+115:     }
+116: 
+117:     const availableChars = useOriginalCharsOnly
+118:       ? Array.from(new Set(text.split(""))).filter((char) => char !== " ")
+119:       : characters.split("")
+120: 
+121:     if (isHovering) {
+122:       setIsScrambling(true)
+123:       interval = setInterval(() => {
+124:         if (sequential) {
+125:           if (revealedIndices.size < text.length) {
+126:             const nextIndex = getNextIndex()
+127:             revealedIndices.add(nextIndex)
+128:             setDisplayText(shuffleText(text))
+129:           } else {
+130:             clearInterval(interval)
+131:             setIsScrambling(false)
+132:           }
+133:         } else {
+134:           setDisplayText(shuffleText(text))
+135:           currentIteration++
+136:           if (currentIteration >= maxIterations) {
+137:             clearInterval(interval)
+138:             setIsScrambling(false)
+139:             setDisplayText(text)
+140:           }
+141:         }
+142:       }, scrambleSpeed)
+143:     } else {
+144:       setDisplayText(text)
+145:       revealedIndices.clear()
+146:     }
+147: 
+148:     return () => {
+149:       if (interval) clearInterval(interval)
+150:     }
+151:   }, [
+152:     isHovering,
+153:     text,
+154:     characters,
+155:     scrambleSpeed,
+156:     useOriginalCharsOnly,
+157:     sequential,
+158:     revealDirection,
+159:     maxIterations,
+160:   ])
+161: 
+162:   return (
+163:     <motion.span
+164:       onHoverStart={() => setIsHovering(true)}
+165:       onHoverEnd={() => setIsHovering(false)}
+166:       className={cn("inline-block whitespace-pre-wrap", className)}
+167:       {...props}
+168:     >
+169:       <span className="sr-only">{displayText}</span>
+170:       <span aria-hidden="true">
+171:         {displayText.split("").map((char, index) => (
+172:           <span
+173:             key={index}
+174:             className={cn(
+175:               revealedIndices.has(index) || !isScrambling || !isHovering
+176:                 ? className
+177:                 : scrambledClassName
+178:             )}
+179:           >
+180:             {char}
+181:           </span>
+182:         ))}
+183:       </span>
+184:     </motion.span>
+185:   )
+186: }
+187: 
+188: export default ScrambleHover
+
+(End of file - total 188 lines)
+</content>
