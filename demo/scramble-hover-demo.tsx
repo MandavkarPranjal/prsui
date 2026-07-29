@@ -25,7 +25,7 @@ export const ScrambleHoverPreview = () => {
           <ScrambleHover
             text="Move your cursor"
             scrambleSpeed={values.speed}
-            sequential={values.reveal.sequential}
+            sequential={values.sequential}
             revealDirection={values.direction as "start" | "end" | "center"}
             maxIterations={values.maxIterations}
             scrambledClassName="text-muted-foreground/50"
