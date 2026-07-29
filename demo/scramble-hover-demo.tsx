@@ -11,10 +11,7 @@ const config = {
     type: "select" as const,
   },
   maxIterations: [10, 1, 30] as [number, number, number],
-  reveal: {
-    _collapsed: true,
-    sequential: true,
-  },
+  sequential: true,
   speed: [40, 5, 100] as [number, number, number],
 };
 
