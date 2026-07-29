@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYP8H2MKMX8VFFT9NB9AVDZE",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "demo/scramble-hover-demo.tsx",
+    "demo/scramble-in-demo.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 159876,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 82112,
+    "output_tokens": 430,
+    "api_call_count": 3
+  }
+}

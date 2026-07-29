@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.8.42",
+  "checkpoint_id": "01KYP8H2MKMX8VFFT9NB9AVDZE",
+  "session_id": "ses_0560b8613ffe93Dszf5mqrcKTj",
+  "strategy": "manual-commit",
+  "created_at": "2026-07-29T06:21:05.759573108Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "demo/scramble-hover-demo.tsx",
+    "demo/scramble-in-demo.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "ling-3.0-flash-free",
+  "turn_id": "08cd32e65a9a",
+  "checkpoint_transcript_start": 75,
+  "transcript_lines_at_start": 75,
+  "compact_transcript_start": 75,
+  "token_usage": {
+    "input_tokens": 159876,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 82112,
+    "output_tokens": 430,
+    "api_call_count": 3
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-07-29T06:21:05.711868984Z",
+    "agent_lines": 5,
+    "agent_removed": 14,
+    "human_added": 0,
+    "human_modified": 21,
+    "human_removed": 24,
+    "total_committed": 26,
+    "total_lines_changed": 64,
+    "agent_percentage": 29.6875,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    }
+  ]
+}
