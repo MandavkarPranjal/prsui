@@ -16,16 +16,14 @@ export const ScrambleInPreview = () => (
       </h1>
     </div>
 
-    <div className="flex flex-col items-center gap-6 text-center">
-      <p className="max-w-md text-center text-lg text-muted-foreground leading-relaxed font-mono">
-        <ScrambleIn
-          text="Every animation resolves into clarity."
-          scrambleSpeed={25}
-          scrambledLetterCount={2}
-          className="font-mono"
-          scrambledClassName="text-muted-foreground/40 font-mono"
-        />
-      </p>
-    </div>
+    <p className="max-w-md text-center text-lg text-muted-foreground leading-relaxed font-mono">
+      <ScrambleIn
+        text="Every animation resolves into clarity."
+        scrambleSpeed={25}
+        scrambledLetterCount={3}
+        className="font-mono"
+        scrambledClassName="text-muted-foreground/40 font-mono"
+      />
+    </p>
   </div>
 );

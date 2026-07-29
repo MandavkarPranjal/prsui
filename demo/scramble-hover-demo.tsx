@@ -11,7 +11,10 @@ const config = {
     type: "select" as const,
   },
   maxIterations: [10, 1, 30] as [number, number, number],
-  sequential: true as boolean,
+  reveal: {
+    _collapsed: true,
+    sequential: true,
+  },
   speed: [40, 5, 100] as [number, number, number],
 };
 
@@ -25,13 +28,16 @@ export const ScrambleHoverPreview = () => {
           <ScrambleHover
             text="Move your cursor"
             scrambleSpeed={values.speed}
-            sequential={values.sequential}
-            revealDirection={values.direction}
+            sequential={values.reveal.sequential}
+            revealDirection={values.direction as "start" | "end" | "center"}
             maxIterations={values.maxIterations}
             scrambledClassName="text-muted-foreground/50"
             className="font-mono"
           />
         </h1>
+        <p className="text-sm text-muted-foreground tracking-wide uppercase">
+          Hover to scramble
+        </p>
       </div>
     </div>
   );
