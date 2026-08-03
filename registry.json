@@ -287,6 +287,30 @@
         }
       ],
       "dependencies": ["motion"]
+    },
+    {
+      "name": "magnetic",
+      "type": "registry:ui",
+      "title": "Magnetic",
+      "description": "A wrapper that springs its children toward the cursor with mouse-following physics.",
+      "files": [
+        {
+          "path": "registry/new-york/magnetic.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/magnetic.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "lib/ease.ts"
+        },
+        {
+          "path": "lib/hooks/use-hover-capable.ts",
+          "type": "registry:lib",
+          "target": "lib/hooks/use-hover-capable.ts"
+        }
+      ],
+      "dependencies": ["framer-motion"]
     }
   ]
 }

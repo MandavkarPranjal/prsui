@@ -1,0 +1,60 @@
+---
+title: Magnetic
+description: A wrapper that springs its children toward the cursor with physics.
+---
+
+import { MagneticDemo } from "@/demo/magnetic-demo";
+
+<ComponentPreview name="magnetic">
+  <MagneticDemo />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/magnetic"
+  __npm__="npx shadcn@latest add @prsui/magnetic"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/magnetic"
+  __yarn__="yarn shadcn@latest add @prsui/magnetic"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/magnetic.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/magnetic.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/magnetic.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/magnetic.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+import { Magnetic } from "@/components/prsui/magnetic";
+
+export function MyComponent() {
+  return (
+    <Magnetic>
+      <button>Drag me with your cursor</button>
+    </Magnetic>
+  );
+}
+```
+
+Wrap any element — buttons, cards, avatars — with `Magnetic` and it will follow
+the cursor while hovered, then spring back to rest on leave. The effect is
+disabled on touch devices and when the user prefers reduced motion.
+
+## Props
+
+| Prop         | Type        | Default | Description                                          |
+| ------------ | ----------- | ------- | ---------------------------------------------------- |
+| `children`   | `ReactNode` | -       | The element that gets pulled toward the cursor       |
+| `className`  | `string`    | -       | Additional CSS classes merged onto the wrapper       |
+| `strength`   | `number`    | `0.35`  | Fraction of the pointer distance to travel (0-1)     |
+| `maxOffset`  | `number`    | `32`    | Maximum travel distance in px from the rest position |
+| `hoverScale` | `number`    | `1.04`  | Scale applied while the pointer is inside            |
