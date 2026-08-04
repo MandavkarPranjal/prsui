@@ -1,0 +1,143 @@
+{
+  "info": {
+    "id": "ses_03407b180ffef4gQeElGdE7Rle",
+    "slug": "silent-meadow",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "Synara generateThreadRecap",
+    "agent": "build",
+    "model": {
+      "id": "deepseek-v4-flash-free",
+      "providerID": "opencode",
+      "variant": "default"
+    },
+    "version": "1.18.12",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 4641,
+      "output": 56,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "permission": [
+      {
+        "permission": "*",
+        "pattern": "*",
+        "action": "deny"
+      }
+    ],
+    "time": {
+      "created": 1785833475711,
+      "updated": 1785833477184
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1785833475855
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "deepseek-v4-flash-free"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_fcbf84f0f001Y7W9VeuKzMpEDO",
+        "sessionID": "ses_03407b180ffef4gQeElGdE7Rle"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "You are writing a compact live recap for Synara's chat side panel.\nReturn a JSON object with key: recap.\nRespond with only the JSON object, no prose and no code fences.\nGoal:\nHelp the user quickly remember what happened in this chat, especially the latest concrete work and the current next step.\n\nRules:\n- recap must be only the recap text; no title, no prefix, no bullets, no markdown\n- use the same language as the active chat\n- maximum 220 characters; prefer 150-190 characters\n- write one compact paragraph that fits in 3-4 narrow panel lines\n- mention the current work area first\n- prioritize recent completed changes over old context\n- include the next step, blocker, or pending decision if useful\n- ignore tool noise unless it changed the outcome\n- do not invent completed work, files, tests, or decisions\n- if there is no meaningful new information, return the previous recap unchanged\n\nPrevious recap:\n(none)\n\nNew material:\nThread: New component suggestions\n[assistant] Both it is. Let me study the existing component conventions before building.\n[assistant] Now I understand the conventions. Let me build both components.\n[assistant] Now the docs pages:\n[assistant] Registry builds. Let me fix formatting on just my new files:\n[assistant] My files are clean now — the remaining 3 format issues are pre-existing in files I didn't touch. Let me verify the built registry artifacts and do a final typecheck:\n[assistant] Both components added and verified. **Animated Counter** (`registry/new-york/counter.tsx`) — counts up via `animate` from `motion/react` when scrolled into view. Props: `value`, `from`, `duration`, `delay`, `decimals`, `prefix`/`suffix`, `separator`, `decimalSeparator`, `transition`, `trigger: \"inView\" | \"auto\"`, `onComplete`. Renders sr-only final value + `tabular-nums` formatted output. **Morphing Text** (`registry/new-york/morphing-text.tsx`) — cycles `words[]` with `AnimatePresence` blur+slide morph. Props: `words`, `interval`, `pauseOnHover`, `as`. Supporting files: demos i... [truncated]\n\nCurrent state:\nLatest turn: completed\nRecent activity: tool.completed: todowrite | context-window.updated: Context window updated | turn.completed: Turn completed | checkpoint.captured: Checkpoint captured\nLatest changed files: content/docs/components/counter.mdx, content/docs/components/meta.json, content/docs/components/morphing-text.mdx, demo/counter-demo.tsx, demo/morphing-text-demo.tsx",
+          "id": "prt_fcbf84f1e0015qx9RJ7Y4smTbO",
+          "sessionID": "ses_03407b180ffef4gQeElGdE7Rle",
+          "messageID": "msg_fcbf84f0f001Y7W9VeuKzMpEDO"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_fcbf84f0f001Y7W9VeuKzMpEDO",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 4697,
+          "input": 4641,
+          "output": 56,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "deepseek-v4-flash-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1785833477091,
+          "completed": 1785833480978
+        },
+        "finish": "stop",
+        "id": "msg_fcbf853e3001ZjLw1NRmNKbONh",
+        "sessionID": "ses_03407b180ffef4gQeElGdE7Rle"
+      },
+      "parts": [
+        {
+          "snapshot": "aa6bfb0ea96979ec2b772ad717667432cc7f252d",
+          "type": "step-start",
+          "id": "prt_fcbf85d1e001zXBbJ23xf2lwpO",
+          "sessionID": "ses_03407b180ffef4gQeElGdE7Rle",
+          "messageID": "msg_fcbf853e3001ZjLw1NRmNKbONh"
+        },
+        {
+          "type": "text",
+          "text": "{\"recap\":\"Added Animated Counter and Morphing Text components to the New York registry, plus demos and docs pages, all verified with formatting, registry build, and typecheck. Next: final typecheck already run; ready for your review or next component.\"}",
+          "time": {
+            "start": 1785833480391,
+            "end": 1785833480837
+          },
+          "id": "prt_fcbf860c7001TBTFRTY6ughwLx",
+          "sessionID": "ses_03407b180ffef4gQeElGdE7Rle",
+          "messageID": "msg_fcbf853e3001ZjLw1NRmNKbONh"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "aa6bfb0ea96979ec2b772ad717667432cc7f252d",
+          "type": "step-finish",
+          "tokens": {
+            "total": 4697,
+            "input": 4641,
+            "output": 56,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_fcbf862e20017Ar2sln61Q2mNF",
+          "sessionID": "ses_03407b180ffef4gQeElGdE7Rle",
+          "messageID": "msg_fcbf853e3001ZjLw1NRmNKbONh"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+You are writing a compact live recap for Synara's chat side panel.
+Return a JSON object with key: recap.
+Respond with only the JSON object, no prose and no code fences.
+Goal:
+Help the user quickly remember what happened in this chat, especially the latest concrete work and the current next step.
+
+Rules:
+- recap must be only the recap text; no title, no prefix, no bullets, no markdown
+- use the same language as the active chat
+- maximum 220 characters; prefer 150-190 characters
+- write one compact paragraph that fits in 3-4 narrow panel lines
+- mention the current work area first
+- prioritize recent completed changes over old context
+- include the next step, blocker, or pending decision if useful
+- ignore tool noise unless it changed the outcome
+- do not invent completed work, files, tests, or decisions
+- if there is no meaningful new information, return the previous recap unchanged
+
+Previous recap:
+(none)
+
+New material:
+Thread: New component suggestions
+[assistant] Both it is. Let me study the existing component conventions before building.
+[assistant] Now I understand the conventions. Let me build both components.
+[assistant] Now the docs pages:
+[assistant] Registry builds. Let me fix formatting on just my new files:
+[assistant] My files are clean now — the remaining 3 format issues are pre-existing in files I didn't touch. Let me verify the built registry artifacts and do a final typecheck:
+[assistant] Both components added and verified. **Animated Counter** (`registry/new-york/counter.tsx`) — counts up via `animate` from `motion/react` when scrolled into view. Props: `value`, `from`, `duration`, `delay`, `decimals`, `prefix`/`suffix`, `separator`, `decimalSeparator`, `transition`, `trigger: "inView" | "auto"`, `onComplete`. Renders sr-only final value + `tabular-nums` formatted output. **Morphing Text** (`registry/new-york/morphing-text.tsx`) — cycles `words[]` with `AnimatePresence` blur+slide morph. Props: `words`, `interval`, `pauseOnHover`, `as`. Supporting files: demos i... [truncated]
+
+Current state:
+Latest turn: completed
+Recent activity: tool.completed: todowrite | context-window.updated: Context window updated | turn.completed: Turn completed | checkpoint.captured: Checkpoint captured
+Latest changed files: content/docs/components/counter.mdx, content/docs/components/meta.json, content/docs/components/morphing-text.mdx, demo/counter-demo.tsx, demo/morphing-text-demo.tsx
