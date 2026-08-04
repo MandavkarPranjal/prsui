@@ -20,6 +20,8 @@
     "line-shadow-text",
     "scramble-in",
     "scramble-hover",
-    "magnetic"
+    "magnetic",
+    "counter",
+    "morphing-text"
   ]
 }

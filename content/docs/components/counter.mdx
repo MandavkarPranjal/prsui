@@ -1,0 +1,71 @@
+---
+title: Counter
+description: Animated counter that counts up to a value with easing when scrolled into view.
+---
+
+import { CounterPreview } from "@/demo/counter-demo";
+
+<ComponentPreview name="counter">
+  <CounterPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/counter"
+  __npm__="npx shadcn@latest add @prsui/counter"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/counter"
+  __yarn__="yarn shadcn@latest add @prsui/counter"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/counter.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/counter.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/counter.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/counter.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import Counter from "@/components/prsui/counter";
+
+export const CounterPreview = () => (
+  <div className="flex flex-col items-center gap-8 py-12">
+    <p className="text-5xl font-medium tracking-tight text-foreground">
+      <Counter value={240_000} prefix="$" duration={2.5} />
+    </p>
+    <p className="text-3xl font-medium text-foreground">
+      <Counter value={99.9} decimals={1} suffix="%" />
+    </p>
+  </div>
+);
+```
+
+The counter starts animating when it scrolls into view. Use `trigger="auto"` to start on mount instead.
+
+## Props
+
+| Prop               | Type                 | Default    | Description                                  |
+| ------------------ | -------------------- | ---------- | -------------------------------------------- |
+| `value`            | `number`             | -          | The final value to count up to.              |
+| `from`             | `number`             | `0`        | The value to start from.                     |
+| `duration`         | `number`             | `2`        | Animation duration in seconds.               |
+| `delay`            | `number`             | `0`        | Delay before the animation starts.           |
+| `decimals`         | `number`             | `0`        | Number of decimal places to display.         |
+| `prefix`           | `string`             | `""`       | Text rendered before the value.              |
+| `suffix`           | `string`             | `""`       | Text rendered after the value.               |
+| `separator`        | `string`             | `","`      | Thousands separator character.               |
+| `decimalSeparator` | `string`             | `"."`      | Decimal separator character.                 |
+| `transition`       | `Transition`         | -          | Overrides the animation transition.          |
+| `trigger`          | `"inView" \| "auto"` | `"inView"` | When to start the animation.                 |
+| `className`        | `string`             | -          | Classes applied to the counter element.      |
+| `onComplete`       | `() => void`         | -          | Callback fired when the animation completes. |

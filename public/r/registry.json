@@ -311,6 +311,44 @@
         }
       ],
       "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "counter",
+      "type": "registry:ui",
+      "title": "Counter",
+      "description": "Animated counter that counts up to a value with easing when scrolled into view.",
+      "files": [
+        {
+          "path": "registry/new-york/counter.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/counter.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "lib/ease.ts"
+        }
+      ],
+      "dependencies": ["motion"]
+    },
+    {
+      "name": "morphing-text",
+      "type": "registry:ui",
+      "title": "Morphing Text",
+      "description": "Text that cycles between words with a smooth blur-and-slide morph transition.",
+      "files": [
+        {
+          "path": "registry/new-york/morphing-text.tsx",
+          "type": "registry:ui",
+          "target": "components/prsui/morphing-text.tsx"
+        },
+        {
+          "path": "lib/ease.ts",
+          "type": "registry:lib",
+          "target": "lib/ease.ts"
+        }
+      ],
+      "dependencies": ["motion"]
     }
   ]
 }

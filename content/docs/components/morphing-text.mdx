@@ -1,0 +1,61 @@
+---
+title: Morphing Text
+description: Text that cycles between words with a smooth blur-and-slide morph transition.
+---
+
+import { MorphingTextPreview } from "@/demo/morphing-text-demo";
+
+<ComponentPreview name="morphing-text">
+  <MorphingTextPreview />
+</ComponentPreview>
+
+## Installation
+
+If you've already added the prsui registry, use the short command:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add @prsui/morphing-text"
+  __npm__="npx shadcn@latest add @prsui/morphing-text"
+  __pnpm__="pnpm dlx shadcn@latest add @prsui/morphing-text"
+  __yarn__="yarn shadcn@latest add @prsui/morphing-text"
+/>
+
+Otherwise, use the full registry URL:
+
+<CodeBlockCommand
+  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
+  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
+  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
+  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
+/>
+
+## Usage
+
+After you add the component with the CLI, import it from your UI folder:
+
+```tsx
+"use client";
+
+import MorphingText from "@/components/prsui/morphing-text";
+
+export const MorphingTextPreview = () => (
+  <h1 className="text-5xl font-medium tracking-tight text-foreground">
+    We build products that
+    <MorphingText
+      words={["delight", "inspire", "endure", "scale"]}
+      interval={2200}
+      className="ml-3 text-primary"
+    />
+  </h1>
+);
+```
+
+## Props
+
+| Prop           | Type          | Default | Description                               |
+| -------------- | ------------- | ------- | ----------------------------------------- |
+| `words`        | `string[]`    | -       | The words to cycle through.               |
+| `interval`     | `number`      | `3000`  | Time in ms between each morph.            |
+| `pauseOnHover` | `boolean`     | `false` | Whether cycling pauses while hovering.    |
+| `as`           | `ElementType` | `"div"` | HTML element to render as.                |
+| `className`    | `string`      | -       | Classes applied to the container element. |
