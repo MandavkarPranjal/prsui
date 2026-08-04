@@ -1,0 +1,74 @@
+{
+  "cli_version": "0.9.0",
+  "checkpoint_id": "01KZ61FXV4MF882SKQTN3NG15V",
+  "session_id": "ses_033e82ec1ffe3sFKSsyEVsK7Up",
+  "strategy": "manual-commit",
+  "created_at": "2026-08-04T09:25:51.486619576Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "content/docs/components/counter.mdx",
+    "content/docs/components/meta.json",
+    "content/docs/components/morphing-text.mdx",
+    "demo/counter-demo.tsx",
+    "demo/morphing-text-demo.tsx",
+    "public/r/counter.json",
+    "public/r/morphing-text.json",
+    "public/r/registry.json",
+    "registry.json",
+    "registry/new-york/counter.tsx",
+    "registry/new-york/morphing-text.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "deepseek-v4-flash-free",
+  "turn_id": "f7e869ba22b0",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 8541,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 3968,
+    "output_tokens": 53,
+    "api_call_count": 1
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-08-04T09:25:51.440937737Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 1,
+    "total_committed": 0,
+    "total_lines_changed": 1,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 526,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "content/docs/components/counter.mdx": 71,
+        "content/docs/components/meta.json": 3,
+        "content/docs/components/morphing-text.mdx": 61,
+        "demo/counter-demo.tsx": 32,
+        "demo/morphing-text-demo.tsx": 16,
+        "public/r/counter.json": 24,
+        "public/r/morphing-text.json": 24,
+        "public/r/registry.json": 38,
+        "registry.json": 38,
+        "registry/new-york/counter.tsx": 128,
+        "registry/new-york/morphing-text.tsx": 91
+      },
+      "user_removed_per_file": {
+        "content/docs/components/meta.json": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+You write concise git commit messages.
+Return a JSON object with keys: subject, body.
+Respond with only the JSON object, no prose and no code fences.
+Rules:
+- subject must be imperative, <= 72 chars, and no trailing period
+- body can be empty string or short bullet points
+- capture the primary user-visible or developer-visible change
+
+Branch: main
+
+Staged files:
+A	content/docs/components/counter.mdx
+M	content/docs/components/meta.json
+A	content/docs/components/morphing-text.mdx
+A	demo/counter-demo.tsx
+A	demo/morphing-text-demo.tsx
+A	public/r/counter.json
+A	public/r/morphing-text.json
+M	public/r/registry.json
+M	registry.json
+A	registry/new-york/counter.tsx
+A	registry/new-york/morphing-text.tsx
+
+Staged patch:
+diff --git c/content/docs/components/counter.mdx i/content/docs/components/counter.mdx
+new file mode 100644
+index 0000000..f7b869b
+--- /dev/null
++++ i/content/docs/components/counter.mdx
+@@ -0,0 +1,71 @@
++---
++title: Counter
++description: Animated counter that counts up to a value with easing when scrolled into view.
++---
++
++import { CounterPreview } from "@/demo/counter-demo";
++
++<ComponentPreview name="counter">
++  <CounterPreview />
++</ComponentPreview>
++
++## Installation
++
++If you've already added the prsui registry, use the short command:
++
++<CodeBlockCommand
++  __bun__="bunx --bun shadcn@latest add @prsui/counter"
++  __npm__="npx shadcn@latest add @prsui/counter"
++  __pnpm__="pnpm dlx shadcn@latest add @prsui/counter"
++  __yarn__="yarn shadcn@latest add @prsui/counter"
++/>
++
++Otherwise, use the full registry URL:
++
++<CodeBlockCommand
++  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/counter.json"
++  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/counter.json"
++  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/counter.json"
++  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/counter.json"
++/>
++
++## Usage
++
++After you add the component with the CLI, import it from your UI folder:
++
++```tsx
++"use client";
++
++import Counter from "@/components/prsui/counter";
++
++export const CounterPreview = () => (
++  <div className="flex flex-col items-center gap-8 py-12">
++    <p className="text-5xl font-medium tracking-tight text-foreground">
++      <Counter value={240_000} prefix="$" duration={2.5} />
++    </p>
++    <p className="text-3xl font-medium text-foreground">
++      <Counter value={99.9} decimals={1} suffix="%" />
++    </p>
++  </div>
++);
++```
++
++The counter starts animating when it scrolls into view. Use `trigger="auto"` to start on mount instead.
++
++## Props
++
++| Prop               | Type                 | Default    | Description                                  |
++| ------------------ | -------------------- | ---------- | -------------------------------------------- |
++| `value`            | `number`             | -          | The final value to count up to.              |
++| `from`             | `number`             | `0`        | The value to start from.                     |
++| `duration`         | `number`             | `2`        | Animation duration in seconds.               |
++| `delay`            | `number`             | `0`        | Delay before the animation starts.           |
++| `decimals`         | `number`             | `0`        | Number of decimal places to display.         |
++| `prefix`           | `string`             | `""`       | Text rendered before the value.              |
++| `suffix`           | `string`             | `""`       | Text rendered after the value.               |
++| `separator`        | `string`             | `","`      | Thousands separator character.               |
++| `decimalSeparator` | `string`             | `"."`      | Decimal separator character.                 |
++| `transition`       | `Transition`         | -          | Overrides the animation transition.          |
++| `trigger`          | `"inView" \| "auto"` | `"inView"` | When to start the animation.                 |
++| `className`        | `string`             | -          | Classes applied to the counter element.      |
++| `onComplete`       | `() => void`         | -          | Callback fired when the animation completes. |
+diff --git c/content/docs/components/meta.json i/content/docs/components/meta.json
+index 9453017..afb3281 100644
+--- c/content/docs/components/meta.json
++++ i/content/docs/components/meta.json
+@@ -20,6 +20,8 @@
+     "line-shadow-text",
+     "scramble-in",
+     "scramble-hover",
+-    "magnetic"
++    "magnetic",
++    "counter",
++    "morphing-text"
+   ]
+ }
+diff --git c/content/docs/components/morphing-text.mdx i/content/docs/components/morphing-text.mdx
+new file mode 100644
+index 0000000..583907b
+--- /dev/null
++++ i/content/docs/components/morphing-text.mdx
+@@ -0,0 +1,61 @@
++---
++title: Morphing Text
++description: Text that cycles between words with a smooth blur-and-slide morph transition.
++---
++
++import { MorphingTextPreview } from "@/demo/morphing-text-demo";
++
++<ComponentPreview name="morphing-text">
++  <MorphingTextPreview />
++</ComponentPreview>
++
++## Installation
++
++If you've already added the prsui registry, use the short command:
++
++<CodeBlockCommand
++  __bun__="bunx --bun shadcn@latest add @prsui/morphing-text"
++  __npm__="npx shadcn@latest add @prsui/morphing-text"
++  __pnpm__="pnpm dlx shadcn@latest add @prsui/morphing-text"
++  __yarn__="yarn shadcn@latest add @prsui/morphing-text"
++/>
++
++Otherwise, use the full registry URL:
++
++<CodeBlockCommand
++  __bun__="bunx --bun shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
++  __npm__="npx shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
++  __pnpm__="pnpm dlx shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
++  __yarn__="yarn shadcn@latest add https://prsui.pr5.dev/r/morphing-text.json"
++/>
++
++## Usage
++
++After you add the component with the CLI, import it from your UI folder:
++
++```tsx
++"use client";
++
++import MorphingText from "@/components/prsui/morphing-text";
++
++export const MorphingTextPreview = () => (
++  <h1 className="text-5xl font-medium tracking-tight text-foreground">
++    We build products that
++    <MorphingText
++      words={["delight", "inspire", "endure", "scale"]}
++      interval={2200}
++      className="ml-3 text-primary"
++    />
++  </h1>
++);
++```
++
++## Props
++
++| Prop           | Type          | Default | Description                               |
++| -------------- | ------------- | ------- | ----------------------------------------- |
++| `words`        | `string[]`    | -       | The words to cycle through.               |
++| `interval`     | `number`      | `3000`  | Time in ms between each morph.            |
++| `pauseOnHover` | `boolean`     | `false` | Whether cycling pauses while hovering.    |
++| `as`           | `ElementType` | `"div"` | HTML element to render as.                |
++| `className`    | `string`      | -       | Classes applied to the container element. |
+diff --git c/demo/counter-demo.tsx i/demo/counter-demo.tsx
+new file mode 100644
+index 0000000..009e245
+--- /dev/null
++++ i/demo/counter-demo.tsx
+@@ -0,0 +1,32 @@
++"use client";
++
++import Counter from "@/registry/new-york/counter";
++
++const metrics = [
++  { label: "Components shipped", prefix: "", suffix: "", value: 12_800 },
++  { decimals: 1, label: "Uptime", suffix: "%", value: 99.9 },
++  { decimals: 1, label: "Average rating", suffix: "/5", value: 4.8 },
++  { label: "Funds raised", prefix: "$", value: 240_000 },
++];
++
++export const CounterPreview = () => (
++  <div className="grid w-full max-w-2xl grid-cols-2 gap-8 px-6 py-16 md:grid-cols-4">
++    {metrics.map((metric) => (
++      <div
++        key={metric.label}
++        className="flex flex-col items-center gap-2 text-center"
++      >
++        <p className="text-4xl font-medium tracking-tight text-foreground">
++          <Counter
++            value={metric.value}
++            prefix={metric.prefix}
++            suffix={metric.suffix}
++            decimals={metric.decimals}
++            duration={2}
++          />
++        </p>
++        <p className="text-sm text-muted-foreground">{metric.label}</p>
++      </div>
++    ))}
++  </div>
++);
+diff --git c/demo/morphing-text-demo.tsx i/demo/morphing-text-demo.tsx
+new file mode 100644
+index 0000000..27c317e
+--- /dev/null
++++ i/demo/morphing-text-demo.tsx
+@@ -0,0 +1,16 @@
++"use client";
++
++import MorphingText from "@/registry/new-york/morphing-text";
++
++export const MorphingTextPreview = () => (
++  <div className="flex flex-col items-center gap-16 px-6 py-16">
++    <h1 className="text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl">
++      We build products that
++      <MorphingText
++        words={["delight", "inspire", "endure", "scale"]}
++        interval={2200}
++        className="ml-3 text-primary"
++      />
++    </h1>
++  </div>
++);
+diff --git c/public/r/counter.json i/public/r/counter.json
+new file mode 100644
+index 0000000..dde723f
+--- /dev/null
++++ i/public/r/counter.json
+@@ -0,0 +1,24 @@
++{
++  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
++  "name": "counter",
++  "title": "Counter",
++  "description": "Animated counter that counts up to a value with easing when scrolled into view.",
++  "dependencies": [
++    "motion"
++  ],
++  "files": [
++    {
++      "path": "registry/new-york/counter.tsx",
++      "content": "\"use client\";\n\nimport type { Transition, Variants } from \"motion/react\";\nimport {\n  animate,\n  motion,\n  useInView,\n  useMotionValue,\n  useMotionValueEvent,\n  useReducedMotion,\n} from \"motion/react\";\nimport { useEffect, useRef, useState } from \"react\";\n\nimport { EASE_OUT } from \"@/lib/ease\";\nimport { cn } from \"@/lib/utils\";\n\nconst landingVariants: Variants = {\n  idle: { scale: 1 },\n  landed: { scale: [1, 1.02, 1] },\n};\n\ninterface CounterProps {\n  value: number;\n  from?: number;\n  duration?: number;\n  delay?: number;\n  decimals?: number;\n  prefix?: string;\n  suffix?: string;\n  separator?: string;\n  decimalSeparator?: string;\n  transition?: Transition;\n  trigger?: \"inView\" | \"auto\";\n  className?: string;\n  onComplete?: () => void;\n}\n\nconst Counter = ({\n  value,\n  from = 0,\n  duration = 2,\n  delay = 0,\n  decimals = 0,\n  prefix = \"\",\n  suffix = \"\",\n  separator = \",\",\n  decimalSeparator = \".\",\n  transition,\n  trigger = \"inView\",\n  className,\n  onComplete,\n  ...props\n}: CounterProps & React.HTMLAttributes<HTMLSpanElement>) => {\n  const ref = useRef<HTMLSpanElement>(null);\n  const inView = useInView(ref, { amount: 0.5, once: true });\n  const reduce = useReducedMotion();\n  const motionValue = useMotionValue(from);\n  const [displayValue, setDisplayValue] = useState(from);\n  const [landed, setLanded] = useState(false);\n\n  useMotionValueEvent(motionValue, \"change\", (latest) => {\n    setDisplayValue(latest);\n  });\n\n  useEffect(() => {\n    if (trigger === \"inView\" && !inView) {\n      return;\n    }\n\n    if (reduce) {\n      motionValue.set(value);\n      onComplete?.();\n      return;\n    }\n\n    const controls = animate(motionValue, value, {\n      ...transition,\n      delay,\n      duration: transition?.duration ?? duration,\n      ease: transition?.ease ?? EASE_OUT,\n      onComplete: () => {\n        setLanded(true);\n        onComplete?.();\n      },\n    });\n\n    return () => controls.stop();\n  }, [\n    value,\n    from,\n    duration,\n    delay,\n    inView,\n    trigger,\n    transition,\n    motionValue,\n    reduce,\n    onComplete,\n  ]);\n\n  const formatValue = (num: number) => {\n    const fixed = num.toFixed(decimals);\n    const [int, dec] = fixed.split(\".\");\n    const formattedInt = int.replaceAll(/\\B(?=(\\d{3})+(?!\\d))/g, separator);\n    return dec === undefined\n      ? formattedInt\n      : `${formattedInt}${decimalSeparator}${dec}`;\n  };\n\n  return (\n    <span ref={ref} className={cn(\"tabular-nums\", className)} {...props}>\n      <span className=\"sr-only\">{`${prefix}${formatValue(value)}${suffix}`}</span>\n      <motion.span\n        aria-hidden=\"true\"\n        variants={landingVariants}\n        initial=\"idle\"\n        animate={landed ? \"landed\" : \"idle\"}\n        transition={{ duration: 0.3, ease: EASE_OUT }}\n      >\n        {prefix}\n        {formatValue(displayValue)}\n        {suffix}\n      </motion.span>\n    </span>\n  );\n};\n\nexport default Counter;\n",
++      "type": "registry:ui",
++      "target": "components/prsui/counter.tsx"
++    },
++    {
++      "path": "lib/ease.ts",
++      "content": "// Shared motion tokens. Easing curves mirror the CSS custom properties in\n// globals.css; springs are the canonical physics used across components.\n// Strong custom variants — defaults like `ease-in`/`ease-out` feel weak.\n\nexport const EASE_OUT = [0.16, 1, 0.3, 1] as const;\nexport const EASE_IN_OUT = [0.77, 0, 0.175, 1] as const;\nexport const EASE_DRAWER = [0.32, 0.72, 0, 1] as const;\n\n/** CSS string form of EASE_OUT for inline style transitions. */\nexport const EASE_OUT_CSS = \"cubic-bezier(0.16, 1, 0.3, 1)\";\n\n/** Press feedback on buttons and other tappable surfaces. */\nexport const SPRING_PRESS = {\n  damping: 30,\n  mass: 0.6,\n  stiffness: 500,\n  type: \"spring\",\n} as const;\n\n/** Content swaps — label/icon slots trading places inside a control. */\nexport const SPRING_SWAP = {\n  damping: 30,\n  mass: 0.55,\n  stiffness: 460,\n  type: \"spring\",\n} as const;\n\n/** Overlay panel entrances — modals and sheets summoned by pointer. */\nexport const SPRING_PANEL = {\n  damping: 40,\n  mass: 0.5,\n  stiffness: 420,\n  type: \"spring\",\n} as const;\n\n/** Shared-layout glides — pills, indicators and panels morphing between positions. */\nexport const SPRING_LAYOUT = {\n  damping: 32,\n  mass: 0.6,\n  stiffness: 360,\n  type: \"spring\",\n} as const;\n\n/** Cursor-follow physics for decorative mouse tracking (magnetic, tilt, dock). */\nexport const SPRING_MOUSE = {\n  damping: 20,\n  mass: 0.5,\n  stiffness: 280,\n} as const;\n",
++      "type": "registry:lib",
++      "target": "lib/ease.ts"
++    }
++  ],
++  "type": "registry:ui"
++}
+\ No newline at end of file
+diff --git c/public/r/morphing-text.json i/public/r/morphing-text.json
+new file mode 100644
+index 0000000..32e4ad0
+--- /dev/null
++++ i/public/r/morphing-text.json
+@@ -0,0 +1,24 @@
++{
++  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
++  "name": "morphing-text",
++  "title": "Morphing Text",
++  "description": "Text that cycles between words with a smooth blur-and-slide morph transition.",
++  "dependencies": [
++    "motion"
++  ],
++  "files": [
++    {
++      "path": "registry/new-york/morphing-text.tsx",
++      "content": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { AnimatePresence, motion, useReducedMotion } from \"motion/react\";\nimport type { ElementType } from \"react\";\nimport { useEffect, useState } from \"react\";\n\nimport { EASE_OUT } from \"@/lib/ease\";\nimport { cn } from \"@/lib/utils\";\n\ninterface MorphingTextProps {\n  words: string[];\n  interval?: number;\n  pauseOnHover?: boolean;\n  as?: ElementType;\n  className?: string;\n}\n\nconst morphVariants: Variants = {\n  animate: {\n    filter: \"blur(0px)\",\n    opacity: 1,\n    transition: { duration: 0.4, ease: EASE_OUT },\n    y: 0,\n  },\n  exit: {\n    filter: \"blur(6px)\",\n    opacity: 0,\n    transition: { duration: 0.18, ease: EASE_OUT },\n    y: -10,\n  },\n  initial: { filter: \"blur(6px)\", opacity: 0, y: 10 },\n};\n\nconst reducedVariants: Variants = {\n  animate: {\n    opacity: 1,\n    transition: { duration: 0.15, ease: EASE_OUT },\n  },\n  exit: { opacity: 0, transition: { duration: 0.1, ease: EASE_OUT } },\n  initial: { opacity: 0 },\n};\n\nconst MorphingText = ({\n  words,\n  interval = 3000,\n  pauseOnHover = false,\n  as: Tag = \"div\",\n  className,\n  ...props\n}: MorphingTextProps & React.HTMLAttributes<HTMLElement>) => {\n  const [index, setIndex] = useState(0);\n  const [paused, setPaused] = useState(false);\n  const reduce = useReducedMotion();\n\n  useEffect(() => {\n    if (paused || words.length <= 1) {\n      return;\n    }\n\n    const id = setInterval(() => {\n      setIndex((prev) => (prev + 1) % words.length);\n    }, interval);\n\n    return () => clearInterval(id);\n  }, [interval, paused, words.length]);\n\n  return (\n    <Tag\n      className={cn(\"inline-flex overflow-hidden\", className)}\n      onMouseEnter={() => pauseOnHover && setPaused(true)}\n      onMouseLeave={() => pauseOnHover && setPaused(false)}\n      {...props}\n    >\n      <AnimatePresence mode=\"wait\" initial={false}>\n        <motion.span\n          key={words[index]}\n          variants={reduce ? reducedVariants : morphVariants}\n          initial=\"initial\"\n          animate=\"animate\"\n          exit=\"exit\"\n          className=\"inline-block\"\n        >\n          {words[index]}\n        </motion.span>\n      </AnimatePresence>\n    </Tag>\n  );\n};\n\nexport default MorphingText;\n",
++      "type": "registry:ui",
++      "target": "components/prsui/morphing-text.tsx"
++    },
++    {
++      "path": "lib/ease.ts",
++      "content": "// Shared motion tokens. Easing curves mirror the CSS custom properties in\n// globals.css; springs are the canonical physics used across components.\n// Strong custom variants — defaults like `ease-in`/`ease-out` feel weak.\n\nexport const EASE_OUT = [0.16, 1, 0.3, 1] as const;\nexport const EASE_IN_OUT = [0.77, 0, 0.175, 1] as const;\nexport const EASE_DRAWER = [0.32, 0.72, 0, 1] as const;\n\n/** CSS string form of EASE_OUT for inline style transitions. */\nexport const EASE_OUT_CSS = \"cubic-bezier(0.16, 1, 0.3, 1)\";\n\n/** Press feedback on buttons and other tappable surfaces. */\nexport const SPRING_PRESS = {\n  damping: 30,\n  mass: 0.6,\n  stiffness: 500,\n  type: \"spring\",\n} as const;\n\n/** Content swaps — label/icon slots trading places inside a control. */\nexport const SPRING_SWAP = {\n  damping: 30,\n  mass: 0.55,\n  stiffness: 460,\n  type: \"spring\",\n} as const;\n\n/** Overlay panel entrances — modals and sheets summoned by pointer. */\nexport const SPRING_PANEL = {\n  damping: 40,\n  mass: 0.5,\n  stiffness: 420,\n  type: \"spring\",\n} as const;\n\n/** Shared-layout glides — pills, indicators and panels morphing between positions. */\nexport const SPRING_LAYOUT = {\n  damping: 32,\n  mass: 0.6,\n  stiffness: 360,\n  type: \"spring\",\n} as const;\n\n/** Cursor-follow physics for decorative mouse tracking (magnetic, tilt, dock). */\nexport const SPRING_MOUSE = {\n  damping: 20,\n  mass: 0.5,\n  stiffness: 280,\n} as const;\n",
++      "type": "registry:lib",
++      "target": "lib/ease.ts"
++    }
++  ],
++  "type": "registry:ui"
++}
+\ No newline at end of file
+diff --git c/public/r/registry.json i/public/r/registry.json
+index a57dc76..da7af64 100644
+--- c/public/r/registry.json
++++ i/public/r/registry.json
+@@ -311,6 +311,44 @@
+         }
+       ],
+       "dependencies": ["framer-motion"]
++    },
++    {
++      "name": "counter",
++      "type": "registry:ui",
++      "title": "Counter",
++      "description": "Animated counter that counts up to a value with easing when scrolled into view.",
++      "files": [
++        {
++          "path": "registry/new-york/counter.tsx",
++          "type": "registry:ui",
++          "target": "components/prsui/counter.tsx"
++        },
++        {
++          "path": "lib/ease.ts",
++          "type": "registry:lib",
++          "target": "lib/ease.ts"
++        }
++      ],
++      "dependencies": ["motion"]
++    },
++    {
++      "name": "morphing-text",
++      "type": "registry:ui",
++      "title": "Morphing Text",
++      "description": "Text that cycles between words with a smooth blur-and-slide morph transition.",
++      "files": [
++        {
++          "path": "registry/new-york/morphing-text.tsx",
++          "type": "registry:ui",
++          "target": "components/prsui/morphing-text.tsx"
++        },
++        {
++          "path": "lib/ease.ts",
++          "type": "registry:lib",
++          "target": "lib/ease.ts"
++        }
++      ],
++      "dependencies": ["motion"]
+     }
+   ]
+ }
+diff --git c/registry.json i/registry.json
+index a57dc76..da7af64 100644
+--- c/registry.json
++++ i/registry.json
+@@ -311,6 +311,44 @@
+         }
+       ],
+       "dependencies": ["framer-motion"]
++    },
++    {
++      "name": "counter",
++      "type": "registry:ui",
++      "title": "Counter",
++      "description": "Animated counter that counts up to a value with easing when scrolled into view.",
++      "files": [
++        {
++          "path": "registry/new-york/counter.tsx",
++          "type": "registry:ui",
++          "target": "components/prsui/counter.tsx"
++        },
++        {
++          "path": "lib/ease.ts",
++          "type": "registry:lib",
++          "target": "lib/ease.ts"
++        }
++      ],
++      "dependencies": ["motion"]
++    },
++    {
++      "name": "morphing-text",
++      "type": "registry:ui",
++      "title": "Morphing Text",
++      "description": "Text that cycles between words with a smooth blur-and-slide morph transition.",
++      "files": [
++        {
++          "path": "registry/new-york/morphing-text.tsx",
++          "type": "registry:ui",
++          "target": "components/prsui/morphing-text.tsx"
++        },
++        {
++          "path": "lib/ease.ts",
++          "type": "registry:lib",
++          "target": "lib/ease.ts"
++        }
++      ],
++      "dependencies": ["motion"]
+     }
+   ]
+ }
+diff --git c/registry/new-york/counter.tsx i/registry/new-york/counter.tsx
+new file mode 100644
+index 0000000..dced8b5
+--- /dev/null
++++ i/registry/new-york/counter.tsx
+@@ -0,0 +1,128 @@
++"use client";
++
++import type { Transition, Variants } from "motion/react";
++import {
++  animate,
++  motion,
++  useInView,
++  useMotionValue,
++  useMotionValueEvent,
++  useReducedMotion,
++} from "motion/react";
++import { useEffect, useRef, useState } from "react";
++
++import { EASE_OUT } from "@/lib/ease";
++import { cn } from "@/lib/utils";
++
++const landingVariants: Variants = {
++  idle: { scale: 1 },
++  landed: { scale: [1, 1.02, 1] },
++};
++
++interface CounterProps {
++  value: number;
++  from?: number;
++  duration?: number;
++  delay?: number;
++  decimals?: number;
++  prefix?: string;
++  suffix?: string;
++  separator?: string;
++  decimalSeparator?: string;
++  transition?: Transition;
++  trigger?: "inView" | "auto";
++  className?: string;
++  onComplete?: () => void;
++}
++
++const Counter = ({
++  value,
++  from = 0,
++  duration = 2,
++  delay = 0,
++  decimals = 0,
++  prefix = "",
++  suffix = "",
++  separator = ",",
++  decimalSeparator = ".",
++  transition,
++  trigger = "inView",
++  className,
++  onComplete,
++  ...props
++}: CounterProps & React.HTMLAttributes<HTMLSpanElement>) => {
++  const ref = useRef<HTMLSpanElement>(null);
++  const inView = useInView(ref, { amount: 0.5, once: true });
++  const reduce = useReducedMotion();
++  const motionValue = useMotionValue(from);
++  const [displayValue, setDisplayValue] = useState(from);
++  const [landed, setLanded] = useState(false);
++
++  useMotionValueEvent(motionValue, "change", (latest) => {
++    setDisplayValue(latest);
++  });
++
++  useEffect(() => {
++    if (trigger === "inView" && !inView) {
++      return;
++    }
++
++    if (reduce) {
++      motionValue.set(value);
++      onComplete?.();
++      return;
++    }
++
++    const controls = animate(motionValue, value, {
++      ...transition,
++      delay,
++      duration: transition?.duration ?? duration,
++      ease: transition?.ease ?? EASE_OUT,
++      onComplete: () => {
++        setLanded(true);
++        onComplete?.();
++      },
++    });
++
++    return () => controls.stop();
++  }, [
++    value,
++    from,
++    duration,
++    delay,
++    inView,
++    trigger,
++    transition,
++    motionValue,
++    reduce,
++    onComplete,
++  ]);
++
++  const formatValue = (num: number) => {
++    const fixed = num.toFixed(decimals);
++    const [int, dec] = fixed.split(".");
++    const formattedInt = int.replaceAll(/\B(?=(\d{3})+(?!\d))/g, separator);
++    return dec === undefined
++      ? formattedInt
++      : `${formattedInt}${decimalSeparator}${dec}`;
++  };
++
++  return (
++    <span ref={ref} className={cn("tabular-nums", className)} {...props}>
++      <span className="sr-only">{`${prefix}${formatValue(value)}${suffix}`}</span>
++      <motion.span
++        aria-hidden="true"
++        variants={landingVariants}
++        initial="idle"
++        animate={landed ? "landed" : "idle"}
++        transition={{ duration: 0.3, ease: EASE_OUT }}
++      >
++        {prefix}
++        {formatValue(displayValue)}
++        {suffix}
++      </motion.span>
++    </span>
++  );
++};
++
++export default Counter;
+diff --git c/registry/new-york/morphing-text.tsx i/registry/new-york/morphing-text.tsx
+new file mode 100644
+index 0000000..d5a1631
+--- /dev/null
++++ i/registry/new-york/morphing-text.tsx
+@@ -0,0 +1,91 @@
++"use client";
++
++import type { Variants } from "motion/react";
++import { AnimatePresence, motion, useReducedMotion } from "motion/react";
++import type { ElementType } from "react";
++import { useEffect, useState } from "react";
++
++import { EASE_OUT } from "@/lib/ease";
++import { cn } from "@/lib/utils";
++
++interface MorphingTextProps {
++  words: string[];
++  interval?: number;
++  pauseOnHover?: boolean;
++  as?: ElementType;
++  className?: string;
++}
++
++const morphVariants: Variants = {
++  animate: {
++    filter: "blur(0px)",
++    opacity: 1,
++    transition: { duration: 0.4, ease: EASE_OUT },
++    y: 0,
++  },
++  exit: {
++    filter: "blur(6px)",
++    opacity: 0,
++    transition: { duration: 0.18, ease: EASE_OUT },
++    y: -10,
++  },
++  initial: { filter: "blur(6px)", opacity: 0, y: 10 },
++};
++
++const reducedVariants: Variants = {
++  animate: {
++    opacity: 1,
++    transition: { duration: 0.15, ease: EASE_OUT },
++  },
++  exit: { opacity: 0, transition: { duration: 0.1, ease: EASE_OUT } },
++  initial: { opacity: 0 },
++};
++
++const MorphingText = ({
++  words,
++  interval = 3000,
++  pauseOnHover = false,
++  as: Tag = "div",
++  className,
++  ...props
++}: MorphingTextProps & React.HTMLAttributes<HTMLElement>) => {
++  const [index, setIndex] = useState(0);
++  const [paused, setPaused] = useState(false);
++  const reduce = useReducedMotion();
++
++  useEffect(() => {
++    if (paused || words.length <= 1) {
++      return;
++    }
++
++    const id = setInterval(() => {
++      setIndex((prev) => (prev + 1) % words.length);
++    }, interval);
++
++    return () => clearInterval(id);
++  }, [interval, paused, words.length]);
++
++  return (
++    <Tag
++      className={cn("inline-flex overflow-hidden", className)}
++      onMouseEnter={() => pauseOnHover && setPaused(true)}
++      onMouseLeave={() => pauseOnHover && setPaused(false)}
++      {...props}
++    >
++      <AnimatePresence mode="wait" initial={false}>
++        <motion.span
++          key={words[index]}
++          variants={reduce ? reducedVariants : morphVariants}
++          initial="initial"
++          animate="animate"
++          exit="exit"
++          className="inline-block"
++        >
++          {words[index]}
++        </motion.span>
++      </AnimatePresence>
++    </Tag>
++  );
++};
++
++export default MorphingText;

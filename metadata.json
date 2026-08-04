@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.9.0",
+  "checkpoint_id": "01KZ61FXV4MF882SKQTN3NG15V",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "content/docs/components/counter.mdx",
+    "content/docs/components/meta.json",
+    "content/docs/components/morphing-text.mdx",
+    "demo/counter-demo.tsx",
+    "demo/morphing-text-demo.tsx",
+    "public/r/counter.json",
+    "public/r/morphing-text.json",
+    "public/r/registry.json",
+    "registry.json",
+    "registry/new-york/counter.tsx",
+    "registry/new-york/morphing-text.tsx"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 8541,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 3968,
+    "output_tokens": 53,
+    "api_call_count": 1
+  }
+}
