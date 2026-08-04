@@ -1,0 +1,34 @@
+You are writing a compact live recap for Synara's chat side panel.
+Return a JSON object with key: recap.
+Respond with only the JSON object, no prose and no code fences.
+Goal:
+Help the user quickly remember what happened in this chat, especially the latest concrete work and the current next step.
+
+Rules:
+- recap must be only the recap text; no title, no prefix, no bullets, no markdown
+- use the same language as the active chat
+- maximum 220 characters; prefer 150-190 characters
+- write one compact paragraph that fits in 3-4 narrow panel lines
+- mention the current work area first
+- prioritize recent completed changes over old context
+- include the next step, blocker, or pending decision if useful
+- ignore tool noise unless it changed the outcome
+- do not invent completed work, files, tests, or decisions
+- if there is no meaningful new information, return the previous recap unchanged
+
+Previous recap:
+(none)
+
+New material:
+Thread: Imported OpenCode session CzEah9Mh
+[assistant] Good catch — the entries exist, but they're now missing a dependency. Both components import `EASE_OUT` from `@/lib/ease`, yet only `tooltip`/`accordion`/`magnetic` list `lib/ease.ts` in their files. Let me check the built output and fix.
+[assistant] Confirmed stale — neither `registry.json` nor the built `public/r/*.json` reference `lib/ease.ts` for counter/morphing-text, so `shadcn add` would break on the new `@/lib/ease` import. Fixing:
+[assistant] Now updated. Added `lib/ease.ts` to both items in `registry.json` and rebuilt — `public/r/counter.json`, `morphing-text.json`, and `registry.json` all reference it now.
+[user] <pasted_text> [{"text":"\n × eslint(sort-keys): Object keys should be sorted\n ╭─[registry/new-york/morphing-text.tsx:20:12]\n 19 │ const morphVariants: Variants = {\n 20 │ initial: { y: 10, opacity: 0, filter: \"blur(6px)\" },\n · ──────────────────────────────────────────\n 21 │ animate: {\n ╰────\n help: Replace `y: 10, opacity: 0, filter: \"blur(6px)\"` with `filter: \"blur(6px)\", opacity: 0, y: 10`.\n\n × eslint(sort-keys): Object keys should be sorted\n ╭─[registry/new-york/morphing-text.tsx:21:12]\n 20 │ initial: { y: 10, opacity: 0, filter: \"blur(6px)\" },\n 21 │ ╭─▶ a... [truncated]
+[assistant] Prettier already re-sorted those keys. Verifying both files now pass lint:
+[assistant] Fixed — all 4 lint errors resolved (nested `sort-keys` in `morphing-text.tsx` were auto-fixed by prettier; `no-negated-condition` in `counter.tsx` swapped by hand). 0 warnings, 0 errors.
+
+Current state:
+Latest turn: completed
+Recent activity: runtime.warning: Runtime warning | context-window.updated: Context window updated | turn.completed: Turn completed | checkpoint.captured: Checkpoint captured
+Latest changed files: registry/new-york/counter.tsx
