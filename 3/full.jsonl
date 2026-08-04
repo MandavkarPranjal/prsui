@@ -1,0 +1,156 @@
+{
+  "info": {
+    "id": "ses_033fb355fffeir8ry6faLKIqyb",
+    "slug": "crisp-sailor",
+    "projectID": "52c34de8c69bb6a56bd5197075ad8e2fbb1d62b0",
+    "directory": "/home/himmel/personal/prsui",
+    "path": "",
+    "title": "Synara generateThreadTitle",
+    "agent": "build",
+    "model": {
+      "id": "deepseek-v4-flash-free",
+      "providerID": "opencode",
+      "variant": "max"
+    },
+    "version": "1.18.12",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 2315,
+      "output": 14,
+      "reasoning": 98,
+      "cache": {
+        "read": 1920,
+        "write": 0
+      }
+    },
+    "permission": [
+      {
+        "permission": "*",
+        "pattern": "*",
+        "action": "deny"
+      }
+    ],
+    "time": {
+      "created": 1785834293921,
+      "updated": 1785834295817
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1785834294249
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "opencode",
+          "modelID": "deepseek-v4-flash-free",
+          "variant": "max"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_fcc04cbe90017UlwAw1uNOPpGE",
+        "sessionID": "ses_033fb355fffeir8ry6faLKIqyb"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "You generate concise chat thread titles.\nReturn a JSON object with key: title.\nRespond with only the JSON object, no prose and no code fences.\nRules:\n- Summarize the user's request in 3-6 words.\n- Never exceed 6 words.\n- Be specific: include distinguishing identifiers from the message when present (PR/issue numbers, branch names, file or feature names, error codes).\n- Two different requests should never produce the same title if the message contains anything that tells them apart.\n- Use a short noun or verb phrase, not a full sentence.\n- Avoid quotes, markdown, emoji, and trailing punctuation.\n- If images are attached, use them as primary context for the title.\n\nUser message:\nchange animation of counter and morphing text. use design related skill",
+          "id": "prt_fcc04cc000013omOo7mqtzc0Yz",
+          "sessionID": "ses_033fb355fffeir8ry6faLKIqyb",
+          "messageID": "msg_fcc04cbe90017UlwAw1uNOPpGE"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_fcc04cbe90017UlwAw1uNOPpGE",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "variant": "max",
+        "path": {
+          "cwd": "/home/himmel/personal/prsui",
+          "root": "/home/himmel/personal/prsui"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 4347,
+          "input": 2315,
+          "output": 14,
+          "reasoning": 98,
+          "cache": {
+            "write": 0,
+            "read": 1920
+          }
+        },
+        "modelID": "deepseek-v4-flash-free",
+        "providerID": "opencode",
+        "time": {
+          "created": 1785834295640,
+          "completed": 1785834309090
+        },
+        "finish": "stop",
+        "id": "msg_fcc04d158001JBUqDNeSKkF1g2",
+        "sessionID": "ses_033fb355fffeir8ry6faLKIqyb"
+      },
+      "parts": [
+        {
+          "snapshot": "d4c7edd12784074108663b7e2a72a53d9af6b409",
+          "type": "step-start",
+          "id": "prt_fcc04fdf3001IE6717PSIhrdNB",
+          "sessionID": "ses_033fb355fffeir8ry6faLKIqyb",
+          "messageID": "msg_fcc04d158001JBUqDNeSKkF1g2"
+        },
+        {
+          "type": "reasoning",
+          "text": "The user wants me to generate a concise chat thread title. The request is about changing animations of a counter and morphing text, using a design-related skill. Let me create a title that summarizes this in 3-6 words.\n\nSomething like \"Rework counter and morphing text animations\" - that's 6 words. Or \"Animate counter and morphing text\" - 5 words.\n\nThe instruction says respond with only the JSON object, no prose and no code fences.",
+          "time": {
+            "start": 1785834307391,
+            "end": 1785834308326
+          },
+          "id": "prt_fcc04ff3f001PkhESwSUUD2L17",
+          "sessionID": "ses_033fb355fffeir8ry6faLKIqyb",
+          "messageID": "msg_fcc04d158001JBUqDNeSKkF1g2"
+        },
+        {
+          "type": "text",
+          "text": "{\"title\": \"Rework counter and morphing text animations\"}",
+          "time": {
+            "start": 1785834308331,
+            "end": 1785834308978
+          },
+          "id": "prt_fcc0502eb001TPEGA8EbcPz5kr",
+          "sessionID": "ses_033fb355fffeir8ry6faLKIqyb",
+          "messageID": "msg_fcc04d158001JBUqDNeSKkF1g2"
+        },
+        {
+          "reason": "stop",
+          "snapshot": "d4c7edd12784074108663b7e2a72a53d9af6b409",
+          "type": "step-finish",
+          "tokens": {
+            "total": 4347,
+            "input": 2315,
+            "output": 14,
+            "reasoning": 98,
+            "cache": {
+              "write": 0,
+              "read": 1920
+            }
+          },
+          "cost": 0,
+          "id": "prt_fcc050590001fkeLAZQBt9u71x",
+          "sessionID": "ses_033fb355fffeir8ry6faLKIqyb",
+          "messageID": "msg_fcc04d158001JBUqDNeSKkF1g2"
+        }
+      ]
+    }
+  ]
+}
