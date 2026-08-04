@@ -1,0 +1,105 @@
+{
+  "cli_version": "0.9.0",
+  "checkpoint_id": "01KZ61FXV4MF882SKQTN3NG15V",
+  "session_id": "ses_033fb3430ffeJoVPMvCzEah9Mh",
+  "strategy": "manual-commit",
+  "created_at": "2026-08-04T09:25:52.002537761Z",
+  "branch": "main",
+  "checkpoints_count": 4,
+  "save_step_count": 4,
+  "files_touched": [
+    "content/docs/components/counter.mdx",
+    "content/docs/components/meta.json",
+    "content/docs/components/morphing-text.mdx",
+    "demo/counter-demo.tsx",
+    "demo/morphing-text-demo.tsx",
+    "public/r/counter.json",
+    "public/r/morphing-text.json",
+    "public/r/registry.json",
+    "registry.json",
+    "registry/new-york/counter.tsx",
+    "registry/new-york/morphing-text.tsx"
+  ],
+  "agent": "OpenCode",
+  "model": "deepseek-v4-flash-free",
+  "turn_id": "9fbcb506f2ee",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 109032,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1086080,
+    "output_tokens": 5101,
+    "api_call_count": 29
+  },
+  "session_metrics": {
+    "turn_count": 4
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-08-04T09:25:51.952323702Z",
+    "agent_lines": 48,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 10,
+    "human_removed": 1,
+    "total_committed": 58,
+    "total_lines_changed": 59,
+    "agent_percentage": 81.35593220338984,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 457,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "content/docs/components/counter.mdx": 71,
+        "content/docs/components/meta.json": 3,
+        "content/docs/components/morphing-text.mdx": 61,
+        "demo/counter-demo.tsx": 32,
+        "demo/morphing-text-demo.tsx": 16,
+        "public/r/counter.json": 18,
+        "public/r/morphing-text.json": 18,
+        "public/r/registry.json": 28,
+        "registry.json": 28,
+        "registry/new-york/counter.tsx": 102,
+        "registry/new-york/morphing-text.tsx": 80
+      },
+      "user_removed_per_file": {
+        "content/docs/components/meta.json": 1
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 494,
+      "agent_lines_removed": 1
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 10,
+      "user_lines_removed": 10,
+      "agent_lines_added": 526,
+      "agent_lines_removed": 1,
+      "user_added_per_file": {
+        "demo/counter-demo.tsx": 1,
+        "registry/new-york/counter.tsx": 3,
+        "registry/new-york/morphing-text.tsx": 6
+      },
+      "user_removed_per_file": {
+        "demo/counter-demo.tsx": 1,
+        "registry/new-york/counter.tsx": 3,
+        "registry/new-york/morphing-text.tsx": 6
+      }
+    }
+  ]
+}
